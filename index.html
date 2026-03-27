@@ -7,880 +7,109 @@
   <meta name="description" content="We buy houses fast in South Yorkshire. No estate agents, no delays, no stress. Get a cash offer within 24 hours." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
-  <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-    /* ---- DESIGN TOKENS ---- */
-    :root {
-      /* Muted professional green */
-      --green:        #1c6b40;
-      --green-hover:  #165534;
-      --green-subtle: rgba(28,107,64,0.09);
-      --green-border: rgba(28,107,64,0.22);
-
-      /* Light mode surfaces */
-      --page-bg:      #f6f7f6;
-      --surface:      #ffffff;
-      --surface-alt:  #f0f3f0;
-      --surface-card: #f6f7f6;
-      --nav-bg:       rgba(255,255,255,0.97);
-      --nav-shadow:   0 1px 0 #e2e6e2;
-      --hero-bg:      #f0f3f0;
-      --border:       #dce2dc;
-      --heading:      #111a14;
-      --body-text:    #2c3a2e;
-      --muted:        #5c7060;
-      --modal-bg:     #ffffff;
-      --modal-text:   #3a4a3c;
-      --footer-bg:    #111a14;
-
-      /* Form — light */
-      --form-panel:   #ffffff;
-      --form-outline: #dce2dc;
-      --input-bg:     #f9faf9;
-      --input-border: #cdd5cd;
-      --input-text:   #111a14;
-      --input-ph:     #8a9e8c;
-      --label-col:    #4a5e4c;
-
-      --radius: 7px;
-    }
-
-    /* ---- DARK MODE ---- */
-    html[data-theme="dark"] {
-      --page-bg:      #0b1610;
-      --surface:      #101f15;
-      --surface-alt:  #0d1a12;
-      --surface-card: #142019;
-      --nav-bg:       rgba(11,22,16,0.97);
-      --nav-shadow:   0 1px 0 #1a2e1e;
-      --hero-bg:      #0b1610;
-      --border:       #1c3022;
-      --heading:      #d8edd e;
-      --body-text:    #94b89a;
-      --muted:        #5e7a64;
-      --modal-bg:     #101f15;
-      --modal-text:   #94b89a;
-      --footer-bg:    #060e08;
-
-      /* Form — dark */
-      --form-panel:   rgba(255,255,255,0.04);
-      --form-outline: rgba(255,255,255,0.09);
-      --input-bg:     rgba(255,255,255,0.05);
-      --input-border: rgba(255,255,255,0.12);
-      --input-text:   #e8f4ea;
-      --input-ph:     rgba(255,255,255,0.28);
-      --label-col:    rgba(255,255,255,0.55);
-
-      --green:        #1e7a49;
-      --green-hover:  #18623b;
-    }
-
-    html { scroll-behavior: smooth; }
-
-    body {
-      font-family: 'Inter', sans-serif;
-      background: var(--page-bg);
-      color: var(--body-text);
-      line-height: 1.65;
-      transition: background 0.3s, color 0.3s;
-    }
-
-    /* ---- NAV ---- */
-    nav {
-      position: fixed;
-      top: 0; left: 0; right: 0;
-      z-index: 100;
-      background: var(--nav-bg);
-      box-shadow: var(--nav-shadow);
-      backdrop-filter: blur(10px);
-      padding: 0 2.5rem;
-      display: flex;
-      align-items: center;
-      height: 64px;
-      gap: 1.5rem;
-      transition: background 0.3s, box-shadow 0.3s;
-    }
-
-    .nav-logo {
-      color: var(--green);
-      font-weight: 700;
-      font-size: 0.95rem;
-      letter-spacing: 0.02em;
-      text-decoration: none;
-      white-space: nowrap;
-    }
-
-    .nav-logo span { color: var(--heading); transition: color 0.3s; }
-
-    .nav-links {
-      display: flex;
-      align-items: center;
-      gap: 2rem;
-      list-style: none;
-      margin-left: auto;
-    }
-
-    .nav-links a {
-      color: var(--muted);
-      text-decoration: none;
-      font-size: 0.85rem;
-      font-weight: 500;
-      transition: color 0.2s;
-    }
-
-    .nav-links a:hover { color: var(--green); }
-
-    .nav-cta {
-      background: var(--green) !important;
-      color: #ffffff !important;
-      padding: 0.45rem 1.15rem;
-      border-radius: var(--radius);
-      font-weight: 600 !important;
-      font-size: 0.85rem !important;
-      transition: background 0.2s !important;
-    }
-
-    .nav-cta:hover { background: var(--green-hover) !important; }
-
-    /* ---- THEME TOGGLE ---- */
-    .theme-toggle {
-      flex-shrink: 0;
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-      background: var(--surface-card);
-      border: 1px solid var(--border);
-      border-radius: 20px;
-      padding: 0.3rem 0.7rem 0.3rem 0.5rem;
-      cursor: pointer;
-      transition: background 0.2s, border-color 0.2s;
-    }
-
-    .theme-toggle:hover { border-color: var(--green); }
-
-    .toggle-track {
-      position: relative;
-      width: 32px; height: 18px;
-      background: var(--border);
-      border-radius: 10px;
-      transition: background 0.3s;
-      flex-shrink: 0;
-    }
-
-    html[data-theme="dark"] .toggle-track { background: var(--green); }
-
-    .toggle-thumb {
-      position: absolute;
-      top: 2px; left: 2px;
-      width: 14px; height: 14px;
-      border-radius: 50%;
-      background: #ffffff;
-      box-shadow: 0 1px 4px rgba(0,0,0,0.25);
-      transition: transform 0.3s;
-    }
-
-    html[data-theme="dark"] .toggle-thumb { transform: translateX(14px); }
-
-    .toggle-icon { font-size: 0.82rem; line-height: 1; user-select: none; }
-    .icon-sun  { display: block; }
-    .icon-moon { display: none; }
-    html[data-theme="dark"] .icon-sun  { display: none; }
-    html[data-theme="dark"] .icon-moon { display: block; }
-
-    /* ---- HERO ---- */
-    .hero {
-      min-height: 100vh;
-      background: var(--hero-bg);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      padding: 8rem 1.5rem 5rem;
-      position: relative;
-      overflow: hidden;
-      transition: background 0.3s;
-    }
-
-    .hero::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: radial-gradient(ellipse 70% 50% at 50% 40%, rgba(28,107,64,0.07) 0%, transparent 70%);
-      pointer-events: none;
-    }
-
-    .hero-inner { max-width: 700px; position: relative; z-index: 1; }
-
-    .avatar {
-      width: 88px; height: 88px;
-      border-radius: 50%;
-      border: 2px solid var(--green-border);
-      background: var(--surface);
-      margin: 0 auto 1.5rem;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 2.6rem;
-      box-shadow: 0 2px 16px rgba(28,107,64,0.1);
-      transition: background 0.3s;
-    }
-
-    .badge {
-      display: inline-block;
-      background: var(--green-subtle);
-      border: 1px solid var(--green-border);
-      color: var(--green);
-      font-size: 0.7rem;
-      font-weight: 600;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      padding: 0.3rem 0.9rem;
-      border-radius: 20px;
-      margin-bottom: 1.4rem;
-    }
-
-    .hero h1 {
-      color: var(--heading);
-      font-size: clamp(2rem, 5vw, 3.2rem);
-      font-weight: 700;
-      line-height: 1.15;
-      margin-bottom: 1.2rem;
-      letter-spacing: -0.02em;
-      transition: color 0.3s;
-    }
-
-    .hero h1 em { color: var(--green); font-style: normal; }
-
-    .hero p {
-      color: var(--muted);
-      font-size: 1.05rem;
-      max-width: 520px;
-      margin: 0 auto 2.25rem;
-      line-height: 1.7;
-      transition: color 0.3s;
-    }
-
-    .hero-btns { display: flex; gap: 0.85rem; justify-content: center; flex-wrap: wrap; }
-
-    .btn-primary {
-      background: var(--green);
-      color: #ffffff;
-      padding: 0.8rem 1.85rem;
-      border-radius: var(--radius);
-      font-weight: 600;
-      font-size: 0.9rem;
-      text-decoration: none;
-      letter-spacing: 0.01em;
-      transition: background 0.2s, transform 0.15s;
-      display: inline-block;
-    }
-
-    .btn-primary:hover { background: var(--green-hover); transform: translateY(-1px); }
-
-    .btn-secondary {
-      background: transparent;
-      color: var(--heading);
-      padding: 0.8rem 1.85rem;
-      border-radius: var(--radius);
-      font-weight: 600;
-      font-size: 0.9rem;
-      text-decoration: none;
-      border: 1.5px solid var(--border);
-      transition: border-color 0.2s, color 0.2s, transform 0.15s;
-      display: inline-block;
-    }
-
-    .btn-secondary:hover { border-color: var(--green); color: var(--green); transform: translateY(-1px); }
-
-    .trust-bar {
-      margin-top: 3.5rem;
-      padding-top: 2.5rem;
-      border-top: 1px solid var(--border);
-      display: flex;
-      gap: 2rem;
-      justify-content: center;
-      flex-wrap: wrap;
-      transition: border-color 0.3s;
-    }
-
-    .trust-item {
-      color: var(--muted);
-      font-size: 0.8rem;
-      display: flex;
-      align-items: center;
-      gap: 0.4rem;
-      transition: color 0.3s;
-    }
-
-    .trust-item .check { color: var(--green); }
-
-    /* ---- SHARED SECTION STYLES ---- */
-    section { padding: 6rem 1.5rem; transition: background 0.3s; }
-
-    .section-inner { max-width: 1040px; margin: 0 auto; }
-
-    .section-label {
-      display: inline-block;
-      color: var(--green);
-      font-size: 0.7rem;
-      font-weight: 700;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      margin-bottom: 0.8rem;
-    }
-
-    .section-title {
-      font-size: clamp(1.6rem, 3.2vw, 2.3rem);
-      font-weight: 700;
-      color: var(--heading);
-      margin-bottom: 0.9rem;
-      line-height: 1.2;
-      letter-spacing: -0.02em;
-      transition: color 0.3s;
-    }
-
-    .section-sub {
-      color: var(--muted);
-      font-size: 0.975rem;
-      max-width: 520px;
-      line-height: 1.7;
-      transition: color 0.3s;
-    }
-
-    /* ---- PAIN POINTS ---- */
-    .pain-section { background: var(--surface); }
-
-    .pain-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 1.25rem;
-      margin-top: 3rem;
-    }
-
-    .pain-card {
-      background: var(--surface-card);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      padding: 1.75rem;
-      transition: border-color 0.2s, box-shadow 0.2s, background 0.3s;
-    }
-
-    .pain-card:hover {
-      border-color: var(--green);
-      box-shadow: 0 4px 24px rgba(28,107,64,0.07);
-    }
-
-    .pain-icon { font-size: 1.6rem; margin-bottom: 1rem; }
-
-    .pain-card h3 {
-      font-size: 0.975rem;
-      font-weight: 700;
-      color: var(--heading);
-      margin-bottom: 0.5rem;
-      transition: color 0.3s;
-    }
-
-    .pain-card p { font-size: 0.875rem; color: var(--muted); line-height: 1.7; transition: color 0.3s; }
-
-    /* ---- HOW IT WORKS ---- */
-    .steps-section { background: var(--surface-alt); }
-
-    .steps-section .section-title { color: var(--heading); }
-    .steps-section .section-sub { color: var(--muted); }
-    .steps-section .section-label { color: var(--green); }
-
-    .steps {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 1.25rem;
-      margin-top: 3rem;
-    }
-
-    .step {
-      text-align: center;
-      padding: 2.5rem 1.5rem;
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      transition: background 0.3s, border-color 0.3s;
-    }
-
-    .step-num {
-      width: 44px; height: 44px;
-      border-radius: 50%;
-      background: var(--green-subtle);
-      border: 1.5px solid var(--green-border);
-      color: var(--green);
-      font-weight: 700;
-      font-size: 1rem;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin: 0 auto 1rem;
-    }
-
-    .step h3 { color: var(--heading); font-size: 0.95rem; font-weight: 600; margin-bottom: 0.5rem; transition: color 0.3s; }
-    .step p  { color: var(--muted); font-size: 0.85rem; line-height: 1.65; transition: color 0.3s; }
-
-    /* ---- ABOUT ---- */
-    .about-section { background: var(--surface); }
-
-    .about-layout {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 5rem;
-      align-items: center;
-      margin-top: 3rem;
-    }
-
-    @media (max-width: 700px) { .about-layout { grid-template-columns: 1fr; gap: 2.5rem; } }
-
-    .about-img {
-      background: var(--surface-alt);
-      border: 1px solid var(--border);
-      border-radius: 10px;
-      aspect-ratio: 4/3;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 5rem;
-      transition: background 0.3s, border-color 0.3s;
-    }
-
-    .about-text .section-title { font-size: 1.85rem; }
-    .about-text p { color: var(--muted); font-size: 0.925rem; margin-bottom: 1rem; line-height: 1.75; transition: color 0.3s; }
-
-    .about-stats {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 1rem;
-      margin-top: 1.75rem;
-      padding-top: 1.75rem;
-      border-top: 1px solid var(--border);
-    }
-
-    .stat-val { font-size: 1.75rem; font-weight: 700; color: var(--heading); letter-spacing: -0.02em; transition: color 0.3s; }
-    .stat-val span { color: var(--green); }
-    .stat-label { font-size: 0.75rem; color: var(--muted); margin-top: 0.2rem; transition: color 0.3s; }
-
-    /* ---- CASE STUDIES ---- */
-    .cases-section { background: var(--surface-alt); }
-
-    .cases-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 1.25rem;
-      margin-top: 3rem;
-    }
-
-    .case-card {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      overflow: hidden;
-      transition: box-shadow 0.2s, transform 0.15s, background 0.3s, border-color 0.3s;
-    }
-
-    .case-card:hover {
-      box-shadow: 0 6px 28px rgba(0,0,0,0.07);
-      transform: translateY(-2px);
-    }
-
-    .case-header {
-      background: var(--surface-card);
-      border-bottom: 1px solid var(--border);
-      padding: 1.25rem 1.5rem;
-      display: flex;
-      align-items: center;
-      gap: 1rem;
-      transition: background 0.3s;
-    }
-
-    .case-icon { font-size: 1.5rem; }
-
-    .case-tag {
-      font-size: 0.65rem;
-      font-weight: 700;
-      letter-spacing: 0.09em;
-      text-transform: uppercase;
-      color: var(--green);
-      background: var(--green-subtle);
-      border: 1px solid var(--green-border);
-      padding: 0.18rem 0.55rem;
-      border-radius: 4px;
-      display: inline-block;
-      margin-bottom: 0.2rem;
-    }
-
-    .case-header h3 { color: var(--heading); font-size: 0.9rem; font-weight: 600; transition: color 0.3s; }
-
-    .case-body { padding: 1.4rem 1.5rem; }
-    .case-body p { font-size: 0.85rem; color: var(--muted); margin-bottom: 1rem; line-height: 1.7; transition: color 0.3s; }
-
-    .case-meta {
-      display: flex;
-      gap: 1.5rem;
-      padding-top: 1rem;
-      border-top: 1px solid var(--border);
-    }
-
-    .case-meta-item { font-size: 0.75rem; color: var(--muted); }
-    .case-meta-item strong { display: block; color: var(--heading); font-size: 0.875rem; font-weight: 700; margin-bottom: 0.1rem; transition: color 0.3s; }
-
-    /* ---- BLOG ---- */
-    .blog-section { background: var(--surface); }
-
-    .blog-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 1.25rem;
-      margin-top: 3rem;
-    }
-
-    .blog-card {
-      background: var(--surface-card);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      overflow: hidden;
-      cursor: pointer;
-      transition: box-shadow 0.2s, transform 0.15s, background 0.3s, border-color 0.3s;
-    }
-
-    .blog-card:hover {
-      box-shadow: 0 6px 28px rgba(0,0,0,0.07);
-      transform: translateY(-2px);
-      border-color: var(--green);
-    }
-
-    .blog-thumb {
-      background: var(--surface-alt);
-      border-bottom: 1px solid var(--border);
-      height: 110px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 2.5rem;
-      transition: background 0.3s;
-    }
-
-    .blog-body { padding: 1.3rem; }
-
-    .blog-cat {
-      font-size: 0.65rem;
-      font-weight: 700;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: var(--green);
-      margin-bottom: 0.5rem;
-    }
-
-    .blog-card h3 {
-      font-size: 0.925rem;
-      font-weight: 700;
-      color: var(--heading);
-      line-height: 1.4;
-      margin-bottom: 0.55rem;
-      transition: color 0.3s;
-    }
-
-    .blog-card p { font-size: 0.82rem; color: var(--muted); line-height: 1.65; margin-bottom: 1rem; transition: color 0.3s; }
-
-    .blog-read {
-      font-size: 0.78rem;
-      font-weight: 600;
-      color: var(--green);
-      text-decoration: none;
-      display: inline-flex;
-      align-items: center;
-      gap: 0.3rem;
-      transition: gap 0.2s;
-    }
-
-    .blog-read:hover { gap: 0.55rem; }
-
-    /* ---- MODAL ---- */
-    .modal-overlay {
-      position: fixed;
-      inset: 0;
-      background: rgba(0,0,0,0.55);
-      z-index: 200;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 1.5rem;
-      opacity: 0;
-      pointer-events: none;
-      transition: opacity 0.25s;
-    }
-
-    .modal-overlay.open { opacity: 1; pointer-events: all; }
-
-    .modal {
-      background: var(--modal-bg);
-      border: 1px solid var(--border);
-      border-radius: 10px;
-      max-width: 680px;
-      width: 100%;
-      max-height: 85vh;
-      overflow-y: auto;
-      transform: translateY(16px);
-      transition: transform 0.25s, background 0.3s;
-    }
-
-    .modal-overlay.open .modal { transform: translateY(0); }
-
-    .modal-header {
-      background: var(--green);
-      padding: 1.75rem 2rem;
-      position: sticky;
-      top: 0;
-    }
-
-    .modal-cat {
-      font-size: 0.65rem;
-      font-weight: 700;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: rgba(255,255,255,0.65);
-      margin-bottom: 0.4rem;
-    }
-
-    .modal-header h2 { color: #ffffff; font-size: 1.15rem; font-weight: 700; line-height: 1.35; }
-
-    .modal-close {
-      position: absolute;
-      top: 1rem; right: 1rem;
-      background: rgba(255,255,255,0.15);
-      border: none;
-      color: #ffffff;
-      width: 30px; height: 30px;
-      border-radius: 50%;
-      font-size: 0.9rem;
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      transition: background 0.2s;
-    }
-
-    .modal-close:hover { background: rgba(255,255,255,0.25); }
-
-    .modal-body { padding: 2rem; }
-
-    .modal-body h3 { font-size: 0.95rem; font-weight: 700; color: var(--heading); margin: 1.5rem 0 0.5rem; transition: color 0.3s; }
-    .modal-body h3:first-child { margin-top: 0; }
-    .modal-body p  { font-size: 0.875rem; color: var(--modal-text); line-height: 1.8; margin-bottom: 0.75rem; }
-    .modal-body ul { padding-left: 1.2rem; margin-bottom: 0.75rem; }
-    .modal-body li { font-size: 0.875rem; color: var(--modal-text); line-height: 1.75; margin-bottom: 0.35rem; }
-
-    .modal-cta {
-      margin-top: 1.75rem;
-      padding: 1.5rem;
-      background: var(--green-subtle);
-      border: 1px solid var(--green-border);
-      border-radius: var(--radius);
-      text-align: center;
-    }
-
-    .modal-cta p { color: var(--muted); font-size: 0.875rem; margin-bottom: 0.9rem; }
-
-    /* ---- CONTACT ---- */
-    .contact-section { background: var(--surface-alt); }
-
-    .contact-layout {
-      display: grid;
-      grid-template-columns: 1fr 1.4fr;
-      gap: 4rem;
-      margin-top: 3rem;
-      align-items: start;
-    }
-
-    @media (max-width: 700px) { .contact-layout { grid-template-columns: 1fr; gap: 2.5rem; } }
-
-    .contact-info-item {
-      display: flex;
-      gap: 1rem;
-      margin-bottom: 1.5rem;
-      align-items: flex-start;
-    }
-
-    .contact-info-icon {
-      width: 38px; height: 38px;
-      border-radius: var(--radius);
-      background: var(--green-subtle);
-      border: 1px solid var(--green-border);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 0.95rem;
-      flex-shrink: 0;
-    }
-
-    .contact-info-text strong {
-      display: block;
-      color: var(--heading);
-      font-size: 0.85rem;
-      font-weight: 600;
-      margin-bottom: 0.2rem;
-      transition: color 0.3s;
-    }
-
-    .contact-info-text span { color: var(--muted); font-size: 0.82rem; transition: color 0.3s; }
-
-    .contact-promise {
-      margin-top: 2rem;
-      padding: 1.25rem;
-      background: var(--green-subtle);
-      border: 1px solid var(--green-border);
-      border-radius: var(--radius);
-    }
-
-    .contact-promise p { color: var(--muted); font-size: 0.85rem; line-height: 1.65; transition: color 0.3s; }
-    .contact-promise strong { color: var(--green); }
-
-    /* ---- FORM ---- */
-    form {
-      background: var(--form-panel);
-      border: 1px solid var(--form-outline);
-      border-radius: 10px;
-      padding: 2rem;
-      transition: background 0.3s, border-color 0.3s;
-    }
-
-    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
-
-    @media (max-width: 480px) { .form-row { grid-template-columns: 1fr; } }
-
-    .form-group { margin-bottom: 1.1rem; }
-
-    label {
-      display: block;
-      color: var(--label-col);
-      font-size: 0.78rem;
-      font-weight: 500;
-      margin-bottom: 0.4rem;
-      letter-spacing: 0.01em;
-      transition: color 0.3s;
-    }
-
-    input, select, textarea {
-      width: 100%;
-      background: var(--input-bg);
-      border: 1px solid var(--input-border);
-      border-radius: var(--radius);
-      color: var(--input-text);
-      font-family: 'Inter', sans-serif;
-      font-size: 0.875rem;
-      padding: 0.7rem 0.9rem;
-      transition: border-color 0.2s, background 0.3s, color 0.3s;
-      outline: none;
-      appearance: none;
-    }
-
-    input::placeholder, textarea::placeholder { color: var(--input-ph); }
-    input:focus, select:focus, textarea:focus { border-color: var(--green); }
-    select option { background: var(--surface); color: var(--input-text); }
-    textarea { resize: vertical; min-height: 110px; }
-
-    .form-submit {
-      width: 100%;
-      background: var(--green);
-      color: #ffffff;
-      font-family: 'Inter', sans-serif;
-      font-size: 0.925rem;
-      font-weight: 600;
-      letter-spacing: 0.01em;
-      padding: 0.875rem;
-      border: none;
-      border-radius: var(--radius);
-      cursor: pointer;
-      transition: background 0.2s, transform 0.15s;
-      margin-top: 0.5rem;
-    }
-
-    .form-submit:hover { background: var(--green-hover); transform: translateY(-1px); }
-
-    .form-note {
-      text-align: center;
-      color: var(--muted);
-      font-size: 0.73rem;
-      margin-top: 0.85rem;
-      transition: color 0.3s;
-    }
-
-    /* ---- TOAST ---- */
-    .toast {
-      position: fixed;
-      bottom: 2rem; right: 2rem;
-      background: var(--green);
-      color: #ffffff;
-      padding: 0.8rem 1.4rem;
-      border-radius: var(--radius);
-      font-size: 0.875rem;
-      font-weight: 600;
-      box-shadow: 0 6px 20px rgba(0,0,0,0.15);
-      transform: translateY(100px);
-      opacity: 0;
-      transition: all 0.3s;
-      z-index: 999;
-    }
-
-    .toast.show { transform: translateY(0); opacity: 1; }
-
-    /* ---- FOOTER ---- */
-    footer {
-      background: var(--footer-bg);
-      padding: 3rem 1.5rem;
-      text-align: center;
-      transition: background 0.3s;
-    }
-
-    .footer-logo { color: var(--green); font-weight: 700; font-size: 0.95rem; margin-bottom: 0.5rem; }
-    html[data-theme="dark"] .footer-logo { color: #3daa68; }
-    .footer-logo span { color: rgba(255,255,255,0.45); }
-    footer p { color: rgba(255,255,255,0.28); font-size: 0.76rem; margin-top: 0.4rem; }
-    footer a { color: rgba(255,255,255,0.38); text-decoration: none; }
-    footer a:hover { color: #3daa68; }
-
-    @media (max-width: 680px) { .nav-links { display: none; } }
-  </style>
+  <link rel="stylesheet" href="/styles.css?v=2" />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
 </head>
 <body>
 
 <!-- NAV -->
 <nav>
-  <a class="nav-logo" href="#">South Yorkshire<span> Property Buyers</span></a>
+  <a class="nav-logo" href="#">
+    <img class="logo-img logo-light-mode" src="logo-light.png" alt="South Yorkshire Property Buyers">
+    <img class="logo-img logo-dark-mode"  src="logo-dark.png" alt="South Yorkshire Property Buyers">
+  </a>
   <ul class="nav-links">
-    <li><a href="#about">About</a></li>
-    <li><a href="#how">How It Works</a></li>
-    <li><a href="#cases">Case Studies</a></li>
-    <li><a href="#blog">Advice</a></li>
-    <li><a href="#contact" class="nav-cta">Get a Cash Offer</a></li>
+    <li class="nav-item"><a href="/#how">How It Works</a></li>
+    <li class="nav-item">
+      <a href="#">Sell Fast <svg class="chevron" viewBox="0 0 10 6"><path d="M1 1l4 4 4-4" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+      <ul class="dropdown">
+        <li><a href="/need-to-sell-house-urgently/">Need to Sell Urgently</a></li>
+        <li><a href="/sell-my-house-quickly/">Sell My House Quickly</a></li>
+        <li><a href="/struggling-to-sell-my-house/">Struggling to Sell</a></li>
+      </ul>
+    </li>
+    <li class="nav-item">
+      <a href="#">Your Situation <svg class="chevron" viewBox="0 0 10 6"><path d="M1 1l4 4 4-4" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+      <ul class="dropdown">
+        <li><a href="/sell-house-before-repossession/">Facing Repossession</a></li>
+        <li><a href="/cannot-afford-mortgage/">Can't Afford Mortgage</a></li>
+        <li><a href="/sell-house-after-divorce/">Divorce or Separation</a></li>
+        <li><a href="/sell-inherited-house-quickly/">Inherited Property</a></li>
+        <li><a href="/tenant-not-paying-rent/">Tenant Not Paying Rent</a></li>
+        <li><a href="/sell-house-that-needs-repairs/">House Needs Repairs</a></li>
+        <li><a href="/house-wont-sell-what-to-do/">House Won't Sell</a></li>
+      </ul>
+    </li>
+    <li class="nav-item"><a href="/#about">About</a></li>
+    <li class="nav-item"><a href="/get-offer/" class="nav-cta">Get a Cash Offer</a></li>
   </ul>
+  <button class="hamburger" id="mobileMenuBtn" aria-label="Open menu" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
 
   <button class="theme-toggle" id="themeToggle" aria-label="Toggle light/dark mode">
     <div class="toggle-track"><div class="toggle-thumb"></div></div>
-    <span class="toggle-icon"><span class="icon-sun">☀️</span><span class="icon-moon">🌙</span></span>
+    <span class="toggle-icon">
+      <span class="icon-sun">
+        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+      </span>
+      <span class="icon-moon">
+        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+      </span>
+    </span>
   </button>
 </nav>
+
+<div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+  <a href="/">Home</a>
+  <a href="/#how">How It Works</a>
+  <div class="mobile-group-title">Sell Fast</div>
+  <a href="/need-to-sell-house-urgently/">Need to Sell Urgently</a>
+  <a href="/sell-my-house-quickly/">Sell My House Quickly</a>
+  <a href="/struggling-to-sell-my-house/">Struggling to Sell</a>
+  <div class="mobile-group-title">Your Situation</div>
+  <a href="/sell-house-before-repossession/">Facing Repossession</a>
+  <a href="/cannot-afford-mortgage/">Can't Afford Mortgage</a>
+  <a href="/sell-house-after-divorce/">Divorce or Separation</a>
+  <a href="/sell-inherited-house-quickly/">Inherited Property</a>
+  <a href="/tenant-not-paying-rent/">Tenant Not Paying Rent</a>
+  <a href="/sell-house-that-needs-repairs/">House Needs Repairs</a>
+  <a href="/house-wont-sell-what-to-do/">House Won't Sell</a>
+  <a href="/#about">About</a>
+  <a href="/get-offer/" class="mobile-cta">Get a Cash Offer</a>
+</div>
 
 <!-- HERO -->
 <section class="hero">
   <div class="hero-inner">
-    <div class="avatar">🏠</div>
+    <div class="avatar">
+      <svg xmlns="http://www.w3.org/2000/svg" width="38" height="38" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+    </div>
     <div class="badge">South Yorkshire's Trusted Cash Buyers</div>
     <h1>Sell Your House Fast.<br><em>No Agents. No Delays.</em></h1>
-    <p>Facing repossession, probate, divorce, or title complications? We buy any property in South Yorkshire for cash, in as little as 7 days.</p>
+    <p>Facing <span class="kw">repossession</span>, probate, divorce, or title complications? We buy any property in South Yorkshire for <span class="kw">cash</span>, in as little as <span class="kw">7 days</span>.</p>
     <div class="hero-btns">
-      <a href="#contact" class="btn-primary">Get My Free Cash Offer</a>
+      <a href="/get-offer/" class="btn-primary">Get My Free Cash Offer</a>
       <a href="#how" class="btn-secondary">How It Works</a>
     </div>
+    <p class="hero-note">Free, no obligation. We respond within 24 hours.</p>
     <div class="trust-bar">
-      <div class="trust-item"><span class="check">✓</span> No estate agent fees</div>
-      <div class="trust-item"><span class="check">✓</span> Any condition accepted</div>
-      <div class="trust-item"><span class="check">✓</span> Offer within 24 hours</div>
-      <div class="trust-item"><span class="check">✓</span> Completed in 7 to 28 days</div>
+      <div class="trust-item">
+        <span class="check"><svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
+        No estate agent fees
+      </div>
+      <div class="trust-item">
+        <span class="check"><svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
+        Any condition accepted
+      </div>
+      <div class="trust-item">
+        <span class="check"><svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
+        Offer within 24 hours
+      </div>
+      <div class="trust-item">
+        <span class="check"><svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
+        Completed in 7 to 28 days
+      </div>
     </div>
   </div>
 </section>
@@ -888,46 +117,60 @@
 <!-- PAIN POINTS -->
 <section class="pain-section" id="situations">
   <div class="section-inner">
-    <span class="section-label">We Understand Your Situation</span>
-    <h2 class="section-title">Life doesn't always go to plan.</h2>
-    <p class="section-sub">Whatever brought you here, we've helped people in exactly your position. No judgement. Just a fast, straightforward solution.</p>
+    <div class="reveal">
+      <span class="section-label">We Understand Your Situation</span>
+      <h2 class="section-title">Life doesn't always go to plan.</h2>
+      <p class="section-sub">Whatever brought you here, we've helped people in exactly your position. No judgement. Just a fast, straightforward solution.</p>
+    </div>
 
     <div class="pain-grid">
 
-      <div class="pain-card">
-        <div class="pain-icon">⚠️</div>
+      <div class="pain-card reveal" data-delay="1">
+        <div class="icon-wrap">
+          <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+        </div>
         <h3>Facing Repossession</h3>
-        <p>Mortgage arrears mounting and the lender is threatening to repossess? We can complete before your repossession date, clear your debt, and protect your credit history from further damage. Time is critical and we know how to move fast.</p>
+        <p>Mortgage arrears mounting and the lender is threatening to repossess? We can complete before your repossession date, <span class="kw">clear your debt</span>, and protect your credit history from further damage. Time is critical and we know how to move fast.</p>
       </div>
 
-      <div class="pain-card">
-        <div class="pain-icon">⚖️</div>
+      <div class="pain-card reveal" data-delay="2">
+        <div class="icon-wrap">
+          <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+        </div>
         <h3>Divorce &amp; Separation</h3>
-        <p>A shared property ties you to the past. We cut through the emotional and legal complexity by purchasing quickly, so both parties can walk away cleanly and start fresh. We handle everything with sensitivity and discretion.</p>
+        <p>A shared property ties you to the past. We cut through the emotional and legal complexity by purchasing quickly, so both parties can <span class="kw">walk away cleanly</span> and start fresh. We handle everything with sensitivity and discretion.</p>
       </div>
 
-      <div class="pain-card">
-        <div class="pain-icon">📜</div>
+      <div class="pain-card reveal" data-delay="3">
+        <div class="icon-wrap">
+          <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+        </div>
         <h3>Probate &amp; Inherited Estates</h3>
-        <p>Dealing with a loved one's estate is already overwhelming. We work directly with solicitors and executors to buy probate properties cleanly, with no long chains and no waiting around for buyers who may pull out.</p>
+        <p>Dealing with a loved one's estate is already overwhelming. We work directly with solicitors and executors to buy probate properties <span class="kw">cleanly and quickly</span>, with no long chains and no waiting around for buyers who may pull out.</p>
       </div>
 
-      <div class="pain-card">
-        <div class="pain-icon">🔍</div>
+      <div class="pain-card reveal" data-delay="4">
+        <div class="icon-wrap">
+          <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M21 2l-2 2m-7.61 7.61a5.5 5.5 0 1 1-7.778 7.778 5.5 5.5 0 0 1 7.777-7.777zm0 0L15.5 7.5m0 0l3 3L22 7l-3-3m-3.5 3.5L19 4"/></svg>
+        </div>
         <h3>Title &amp; Legal Issues</h3>
-        <p>Restrictive covenants, missing deeds, boundary disputes, flying freeholds. These are the kinds of problems that scare off traditional buyers and stall conveyancing for months. We have the experience to work through complications that others simply will not touch.</p>
+        <p>Restrictive covenants, missing deeds, boundary disputes, flying freeholds. These are problems that scare off traditional buyers. We have the experience to work through <span class="kw">complications others will not touch</span>.</p>
       </div>
 
-      <div class="pain-card">
-        <div class="pain-icon">💸</div>
+      <div class="pain-card reveal" data-delay="5">
+        <div class="icon-wrap">
+          <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 18 13.5 8.5 8.5 13.5 1 6"/><polyline points="17 18 23 18 23 12"/></svg>
+        </div>
         <h3>Financial Pressure</h3>
-        <p>Whether it's debt, job loss, or a change in circumstances, a property sale that drags on for months only makes things worse. We work to your timeline, often completing in under two weeks, so you can regain control of your finances.</p>
+        <p>Whether it's debt, job loss, or a change in circumstances, a sale that drags on only makes things worse. We work to your timeline, often completing <span class="kw">in under two weeks</span>, so you can regain control of your finances.</p>
       </div>
 
-      <div class="pain-card">
-        <div class="pain-icon">🏚️</div>
+      <div class="pain-card reveal" data-delay="6">
+        <div class="icon-wrap">
+          <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
+        </div>
         <h3>Problem Properties</h3>
-        <p>Unmortgageable, structural issues, subsidence, Japanese knotweed. We buy properties the open market simply will not touch. No surveys, no pulled offers, no last-minute surprises. We make one offer and we stick to it.</p>
+        <p>Unmortgageable, structural issues, subsidence, Japanese knotweed. We buy properties <span class="kw">the open market will not touch</span>. No surveys, no pulled offers, no last-minute surprises. We make one offer and we stick to it.</p>
       </div>
 
     </div>
@@ -935,28 +178,109 @@
 </section>
 
 <!-- HOW IT WORKS -->
-<section class="steps-section" id="how">
+<section class="how-section" id="how">
   <div class="section-inner">
-    <span class="section-label">Simple &amp; Transparent</span>
-    <h2 class="section-title">Three steps to sold.</h2>
-    <p class="section-sub">We have streamlined everything so you spend less time waiting and more time moving forward.</p>
+    <div class="section-header reveal">
+      <span class="section-label">Simple Process</span>
+      <h2 class="section-title">How it works</h2>
+      <p class="section-sub">We are completely transparent throughout the process of buying your home. Here is how it works.</p>
+    </div>
+    <div class="how-steps reveal">
+      <div class="how-step">
+        <div class="how-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><rect x="8" y="2" width="8" height="4" rx="1" ry="1"/><line x1="9" y1="12" x2="15" y2="12"/><line x1="9" y1="16" x2="13" y2="16"/></svg>
+        </div>
+        <div class="step-arrow">&#9658;</div>
+        <h3>Step 1</h3>
+        <strong>Fill in the online form</strong>
+        <p>Tell us about your property using our simple online form. No obligation, no pressure.</p>
+      </div>
+      <div class="how-step">
+        <div class="how-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.65 3.37 2 2 0 0 1 3.64 1.18h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.75a16 16 0 0 0 6.29 6.29l.97-.97a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        </div>
+        <div class="step-arrow">&#9658;</div>
+        <h3>Step 2</h3>
+        <strong>Receive your offer</strong>
+        <p>Once we have your property details we will make you a cash offer within 24 hours.</p>
+      </div>
+      <div class="how-step">
+        <div class="how-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+        </div>
+        <div class="step-arrow">&#9658;</div>
+        <h3>Step 3</h3>
+        <strong>Sale agreed</strong>
+        <p>We handle everything from here. Sit back while we take care of the paperwork and completion.</p>
+      </div>
+    </div>
+  </div>
+</section>
 
-    <div class="steps">
-      <div class="step">
-        <div class="step-num">1</div>
-        <h3>Tell Us About Your Property</h3>
-        <p>Fill in our short form. It takes less than 2 minutes. Tell us the address, your situation, and your ideal timeline.</p>
-      </div>
-      <div class="step">
-        <div class="step-num">2</div>
-        <h3>Receive Your Cash Offer</h3>
-        <p>We will call you within 24 hours with a fair, no-obligation cash offer. No hidden deductions, no last-minute surprises.</p>
-      </div>
-      <div class="step">
-        <div class="step-num">3</div>
-        <h3>Pick Your Completion Date</h3>
-        <p>You choose when we complete. As fast as 7 days, or longer if you need it. We cover all legal fees.</p>
-      </div>
+<!-- COMPARISON TABLE -->
+<section class="compare-section" id="compare">
+  <div class="section-inner">
+    <div class="section-header reveal">
+      <span class="section-label">The Real Numbers</span>
+      <h2 class="section-title">See the difference for yourself</h2>
+      <p class="section-sub">On a £130,000 property sitting empty, here is what you actually walk away with after all the costs of a traditional sale are accounted for.</p>
+    </div>
+    <div class="compare-wrap reveal">
+      <table class="compare-table">
+        <thead>
+          <tr>
+            <th></th>
+            <th>Estate Agent</th>
+            <th class="our-col">South Yorkshire<br>Property Buyers</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Time to sell</td>
+            <td><strong>6 to 9 months</strong></td>
+            <td class="our-col"><strong>As little as 7 days</strong></td>
+          </tr>
+          <tr>
+            <td>True market value</td>
+            <td><strong>£130,000</strong></td>
+            <td class="our-col"><strong>£130,000</strong></td>
+          </tr>
+          <tr>
+            <td>Agreed sale price</td>
+            <td><strong>£124,000</strong></td>
+            <td class="our-col"><strong>£110,000</strong></td>
+          </tr>
+          <tr>
+            <td>After agent fees (2.5%)</td>
+            <td><strong>£120,900</strong></td>
+            <td class="our-col"><strong>£110,000</strong></td>
+          </tr>
+          <tr>
+            <td>After utility bills (9 months empty)</td>
+            <td><strong>£119,100</strong></td>
+            <td class="our-col"><strong>£110,000</strong></td>
+          </tr>
+          <tr>
+            <td>After double council tax (empty property, 9 months)</td>
+            <td><strong>£116,490</strong></td>
+            <td class="our-col"><strong>£110,000</strong></td>
+          </tr>
+          <tr>
+            <td>After mortgage payments (9 months)</td>
+            <td><strong>£109,290</strong></td>
+            <td class="our-col"><strong>£110,000</strong></td>
+          </tr>
+          <tr class="final-row">
+            <td><strong>Final amount you receive</strong></td>
+            <td><strong>£109,290</strong></td>
+            <td class="our-col"><strong>£110,000</strong></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="compare-cta reveal">
+      <p>Ready to find out what we would pay for your property?</p>
+      <a href="/get-offer/" class="btn-primary">Get My Free Cash Offer</a>
     </div>
   </div>
 </section>
@@ -964,25 +288,29 @@
 <!-- ABOUT -->
 <section class="about-section" id="about">
   <div class="section-inner">
-    <div class="about-layout">
-      <div class="about-img">🏙️</div>
+    <div class="about-layout reveal">
+      <div class="about-img" style="padding:0;overflow:hidden;position:relative;">
+        <div id="coverage-map" style="width:100%;height:100%;min-height:320px;"></div>
+        <div style="position:absolute;top:10px;left:10px;z-index:1000;background:rgba(28,107,64,0.9);color:#fff;font-size:10px;font-weight:600;font-family:Inter,sans-serif;padding:5px 10px;border-radius:4px;pointer-events:none;">Our Coverage Area</div>
+      </div>
       <div class="about-text">
         <span class="section-label">About Us</span>
         <h2 class="section-title">South Yorkshire's local property buyers.</h2>
-        <p>We are a small, experienced team of property investors based right here in South Yorkshire. We are not a national call centre. When you contact us, you speak directly with the decision-maker, with no middlemen and no waiting on approvals from head office.</p>
-        <p>We have been buying residential and commercial property across Sheffield, Rotherham, Doncaster, Barnsley, and the surrounding areas for years. We know this market, we know the local solicitors, and we know how to move quickly when it matters.</p>
-        <p>We pay a fair cash price, typically 80 to 90 percent of market value, in exchange for speed, certainty, and zero hassle. For many people in difficult circumstances, that trade-off is absolutely worth it, and we will always be honest with you about what to expect.</p>
+        <p>We are a small, experienced team of property investors based right here in South Yorkshire. We are not a national call centre. When you contact us, you speak directly with the <span class="kw">decision-maker</span>, with no middlemen and no waiting on approvals from head office.</p>
+        <p>We have been buying residential and commercial property across <span class="kw">Sheffield, Rotherham, Doncaster, Barnsley</span>, and the surrounding areas for years. We know this market, we know the local solicitors, and we know how to move quickly when it matters.</p>
+        <p>We pay a fair cash price, typically <span class="kw">80 to 90 % of market value</span>, in exchange for speed, certainty, and zero hassle. For many people in difficult circumstances, that trade-off is absolutely worth it, and we will always be honest with you about what to expect.</p>
+        <p>We can also <span class="kw">cover your legal costs</span>. We work with our own panel of solicitors who know exactly how we operate, which keeps things moving quickly. If you would prefer to use your own solicitor, that is absolutely fine too. We can make offers that include a contribution towards those costs, so there is nothing standing in your way.</p>
         <div class="about-stats">
           <div>
-            <div class="stat-val">100<span>+</span></div>
+            <div class="stat-val" data-count="100" data-suffix="+"><span class="count-num">0</span><span>+</span></div>
             <div class="stat-label">Properties purchased</div>
           </div>
           <div>
-            <div class="stat-val">7<span>days</span></div>
+            <div class="stat-val" data-count="7" data-suffix="days"><span class="count-num">0</span><span>days</span></div>
             <div class="stat-label">Fastest completion</div>
           </div>
           <div>
-            <div class="stat-val">£0</div>
+            <div class="stat-val" data-prefix="£" data-count="0"><span>£</span><span class="count-num">0</span></div>
             <div class="stat-label">Fees to you</div>
           </div>
         </div>
@@ -990,139 +318,21 @@
     </div>
   </div>
 </section>
-
-<!-- CASE STUDIES -->
-<section class="cases-section" id="cases">
-  <div class="section-inner">
-    <span class="section-label">Case Studies</span>
-    <h2 class="section-title">Real situations. Real results.</h2>
-    <p class="section-sub">Here are a few of the situations we have helped people through. Details have been changed to protect privacy.</p>
-
-    <div class="cases-grid">
-
-      <div class="case-card">
-        <div class="case-header">
-          <div class="case-icon">⚠️</div>
-          <div>
-            <div class="case-tag">Repossession</div>
-            <h3>Sheffield, 3-Bed Semi</h3>
-          </div>
-        </div>
-        <div class="case-body">
-          <p>A homeowner in Sheffield contacted us with 6 weeks remaining before a lender's repossession hearing. They had £18,000 in mortgage arrears and no buyer after 4 months on the open market. We made an offer within 24 hours and completed 19 days later, clearing all arrears and leaving the seller with a surplus to start again.</p>
-          <div class="case-meta">
-            <div class="case-meta-item"><strong>19 days</strong>Completion time</div>
-            <div class="case-meta-item"><strong>Arrears cleared</strong>Outcome</div>
-            <div class="case-meta-item"><strong>£0</strong>Fees to seller</div>
-          </div>
-        </div>
-      </div>
-
-      <div class="case-card">
-        <div class="case-header">
-          <div class="case-icon">📜</div>
-          <div>
-            <div class="case-tag">Probate</div>
-            <h3>Rotherham, Terraced House</h3>
-          </div>
-        </div>
-        <div class="case-body">
-          <p>Following the passing of a parent, two siblings needed to sell an inherited property in Rotherham as part of the estate. The property had been empty for 18 months, had fallen into disrepair, and would not have been mortgageable. We purchased as-is, working directly with the estate solicitor to keep the process as simple as possible.</p>
-          <div class="case-meta">
-            <div class="case-meta-item"><strong>28 days</strong>Completion time</div>
-            <div class="case-meta-item"><strong>As-is purchase</strong>Condition</div>
-            <div class="case-meta-item"><strong>Estate settled</strong>Outcome</div>
-          </div>
-        </div>
-      </div>
-
-      <div class="case-card">
-        <div class="case-header">
-          <div class="case-icon">⚖️</div>
-          <div>
-            <div class="case-tag">Divorce</div>
-            <h3>Doncaster, Detached Home</h3>
-          </div>
-        </div>
-        <div class="case-body">
-          <p>A separating couple needed a fast, clean break on their jointly owned property in Doncaster. After months of failed viewings and one collapsed sale, they came to us. With both parties agreeing to sell, we moved quickly, handled communications through separate solicitors, and completed in 24 days allowing both to move on with their lives.</p>
-          <div class="case-meta">
-            <div class="case-meta-item"><strong>24 days</strong>Completion time</div>
-            <div class="case-meta-item"><strong>Clean break</strong>Outcome</div>
-            <div class="case-meta-item"><strong>Both parties</strong>Agreement</div>
-          </div>
-        </div>
-      </div>
-
-      <div class="case-card">
-        <div class="case-header">
-          <div class="case-icon">🔍</div>
-          <div>
-            <div class="case-tag">Title Issues</div>
-            <h3>Barnsley, End-of-Terrace</h3>
-          </div>
-        </div>
-        <div class="case-body">
-          <p>A seller in Barnsley had their sale fall through twice due to a restrictive covenant on the title that mortgage lenders were not comfortable with. After 9 months of frustration, they contacted us. Because we are cash buyers, lender requirements are not our concern. We reviewed the title, made an offer, and completed within 3 weeks.</p>
-          <div class="case-meta">
-            <div class="case-meta-item"><strong>21 days</strong>Completion time</div>
-            <div class="case-meta-item"><strong>2 prior collapses</strong>History</div>
-            <div class="case-meta-item"><strong>Title resolved</strong>Outcome</div>
-          </div>
-        </div>
-      </div>
-
-      <div class="case-card">
-        <div class="case-header">
-          <div class="case-icon">💸</div>
-          <div>
-            <div class="case-tag">Financial Pressure</div>
-            <h3>Sheffield, 2-Bed Flat</h3>
-          </div>
-        </div>
-        <div class="case-body">
-          <p>Following redundancy, a homeowner in Sheffield needed to release equity quickly to avoid falling into arrears. The property had service charge disputes that made it unattractive to other buyers. We purchased the leasehold flat, sorted the paperwork ourselves, and completed in 17 days giving the seller financial breathing room.</p>
-          <div class="case-meta">
-            <div class="case-meta-item"><strong>17 days</strong>Completion time</div>
-            <div class="case-meta-item"><strong>Leasehold flat</strong>Property type</div>
-            <div class="case-meta-item"><strong>Arrears avoided</strong>Outcome</div>
-          </div>
-        </div>
-      </div>
-
-      <div class="case-card">
-        <div class="case-header">
-          <div class="case-icon">🏚️</div>
-          <div>
-            <div class="case-tag">Problem Property</div>
-            <h3>Rotherham, Detached</h3>
-          </div>
-        </div>
-        <div class="case-body">
-          <p>A landlord in Rotherham had a vacant property with significant structural movement that no surveyor had passed in two years of attempts at sale. Rather than continue spending money on maintenance with no buyer in sight, they contacted us. We assessed the property, made a fair offer reflecting the condition, and completed with no fuss.</p>
-          <div class="case-meta">
-            <div class="case-meta-item"><strong>25 days</strong>Completion time</div>
-            <div class="case-meta-item"><strong>Structural issues</strong>Condition</div>
-            <div class="case-meta-item"><strong>Sold as-is</strong>Outcome</div>
-          </div>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</section>
-
 <!-- SEO BLOG -->
 <section class="blog-section" id="blog">
   <div class="section-inner">
-    <span class="section-label">Advice &amp; Guides</span>
-    <h2 class="section-title">Helpful guides for property sellers.</h2>
-    <p class="section-sub">Whether you are facing repossession, dealing with probate, or just want to understand your options, these guides are here to help.</p>
+    <div class="reveal">
+      <span class="section-label">Advice &amp; Guides</span>
+      <h2 class="section-title">Helpful guides for property sellers.</h2>
+      <p class="section-sub">Whether you are facing repossession, dealing with probate, or just want to understand your options, these guides are here to help.</p>
+    </div>
 
     <div class="blog-grid">
 
-      <div class="blog-card" onclick="openPost('repossession')">
-        <div class="blog-thumb">⚠️</div>
+      <div class="blog-card reveal" data-delay="1" onclick="openPost('repossession')">
+        <div class="blog-thumb">
+          <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+        </div>
         <div class="blog-body">
           <div class="blog-cat">Repossession</div>
           <h3>How to Stop a House Repossession in South Yorkshire</h3>
@@ -1131,8 +341,10 @@
         </div>
       </div>
 
-      <div class="blog-card" onclick="openPost('probate')">
-        <div class="blog-thumb">📜</div>
+      <div class="blog-card reveal" data-delay="2" onclick="openPost('probate')">
+        <div class="blog-thumb">
+          <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+        </div>
         <div class="blog-body">
           <div class="blog-cat">Probate</div>
           <h3>Selling an Inherited Property in South Yorkshire: A Complete Guide</h3>
@@ -1141,8 +353,10 @@
         </div>
       </div>
 
-      <div class="blog-card" onclick="openPost('divorce')">
-        <div class="blog-thumb">⚖️</div>
+      <div class="blog-card reveal" data-delay="3" onclick="openPost('divorce')">
+        <div class="blog-thumb">
+          <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+        </div>
         <div class="blog-body">
           <div class="blog-cat">Divorce</div>
           <h3>Can You Sell Your House During a Divorce in the UK?</h3>
@@ -1151,8 +365,10 @@
         </div>
       </div>
 
-      <div class="blog-card" onclick="openPost('title')">
-        <div class="blog-thumb">🔍</div>
+      <div class="blog-card reveal" data-delay="4" onclick="openPost('title')">
+        <div class="blog-thumb">
+          <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M21 2l-2 2m-7.61 7.61a5.5 5.5 0 1 1-7.778 7.778 5.5 5.5 0 0 1 7.777-7.777zm0 0L15.5 7.5m0 0l3 3L22 7l-3-3m-3.5 3.5L19 4"/></svg>
+        </div>
         <div class="blog-body">
           <div class="blog-cat">Title Issues</div>
           <h3>What Are Title Defects and Can I Still Sell My Property?</h3>
@@ -1161,8 +377,10 @@
         </div>
       </div>
 
-      <div class="blog-card" onclick="openPost('cashbuyer')">
-        <div class="blog-thumb">💷</div>
+      <div class="blog-card reveal" data-delay="5" onclick="openPost('cashbuyer')">
+        <div class="blog-thumb">
+          <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>
+        </div>
         <div class="blog-body">
           <div class="blog-cat">Cash Buyers</div>
           <h3>What is a Cash Buyer and Why Does It Matter When Selling Fast?</h3>
@@ -1171,8 +389,10 @@
         </div>
       </div>
 
-      <div class="blog-card" onclick="openPost('condition')">
-        <div class="blog-thumb">🏚️</div>
+      <div class="blog-card reveal" data-delay="6" onclick="openPost('condition')">
+        <div class="blog-thumb">
+          <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
+        </div>
         <div class="blog-body">
           <div class="blog-cat">Problem Properties</div>
           <h3>Selling a House in Poor Condition: What Are Your Options?</h3>
@@ -1188,15 +408,19 @@
 <!-- CONTACT -->
 <section class="contact-section" id="contact">
   <div class="section-inner">
-    <span class="section-label">Get In Touch</span>
-    <h2 class="section-title">Get your free cash offer today.</h2>
-    <p class="section-sub">No obligation. No pressure. Just a straightforward conversation about your property and your situation.</p>
+    <div class="reveal">
+      <span class="section-label">Get In Touch</span>
+      <h2 class="section-title">Get your free cash offer today.</h2>
+      <p class="section-sub">No obligation. No pressure. Just a straightforward conversation about your property and your situation.</p>
+    </div>
 
     <div class="contact-layout">
-      <div class="contact-info">
+      <div class="contact-info reveal" data-delay="1">
 
         <div class="contact-info-item">
-          <div class="contact-info-icon">📍</div>
+          <div class="contact-info-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          </div>
           <div class="contact-info-text">
             <strong>Area We Cover</strong>
             <span>Sheffield, Rotherham, Doncaster, Barnsley and surrounding South Yorkshire</span>
@@ -1204,7 +428,9 @@
         </div>
 
         <div class="contact-info-item">
-          <div class="contact-info-icon">⏱</div>
+          <div class="contact-info-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          </div>
           <div class="contact-info-text">
             <strong>Response Time</strong>
             <span>We will call you back within 24 hours, usually much sooner</span>
@@ -1212,7 +438,9 @@
         </div>
 
         <div class="contact-info-item">
-          <div class="contact-info-icon">🌐</div>
+          <div class="contact-info-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+          </div>
           <div class="contact-info-text">
             <strong>Website</strong>
             <span>southyorkshirepropertybuyers.com</span>
@@ -1225,7 +453,7 @@
 
       </div>
 
-      <form id="contactForm">
+      <form id="contactForm" class="reveal" data-delay="2">
         <div class="form-row">
           <div class="form-group">
             <label for="name">Your Name</label>
@@ -1301,15 +529,14 @@
 
 <!-- FOOTER -->
 <footer>
-  <div class="footer-logo">South Yorkshire <span>Property Buyers</span></div>
+  <div class="footer-logo"><img src="logo-dark.png" alt="South Yorkshire Property Buyers" style="height:40px;width:auto;display:block;margin:0 auto 0.5rem;"></div>
   <p>southyorkshirepropertybuyers.com &nbsp;&middot;&nbsp; Buying property fast across South Yorkshire</p>
   <p style="margin-top:0.75rem;">
     <a href="#situations">Situations</a> &nbsp;&middot;&nbsp;
     <a href="#how">How It Works</a> &nbsp;&middot;&nbsp;
     <a href="#about">About</a> &nbsp;&middot;&nbsp;
-    <a href="#cases">Case Studies</a> &nbsp;&middot;&nbsp;
     <a href="#blog">Advice</a> &nbsp;&middot;&nbsp;
-    <a href="#contact">Contact</a>
+    <a href="/get-offer/">Contact</a>
   </p>
   <p style="margin-top:1rem;">&#169; 2025 South Yorkshire Property Buyers. All rights reserved.</p>
 </footer>
@@ -1329,6 +556,27 @@
 </div>
 
 <script>
+  const mobileBtn = document.getElementById('mobileMenuBtn');
+  const mobileMenu = document.getElementById('mobileMenu');
+  if (mobileBtn && mobileMenu) {
+    mobileBtn.addEventListener('click', () => {
+      const isOpen = mobileBtn.classList.contains('open');
+      mobileBtn.classList.toggle('open');
+      mobileMenu.classList.toggle('open');
+      mobileBtn.setAttribute('aria-expanded', String(!isOpen));
+      mobileMenu.setAttribute('aria-hidden', String(isOpen));
+      document.body.style.overflow = isOpen ? '' : 'hidden';
+    });
+    mobileMenu.querySelectorAll('a').forEach(a => {
+      a.addEventListener('click', () => {
+        mobileBtn.classList.remove('open');
+        mobileMenu.classList.remove('open');
+        mobileBtn.setAttribute('aria-expanded', 'false');
+        mobileMenu.setAttribute('aria-hidden', 'true');
+        document.body.style.overflow = '';
+      });
+    });
+  }
   /* ---- Theme toggle ---- */
   const html = document.documentElement;
 
@@ -1362,9 +610,21 @@
       if (window.scrollY >= s.offsetTop - 120) current = s.id;
     });
     navLinks.forEach(a => {
-      a.style.color = a.getAttribute('href') === '#' + current ? 'var(--green-light)' : '';
+      a.style.color = a.getAttribute('href') === '#' + current ? 'var(--green)' : '';
     });
   });
+
+  /* ---- Scroll reveal ---- */
+  const revealEls = document.querySelectorAll('.reveal');
+  const revealObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('in-view');
+        revealObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1 });
+  revealEls.forEach(el => revealObserver.observe(el));
 
   /* ---- Blog posts ---- */
   const posts = {
@@ -1393,7 +653,7 @@
         <p>We have helped homeowners in Sheffield, Rotherham, and Doncaster sell within weeks of a scheduled repossession hearing. In every case, acting early made a significant difference to the outcome.</p>
         <div class="modal-cta">
           <p>Facing repossession and need to act quickly? Get in touch today for a no-obligation cash offer.</p>
-          <a href="#contact" class="btn-primary" onclick="closePost()">Get a Cash Offer</a>
+          <a href="/get-offer/" class="btn-primary" onclick="closePost()">Get a Cash Offer</a>
         </div>`
     },
     probate: {
@@ -1411,7 +671,7 @@
         <p>A traditional sale through an estate agent can add months to an already lengthy process. As cash buyers we have no chain, no mortgage, and no survey requirements. Once probate is granted, we can complete very quickly.</p>
         <div class="modal-cta">
           <p>Dealing with a probate property in South Yorkshire? We are here to help and will work around your timeline.</p>
-          <a href="#contact" class="btn-primary" onclick="closePost()">Get a Cash Offer</a>
+          <a href="/get-offer/" class="btn-primary" onclick="closePost()">Get a Cash Offer</a>
         </div>`
     },
     divorce: {
@@ -1428,7 +688,7 @@
         <p>We can deal with both parties separately through their respective solicitors, meaning you do not need to be in the same room or agree on every detail directly. We make one clear offer and work to a fixed timeline. There is no negotiating down after surveys, no chain to worry about, and no uncertainty about whether the sale will complete.</p>
         <div class="modal-cta">
           <p>Going through a separation and need a fast, clean property sale? We understand how sensitive these situations are.</p>
-          <a href="#contact" class="btn-primary" onclick="closePost()">Get a Cash Offer</a>
+          <a href="/get-offer/" class="btn-primary" onclick="closePost()">Get a Cash Offer</a>
         </div>`
     },
     title: {
@@ -1453,7 +713,7 @@
         <p>As experienced property investors, we have dealt with most types of title defect. We have our own legal team and are comfortable assessing the risk ourselves. We have completed on properties in Barnsley and Rotherham with significant title complications that had already caused two or three prior sales to collapse.</p>
         <div class="modal-cta">
           <p>Struggling to sell because of a title issue? Tell us about your property and we will let you know how we can help.</p>
-          <a href="#contact" class="btn-primary" onclick="closePost()">Get a Cash Offer</a>
+          <a href="/get-offer/" class="btn-primary" onclick="closePost()">Get a Cash Offer</a>
         </div>`
     },
     cashbuyer: {
@@ -1465,12 +725,12 @@
         <h3>Why does it matter for a fast sale?</h3>
         <p>The average UK house sale takes between 12 and 16 weeks from offer to completion, and a significant proportion of sales collapse before they reach exchange. Most of those collapses are mortgage-related. None of these apply when selling to a genuine cash buyer.</p>
         <h3>What is the trade-off?</h3>
-        <p>Cash buyers typically pay less than market value in exchange for speed and certainty. Our offers are typically 80 to 90 percent of open market value. For someone in financial difficulty, facing a deadline, or simply wanting a clean sale without the uncertainty of a chain, the value of certainty often outweighs the difference in price.</p>
+        <p>Cash buyers typically pay less than market value in exchange for speed and certainty. Our offers are typically 80 to 90 % of open market value. For someone in financial difficulty, facing a deadline, or simply wanting a clean sale without the uncertainty of a chain, the value of certainty often outweighs the difference in price.</p>
         <h3>How to verify a cash buyer is genuine</h3>
         <p>A genuine cash buyer should be able to provide proof of funds quickly, name a solicitor from the outset, and not require you to sign any exclusivity agreements or pay any upfront fees. We are happy to provide proof of funds at any stage of the process.</p>
         <div class="modal-cta">
           <p>Want to know what we would offer for your property? There is no obligation and we will be completely transparent.</p>
-          <a href="#contact" class="btn-primary" onclick="closePost()">Get a Cash Offer</a>
+          <a href="/get-offer/" class="btn-primary" onclick="closePost()">Get a Cash Offer</a>
         </div>`
     },
     condition: {
@@ -1498,7 +758,7 @@
         <p>Selling directly to a cash buyer like us removes the surveyor from the equation entirely. We carry out our own assessment, make an offer reflecting the condition, and proceed without lender interference. No auction fees, no estate agent commission, and no risk of a mortgage-related collapse.</p>
         <div class="modal-cta">
           <p>Have a property that others have turned down? Tell us about it. We are experienced in exactly these situations.</p>
-          <a href="#contact" class="btn-primary" onclick="closePost()">Get a Cash Offer</a>
+          <a href="/get-offer/" class="btn-primary" onclick="closePost()">Get a Cash Offer</a>
         </div>`
     }
   };
@@ -1522,6 +782,97 @@
   }
 
   document.addEventListener('keydown', e => { if (e.key === 'Escape') closePost(); });
+
+  // ---- LEAFLET COVERAGE MAP ----
+  (function() {
+    var L = window.L;
+    if (!L) {
+      var s = document.createElement('script');
+      s.src = 'https://unpkg.com/leaflet@1.9.4/dist/leaflet.js';
+      s.onload = initMap;
+      document.head.appendChild(s);
+    } else { initMap(); }
+
+    function initMap() {
+      var map = L.map('coverage-map', {
+        center: [53.43, -1.28],
+        zoom: 9,
+        zoomControl: false,
+        scrollWheelZoom: false,
+        dragging: false,
+        doubleClickZoom: false,
+        touchZoom: false,
+        keyboard: false,
+        attributionControl: false
+      });
+
+      L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        maxZoom: 12
+      }).addTo(map);
+
+      var zones = [
+        { latlng: [53.381, -1.470], radius: 8000,  label: 'Sheffield' },
+        { latlng: [53.430, -1.357], radius: 6000,  label: 'Rotherham' },
+        { latlng: [53.553, -1.480], radius: 6500,  label: 'Barnsley' },
+        { latlng: [53.522, -1.128], radius: 8500,  label: 'Doncaster' },
+        { latlng: [53.235, -1.421], radius: 5500,  label: 'Chesterfield' },
+        { latlng: [53.304, -1.124], radius: 5000,  label: 'Worksop' }
+      ];
+
+      zones.forEach(function(z) {
+        L.circle(z.latlng, {
+          radius: z.radius,
+          color: '#1c6b40',
+          fillColor: '#1c6b40',
+          fillOpacity: 0.15,
+          weight: 2,
+          dashArray: '6 4'
+        }).addTo(map);
+
+        L.marker(z.latlng, {
+          icon: L.divIcon({
+            className: '',
+            html: '<div style="background:#1c6b40;color:#fff;font-family:Inter,sans-serif;font-size:11px;font-weight:600;padding:3px 7px;border-radius:4px;white-space:nowrap;box-shadow:0 1px 4px rgba(0,0,0,0.2);">' + z.label + '</div>',
+            iconAnchor: [0, 0]
+          })
+        }).addTo(map);
+      });
+    }
+  })();
+
+  // ---- COUNT-UP ANIMATION ----
+  (function() {
+    var observed = false;
+    var stats = document.querySelectorAll('.stat-val[data-count]');
+    if (!stats.length) return;
+
+    var observer = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting && !observed) {
+          observed = true;
+          stats.forEach(function(el) {
+            var target = parseInt(el.getAttribute('data-count'), 10);
+            var numEl = el.querySelector('.count-num');
+            if (!numEl || target === 0) return;
+            var start = 0;
+            var duration = 1400;
+            var startTime = null;
+            function step(ts) {
+              if (!startTime) startTime = ts;
+              var progress = Math.min((ts - startTime) / duration, 1);
+              var ease = 1 - Math.pow(1 - progress, 3);
+              numEl.textContent = Math.floor(ease * target);
+              if (progress < 1) requestAnimationFrame(step);
+              else numEl.textContent = target;
+            }
+            requestAnimationFrame(step);
+          });
+        }
+      });
+    }, { threshold: 0.5 });
+
+    observer.observe(document.querySelector('.about-stats'));
+  })();
 </script>
 
 </body>
