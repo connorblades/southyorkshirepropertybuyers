@@ -1037,6 +1037,8 @@ footer a:hover { color: #ffffff; }
 .page-body li { margin-bottom: 0.4rem; }
 .page-body a { color: var(--green); text-decoration: none; font-weight: 500; }
 .page-body a:hover { text-decoration: underline; }
+.page-body .btn-primary { color: #ffffff; }
+.page-body .btn-primary:hover { text-decoration: none; }
 .page-cta-box {
   background: var(--green-subtle);
   border: 1px solid var(--green-border);
@@ -1311,6 +1313,34 @@ footer a:hover { color: #ffffff; }
 
 /* ---- HERO NOTE ---- */
 .hero-note { font-size: 0.8rem; color: var(--muted); margin-top: 0.85rem; }
+
+/* ---- MAP LABELS ---- */
+.map-label {
+  position: absolute;
+  background: rgba(10, 48, 26, 0.88);
+  color: #fff;
+  font-size: 12px;
+  font-weight: 700;
+  font-family: Inter, sans-serif;
+  padding: 4px 10px 4px 20px;
+  border-radius: 20px;
+  white-space: nowrap;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  box-shadow: 0 2px 6px rgba(0,0,0,0.35);
+  letter-spacing: 0.02em;
+}
+.map-label::before {
+  content: '';
+  position: absolute;
+  left: 7px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 7px;
+  height: 7px;
+  background: #3dda82;
+  border-radius: 50%;
+}
 
 /* ---- HERO HEADING CONTOUR LINE ---- */
 h1 em {
