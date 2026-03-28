@@ -248,12 +248,14 @@
     submitBtn.textContent = 'Sending...';
     submitBtn.disabled = true;
 
+    const fullName = form.fullName.value.trim().split(' ');
     const data = {
-      full_name: form.fullName.value,
+      firstName: fullName[0] || '',
+      lastName: fullName.slice(1).join(' ') || '',
       phone: form.phone.value,
       email: form.email.value,
-      address: form.address.value,
-      situation: form.situation.value
+      address1: form.address.value,
+      notes: form.situation.value
     };
 
     try {
