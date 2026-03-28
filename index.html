@@ -607,12 +607,10 @@
       phone: document.getElementById('phone').value,
       email: document.getElementById('email').value,
       address1: document.getElementById('address').value,
-      notes: [
-        document.getElementById('type').value,
-        document.getElementById('timeline').value,
-        document.getElementById('situation').value,
-        document.getElementById('message').value
-      ].filter(Boolean).join(' | ')
+      propertyType: document.getElementById('type').value,
+      timeline: document.getElementById('timeline').value,
+      situation: document.getElementById('situation').value,
+      notes: document.getElementById('message').value
     };
     try {
       await fetch('/api/submit', {
