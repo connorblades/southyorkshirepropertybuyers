@@ -1107,6 +1107,28 @@ footer a:hover { color: #ffffff; }
   border-radius: 12px;
   transition: background 0.3s, border-color 0.3s;
 }
+/* Progressive green: light → mid → deep */
+.how-step:nth-child(1) {
+  background: rgba(39, 174, 96, 0.08);
+  border-color: rgba(39, 174, 96, 0.22);
+}
+.how-step:nth-child(2) {
+  background: rgba(39, 174, 96, 0.18);
+  border-color: rgba(39, 174, 96, 0.4);
+}
+.how-step:nth-child(3) {
+  background: #1a6b40;
+  border-color: #155c35;
+}
+.how-step:nth-child(3) h3,
+.how-step:nth-child(3) strong,
+.how-step:nth-child(3) p { color: #ffffff; }
+.how-step:nth-child(3) strong { color: #7de8aa; }
+.how-step:nth-child(3) .how-icon {
+  background: rgba(255,255,255,0.12);
+  color: #ffffff;
+}
+.how-step:nth-child(3) .step-arrow { color: rgba(255,255,255,0.7); }
 .how-icon {
   display: flex;
   align-items: center;
