@@ -241,9 +241,30 @@
       }
     });
   });
-  document.getElementById('offerForm').addEventListener('submit', function(e) {
+  document.getElementById('offerForm').addEventListener('submit', async function(e) {
     e.preventDefault();
-    this.innerHTML = '<div style="text-align:center;padding:2rem 1rem;"><div style="color:var(--green);font-size:2rem;margin-bottom:1rem;">&#10003;</div><h3 style="color:var(--heading);margin-bottom:0.75rem;">Thank you. We have received your request.</h3><p style="color:var(--muted);font-size:0.9rem;">A member of our team will call you back within 24 hours on working days. If your situation is urgent, please call us directly.</p></div>';
+    const form = this;
+    const submitBtn = form.querySelector('.form-submit');
+    submitBtn.textContent = 'Sending...';
+    submitBtn.disabled = true;
+
+    const data = {
+      full_name: form.fullName.value,
+      phone: form.phone.value,
+      email: form.email.value,
+      address: form.address.value,
+      situation: form.situation.value
+    };
+
+    try {
+      await fetch('https://services.leadconnectorhq.com/hooks/Lt1hJmen7QrCZZJy7bzf/webhook-trigger/85ee2449-0964-47cc-9a18-dc35ed075c9a', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data)
+      });
+    } catch (_) {}
+
+    form.innerHTML = '<div style="text-align:center;padding:2rem 1rem;"><div style="color:var(--green);font-size:2rem;margin-bottom:1rem;">&#10003;</div><h3 style="color:var(--heading);margin-bottom:0.75rem;">Thank you. We have received your request.</h3><p style="color:var(--muted);font-size:0.9rem;">A member of our team will call you back within 24 hours on working days. If your situation is urgent, please call us directly.</p></div>';
   });
 </script>
 </body>
