@@ -91,10 +91,10 @@
 
 <!-- HERO -->
 <section class="hero">
-  <video class="hero-video" id="heroVid1" autoplay muted playsinline>
+  <video class="hero-video" id="heroVid1" autoplay muted loop playsinline preload="auto">
     <source src="/hero.mp4" type="video/mp4">
   </video>
-  <video class="hero-video hero-video-2" id="heroVid2" muted playsinline>
+  <video class="hero-video hero-video-2" id="heroVid2" muted loop playsinline preload="auto">
     <source src="/Website-background2.mp4" type="video/mp4">
   </video>
   <div class="hero-overlay"></div>
@@ -899,29 +899,27 @@
     var v2 = document.getElementById('heroVid2');
     if (!v1 || !v2) return;
 
-    var FADE = 1500;      // ms for the crossfade transition
-    var HOLD = 12000;     // ms to hold each video before fading
+    var FADE_MS = 1800;
+    var HOLD_MS = 11000;
 
-    function crossfadeTo(incoming, outgoing) {
-      incoming.currentTime = 0;
-      incoming.play();
-      incoming.style.opacity = '1';
-      outgoing.style.opacity = '0';
-      setTimeout(function () {
-        outgoing.pause();
-        outgoing.currentTime = 0;
-        setTimeout(function () {
-          crossfadeTo(outgoing, incoming);
-        }, HOLD);
-      }, FADE);
+    function fadeTo(incoming, outgoing) {
+      incoming.play().catch(function () {});
+      requestAnimationFrame(function () {
+        requestAnimationFrame(function () {
+          incoming.style.opacity = '1';
+          outgoing.style.opacity = '0';
+          setTimeout(function () {
+            setTimeout(function () {
+              fadeTo(outgoing, incoming);
+            }, HOLD_MS);
+          }, FADE_MS);
+        });
+      });
     }
 
-    v1.addEventListener('canplaythrough', function () {
-      v1.play();
-      setTimeout(function () {
-        crossfadeTo(v2, v1);
-      }, HOLD);
-    }, { once: true });
+    setTimeout(function () {
+      fadeTo(v2, v1);
+    }, HOLD_MS);
   })();
 </script>
 </body>

@@ -313,7 +313,9 @@ html[data-theme="dark"] .hero-overlay {
 /* Hero overrides for video background */
 html:not([data-theme="dark"]) .hero h1 em {
   color: #ffffff;
-  text-shadow: 0 0 24px rgba(0,0,0,0.9), 0 2px 8px rgba(0,0,0,0.8);
+  -webkit-text-fill-color: #ffffff;
+  background: none;
+  text-shadow: 0 2px 14px rgba(0,0,0,0.7);
 }
 html:not([data-theme="dark"]) .hero .kw {
   color: #ffffff;
