@@ -307,10 +307,10 @@ h1 .kw, h2 .kw, h3 .kw {
 .hero-inner { max-width: 700px; position: relative; z-index: 3; }
 
 /* Hero overrides for video background */
-html:not([data-theme="dark"]) .hero h1 em {
+.hero h1 em {
   text-shadow: 0 0 24px rgba(255,255,255,0.6), 0 0 8px rgba(255,255,255,0.4);
 }
-html:not([data-theme="dark"]) .hero .kw {
+.hero .kw {
   font-weight: 700;
   text-shadow: 0 0 18px rgba(255,255,255,0.55), 0 1px 4px rgba(0,0,0,0.4);
 }
