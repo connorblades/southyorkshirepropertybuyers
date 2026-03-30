@@ -91,10 +91,10 @@
 
 <!-- HERO -->
 <section class="hero">
-  <video class="hero-video" id="heroVid1" autoplay muted loop playsinline preload="auto">
+  <video class="hero-video" id="heroVid1" autoplay muted playsinline preload="auto">
     <source src="/hero.mp4" type="video/mp4">
   </video>
-  <video class="hero-video hero-video-2" id="heroVid2" muted loop playsinline preload="auto">
+  <video class="hero-video hero-video-2" id="heroVid2" muted playsinline preload="auto">
     <source src="/Website-background2.mp4" type="video/mp4">
   </video>
   <div class="hero-overlay"></div>
@@ -899,27 +899,24 @@
     var v2 = document.getElementById('heroVid2');
     if (!v1 || !v2) return;
 
-    var FADE_MS = 1800;
-    var HOLD_MS = 11000;
+    var current = v1, next = v2;
 
-    function fadeTo(incoming, outgoing) {
+    function crossfade() {
+      var incoming = next, outgoing = current;
+      incoming.currentTime = 0;
       incoming.play().catch(function () {});
       requestAnimationFrame(function () {
         requestAnimationFrame(function () {
           incoming.style.opacity = '1';
           outgoing.style.opacity = '0';
-          setTimeout(function () {
-            setTimeout(function () {
-              fadeTo(outgoing, incoming);
-            }, HOLD_MS);
-          }, FADE_MS);
+          current = incoming;
+          next = outgoing;
         });
       });
     }
 
-    setTimeout(function () {
-      fadeTo(v2, v1);
-    }, HOLD_MS);
+    v1.addEventListener('ended', crossfade);
+    v2.addEventListener('ended', crossfade);
   })();
 </script>
 </body>
