@@ -80,7 +80,7 @@ nav {
   background: var(--nav-bg);
   box-shadow: var(--nav-shadow);
   backdrop-filter: blur(10px);
-  padding: 0 max(1.5rem, calc((100vw - 1040px) / 2));
+  padding: 0 max(1rem, calc((100vw - 1040px) / 4));
   display: flex;
   align-items: center;
   height: 72px;
