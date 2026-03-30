@@ -281,7 +281,58 @@ h1 .kw, h2 .kw, h3 .kw {
   pointer-events: none;
 }
 
-.hero-inner { max-width: 700px; position: relative; z-index: 1; }
+.hero-video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 1;
+  opacity: 1;
+  transition: opacity 1.5s ease-in-out;
+}
+
+.hero-video-2 {
+  opacity: 0;
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(28,107,64,0.38) 0%, rgba(0,0,0,0.52) 100%);
+  z-index: 2;
+  pointer-events: none;
+}
+
+html[data-theme="dark"] .hero-overlay {
+  background: linear-gradient(135deg, rgba(10,40,24,0.82) 0%, rgba(0,0,0,0.78) 100%);
+}
+
+.hero-inner { max-width: 700px; position: relative; z-index: 3; }
+
+/* Hero overrides for video background */
+html:not([data-theme="dark"]) .hero h1 em {
+  color: #ffffff;
+  text-shadow: 0 0 24px rgba(0,0,0,0.9), 0 2px 8px rgba(0,0,0,0.8);
+}
+html:not([data-theme="dark"]) .hero .kw {
+  color: #ffffff;
+  font-weight: 700;
+}
+.hero .badge {
+  background: rgba(255,255,255,0.15);
+  border-color: rgba(255,255,255,0.35);
+  color: #ffffff;
+}
+.hero .btn-secondary {
+  color: #ffffff;
+  border-color: rgba(255,255,255,0.5);
+}
+.hero .btn-secondary:hover {
+  background: rgba(255,255,255,0.15);
+  border-color: #ffffff;
+  color: #ffffff;
+}
 
 .avatar {
   width: 88px; height: 88px;
@@ -312,7 +363,7 @@ h1 .kw, h2 .kw, h3 .kw {
 }
 
 .hero h1 {
-  color: var(--heading);
+  color: #ffffff;
   font-size: clamp(2rem, 5vw, 3.2rem);
   font-weight: 700;
   line-height: 1.15;
@@ -324,7 +375,7 @@ h1 .kw, h2 .kw, h3 .kw {
 .hero h1 em { color: var(--green); font-style: normal; }
 
 .hero p {
-  color: var(--muted);
+  color: rgba(255,255,255,0.85);
   font-size: 1.05rem;
   max-width: 520px;
   margin: 0 auto 2.25rem;
@@ -337,7 +388,7 @@ h1 .kw, h2 .kw, h3 .kw {
 .trust-bar {
   margin-top: 3.5rem;
   padding-top: 2.5rem;
-  border-top: 1px solid var(--border);
+  border-top: 1px solid rgba(255,255,255,0.25);
   display: flex;
   gap: 1.5rem;
   justify-content: center;
@@ -348,7 +399,7 @@ h1 .kw, h2 .kw, h3 .kw {
 }
 
 .trust-item {
-  color: var(--muted);
+  color: rgba(255,255,255,0.8);
   font-size: 0.8rem;
   display: flex;
   align-items: center;
@@ -1336,7 +1387,7 @@ footer a:hover { color: #ffffff; }
 }
 
 /* ---- HERO NOTE ---- */
-.hero-note { font-size: 0.8rem; color: var(--muted); margin-top: 0; }
+.hero-note { font-size: 0.8rem; color: rgba(255,255,255,0.7); margin-top: 0; }
 
 /* ---- MAP LABELS ---- */
 .map-label {

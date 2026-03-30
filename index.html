@@ -91,13 +91,20 @@
 
 <!-- HERO -->
 <section class="hero">
+  <video class="hero-video" id="heroVid1" autoplay muted playsinline>
+    <source src="/hero.mp4" type="video/mp4">
+  </video>
+  <video class="hero-video hero-video-2" id="heroVid2" muted playsinline>
+    <source src="/Website-background2.mp4" type="video/mp4">
+  </video>
+  <div class="hero-overlay"></div>
   <div class="hero-inner">
     <div class="avatar">
       <svg xmlns="http://www.w3.org/2000/svg" width="38" height="38" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
     </div>
     <div class="badge">South Yorkshire's Trusted Cash Buyers</div>
     <h1>Sell Your House Fast in South Yorkshire.<br><em>No Agents. No Delays.</em></h1>
-    <p>Facing <span class="kw">repossession</span>, probate, divorce, or title complications? We buy any property in South Yorkshire for <span class="kw">cash</span>, in as little as <span class="kw">7 days</span>.</p>
+    <p>Facing <span class="kw">repossession</span>, <span class="kw">probate</span>, <span class="kw">divorce</span>, or <span class="kw">title complications</span>? We buy any property in South Yorkshire for <span class="kw">cash</span>, in as little as <span class="kw">7 days</span>.</p>
     <div class="hero-btns">
       <a href="/get-offer/" class="btn-primary">Get My Free Cash Offer</a>
       <a href="#how" class="btn-secondary">How It Works</a>
@@ -883,6 +890,39 @@
     "addressCountry": "GB"
   }
 }
+</script>
+
+<script>
+  /* ---- Hero video crossfade ---- */
+  (function () {
+    var v1 = document.getElementById('heroVid1');
+    var v2 = document.getElementById('heroVid2');
+    if (!v1 || !v2) return;
+
+    var FADE = 1500;      // ms for the crossfade transition
+    var HOLD = 12000;     // ms to hold each video before fading
+
+    function crossfadeTo(incoming, outgoing) {
+      incoming.currentTime = 0;
+      incoming.play();
+      incoming.style.opacity = '1';
+      outgoing.style.opacity = '0';
+      setTimeout(function () {
+        outgoing.pause();
+        outgoing.currentTime = 0;
+        setTimeout(function () {
+          crossfadeTo(outgoing, incoming);
+        }, HOLD);
+      }, FADE);
+    }
+
+    v1.addEventListener('canplaythrough', function () {
+      v1.play();
+      setTimeout(function () {
+        crossfadeTo(v2, v1);
+      }, HOLD);
+    }, { once: true });
+  })();
 </script>
 </body>
 </html>
