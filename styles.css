@@ -339,9 +339,11 @@ h1 .kw, h2 .kw, h3 .kw {
   padding-top: 2.5rem;
   border-top: 1px solid var(--border);
   display: flex;
-  gap: 2rem;
+  gap: 1.5rem;
   justify-content: center;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
+  margin-left: -4rem;
+  margin-right: -4rem;
   transition: border-color 0.3s;
 }
 
