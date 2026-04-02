@@ -21,6 +21,7 @@
   <meta name="twitter:description" content="We buy any property in South Yorkshire for cash. No estate agents, no fees, no delays. Genuine cash offer within 24 hours. Sheffield, Rotherham, Doncaster, Barnsley.">
 </head>
 <body>
+<div class="scroll-progress" id="scrollProgress"></div>
 
 <!-- NAV -->
 <nav>
@@ -315,6 +316,8 @@
         <div class="map-label" style="top:36%;left:44%;">Rotherham</div>
         <div class="map-label" style="top:76%;left:31%;">Chesterfield</div>
         <div class="map-label" style="top:71%;left:57%;">Worksop</div>
+        <div class="map-label" style="top:68%;left:83%;">Retford</div>
+        <div class="map-label" style="top:13%;left:85%;">Gainsborough</div>
       </div>
       <div class="about-text">
         <span class="section-label">About Us</span>
@@ -642,6 +645,13 @@
     this.reset();
     setTimeout(() => toast.classList.remove('show'), 4000);
   });
+
+  /* ---- Scroll progress bar ---- */
+  var scrollBar = document.getElementById('scrollProgress');
+  window.addEventListener('scroll', function () {
+    var pct = window.scrollY / (document.body.scrollHeight - window.innerHeight) * 100;
+    scrollBar.style.width = Math.min(pct, 100) + '%';
+  }, { passive: true });
 
   /* ---- Nav active highlight ---- */
   const sections = document.querySelectorAll('section[id]');
