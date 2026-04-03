@@ -608,6 +608,9 @@ section { padding: 6rem 1.5rem; transition: background 0.3s; }
 }
 
 .blog-card {
+  display: block;
+  text-decoration: none;
+  color: inherit;
   background: var(--surface-card);
   border: 1px solid var(--border);
   border-radius: var(--radius);
