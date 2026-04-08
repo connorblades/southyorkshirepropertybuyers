@@ -1024,6 +1024,19 @@ footer a:hover { color: #ffffff; }
   border-bottom: 1px solid var(--border);
   transition: background 0.3s, border-color 0.3s;
 }
+
+/* Override global white trust-bar styles for light-background page heroes */
+.page-hero .trust-bar {
+  border-top: 1px solid var(--border);
+  padding-top: 1.5rem;
+  margin-top: 1.75rem;
+}
+.page-hero .trust-item {
+  color: var(--body-text);
+}
+.page-hero .trust-item .check {
+  color: var(--green);
+}
 .page-hero .breadcrumb {
   font-size: 0.78rem;
   color: var(--muted);
