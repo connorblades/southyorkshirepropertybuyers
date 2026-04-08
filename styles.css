@@ -1099,6 +1099,26 @@ footer a:hover { color: #ffffff; }
   font-size: 1.35rem;
 }
 .page-cta-box p { color: var(--muted); margin-bottom: 1.5rem; }
+/* ---- AREA GRID ---- */
+.area-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  gap: 0.5rem;
+  margin: 1rem 0;
+}
+.area-grid span {
+  background: var(--green-subtle);
+  border: 1px solid var(--green-border);
+  border-radius: 6px;
+  padding: 0.4rem 0.75rem;
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: var(--green);
+  text-align: center;
+  transition: background 0.2s, border-color 0.2s;
+}
+/* ---- END AREA GRID ---- */
+
 .related-links {
   background: var(--surface-card);
   border: 1px solid var(--border);
