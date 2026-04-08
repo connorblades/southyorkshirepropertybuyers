@@ -1848,7 +1848,7 @@ h1 em {
   background: var(--surface-alt);
 }
 .faq-list {
-  margin-top: 2.5rem;
+  margin: 2.5rem auto 0;
   max-width: 800px;
 }
 .faq-item {
