@@ -7,7 +7,7 @@
   <meta name="description" content="We buy houses fast in South Yorkshire. No estate agents, no delays, no stress. Get a cash offer within 24 hours." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="/styles.css?v=3" />
+  <link rel="stylesheet" href="/styles.css?v=4" />
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <link rel="canonical" href="https://southyorkshirepropertybuyers.com/">
   <meta property="og:site_name" content="South Yorkshire Property Buyers">
@@ -51,6 +51,15 @@
         <li><a href="/house-wont-sell-what-to-do/">House Won't Sell</a></li>
       </ul>
     </li>
+    <li class="nav-item">
+      <a href="#">Locations <svg class="chevron" viewBox="0 0 10 6"><path d="M1 1l4 4 4-4" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+      <ul class="dropdown">
+        <li><a href="/sell-house-fast-sheffield/">Sheffield</a></li>
+        <li><a href="/sell-house-fast-rotherham/">Rotherham</a></li>
+        <li><a href="/sell-house-fast-doncaster/">Doncaster</a></li>
+        <li><a href="/sell-house-fast-barnsley/">Barnsley</a></li>
+      </ul>
+    </li>
     <li class="nav-item"><a href="/#about">About</a></li>
     <li class="nav-item"><a href="/get-offer/" class="nav-cta">Get a Cash Offer</a></li>
   </ul>
@@ -78,6 +87,11 @@
   <a href="/need-to-sell-house-urgently/">Need to Sell Urgently</a>
   <a href="/sell-my-house-quickly/">Sell My House Quickly</a>
   <a href="/struggling-to-sell-my-house/">Struggling to Sell</a>
+  <div class="mobile-group-title">Locations</div>
+  <a href="/sell-house-fast-sheffield/">Sheffield</a>
+  <a href="/sell-house-fast-rotherham/">Rotherham</a>
+  <a href="/sell-house-fast-doncaster/">Doncaster</a>
+  <a href="/sell-house-fast-barnsley/">Barnsley</a>
   <div class="mobile-group-title">Your Situation</div>
   <a href="/sell-house-before-repossession/">Facing Repossession</a>
   <a href="/cannot-afford-mortgage/">Can't Afford Mortgage</a>
@@ -556,13 +570,26 @@
 <!-- FOOTER -->
 <footer>
   <div class="footer-logo"><img src="logo-dark.png" alt="South Yorkshire Property Buyers" style="height:40px;width:auto;display:block;margin:0 auto 0.5rem;"></div>
-  <p>southyorkshirepropertybuyers.com &nbsp;&middot;&nbsp; Buying property fast across South Yorkshire</p>
+  <p>South Yorkshire Property Buyers &nbsp;&middot;&nbsp; Buying property fast across South Yorkshire</p>
   <p style="margin-top:0.75rem;">
-    <a href="#situations">Situations</a> &nbsp;&middot;&nbsp;
-    <a href="#how">How It Works</a> &nbsp;&middot;&nbsp;
-    <a href="#about">About</a> &nbsp;&middot;&nbsp;
-    <a href="#blog">Advice</a> &nbsp;&middot;&nbsp;
-    <a href="/get-offer/">Contact</a>
+    <a href="/sell-house-fast-sheffield/">Sheffield</a> &nbsp;&middot;&nbsp;
+    <a href="/sell-house-fast-rotherham/">Rotherham</a> &nbsp;&middot;&nbsp;
+    <a href="/sell-house-fast-doncaster/">Doncaster</a> &nbsp;&middot;&nbsp;
+    <a href="/sell-house-fast-barnsley/">Barnsley</a>
+  </p>
+  <p style="margin-top:0.5rem;">
+    <a href="/sell-house-before-repossession/">Repossession</a> &nbsp;&middot;&nbsp;
+    <a href="/sell-house-after-divorce/">Divorce</a> &nbsp;&middot;&nbsp;
+    <a href="/sell-inherited-house-quickly/">Inherited Property</a> &nbsp;&middot;&nbsp;
+    <a href="/cannot-afford-mortgage/">Mortgage Issues</a> &nbsp;&middot;&nbsp;
+    <a href="/sell-house-that-needs-repairs/">Needs Repairs</a> &nbsp;&middot;&nbsp;
+    <a href="/house-wont-sell-what-to-do/">House Won't Sell</a>
+  </p>
+  <p style="margin-top:0.5rem;">
+    <a href="/#how">How It Works</a> &nbsp;&middot;&nbsp;
+    <a href="/#about">About</a> &nbsp;&middot;&nbsp;
+    <a href="/#blog">Guides</a> &nbsp;&middot;&nbsp;
+    <a href="/get-offer/">Get a Cash Offer</a>
   </p>
   <p style="margin-top:1rem;">&#169; 2025 South Yorkshire Property Buyers. All rights reserved.</p>
 </footer>
@@ -876,7 +903,17 @@
   "@context": "https://schema.org",
   "@type": "WebSite",
   "name": "South Yorkshire Property Buyers",
-  "url": "https://southyorkshirepropertybuyers.com"
+  "alternateName": "SYPB",
+  "url": "https://southyorkshirepropertybuyers.com",
+  "description": "We buy houses fast for cash across Sheffield, Rotherham, Doncaster and Barnsley. No estate agent fees, no delays.",
+  "potentialAction": {
+    "@type": "SearchAction",
+    "target": {
+      "@type": "EntryPoint",
+      "urlTemplate": "https://southyorkshirepropertybuyers.com/get-offer/?q={search_term_string}"
+    },
+    "query-input": "required name=search_term_string"
+  }
 }
 </script>
 <script type="application/ld+json">
