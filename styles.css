@@ -1861,7 +1861,7 @@ h1 em {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1.15rem 0;
+  padding: 1.15rem 1.25rem;
   cursor: pointer;
   font-weight: 600;
   font-size: 0.975rem;
@@ -1896,7 +1896,7 @@ h1 em {
   font-size: 0.9rem;
   color: var(--body-text);
   line-height: 1.72;
-  padding-bottom: 1.25rem;
+  padding: 0 1.25rem 1.25rem;
 }
 .faq-item.open .faq-a {
   max-height: 400px;
