@@ -1677,3 +1677,214 @@ h1 em {
 .reveal.in-view .section-label::after {
   width: 100%;
 }
+
+/* ---- Mid-page CTA strip ---- */
+.midcta-strip {
+  background: var(--green);
+  padding: 2.5rem 1.5rem;
+  text-align: center;
+}
+.midcta-strip h3 {
+  color: #fff;
+  font-size: 1.35rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+.midcta-strip p {
+  color: rgba(255,255,255,0.85);
+  font-size: 0.95rem;
+  margin-bottom: 1.4rem;
+  max-width: 560px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.btn-white {
+  display: inline-block;
+  background: #fff;
+  color: var(--green);
+  font-weight: 700;
+  padding: 0.8rem 2.25rem;
+  border-radius: var(--radius);
+  text-decoration: none;
+  font-size: 1rem;
+  transition: background 0.2s, transform 0.2s, box-shadow 0.2s;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.15);
+}
+.btn-white:hover {
+  background: #e8f5ed;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.18);
+}
+
+/* ---- Testimonials ---- */
+.testimonials-section {
+  padding: 5rem 1.5rem;
+  background: var(--surface-alt);
+}
+.testimonials-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2.5rem;
+}
+.testimonial-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 1.75rem 1.75rem 1.5rem;
+  position: relative;
+}
+.testimonial-card::before {
+  content: '\201C';
+  position: absolute;
+  top: 0.25rem;
+  left: 1.4rem;
+  font-size: 3.5rem;
+  color: var(--green);
+  font-family: Georgia, serif;
+  line-height: 1;
+  opacity: 0.35;
+}
+.testimonial-card .stars {
+  color: #f5a623;
+  font-size: 0.95rem;
+  margin-bottom: 0.9rem;
+  letter-spacing: 2px;
+}
+.testimonial-card blockquote {
+  font-style: italic;
+  color: var(--body-text);
+  font-size: 0.92rem;
+  line-height: 1.68;
+  margin-bottom: 1.25rem;
+  border: none;
+  padding: 0;
+}
+.reviewer {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+  padding-top: 0.9rem;
+  border-top: 1px solid var(--border);
+}
+.reviewer strong {
+  font-size: 0.88rem;
+  color: var(--heading);
+}
+.reviewer span {
+  font-size: 0.8rem;
+  color: var(--muted);
+}
+
+/* ---- Areas We Cover ---- */
+.areas-section {
+  padding: 5rem 1.5rem;
+  background: var(--surface);
+}
+.areas-city-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
+  gap: 1rem;
+  margin-top: 2rem;
+  margin-bottom: 1.5rem;
+}
+.area-city-card {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  background: var(--green-subtle);
+  border: 1px solid var(--green-border);
+  border-radius: 8px;
+  padding: 1rem 1.25rem;
+  text-decoration: none;
+  color: var(--heading);
+  font-weight: 600;
+  font-size: 0.95rem;
+  transition: background 0.2s, border-color 0.2s, transform 0.2s, color 0.2s;
+}
+.area-city-card:hover {
+  background: var(--green);
+  border-color: var(--green);
+  color: #fff;
+  transform: translateY(-3px);
+}
+.area-city-card svg {
+  flex-shrink: 0;
+  stroke: var(--green);
+  transition: stroke 0.2s;
+}
+.area-city-card:hover svg {
+  stroke: #fff;
+}
+.area-towns-label {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  margin: 1.75rem 0 0.75rem;
+}
+.areas-cta {
+  text-align: center;
+  margin-top: 2.5rem;
+}
+
+/* ---- FAQ ---- */
+.faq-section {
+  padding: 5rem 1.5rem;
+  background: var(--surface-alt);
+}
+.faq-list {
+  margin-top: 2.5rem;
+  max-width: 800px;
+}
+.faq-item {
+  border-bottom: 1px solid var(--border);
+}
+.faq-item:first-child {
+  border-top: 1px solid var(--border);
+}
+.faq-q {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.15rem 0;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 0.975rem;
+  color: var(--heading);
+  gap: 1rem;
+  user-select: none;
+  list-style: none;
+}
+.faq-q:hover {
+  color: var(--green);
+}
+.faq-chevron {
+  flex-shrink: 0;
+  width: 20px;
+  height: 20px;
+  transition: transform 0.3s ease;
+  stroke: var(--muted);
+}
+.faq-item.open .faq-q {
+  color: var(--green);
+}
+.faq-item.open .faq-chevron {
+  transform: rotate(180deg);
+  stroke: var(--green);
+}
+.faq-a {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease;
+}
+.faq-a p {
+  font-size: 0.9rem;
+  color: var(--body-text);
+  line-height: 1.72;
+  padding-bottom: 1.25rem;
+}
+.faq-item.open .faq-a {
+  max-height: 400px;
+}
