@@ -1,12 +1,12 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500">
-  <!-- House outline: roof peak + walls, white fill, thick green rounded stroke -->
-  <path d="M250 70 L455 248 L455 435 Q455 452 438 452 L62 452 Q45 452 45 435 L45 248 Z"
-        fill="white" stroke="#1c6b40" stroke-width="36"
+  <!-- House: peak at top-centre, eaves at mid-height, rounded bottom corners -->
+  <path d="M250 92 L428 256 L428 418 Q428 440 406 440 L94 440 Q72 440 72 418 L72 256 Z"
+        fill="white" stroke="#1c6b40" stroke-width="30"
         stroke-linejoin="round" stroke-linecap="round"/>
-  <!-- Window: green square with 4 white panes -->
-  <rect x="88" y="308" width="138" height="138" rx="8" fill="#1c6b40"/>
-  <rect x="96"  y="316" width="54" height="54" rx="4" fill="white"/>
-  <rect x="164" y="316" width="54" height="54" rx="4" fill="white"/>
-  <rect x="96"  y="384" width="54" height="54" rx="4" fill="white"/>
-  <rect x="164" y="384" width="54" height="54" rx="4" fill="white"/>
+  <!-- 4-pane window, lower-left of interior -->
+  <rect x="100" y="270" width="128" height="128" rx="6" fill="#1c6b40"/>
+  <rect x="108" y="278" width="50" height="50" rx="3" fill="white"/>
+  <rect x="170" y="278" width="50" height="50" rx="3" fill="white"/>
+  <rect x="108" y="340" width="50" height="50" rx="3" fill="white"/>
+  <rect x="170" y="340" width="50" height="50" rx="3" fill="white"/>
 </svg>
