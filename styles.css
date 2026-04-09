@@ -1476,10 +1476,19 @@ footer a:hover { color: #ffffff; }
   padding: 4px 10px 4px 20px;
   border-radius: 20px;
   white-space: nowrap;
-  pointer-events: none;
+  pointer-events: auto;
   transform: translate(-50%, -50%);
   box-shadow: 0 2px 6px rgba(0,0,0,0.35);
   letter-spacing: 0.02em;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
+}
+.map-label:hover {
+  background: var(--green);
+  transform: translate(-50%, -50%) scale(1.08);
+  box-shadow: 0 4px 12px rgba(28,107,64,0.45);
+  color: #fff;
 }
 .map-label::before {
   content: '';
