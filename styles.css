@@ -337,6 +337,14 @@ h1 .kw, h2 .kw, h3 .kw {
   color: var(--green);
   box-shadow: 0 2px 16px rgba(28,107,64,0.1);
   transition: background 0.3s;
+  overflow: hidden;
+}
+.avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+  display: block;
 }
 
 .badge {
