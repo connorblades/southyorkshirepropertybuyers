@@ -1016,6 +1016,23 @@ footer a { color: rgba(255,255,255,0.55); text-decoration: none; transition: col
 footer a:hover { color: #ffffff; }
 .footer-legal { margin-top: 1.5rem; font-size: 0.75rem; opacity: 0.4; }
 
+.footer-social {
+  display: flex;
+  justify-content: center;
+  gap: 1.1rem;
+  margin: 0.9rem 0 0.25rem;
+}
+.footer-social a {
+  color: rgba(255,255,255,0.4);
+  display: flex;
+  align-items: center;
+  transition: color 0.2s, transform 0.2s;
+}
+.footer-social a:hover {
+  color: #3daa68;
+  transform: translateY(-2px);
+}
+
 /* ---- SEO PAGE STYLES ---- */
 .page-hero {
   background: var(--hero-bg);
