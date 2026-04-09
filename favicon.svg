@@ -1,7 +1,12 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
-  <circle cx="50" cy="50" r="50" fill="#eef7f2"/>
-  <g transform="translate(15,15) scale(2.92)" stroke="#1c6b40" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" fill="none">
-    <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
-    <polyline points="9 22 9 12 15 12 15 22"/>
-  </g>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500">
+  <!-- House outline: roof peak + walls, white fill, thick green rounded stroke -->
+  <path d="M250 70 L455 248 L455 435 Q455 452 438 452 L62 452 Q45 452 45 435 L45 248 Z"
+        fill="white" stroke="#1c6b40" stroke-width="36"
+        stroke-linejoin="round" stroke-linecap="round"/>
+  <!-- Window: green square with 4 white panes -->
+  <rect x="88" y="308" width="138" height="138" rx="8" fill="#1c6b40"/>
+  <rect x="96"  y="316" width="54" height="54" rx="4" fill="white"/>
+  <rect x="164" y="316" width="54" height="54" rx="4" fill="white"/>
+  <rect x="96"  y="384" width="54" height="54" rx="4" fill="white"/>
+  <rect x="164" y="384" width="54" height="54" rx="4" fill="white"/>
 </svg>
