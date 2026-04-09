@@ -137,13 +137,13 @@ html[data-theme="dark"] .nav-logo .logo-dark-mode  { display: block; }
 
 /* ---- NAV PHONE ---- */
 .nav-phone a {
-  font-size: 0.88rem;
-  font-weight: 700;
+  display: flex;
+  align-items: center;
   color: var(--green);
   text-decoration: none;
-  letter-spacing: 0.01em;
+  transition: color 0.2s, transform 0.2s;
 }
-.nav-phone a:hover { text-decoration: underline; }
+.nav-phone a:hover { color: var(--green-hover); transform: scale(1.1); }
 @media (max-width: 900px) { .nav-phone { display: none; } }
 
 /* ---- THEME TOGGLE ---- */
@@ -1038,14 +1038,15 @@ footer a:hover { color: #ffffff; }
 /* ---- FOOTER PHONE ---- */
 .footer-phone {
   margin: 0.5rem 0 0;
-  font-size: 1.15rem;
-  font-weight: 700;
 }
 .footer-phone a {
-  color: #fff;
+  display: inline-flex;
+  align-items: center;
+  color: rgba(255,255,255,0.6);
   text-decoration: none;
+  transition: color 0.2s, transform 0.2s;
 }
-.footer-phone a:hover { color: #3daa68; }
+.footer-phone a:hover { color: #3daa68; transform: scale(1.1); }
 
 .footer-social {
   display: flex;
@@ -1602,9 +1603,13 @@ h1 em {
   padding: 1.25rem 0 0.1rem;
 }
 .mobile-menu .mobile-phone {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
   font-weight: 700;
   color: var(--green) !important;
-  font-size: 1.05rem;
+  font-size: 1rem;
   text-align: center;
   border-bottom: none !important;
   margin-top: 0.5rem;
