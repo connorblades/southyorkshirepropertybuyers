@@ -328,8 +328,8 @@ h1 .kw, h2 .kw, h3 .kw {
 .avatar {
   width: 88px; height: 88px;
   border-radius: 50%;
-  border: 2px solid var(--green-border);
-  background: var(--surface);
+  border: 2px solid rgba(255,255,255,0.25);
+  background: transparent;
   margin: 0 auto 1.5rem;
   display: flex;
   align-items: center;
