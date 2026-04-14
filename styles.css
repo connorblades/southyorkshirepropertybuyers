@@ -970,21 +970,32 @@ footer a:hover { color: #3daa68; }
 
 .dropdown {
   position: absolute;
-  top: calc(100% + 12px);
+  top: 100%;
   left: 50%;
   transform: translateX(-50%);
   background: var(--surface);
   border: 1px solid var(--border);
   border-radius: 10px;
   padding: 0.5rem;
+  padding-top: 0.75rem;
   min-width: 230px;
   box-shadow: 0 8px 30px rgba(0,0,0,0.1);
   list-style: none;
   opacity: 0;
   pointer-events: none;
-  transition: opacity 0.15s, transform 0.15s;
+  transition: opacity 0.18s, transform 0.18s;
   transform: translateX(-50%) translateY(-4px);
   z-index: 200;
+  margin-top: 0;
+}
+
+.nav-item::after {
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  height: 12px;
 }
 
 .nav-item:hover .dropdown,
