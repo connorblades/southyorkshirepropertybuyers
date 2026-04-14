@@ -7,7 +7,7 @@
   <meta name="description" content="We buy houses fast in South Yorkshire. No estate agents, no delays, no stress. Get a cash offer within 24 hours." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="/styles.css?v=9" />
+  <link rel="stylesheet" href="/styles.css?v=10" />
   <link rel="icon" href="/favicon.png" type="image/png">
   <link rel="canonical" href="https://southyorkshirepropertybuyers.com/">
   <meta property="og:site_name" content="South Yorkshire Property Buyers">
@@ -755,6 +755,39 @@
 </div>
 
 <script>
+  /* ---- NAV DROPDOWNS ---- */
+  (function() {
+    var items = document.querySelectorAll('.nav-item');
+    items.forEach(function(item) {
+      var dropdown = item.querySelector('.dropdown');
+      if (!dropdown) return;
+      var timer = null;
+
+      function open() {
+        clearTimeout(timer);
+        items.forEach(function(el) { if (el !== item) el.classList.remove('open'); });
+        item.classList.add('open');
+      }
+
+      function scheduleClose() {
+        timer = setTimeout(function() {
+          item.classList.remove('open');
+        }, 400);
+      }
+
+      item.addEventListener('mouseenter', open);
+      item.addEventListener('mouseleave', scheduleClose);
+      dropdown.addEventListener('mouseenter', function() { clearTimeout(timer); });
+      dropdown.addEventListener('mouseleave', scheduleClose);
+    });
+
+    document.addEventListener('click', function(e) {
+      if (!e.target.closest('.nav-item')) {
+        document.querySelectorAll('.nav-item').forEach(function(el) { el.classList.remove('open'); });
+      }
+    });
+  })();
+
   const mobileBtn = document.getElementById('mobileMenuBtn');
   const mobileMenu = document.getElementById('mobileMenu');
   if (mobileBtn && mobileMenu) {
