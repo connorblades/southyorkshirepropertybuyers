@@ -983,17 +983,13 @@ footer a:hover { color: #3daa68; }
   opacity: 0;
   pointer-events: none;
   transition: opacity 0.15s ease, transform 0.15s ease;
-  transition-delay: 0.15s;
   z-index: 200;
 }
 
-.nav-item:hover .dropdown,
-.nav-item:focus-within .dropdown,
 .nav-item.open .dropdown {
   opacity: 1;
   pointer-events: auto;
   transform: translateX(-50%) translateY(0);
-  transition-delay: 0s;
 }
 
 .dropdown li a {

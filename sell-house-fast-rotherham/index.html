@@ -275,16 +275,7 @@
 </footer>
 
 <script>
-  /* ---- NAV DROPDOWN: click to open, stays open until click elsewhere ---- */
-  document.querySelectorAll('.nav-item').forEach(function(item) {
-    var trigger = item.querySelector('a');
-    var dropdown = item.querySelector('.dropdown');
-    if (!dropdown) return;
-    trigger.addEventListener('click', function(e) {
-      var isOpen = item.classList.contains('open');
-      document.querySelectorAll('.nav-item.open').forEach(function(el) {
-        el.classList.remove('open');
-      });
+  
       if (!isOpen) {
         e.preventDefault();
         item.classList.add('open');
@@ -300,7 +291,22 @@
   });
 
   <script>
-  const mobileBtn = document.getElementById('mobileMenuBtn');
+  /* ---- NAV DROPDOWN: hover with delay so it doesnt snap shut ---- */
+  document.querySelectorAll('.nav-item').forEach(function(item) {
+    if (!item.querySelector('.dropdown')) return;
+    var timer;
+    item.addEventListener('mouseenter', function() {
+      clearTimeout(timer);
+      item.classList.add('open');
+    });
+    item.addEventListener('mouseleave', function() {
+      timer = setTimeout(function() {
+        item.classList.remove('open');
+      }, 300);
+    });
+  });
+
+    const mobileBtn = document.getElementById('mobileMenuBtn');
   const mobileMenu = document.getElementById('mobileMenu');
   if (mobileBtn && mobileMenu) {
     mobileBtn.addEventListener('click', () => {
