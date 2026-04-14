@@ -942,7 +942,7 @@ footer a:hover { color: #3daa68; }
 @media (max-width: 680px) { .nav-links { display: none; } }
 
 /* ---- NAV DROPDOWNS ---- */
-.nav-item { position: relative; list-style: none; padding-bottom: 16px; margin-bottom: -16px; }
+.nav-item { position: relative; list-style: none; }
 
 .nav-item > a {
   color: var(--muted);
@@ -983,15 +983,13 @@ footer a:hover { color: #3daa68; }
   opacity: 0;
   pointer-events: none;
   transition: opacity 0.2s ease, transform 0.2s ease;
-  transition-delay: 0.25s;
   z-index: 200;
 }
 
-.nav-item:hover .dropdown {
+.nav-item.open .dropdown {
   opacity: 1;
   pointer-events: auto;
   transform: translateX(-50%) translateY(0);
-  transition-delay: 0s;
 }
 
 .dropdown li a {
