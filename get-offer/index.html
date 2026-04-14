@@ -271,23 +271,40 @@
 </footer>
 
 <script>
-  
-      if (!isOpen) {
-        e.preventDefault();
+  /* ---- NAV DROPDOWNS ---- */
+  (function() {
+    var items = document.querySelectorAll('.nav-item');
+    items.forEach(function(item) {
+      var dropdown = item.querySelector('.dropdown');
+      if (!dropdown) return;
+      var timer = null;
+
+      function open() {
+        clearTimeout(timer);
+        items.forEach(function(el) { if (el !== item) el.classList.remove('open'); });
         item.classList.add('open');
       }
-    });
-  });
-  document.addEventListener('click', function(e) {
-    if (!e.target.closest('.nav-item')) {
-      document.querySelectorAll('.nav-item.open').forEach(function(el) {
-        el.classList.remove('open');
-      });
-    }
-  });
 
-  <script>
-    const mobileBtn = document.getElementById('mobileMenuBtn');
+      function scheduleClose() {
+        timer = setTimeout(function() {
+          item.classList.remove('open');
+        }, 400);
+      }
+
+      item.addEventListener('mouseenter', open);
+      item.addEventListener('mouseleave', scheduleClose);
+      dropdown.addEventListener('mouseenter', function() { clearTimeout(timer); });
+      dropdown.addEventListener('mouseleave', scheduleClose);
+    });
+
+    document.addEventListener('click', function(e) {
+      if (!e.target.closest('.nav-item')) {
+        document.querySelectorAll('.nav-item').forEach(function(el) { el.classList.remove('open'); });
+      }
+    });
+  })();
+
+  const mobileBtn = document.getElementById('mobileMenuBtn');
   const mobileMenu = document.getElementById('mobileMenu');
   if (mobileBtn && mobileMenu) {
     mobileBtn.addEventListener('click', () => {
@@ -308,55 +325,19 @@
       });
     });
   }
-  const btn = document.getElementById('themeToggle');
+  /* ---- Theme toggle ---- */
   const html = document.documentElement;
-  const saved = localStorage.getItem('theme');
-  if (saved) html.setAttribute('data-theme', saved);
-  btn.addEventListener('click', () => {
-    const next = html.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+
+  try {
+    const saved = localStorage.getItem('theme');
+    if (saved) html.setAttribute('data-theme', saved);
+  } catch (e) {}
+
+  document.getElementById('themeToggle').addEventListener('click', function () {
+    const current = html.getAttribute('data-theme');
+    const next = current === 'dark' ? 'light' : 'dark';
     html.setAttribute('data-theme', next);
-    localStorage.setItem('theme', next);
-  });
-  document.querySelectorAll('.faq-q').forEach(btn => {
-    btn.addEventListener('click', () => {
-      const item = btn.closest('.faq-item');
-      const isOpen = item.classList.contains('open');
-      document.querySelectorAll('.faq-item.open').forEach(i => {
-        i.classList.remove('open');
-        i.querySelector('.faq-q').setAttribute('aria-expanded', 'false');
-      });
-      if (!isOpen) {
-        item.classList.add('open');
-        btn.setAttribute('aria-expanded', 'true');
-      }
-    });
-  });
-  document.getElementById('offerForm').addEventListener('submit', async function(e) {
-    e.preventDefault();
-    const form = this;
-    const submitBtn = form.querySelector('.form-submit');
-    submitBtn.textContent = 'Sending...';
-    submitBtn.disabled = true;
-
-    const fullName = form.fullName.value.trim().split(' ');
-    const data = {
-      firstName: fullName[0] || '',
-      lastName: fullName.slice(1).join(' ') || '',
-      phone: form.phone.value,
-      email: form.email.value,
-      address1: form.address.value,
-      notes: form.situation.value
-    };
-
-    try {
-      await fetch('/api/submit', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(data)
-      });
-    } catch (_) {}
-
-    form.innerHTML = '<div style="text-align:center;padding:2rem 1rem;"><div style="color:var(--green);font-size:2rem;margin-bottom:1rem;">&#10003;</div><h3 style="color:var(--heading);margin-bottom:0.75rem;">Thank you. We have received your request.</h3><p style="color:var(--muted);font-size:0.9rem;">A member of our team will call you back within 24 hours on working days. If your situation is urgent, please call us directly.</p></div>';
+    try { localStorage.setItem('theme', next); } catch (e) {}
   });
 </script>
 <script type="application/ld+json">
