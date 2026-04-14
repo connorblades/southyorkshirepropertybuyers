@@ -220,6 +220,39 @@
 </footer>
 
 <script>
+  /* ---- NAV DROPDOWNS ---- */
+  (function() {
+    var items = document.querySelectorAll('.nav-item');
+    items.forEach(function(item) {
+      var dropdown = item.querySelector('.dropdown');
+      if (!dropdown) return;
+      var timer = null;
+
+      function open() {
+        clearTimeout(timer);
+        items.forEach(function(el) { if (el !== item) el.classList.remove('open'); });
+        item.classList.add('open');
+      }
+
+      function scheduleClose() {
+        timer = setTimeout(function() {
+          item.classList.remove('open');
+        }, 400);
+      }
+
+      item.addEventListener('mouseenter', open);
+      item.addEventListener('mouseleave', scheduleClose);
+      dropdown.addEventListener('mouseenter', function() { clearTimeout(timer); });
+      dropdown.addEventListener('mouseleave', scheduleClose);
+    });
+
+    document.addEventListener('click', function(e) {
+      if (!e.target.closest('.nav-item')) {
+        document.querySelectorAll('.nav-item').forEach(function(el) { el.classList.remove('open'); });
+      }
+    });
+  })();
+
   const mobileMenuBtn = document.getElementById('mobileMenuBtn');
   const mobileMenu = document.getElementById('mobileMenu');
   mobileMenuBtn.addEventListener('click', () => {
