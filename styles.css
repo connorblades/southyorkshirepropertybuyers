@@ -86,6 +86,7 @@ nav {
   height: 84px;
   gap: 1.5rem;
   transition: background 0.3s, box-shadow 0.3s;
+  overflow: visible;
 }
 
 .nav-logo {
@@ -111,6 +112,7 @@ html[data-theme="dark"] .nav-logo .logo-dark-mode  { display: block; }
   gap: 2rem;
   list-style: none;
   margin-left: auto;
+  overflow: visible;
 }
 
 .nav-links a {
