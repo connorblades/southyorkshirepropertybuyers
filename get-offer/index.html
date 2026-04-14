@@ -282,21 +282,6 @@
   });
 
   <script>
-  /* ---- NAV DROPDOWN: hover with delay so it doesnt snap shut ---- */
-  document.querySelectorAll('.nav-item').forEach(function(item) {
-    if (!item.querySelector('.dropdown')) return;
-    var timer;
-    item.addEventListener('mouseenter', function() {
-      clearTimeout(timer);
-      item.classList.add('open');
-    });
-    item.addEventListener('mouseleave', function() {
-      timer = setTimeout(function() {
-        item.classList.remove('open');
-      }, 300);
-    });
-  });
-
     const mobileBtn = document.getElementById('mobileMenuBtn');
   const mobileMenu = document.getElementById('mobileMenu');
   if (mobileBtn && mobileMenu) {
