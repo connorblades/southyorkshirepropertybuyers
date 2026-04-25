@@ -173,6 +173,58 @@
     <changefreq>monthly</changefreq>
   </url>
 
+
+  <!-- PORTFOLIO & TENANCY PAGES -->
+  <url>
+    <loc>https://southyorkshirepropertybuyers.com/sell-property-portfolio/</loc>
+    <lastmod>2026-04-25</lastmod>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://southyorkshirepropertybuyers.com/sell-house-with-tenants-in-situ/</loc>
+    <lastmod>2026-04-25</lastmod>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://southyorkshirepropertybuyers.com/landlord-selling-house-can-i-stay/</loc>
+    <lastmod>2026-04-25</lastmod>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://southyorkshirepropertybuyers.com/sell-house-during-probate/</loc>
+    <lastmod>2026-04-25</lastmod>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+
+  <!-- BLOG -->
+  <url>
+    <loc>https://southyorkshirepropertybuyers.com/blog/</loc>
+    <lastmod>2026-04-25</lastmod>
+    <priority>0.7</priority>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>https://southyorkshirepropertybuyers.com/blog/how-to-sell-property-portfolio-quickly/</loc>
+    <lastmod>2026-04-25</lastmod>
+    <priority>0.7</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://southyorkshirepropertybuyers.com/blog/tenant-rights-when-landlord-sells/</loc>
+    <lastmod>2026-04-25</lastmod>
+    <priority>0.7</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://southyorkshirepropertybuyers.com/blog/selling-house-during-probate-south-yorkshire/</loc>
+    <lastmod>2026-04-25</lastmod>
+    <priority>0.7</priority>
+    <changefreq>monthly</changefreq>
+  </url>
   <!-- LEGAL -->
   <url>
     <loc>https://southyorkshirepropertybuyers.com/privacy-policy/</loc>
