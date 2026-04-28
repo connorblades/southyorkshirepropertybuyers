@@ -451,22 +451,34 @@
     <p style="text-align:center;font-size:0.82rem;color:var(--muted);margin-top:0.75rem;">Click the video to toggle sound</p>
     <script>
       (function(){
-        var v = document.getElementById('adVideo');
         var wrap = document.getElementById('videoWrap');
         var iconMuted = document.getElementById('iconMuted');
         var iconSound = document.getElementById('iconSound');
-        v.src = window.innerWidth <= 600 ? '/sypb-video-ad-9x16.mp4' : '/sypb-video-ad-16x9.mp4';
-        function toggleMute() {
-          if (v.muted) {
-            v.removeAttribute('muted');
-            v.volume = 1;
+        var src = window.innerWidth <= 600 ? '/sypb-video-ad-9x16.mp4' : '/sypb-video-ad-16x9.mp4';
+        var v = document.getElementById('adVideo');
+        v.src = src;
+        var isMuted = true;
+
+        wrap.addEventListener('click', function() {
+          if (isMuted) {
+            // Replace video entirely — only way Chrome allows audio after autoplay
+            var t = v.currentTime;
+            var v2 = document.createElement('video');
+            v2.loop = true; v2.playsInline = true; v2.volume = 1;
+            v2.style.cssText = 'width:100%;display:block;';
+            v2.src = src;
+            wrap.replaceChild(v2, v);
+            v = v2;
+            v.currentTime = t;
+            v.play();
+            isMuted = false;
           } else {
             v.muted = true;
+            isMuted = true;
           }
-          iconMuted.style.display = v.muted ? 'block' : 'none';
-          iconSound.style.display = v.muted ? 'none' : 'block';
-        }
-        wrap.addEventListener('click', toggleMute);
+          iconMuted.style.display = isMuted ? 'block' : 'none';
+          iconSound.style.display = isMuted ? 'none' : 'block';
+        });
       })();
     </script>
   </div>
