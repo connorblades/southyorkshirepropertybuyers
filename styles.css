@@ -1986,3 +1986,46 @@ h1 em {
 .faq-item.open .faq-a {
   max-height: 400px;
 }
+
+/* ── Video section ── */
+.video-section {
+  padding: 4rem 1.5rem;
+  background: var(--surface-light);
+}
+.video-section .section-header {
+  margin-bottom: 2rem;
+}
+.video-wrap {
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 6px 32px rgba(0,0,0,0.13);
+  max-width: 820px;
+  margin: 0 auto;
+}
+.video-wrap video {
+  width: 100%;
+  display: block;
+}
+.video-portrait { display: none; }
+@media (max-width: 600px) {
+  .video-landscape { display: none; }
+  .video-portrait { display: block; }
+}
+
+/* ── Blog post images ── */
+.blog-featured-img {
+  width: 100%;
+  border-radius: 10px;
+  margin: 0 0 2.5rem;
+  display: block;
+  height: auto;
+  object-fit: cover;
+}
+.blog-inline-img {
+  width: 100%;
+  border-radius: 8px;
+  margin: 2rem 0;
+  display: block;
+  height: auto;
+  object-fit: cover;
+}
