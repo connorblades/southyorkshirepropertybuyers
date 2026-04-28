@@ -468,13 +468,8 @@
         v.appendChild(s);
         wrap.insertBefore(v, btn);
         function toggleMute() {
-          if (v.muted) {
-            v.muted = false;
-            v.volume = 1;
-            v.play();
-          } else {
-            v.muted = true;
-          }
+          v.muted = !v.muted;
+          v.volume = 1;
           iconMuted.style.display = v.muted ? 'block' : 'none';
           iconSound.style.display = v.muted ? 'none' : 'block';
         }
