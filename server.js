@@ -4,7 +4,7 @@ const path = require('path');
 const app = express();
 const PORT = process.env.PORT || 3000;
 
-const GHL_WEBHOOK = 'https://services.leadconnectorhq.com/hooks/Lt1hJmen7QrCZZJy7bzf/webhook-trigger/dbb7d1c7-69c1-43c2-9bb7-ff9fb7df4e09';
+const GHL_WEBHOOK = 'https://services.leadconnectorhq.com/hooks/Lt1hJmen7QrCZZJy7bzf/webhook-trigger/0e1dc81a-9083-4e12-be50-a0aa1d486a27';
 
 app.use(express.json());
 app.use(express.static(path.join(__dirname)));
