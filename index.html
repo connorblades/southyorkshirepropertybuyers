@@ -442,39 +442,31 @@
       <p class="section-sub" style="text-align:left;">We buy houses directly for cash, with no estate agents, no viewings, no chains and no fees on your side. You fill in a short form, we call you within 24 hours with a genuine offer, and if you are happy we handle everything from there. Most sales complete in 7 to 28 days. You choose the date that works for you.</p>
     </div>
     <div class="video-wrap" id="videoWrap" style="position:relative;cursor:pointer;">
+      <video id="adVideo" autoplay muted loop playsinline style="width:100%;display:block;"></video>
       <div id="muteBtn" style="position:absolute;bottom:14px;right:14px;z-index:10;background:rgba(0,0,0,0.55);border-radius:50%;width:40px;height:40px;display:flex;align-items:center;justify-content:center;transition:background 0.2s;">
-        <!-- Muted icon -->
         <svg id="iconMuted" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><line x1="23" y1="9" x2="17" y2="15"/><line x1="17" y1="9" x2="23" y2="15"/></svg>
-        <!-- Sound icon (hidden by default) -->
         <svg id="iconSound" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:none;"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/></svg>
       </div>
     </div>
     <p style="text-align:center;font-size:0.82rem;color:var(--muted);margin-top:0.75rem;">Click the video to toggle sound</p>
     <script>
       (function(){
+        var v = document.getElementById('adVideo');
         var wrap = document.getElementById('videoWrap');
-        var btn = document.getElementById('muteBtn');
         var iconMuted = document.getElementById('iconMuted');
         var iconSound = document.getElementById('iconSound');
-        var src = window.innerWidth <= 600
-          ? '/sypb-video-ad-9x16.mp4'
-          : '/sypb-video-ad-16x9.mp4';
-        var v = document.createElement('video');
-        v.autoplay = true; v.muted = true; v.loop = true; v.playsInline = true;
-        v.setAttribute('playsinline','');
-        v.style.width = '100%'; v.style.display = 'block';
-        var s = document.createElement('source');
-        s.src = src; s.type = 'video/mp4';
-        v.appendChild(s);
-        wrap.insertBefore(v, btn);
+        v.src = window.innerWidth <= 600 ? '/sypb-video-ad-9x16.mp4' : '/sypb-video-ad-16x9.mp4';
         function toggleMute() {
-          v.muted = !v.muted;
-          v.volume = 1;
+          if (v.muted) {
+            v.removeAttribute('muted');
+            v.volume = 1;
+          } else {
+            v.muted = true;
+          }
           iconMuted.style.display = v.muted ? 'block' : 'none';
           iconSound.style.display = v.muted ? 'none' : 'block';
         }
         wrap.addEventListener('click', toggleMute);
-        btn.addEventListener('click', function(e){ e.stopPropagation(); toggleMute(); });
       })();
     </script>
   </div>
