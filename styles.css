@@ -464,7 +464,7 @@ section { padding: 6rem 1.5rem; transition: background 0.3s; }
 .section-sub {
   color: var(--muted);
   font-size: 0.975rem;
-  max-width: 520px;
+  max-width: 720px;
   line-height: 1.7;
   transition: color 0.3s;
 }
