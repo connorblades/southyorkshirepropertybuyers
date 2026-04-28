@@ -441,14 +441,22 @@
       <h2 class="section-title">See exactly what we do</h2>
       <p class="section-sub">A straightforward cash sale — no estate agents, no fees, no delays.</p>
     </div>
-    <div class="video-wrap reveal">
-      <video class="video-landscape" autoplay muted loop playsinline>
-        <source src="/sypb-video-ad-16x9.mp4" type="video/mp4">
-      </video>
-      <video class="video-portrait" autoplay muted loop playsinline>
-        <source src="/sypb-video-ad-9x16.mp4" type="video/mp4">
-      </video>
-    </div>
+    <div class="video-wrap reveal" id="videoWrap"></div>
+    <script>
+      (function(){
+        var src = window.innerWidth <= 600
+          ? '/sypb-video-ad-9x16.mp4'
+          : '/sypb-video-ad-16x9.mp4';
+        var v = document.createElement('video');
+        v.autoplay = true; v.muted = true; v.loop = true; v.playsInline = true;
+        v.setAttribute('playsinline','');
+        v.style.width = '100%'; v.style.display = 'block';
+        var s = document.createElement('source');
+        s.src = src; s.type = 'video/mp4';
+        v.appendChild(s);
+        document.getElementById('videoWrap').appendChild(v);
+      })();
+    </script>
   </div>
 </section>
 
