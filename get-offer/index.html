@@ -174,28 +174,68 @@
     <form id="offerForm" style="margin-top:1.75rem;">
       <div class="form-row">
         <div class="form-group">
-          <label for="fullName">Full Name</label>
-          <input type="text" id="fullName" name="fullName" placeholder="e.g. John Smith" required />
+          <label for="name">Your Name</label>
+          <input type="text" id="name" name="name" placeholder="John Smith" required />
         </div>
         <div class="form-group">
           <label for="phone">Phone Number</label>
-          <input type="tel" id="phone" name="phone" placeholder="e.g. 07700 900000" required />
+          <input type="tel" id="phone" name="phone" placeholder="07700 000000" required />
         </div>
       </div>
       <div class="form-group">
         <label for="email">Email Address</label>
-        <input type="email" id="email" name="email" placeholder="e.g. john@example.com" required />
+        <input type="email" id="email" name="email" placeholder="john@example.com" />
       </div>
       <div class="form-group">
         <label for="address">Property Address</label>
-        <textarea id="address" name="address" placeholder="Full address of the property you wish to sell" style="min-height:80px;" required></textarea>
+        <input type="text" id="address" name="address" placeholder="Full address or postcode" required />
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label for="type">Property Type</label>
+          <select id="type" name="type">
+            <option value="">Select type...</option>
+            <option>Terraced</option>
+            <option>Semi-detached</option>
+            <option>Detached</option>
+            <option>Flat / Apartment</option>
+            <option>Bungalow</option>
+            <option>Other</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="timeline">Ideal Timeline</label>
+          <select id="timeline" name="timeline">
+            <option value="">Select...</option>
+            <option>ASAP (under 2 weeks)</option>
+            <option>Within a month</option>
+            <option>1 to 3 months</option>
+            <option>Flexible</option>
+          </select>
+        </div>
       </div>
       <div class="form-group">
-        <label for="situation">Tell us about your situation</label>
-        <textarea id="situation" name="situation" placeholder="e.g. facing repossession, going through divorce, inherited property, need to sell quickly, anything that helps us understand your position" style="min-height:130px;"></textarea>
+        <label for="situation">Your Situation (optional)</label>
+        <select id="situation" name="situation">
+          <option value="">Select if applicable...</option>
+          <option>Facing repossession</option>
+          <option>Divorce / separation</option>
+          <option>Probate / inherited property</option>
+          <option>Title / legal issues</option>
+          <option>Financial difficulties</option>
+          <option>Problem property</option>
+          <option>Landlord / portfolio exit</option>
+          <option>Tenanted property</option>
+          <option>Relocation</option>
+          <option>Other</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="message">Anything else we should know?</label>
+        <textarea id="message" name="message" placeholder="Tell us a little more about your situation..."></textarea>
       </div>
       <button type="submit" class="form-submit">Send My Request &rarr;</button>
-      <p class="form-note">No obligation. We will never share your details. You can expect a call within 24 hours on working days. By submitting this form you agree to our <a href="/privacy-policy/" style="color:inherit;text-decoration:underline;">Privacy Policy</a>.</p>
+      <p class="form-note">100% confidential. No obligation. We cover all legal fees. By submitting this form you agree to our <a href="/privacy-policy/" style="color:inherit;text-decoration:underline;">Privacy Policy</a>.</p>
     </form>
 
     <div style="background:var(--surface-card);border:1px solid var(--border);border-radius:10px;padding:1.75rem;margin-top:2.5rem;">
@@ -353,17 +393,17 @@
     const btn = this.querySelector('button[type="submit"]');
     btn.disabled = true;
     btn.textContent = 'Sending...';
-    const fullName = (document.getElementById('name') ? document.getElementById('name').value.trim() : '').split(' ');
+    const fullName = document.getElementById('name').value.trim().split(' ');
     const data = {
       firstName: fullName[0] || '',
       lastName: fullName.slice(1).join(' ') || '',
-      phone: document.getElementById('phone') ? document.getElementById('phone').value : '',
-      email: document.getElementById('email') ? document.getElementById('email').value : '',
-      address1: document.getElementById('address') ? document.getElementById('address').value : '',
-      propertyType: document.getElementById('type') ? document.getElementById('type').value : '',
-      timeline: document.getElementById('timeline') ? document.getElementById('timeline').value : '',
-      situation: document.getElementById('situation') ? document.getElementById('situation').value : '',
-      notes: document.getElementById('message') ? document.getElementById('message').value : ''
+      phone: document.getElementById('phone').value,
+      email: document.getElementById('email').value,
+      address1: document.getElementById('address').value,
+      propertyType: document.getElementById('type').value,
+      timeline: document.getElementById('timeline').value,
+      situation: document.getElementById('situation').value,
+      notes: document.getElementById('message').value
     };
     try {
       await fetch('/api/submit', {
