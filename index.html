@@ -459,17 +459,20 @@
         v.src = src;
         var isMuted = true;
 
-        var audioEl = null;
+        // Pre-create audio element so play() fires cleanly on user gesture
+        var audioEl = document.createElement('audio');
+        audioEl.src = src;
+        audioEl.loop = true;
+        audioEl.volume = 1;
+        document.body.appendChild(audioEl);
+
         wrap.addEventListener('click', function() {
           if (isMuted) {
-            audioEl = new Audio(src);
-            audioEl.loop = true;
-            audioEl.volume = 1;
             audioEl.currentTime = v.currentTime;
             audioEl.play();
             isMuted = false;
           } else {
-            if (audioEl) { audioEl.pause(); audioEl = null; }
+            audioEl.pause();
             isMuted = true;
           }
           iconMuted.style.display = isMuted ? 'block' : 'none';
