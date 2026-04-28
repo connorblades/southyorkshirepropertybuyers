@@ -346,6 +346,34 @@
     html.setAttribute('data-theme', next);
     try { localStorage.setItem('theme', next); } catch (e) {}
   });
+
+  /* ---- Offer form submission ---- */
+  document.getElementById('offerForm').addEventListener('submit', async function (e) {
+    e.preventDefault();
+    const btn = this.querySelector('button[type="submit"]');
+    btn.disabled = true;
+    btn.textContent = 'Sending...';
+    const fullName = (document.getElementById('name') ? document.getElementById('name').value.trim() : '').split(' ');
+    const data = {
+      firstName: fullName[0] || '',
+      lastName: fullName.slice(1).join(' ') || '',
+      phone: document.getElementById('phone') ? document.getElementById('phone').value : '',
+      email: document.getElementById('email') ? document.getElementById('email').value : '',
+      address1: document.getElementById('address') ? document.getElementById('address').value : '',
+      propertyType: document.getElementById('type') ? document.getElementById('type').value : '',
+      timeline: document.getElementById('timeline') ? document.getElementById('timeline').value : '',
+      situation: document.getElementById('situation') ? document.getElementById('situation').value : '',
+      notes: document.getElementById('message') ? document.getElementById('message').value : ''
+    };
+    try {
+      await fetch('/api/submit', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data)
+      });
+    } catch (_) {}
+    window.location.href = '/thank-you/';
+  });
 </script>
 <script type="application/ld+json">
 {
