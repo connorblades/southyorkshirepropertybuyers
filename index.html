@@ -459,24 +459,17 @@
         v.src = src;
         var isMuted = true;
 
+        var audioEl = null;
         wrap.addEventListener('click', function() {
           if (isMuted) {
-            var t = v.currentTime;
-            var v2 = document.createElement('video');
-            v2.loop = true; v2.playsInline = true; v2.volume = 1;
-            v2.style.cssText = 'width:100%;display:block;';
-            v2.src = src;
-            wrap.replaceChild(v2, v);
-            v = v2;
-            // Play immediately in click handler (preserves user gesture), seek once ready
-            v.play();
-            v.addEventListener('canplay', function seekOnce() {
-              v.currentTime = t;
-              v.removeEventListener('canplay', seekOnce);
-            });
+            audioEl = new Audio(src);
+            audioEl.loop = true;
+            audioEl.volume = 1;
+            audioEl.currentTime = v.currentTime;
+            audioEl.play();
             isMuted = false;
           } else {
-            v.muted = true;
+            if (audioEl) { audioEl.pause(); audioEl = null; }
             isMuted = true;
           }
           iconMuted.style.display = isMuted ? 'block' : 'none';
