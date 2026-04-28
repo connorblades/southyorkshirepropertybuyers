@@ -461,7 +461,6 @@
 
         wrap.addEventListener('click', function() {
           if (isMuted) {
-            // Replace video entirely — only way Chrome allows audio after autoplay
             var t = v.currentTime;
             var v2 = document.createElement('video');
             v2.loop = true; v2.playsInline = true; v2.volume = 1;
@@ -469,8 +468,12 @@
             v2.src = src;
             wrap.replaceChild(v2, v);
             v = v2;
-            v.currentTime = t;
+            // Play immediately in click handler (preserves user gesture), seek once ready
             v.play();
+            v.addEventListener('canplay', function seekOnce() {
+              v.currentTime = t;
+              v.removeEventListener('canplay', seekOnce);
+            });
             isMuted = false;
           } else {
             v.muted = true;
