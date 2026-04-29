@@ -1125,6 +1125,53 @@ footer a:hover { color: #ffffff; }
   line-height: 1.7;
   transition: color 0.3s;
 }
+/* ---- BLOG HERO WITH BACKGROUND IMAGE ---- */
+.page-hero.blog-hero {
+  position: relative;
+  overflow: hidden;
+  padding: 8rem 2rem 6rem;
+  border-bottom: none;
+  background: #111a14;
+}
+.blog-hero-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+  opacity: 0.42;
+}
+.blog-hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, rgba(10,20,12,0.35) 0%, rgba(10,20,12,0.72) 100%);
+  z-index: 1;
+}
+.blog-hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 780px;
+  margin: 0 auto;
+}
+.page-hero.blog-hero .breadcrumb {
+  color: rgba(255,255,255,0.6);
+}
+.page-hero.blog-hero .breadcrumb a {
+  color: rgba(255,255,255,0.85);
+}
+.page-hero.blog-hero .badge {
+  background: rgba(255,255,255,0.13);
+  border-color: rgba(255,255,255,0.28);
+  color: rgba(255,255,255,0.92);
+}
+.page-hero.blog-hero h1 {
+  color: #ffffff;
+}
+.page-hero.blog-hero .hero-intro {
+  color: rgba(255,255,255,0.8);
+}
+
 .page-body {
   max-width: 1040px;
   margin: 0 auto;
