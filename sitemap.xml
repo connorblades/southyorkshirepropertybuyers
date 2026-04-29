@@ -203,7 +203,7 @@
   <!-- BLOG -->
   <url>
     <loc>https://southyorkshirepropertybuyers.com/blog/</loc>
-    <lastmod>2026-04-25</lastmod>
+    <lastmod>2026-04-29</lastmod>
     <priority>0.7</priority>
     <changefreq>weekly</changefreq>
   </url>
@@ -222,6 +222,42 @@
   <url>
     <loc>https://southyorkshirepropertybuyers.com/blog/selling-house-during-probate-south-yorkshire/</loc>
     <lastmod>2026-04-25</lastmod>
+    <priority>0.7</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://southyorkshirepropertybuyers.com/blog/how-long-does-it-take-to-sell-a-house-uk/</loc>
+    <lastmod>2026-04-29</lastmod>
+    <priority>0.7</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://southyorkshirepropertybuyers.com/blog/how-much-do-cash-buyers-offer-below-market-value/</loc>
+    <lastmod>2026-04-29</lastmod>
+    <priority>0.7</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://southyorkshirepropertybuyers.com/blog/is-it-worth-selling-to-a-house-buying-company/</loc>
+    <lastmod>2026-04-29</lastmod>
+    <priority>0.7</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://southyorkshirepropertybuyers.com/blog/selling-house-negative-equity-uk/</loc>
+    <lastmod>2026-04-29</lastmod>
+    <priority>0.7</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://southyorkshirepropertybuyers.com/blog/sell-house-without-estate-agent-uk/</loc>
+    <lastmod>2026-04-29</lastmod>
+    <priority>0.7</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://southyorkshirepropertybuyers.com/blog/what-happens-to-mortgage-when-you-sell-house/</loc>
+    <lastmod>2026-04-29</lastmod>
     <priority>0.7</priority>
     <changefreq>monthly</changefreq>
   </url>
