@@ -80,6 +80,13 @@
   ]
 }
 </script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Speakable",
+  "speakableSelector": [".blog-hero-content h1", ".blog-hero-content .hero-intro", ".page-body h2:first-of-type"]
+}
+</script>
   <style id="nav-fix">
   nav, .nav-links { overflow: visible !important; }
   .nav-item .dropdown { opacity: 0 !important; pointer-events: none !important; transform: translateX(-50%) translateY(-4px) !important; transition: opacity 0.15s ease, transform 0.15s ease !important; }
@@ -184,7 +191,7 @@
 
 <main style="padding-top: 64px;">
   <div class="page-hero blog-hero">
-    <img src="/blog/images/what-happens-to-mortgage-when-you-sell-house.jpg" alt="Homeowner reviewing mortgage documents and understanding what happens when they sell their property" class="blog-hero-img" width="1200" height="630">
+    <img src="/blog/images/what-happens-to-mortgage-when-you-sell-house.jpg" alt="Homeowner reviewing mortgage documents and understanding what happens when they sell their property" class="blog-hero-img" width="1200" height="630" fetchpriority="high">
     <div class="blog-hero-overlay"></div>
     <div class="blog-hero-content">
     <div class="breadcrumb"><a href="/">Home</a> &rsaquo; <a href="/blog/">Blog</a> &rsaquo; What Happens to Your Mortgage When You Sell?</div>
@@ -226,6 +233,7 @@
       alt="Solicitor handling mortgage redemption paperwork at completion of a house sale"
       class="blog-inline-img"
       width="1200" height="630"
+      loading="lazy" decoding="async"
     >
 
     <h2>Can you avoid early repayment charges by porting the mortgage?</h2>
