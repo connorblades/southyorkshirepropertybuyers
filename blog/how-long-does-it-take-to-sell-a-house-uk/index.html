@@ -80,6 +80,13 @@
   ]
 }
 </script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Speakable",
+  "speakableSelector": [".blog-hero-content h1", ".blog-hero-content .hero-intro", ".page-body h2:first-of-type"]
+}
+</script>
   <style id="nav-fix">
   nav, .nav-links { overflow: visible !important; }
   .nav-item .dropdown { opacity: 0 !important; pointer-events: none !important; transform: translateX(-50%) translateY(-4px) !important; transition: opacity 0.15s ease, transform 0.15s ease !important; }
@@ -184,7 +191,7 @@
 
 <main style="padding-top: 64px;">
   <div class="page-hero blog-hero">
-    <img src="/blog/images/how-long-does-it-take-to-sell-a-house-uk.jpg" alt="House keys on a table next to a calendar showing the timeline for selling a house in the UK" class="blog-hero-img" width="1200" height="630">
+    <img src="/blog/images/how-long-does-it-take-to-sell-a-house-uk.jpg" alt="House keys on a table next to a calendar showing the timeline for selling a house in the UK" class="blog-hero-img" width="1200" height="630" fetchpriority="high">
     <div class="blog-hero-overlay"></div>
     <div class="blog-hero-content">
     <div class="breadcrumb"><a href="/">Home</a> &rsaquo; <a href="/blog/">Blog</a> &rsaquo; How Long Does It Take to Sell a House?</div>
@@ -224,6 +231,7 @@
       alt="Solicitor reviewing conveyancing documents as part of a house sale in the UK"
       class="blog-inline-img"
       width="1200" height="630"
+      loading="lazy" decoding="async"
     >
 
     <h2>What causes house sales to collapse</h2>
