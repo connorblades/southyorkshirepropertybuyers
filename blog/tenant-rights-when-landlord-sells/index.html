@@ -48,6 +48,13 @@
   }
 }
 </script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Speakable",
+  "speakableSelector": [".blog-hero-content h1", ".blog-hero-content .hero-intro", ".page-body h2:first-of-type"]
+}
+</script>
   <style id="nav-fix">
   nav, .nav-links { overflow: visible !important; }
   .nav-item .dropdown { opacity: 0 !important; pointer-events: none !important; transform: translateX(-50%) translateY(-4px) !important; transition: opacity 0.15s ease, transform 0.15s ease !important; }
@@ -152,7 +159,7 @@
 
 <main style="padding-top: 64px;">
   <div class="page-hero blog-hero">
-    <img src="/blog/images/tenant-rights-when-landlord-sells-property-uk.jpg" alt="Tenant reading rights information after being told their landlord is selling the property" class="blog-hero-img" width="1200" height="630">
+    <img src="/blog/images/tenant-rights-when-landlord-sells-property-uk.jpg" alt="Tenant reading rights information after being told their landlord is selling the property" class="blog-hero-img" width="1200" height="630" fetchpriority="high">
     <div class="blog-hero-overlay"></div>
     <div class="blog-hero-content">
     <div class="breadcrumb"><a href="/">Home</a> &rsaquo; <a href="/blog/">Blog</a> &rsaquo; Tenant Rights When a Landlord Sells</div>
@@ -195,6 +202,7 @@
       alt="Tenant checking a Section 21 notice to understand their legal rights in England"
       class="blog-inline-img"
       width="1200" height="630"
+      loading="lazy" decoding="async"
     >
 
     <h2>What happens if you receive a Section 21 notice</h2>

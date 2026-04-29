@@ -1277,12 +1277,28 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "LocalBusiness",
+  "@type": ["LocalBusiness", "RealEstateAgent"],
   "name": "South Yorkshire Property Buyers",
-  "description": "We buy houses fast for cash in South Yorkshire. No estate agents, no fees, no delays.",
+  "legalName": "Bullseye Properties Ltd",
+  "description": "We buy houses fast for cash across South Yorkshire. No estate agents, no fees, no delays. Cash offer within 24 hours, complete in as little as 7 days. Any condition, any situation.",
   "url": "https://southyorkshirepropertybuyers.com",
-  "logo": "https://southyorkshirepropertybuyers.com/favicon.jpg",
+  "logo": {
+    "@type": "ImageObject",
+    "url": "https://southyorkshirepropertybuyers.com/favicon.jpg"
+  },
+  "image": "https://southyorkshirepropertybuyers.com/favicon.jpg",
   "telephone": "+447739063734",
+  "email": "hello@southyorkshirepropertybuyers.com",
+  "foundingDate": "2023",
+  "priceRange": "No fees",
+  "openingHoursSpecification": [
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
+      "opens": "08:00",
+      "closes": "20:00"
+    }
+  ],
   "areaServed": [
     {"@type": "City", "name": "Sheffield"},
     {"@type": "City", "name": "Rotherham"},
@@ -1299,7 +1315,41 @@
     "@type": "PostalAddress",
     "addressRegion": "South Yorkshire",
     "addressCountry": "GB"
-  }
+  },
+  "sameAs": [
+    "https://www.facebook.com/profile.php?id=61584749047268",
+    "https://www.instagram.com/southyorkshire_propertybuyers/",
+    "https://find-and-update.company-information.service.gov.uk/company/14869608"
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "South Yorkshire Property Buyers",
+  "legalName": "Bullseye Properties Ltd",
+  "url": "https://southyorkshirepropertybuyers.com",
+  "logo": "https://southyorkshirepropertybuyers.com/favicon.jpg",
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "telephone": "+447739063734",
+    "contactType": "customer service",
+    "areaServed": "GB",
+    "availableLanguage": "English"
+  },
+  "sameAs": [
+    "https://www.facebook.com/profile.php?id=61584749047268",
+    "https://www.instagram.com/southyorkshire_propertybuyers/",
+    "https://find-and-update.company-information.service.gov.uk/company/14869608"
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Speakable",
+  "speakableSelector": [".hero h1", ".hero .hero-sub", "#how"]
 }
 </script>
 
