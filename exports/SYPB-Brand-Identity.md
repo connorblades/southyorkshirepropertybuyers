@@ -75,7 +75,7 @@ https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=
 - **Favicon / Avatar:** `favicon.png` and `favicon.jpg` — used as the profile/avatar image in the hero section
 - **Coverage Map:** `areas-we-operate.png` — map showing coverage across South Yorkshire and surrounding areas
 - **Hero Videos:** `hero.mp4` and `Website-background2.mp4` — background videos used on the homepage hero section
-- All assets are in the root of the site directory: `/Users/connorblades32/Documents/Claude/SYPB/`
+- All assets are in the root of the site directory: `/Users/connorblades32/Documents/Companies/South Yorkshire Property Buyers/`
 
 ---
 
