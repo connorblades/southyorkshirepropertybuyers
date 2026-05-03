@@ -203,7 +203,7 @@
   <!-- BLOG -->
   <url>
     <loc>https://southyorkshirepropertybuyers.com/blog/</loc>
-    <lastmod>2026-04-29</lastmod>
+    <lastmod>2026-05-03</lastmod>
     <priority>0.7</priority>
     <changefreq>weekly</changefreq>
   </url>
@@ -306,6 +306,67 @@
   <url>
     <loc>https://southyorkshirepropertybuyers.com/blog/selling-house-with-subsidence-uk/</loc>
     <lastmod>2026-04-30</lastmod>
+    <priority>0.7</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <!-- BLOG: NEW MAY 2026 (Renters Rights Act, BoE rates, CGT, prices) -->
+  <url>
+    <loc>https://southyorkshirepropertybuyers.com/blog/should-i-sell-my-buy-to-let-2026/</loc>
+    <lastmod>2026-05-02</lastmod>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://southyorkshirepropertybuyers.com/blog/selling-tenanted-property-2026-renters-rights-act/</loc>
+    <lastmod>2026-05-02</lastmod>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://southyorkshirepropertybuyers.com/blog/tired-landlord-guide-exit-buy-to-let-2026/</loc>
+    <lastmod>2026-05-02</lastmod>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://southyorkshirepropertybuyers.com/blog/section-21-abolished-how-to-evict-tenant-2026/</loc>
+    <lastmod>2026-05-01</lastmod>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://southyorkshirepropertybuyers.com/blog/section-8-eviction-grounds-2026/</loc>
+    <lastmod>2026-05-01</lastmod>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://southyorkshirepropertybuyers.com/blog/what-is-an-assured-periodic-tenancy/</loc>
+    <lastmod>2026-05-01</lastmod>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://southyorkshirepropertybuyers.com/blog/will-uk-interest-rates-fall-2026/</loc>
+    <lastmod>2026-04-29</lastmod>
+    <priority>0.7</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://southyorkshirepropertybuyers.com/blog/bank-of-england-base-rate-history-2020-2026/</loc>
+    <lastmod>2026-04-29</lastmod>
+    <priority>0.7</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://southyorkshirepropertybuyers.com/blog/sheffield-yorkshire-house-prices-2026/</loc>
+    <lastmod>2026-04-23</lastmod>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://southyorkshirepropertybuyers.com/blog/capital-gains-tax-buy-to-let-2026/</loc>
+    <lastmod>2026-04-06</lastmod>
     <priority>0.7</priority>
     <changefreq>monthly</changefreq>
   </url>
