@@ -1,13 +1,30 @@
 <!DOCTYPE html>
 <html lang="en" data-theme="light">
 <head>
-  <!-- Google tag (gtag.js) -->
+  <!-- Google tag (gtag.js) with Google Consent Mode v2 -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18125556330"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
+    gtag('consent', 'default', {
+      'ad_storage': 'denied',
+      'ad_user_data': 'denied',
+      'ad_personalization': 'denied',
+      'analytics_storage': 'denied',
+      'wait_for_update': 500
+    });
     gtag('js', new Date());
     gtag('config', 'AW-18125556330');
+    try {
+      if (localStorage.getItem('sypb_consent') === 'granted') {
+        gtag('consent', 'update', {
+          'ad_storage': 'granted',
+          'ad_user_data': 'granted',
+          'ad_personalization': 'granted',
+          'analytics_storage': 'granted'
+        });
+      }
+    } catch(e) {}
   </script>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -1446,5 +1463,44 @@
     v2.addEventListener('timeupdate', onTimeUpdate);
   })();
 </script>
+
+<!-- Cookie / consent banner (GDPR + Google Consent Mode v2) -->
+<div id="sypb-consent" style="display:none;position:fixed;bottom:0;left:0;right:0;z-index:9999;background:#ffffff;border-top:1px solid #e5e7eb;box-shadow:0 -6px 20px rgba(0,0,0,0.08);padding:1rem 1.25rem;font-family:Inter,system-ui,sans-serif;font-size:0.95rem;line-height:1.5;color:#374151;">
+  <div style="max-width:1200px;margin:0 auto;display:flex;flex-wrap:wrap;align-items:center;gap:1rem;justify-content:space-between;">
+    <p style="margin:0;flex:1;min-width:260px;">We use cookies to measure ad performance and improve our service. You can accept or reject below. See our <a href="/privacy-policy/" style="color:#0f766e;text-decoration:underline;">Privacy Policy</a>.</p>
+    <div style="display:flex;gap:0.5rem;flex-shrink:0;">
+      <button type="button" onclick="sypbConsent('denied')" style="padding:0.55rem 1.1rem;background:#ffffff;color:#374151;border:1px solid #d1d5db;border-radius:6px;cursor:pointer;font-size:0.9rem;font-weight:500;font-family:inherit;">Reject</button>
+      <button type="button" onclick="sypbConsent('granted')" style="padding:0.55rem 1.25rem;background:#0f766e;color:#ffffff;border:none;border-radius:6px;cursor:pointer;font-size:0.9rem;font-weight:600;font-family:inherit;">Accept</button>
+    </div>
+  </div>
+</div>
+<script>
+(function(){
+  function sypbConsent(choice){
+    try { localStorage.setItem('sypb_consent', choice); } catch(e){}
+    if (typeof gtag === 'function') {
+      gtag('consent', 'update', {
+        'ad_storage': choice,
+        'ad_user_data': choice,
+        'ad_personalization': choice,
+        'analytics_storage': choice
+      });
+    }
+    var b = document.getElementById('sypb-consent');
+    if (b) b.style.display = 'none';
+  }
+  window.sypbConsent = sypbConsent;
+  try {
+    if (!localStorage.getItem('sypb_consent')) {
+      var b = document.getElementById('sypb-consent');
+      if (b) b.style.display = 'block';
+    }
+  } catch(e) {
+    var b = document.getElementById('sypb-consent');
+    if (b) b.style.display = 'block';
+  }
+})();
+</script>
+
 </body>
 </html>
