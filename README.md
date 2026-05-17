@@ -54,10 +54,53 @@ cd _dev && python3 serve.py
 
 GitHub Pages auto-deploys from `main`. Every `git push origin main` triggers a rebuild that goes live in 1-2 minutes. No build step.
 
+## Naming conventions
+
+Files and directories follow these conventions. Apply them when adding anything new.
+
+### Served at a public URL (mandatory: kebab-case lowercase)
+
+| Type | Pattern | Example |
+|---|---|---|
+| URL directory | `kebab-case-lowercase/` | `sell-house-fast-doncaster/` |
+| Page file | always `index.html` inside the URL directory | `sell-house-fast-doncaster/index.html` |
+| Image | `kebab-case-descriptive-name.ext` | `logo-light.png`, `hero-poster.jpg`, `best-cash-house-buyer-sheffield-2026.jpg` |
+| Video | same pattern | `website-background.mp4`, `sypb-video-ad-16x9.mp4` |
+| Stylesheet | same pattern | `styles.css` |
+
+Brand-name abbreviations like `sypb-` are allowed at the start of asset filenames. Dimensions like `16x9` and years like `2026` are part of the descriptor, separated by hyphens.
+
+### Local working folders (Title Case With Spaces, untracked)
+
+For folders that hold drafts, outreach docs, social content, and other non-website artefacts:
+
+`Backlink Outreach/`, `Social Posts/`, `Worksop Workspace Social/`
+
+### Hidden / system folders (lowercase, underscore prefix)
+
+For folders that should sort to the top of a directory listing and stay out of the served site:
+
+`_off-website/`, `_dev/`
+
+### Documentation files inside working folders
+
+Match the working folder convention: `01-Strategy.md`, `02-Citation Directories.md`. Numeric prefixes enforce reading order.
+
+### Root-level documentation
+
+UPPERCASE convention for standard project docs that tooling recognises: `README.md`, `LICENSE`, `CREDITS.md`.
+
+### Convention violations to avoid
+
+- No PascalCase or Title-Case in URL-bound paths (was: `Website-background2.mp4`, now: `website-background.mp4`).
+- No spaces in served filenames or URL slugs (spaces force URL encoding to `%20` and look broken).
+- No trailing version numbers like `-v2`, `-final`, `-new`. If you replace an asset, replace the file, do not add a sibling with a higher number. Old assets that are no longer referenced should be deleted.
+- No mixed-case extensions (`.JPG`, `.Mp4`). Always lowercase.
+
 ## Editing rules
 
 - **Never rename or move a top-level directory** that has a URL. It will break SEO. URL = directory path.
 - **Asset references** should use absolute paths like `/css/styles.css`, `/images/favicon.png`, `/media/hero.mp4`.
-- **Brand voice rules** for any new content live in `/_off-website/` and `~/.claude/skills/sypb-content/references/brand-voice.md`. Key rule: no em dashes.
+- **Brand voice rules** for any new content live in `~/.claude/skills/sypb-content/references/brand-voice.md`. Key rule: no em dashes.
 - **No AI attribution** in commit messages or anywhere in served content.
 - **Sitemap** (`sitemap.xml`) must be updated whenever a new page directory is added or a page is significantly rewritten (refresh `lastmod`).
