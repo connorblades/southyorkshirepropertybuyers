@@ -978,14 +978,22 @@
       situation: document.getElementById('situation').value,
       notes: document.getElementById('message').value
     };
+    var submitBtn = this.querySelector('.form-submit');
+    if (submitBtn) { submitBtn.disabled = true; submitBtn.textContent = 'Sending…'; }
     try {
-      await fetch('/api/submit', {
+      const response = await fetch('/api/submit', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(data)
       });
+      if (response.ok) {
+        try { sessionStorage.setItem('sypb_lead_submitted', '1'); } catch(_) {}
+        window.location.href = '/thank-you/';
+        return;
+      }
     } catch (_) {}
-    window.location.href = '/thank-you/';
+    if (submitBtn) { submitBtn.disabled = false; submitBtn.textContent = 'Send My Enquiry →'; }
+    alert('Sorry, we could not submit your enquiry just now. Please call us on 07739 063734 or try again in a moment.');
   });
 
   /* ---- Scroll progress bar ---- */

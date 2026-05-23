@@ -1,6 +1,24 @@
 <!DOCTYPE html>
 <html lang="en" data-theme="light">
 <head>
+  <!-- Gate: bounce direct visitors home; allow real submitters; fire conversion once per session -->
+  <script>
+    (function(){
+      var fromSubmit = false;
+      try { fromSubmit = sessionStorage.getItem('sypb_lead_submitted') === '1'; } catch(_) {}
+      if (!fromSubmit) {
+        window.location.replace('/');
+        return;
+      }
+      try {
+        if (sessionStorage.getItem('sypb_conversion_fired') !== '1') {
+          window.__sypbFireConversion = true;
+          sessionStorage.setItem('sypb_conversion_fired', '1');
+        }
+      } catch(_) {}
+    })();
+  </script>
+
   <!-- Google tag (gtag.js) with Google Consent Mode v2 -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18125556330"></script>
   <script>
@@ -25,6 +43,13 @@
         });
       }
     } catch(e) {}
+    if (window.__sypbFireConversion) {
+      gtag('event', 'conversion', {
+        'send_to': 'AW-18125556330/uZetCNHoibIcEOqU-MJD',
+        'value': 300.0,
+        'currency': 'GBP'
+      });
+    }
   </script>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
