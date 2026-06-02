@@ -1,477 +1,787 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
 
   <!-- HOMEPAGE -->
   <url>
     <loc>https://southyorkshirepropertybuyers.com/</loc>
-    <lastmod>2026-05-04</lastmod>
+    <lastmod>2026-06-02</lastmod>
     <priority>1.0</priority>
+    <changefreq>weekly</changefreq>
+    <image:image>
+      <image:loc>https://southyorkshirepropertybuyers.com/images/sypb-video-ad-poster.jpg</image:loc>
+      <image:title>South Yorkshire Property Buyers — cash house buyer</image:title>
+    </image:image>
+  </url>
+
+  <!-- BLOG INDEX -->
+  <url>
+    <loc>https://southyorkshirepropertybuyers.com/blog/</loc>
+    <lastmod>2026-06-02</lastmod>
+    <priority>0.8</priority>
     <changefreq>weekly</changefreq>
   </url>
 
-  <!-- CORE PAGES -->
+  <!-- TIER 1 — top-priority money pages -->
   <url>
-    <loc>https://southyorkshirepropertybuyers.com/get-offer/</loc>
-    <lastmod>2026-05-04</lastmod>
-    <priority>0.9</priority>
+    <loc>https://southyorkshirepropertybuyers.com/how-to-stop-house-repossession-south-yorkshire/</loc>
+    <lastmod>2026-06-02</lastmod>
+    <priority>1.0</priority>
     <changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://southyorkshirepropertybuyers.com/about/</loc>
-    <lastmod>2026-05-04</lastmod>
-    <priority>0.8</priority>
-    <changefreq>monthly</changefreq>
-  </url>
-
-  <!-- CITY PAGES -->
-  <url>
-    <loc>https://southyorkshirepropertybuyers.com/sell-house-fast-sheffield/</loc>
-    <lastmod>2026-05-04</lastmod>
-    <priority>0.9</priority>
+    <loc>https://southyorkshirepropertybuyers.com/sell-house-during-divorce-uk/</loc>
+    <lastmod>2026-06-02</lastmod>
+    <priority>1.0</priority>
     <changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://southyorkshirepropertybuyers.com/sell-house-fast-rotherham/</loc>
-    <lastmod>2026-05-04</lastmod>
-    <priority>0.9</priority>
+    <loc>https://southyorkshirepropertybuyers.com/sell-house-during-probate/</loc>
+    <lastmod>2026-06-02</lastmod>
+    <priority>1.0</priority>
     <changefreq>monthly</changefreq>
   </url>
   <url>
     <loc>https://southyorkshirepropertybuyers.com/sell-house-fast-doncaster/</loc>
-    <lastmod>2026-05-14</lastmod>
+    <lastmod>2026-06-02</lastmod>
+    <priority>1.0</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://southyorkshirepropertybuyers.com/sell-house-fast-sheffield/</loc>
+    <lastmod>2026-06-02</lastmod>
+    <priority>1.0</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+
+  <!-- TIER 2 — high-priority situation pages -->
+  <url>
+    <loc>https://southyorkshirepropertybuyers.com/cannot-afford-mortgage/</loc>
+    <lastmod>2026-06-02</lastmod>
+    <priority>0.9</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://southyorkshirepropertybuyers.com/sell-house-before-repossession/</loc>
+    <lastmod>2026-06-02</lastmod>
+    <priority>0.9</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://southyorkshirepropertybuyers.com/sell-house-with-tenants-in-situ/</loc>
+    <lastmod>2026-06-02</lastmod>
+    <priority>0.9</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://southyorkshirepropertybuyers.com/sell-inherited-house-quickly/</loc>
+    <lastmod>2026-06-02</lastmod>
+    <priority>0.9</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://southyorkshirepropertybuyers.com/selling-inherited-property-south-yorkshire/</loc>
+    <lastmod>2026-06-02</lastmod>
+    <priority>0.9</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+
+  <!-- TIER 3 — location pages -->
+  <url>
+    <loc>https://southyorkshirepropertybuyers.com/cash-house-buyer-barnsley/</loc>
+    <lastmod>2026-06-02</lastmod>
     <priority>0.9</priority>
     <changefreq>monthly</changefreq>
   </url>
   <url>
     <loc>https://southyorkshirepropertybuyers.com/cash-house-buyer-doncaster/</loc>
-    <lastmod>2026-05-14</lastmod>
-    <priority>0.8</priority>
-    <changefreq>monthly</changefreq>
-  </url>
-  <url>
-    <loc>https://southyorkshirepropertybuyers.com/sell-house-fast-barnsley/</loc>
-    <lastmod>2026-05-14</lastmod>
+    <lastmod>2026-06-02</lastmod>
     <priority>0.9</priority>
     <changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://southyorkshirepropertybuyers.com/cash-house-buyer-barnsley/</loc>
-    <lastmod>2026-05-14</lastmod>
-    <priority>0.8</priority>
+    <loc>https://southyorkshirepropertybuyers.com/cash-house-buyer-rotherham/</loc>
+    <lastmod>2026-06-02</lastmod>
+    <priority>0.9</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://southyorkshirepropertybuyers.com/cash-house-buyer-sheffield/</loc>
+    <lastmod>2026-06-02</lastmod>
+    <priority>0.9</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://southyorkshirepropertybuyers.com/sell-house-fast-barnsley/</loc>
+    <lastmod>2026-06-02</lastmod>
+    <priority>0.9</priority>
     <changefreq>monthly</changefreq>
   </url>
   <url>
     <loc>https://southyorkshirepropertybuyers.com/sell-house-fast-chesterfield/</loc>
-    <lastmod>2026-05-04</lastmod>
-    <priority>0.8</priority>
-    <changefreq>monthly</changefreq>
-  </url>
-  <url>
-    <loc>https://southyorkshirepropertybuyers.com/sell-house-fast-worksop/</loc>
-    <lastmod>2026-05-04</lastmod>
-    <priority>0.8</priority>
-    <changefreq>monthly</changefreq>
-  </url>
-  <url>
-    <loc>https://southyorkshirepropertybuyers.com/sell-house-fast-retford/</loc>
-    <lastmod>2026-05-04</lastmod>
-    <priority>0.8</priority>
+    <lastmod>2026-06-02</lastmod>
+    <priority>0.9</priority>
     <changefreq>monthly</changefreq>
   </url>
   <url>
     <loc>https://southyorkshirepropertybuyers.com/sell-house-fast-gainsborough/</loc>
-    <lastmod>2026-05-04</lastmod>
-    <priority>0.8</priority>
+    <lastmod>2026-06-02</lastmod>
+    <priority>0.9</priority>
     <changefreq>monthly</changefreq>
   </url>
   <url>
     <loc>https://southyorkshirepropertybuyers.com/sell-house-fast-mansfield/</loc>
-    <lastmod>2026-05-04</lastmod>
-    <priority>0.8</priority>
+    <lastmod>2026-06-02</lastmod>
+    <priority>0.9</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://southyorkshirepropertybuyers.com/sell-house-fast-retford/</loc>
+    <lastmod>2026-06-02</lastmod>
+    <priority>0.9</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://southyorkshirepropertybuyers.com/sell-house-fast-rotherham/</loc>
+    <lastmod>2026-06-02</lastmod>
+    <priority>0.9</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://southyorkshirepropertybuyers.com/sell-house-fast-worksop/</loc>
+    <lastmod>2026-06-02</lastmod>
+    <priority>0.9</priority>
     <changefreq>monthly</changefreq>
   </url>
 
-  <!-- SELL FAST / SITUATION PAGES -->
+  <!-- TIER 4 — secondary situation pages -->
   <url>
-    <loc>https://southyorkshirepropertybuyers.com/sell-my-house-quickly/</loc>
-    <lastmod>2026-05-04</lastmod>
-    <priority>0.8</priority>
-    <changefreq>monthly</changefreq>
-  </url>
-  <url>
-    <loc>https://southyorkshirepropertybuyers.com/struggling-to-sell-my-house/</loc>
-    <lastmod>2026-05-04</lastmod>
-    <priority>0.8</priority>
-    <changefreq>monthly</changefreq>
-  </url>
-  <url>
-    <loc>https://southyorkshirepropertybuyers.com/need-to-sell-house-urgently/</loc>
-    <lastmod>2026-05-04</lastmod>
-    <priority>0.8</priority>
-    <changefreq>monthly</changefreq>
-  </url>
-  <url>
-    <loc>https://southyorkshirepropertybuyers.com/sell-house-before-repossession/</loc>
-    <lastmod>2026-05-04</lastmod>
-    <priority>0.8</priority>
-    <changefreq>monthly</changefreq>
-  </url>
-  <url>
-    <loc>https://southyorkshirepropertybuyers.com/cannot-afford-mortgage/</loc>
-    <lastmod>2026-05-04</lastmod>
+    <loc>https://southyorkshirepropertybuyers.com/landlord-selling-house-can-i-stay/</loc>
+    <lastmod>2026-06-02</lastmod>
     <priority>0.8</priority>
     <changefreq>monthly</changefreq>
   </url>
   <url>
     <loc>https://southyorkshirepropertybuyers.com/sell-house-after-divorce/</loc>
-    <lastmod>2026-05-04</lastmod>
-    <priority>0.8</priority>
-    <changefreq>monthly</changefreq>
-  </url>
-  <url>
-    <loc>https://southyorkshirepropertybuyers.com/sell-inherited-house-quickly/</loc>
-    <lastmod>2026-05-04</lastmod>
-    <priority>0.8</priority>
-    <changefreq>monthly</changefreq>
-  </url>
-  <url>
-    <loc>https://southyorkshirepropertybuyers.com/tenant-not-paying-rent/</loc>
-    <lastmod>2026-05-04</lastmod>
+    <lastmod>2026-06-02</lastmod>
     <priority>0.8</priority>
     <changefreq>monthly</changefreq>
   </url>
   <url>
     <loc>https://southyorkshirepropertybuyers.com/sell-house-that-needs-repairs/</loc>
-    <lastmod>2026-05-04</lastmod>
+    <lastmod>2026-06-02</lastmod>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://southyorkshirepropertybuyers.com/sell-house-with-japanese-knotweed/</loc>
+    <lastmod>2026-06-02</lastmod>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://southyorkshirepropertybuyers.com/selling-house-poor-condition-options/</loc>
+    <lastmod>2026-06-02</lastmod>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://southyorkshirepropertybuyers.com/tenant-not-paying-rent/</loc>
+    <lastmod>2026-06-02</lastmod>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://southyorkshirepropertybuyers.com/title-defects-can-i-sell-my-property/</loc>
+    <lastmod>2026-06-02</lastmod>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+
+  <!-- TIER 4 — comparison & long-tail pages -->
+  <url>
+    <loc>https://southyorkshirepropertybuyers.com/cash-buyer-vs-estate-agent/</loc>
+    <lastmod>2026-06-02</lastmod>
     <priority>0.8</priority>
     <changefreq>monthly</changefreq>
   </url>
   <url>
     <loc>https://southyorkshirepropertybuyers.com/house-wont-sell-what-to-do/</loc>
-    <lastmod>2026-05-04</lastmod>
-    <priority>0.8</priority>
-    <changefreq>monthly</changefreq>
-  </url>
-
-  <!-- GUIDE PAGES -->
-  <url>
-    <loc>https://southyorkshirepropertybuyers.com/how-to-stop-house-repossession-south-yorkshire/</loc>
-    <lastmod>2026-05-04</lastmod>
-    <priority>0.7</priority>
-    <changefreq>monthly</changefreq>
-  </url>
-  <url>
-    <loc>https://southyorkshirepropertybuyers.com/selling-inherited-property-south-yorkshire/</loc>
-    <lastmod>2026-05-04</lastmod>
-    <priority>0.7</priority>
-    <changefreq>monthly</changefreq>
-  </url>
-  <url>
-    <loc>https://southyorkshirepropertybuyers.com/sell-house-during-divorce-uk/</loc>
-    <lastmod>2026-05-04</lastmod>
-    <priority>0.7</priority>
-    <changefreq>monthly</changefreq>
-  </url>
-  <url>
-    <loc>https://southyorkshirepropertybuyers.com/title-defects-can-i-sell-my-property/</loc>
-    <lastmod>2026-05-04</lastmod>
-    <priority>0.7</priority>
-    <changefreq>monthly</changefreq>
-  </url>
-  <url>
-    <loc>https://southyorkshirepropertybuyers.com/what-is-a-cash-buyer-selling-fast/</loc>
-    <lastmod>2026-05-04</lastmod>
-    <priority>0.7</priority>
-    <changefreq>monthly</changefreq>
-  </url>
-  <url>
-    <loc>https://southyorkshirepropertybuyers.com/selling-house-poor-condition-options/</loc>
-    <lastmod>2026-05-04</lastmod>
-    <priority>0.7</priority>
-    <changefreq>monthly</changefreq>
-  </url>
-
-
-  <!-- PORTFOLIO & TENANCY PAGES -->
-  <url>
-    <loc>https://southyorkshirepropertybuyers.com/sell-property-portfolio/</loc>
-    <lastmod>2026-05-04</lastmod>
+    <lastmod>2026-06-02</lastmod>
     <priority>0.8</priority>
     <changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://southyorkshirepropertybuyers.com/sell-house-with-tenants-in-situ/</loc>
-    <lastmod>2026-05-04</lastmod>
-    <priority>0.8</priority>
-    <changefreq>monthly</changefreq>
-  </url>
-  <url>
-    <loc>https://southyorkshirepropertybuyers.com/landlord-selling-house-can-i-stay/</loc>
-    <lastmod>2026-05-04</lastmod>
-    <priority>0.8</priority>
-    <changefreq>monthly</changefreq>
-  </url>
-  <url>
-    <loc>https://southyorkshirepropertybuyers.com/sell-house-during-probate/</loc>
-    <lastmod>2026-05-04</lastmod>
-    <priority>0.8</priority>
-    <changefreq>monthly</changefreq>
-  </url>
-
-  <!-- BLOG -->
-  <url>
-    <loc>https://southyorkshirepropertybuyers.com/blog/</loc>
-    <lastmod>2026-05-04</lastmod>
-    <priority>0.7</priority>
-    <changefreq>weekly</changefreq>
-  </url>
-  <url>
-    <loc>https://southyorkshirepropertybuyers.com/blog/how-to-sell-property-portfolio-quickly/</loc>
-    <lastmod>2026-05-04</lastmod>
-    <priority>0.7</priority>
-    <changefreq>monthly</changefreq>
-  </url>
-  <url>
-    <loc>https://southyorkshirepropertybuyers.com/blog/tenant-rights-when-landlord-sells/</loc>
-    <lastmod>2026-05-04</lastmod>
-    <priority>0.7</priority>
-    <changefreq>monthly</changefreq>
-  </url>
-  <url>
-    <loc>https://southyorkshirepropertybuyers.com/blog/selling-house-during-probate-south-yorkshire/</loc>
-    <lastmod>2026-05-04</lastmod>
-    <priority>0.7</priority>
-    <changefreq>monthly</changefreq>
-  </url>
-  <url>
-    <loc>https://southyorkshirepropertybuyers.com/blog/how-long-does-it-take-to-sell-a-house-uk/</loc>
-    <lastmod>2026-05-14</lastmod>
-    <priority>0.8</priority>
-    <changefreq>monthly</changefreq>
-  </url>
-  <url>
-    <loc>https://southyorkshirepropertybuyers.com/blog/how-much-do-cash-buyers-offer-below-market-value/</loc>
-    <lastmod>2026-05-04</lastmod>
-    <priority>0.7</priority>
-    <changefreq>monthly</changefreq>
-  </url>
-  <url>
-    <loc>https://southyorkshirepropertybuyers.com/blog/is-it-worth-selling-to-a-house-buying-company/</loc>
-    <lastmod>2026-05-04</lastmod>
-    <priority>0.7</priority>
-    <changefreq>monthly</changefreq>
-  </url>
-  <url>
-    <loc>https://southyorkshirepropertybuyers.com/blog/selling-house-negative-equity-uk/</loc>
-    <lastmod>2026-05-14</lastmod>
-    <priority>0.8</priority>
-    <changefreq>monthly</changefreq>
-  </url>
-  <url>
-    <loc>https://southyorkshirepropertybuyers.com/blog/sell-house-without-estate-agent-uk/</loc>
-    <lastmod>2026-05-04</lastmod>
-    <priority>0.7</priority>
-    <changefreq>monthly</changefreq>
-  </url>
-  <url>
-    <loc>https://southyorkshirepropertybuyers.com/blog/what-happens-to-mortgage-when-you-sell-house/</loc>
-    <lastmod>2026-05-04</lastmod>
-    <priority>0.7</priority>
-    <changefreq>monthly</changefreq>
-  </url>
-  <url>
-    <loc>https://southyorkshirepropertybuyers.com/blog/house-sale-fallen-through-what-to-do/</loc>
-    <lastmod>2026-05-04</lastmod>
-    <priority>0.7</priority>
-    <changefreq>monthly</changefreq>
-  </url>
-  <url>
-    <loc>https://southyorkshirepropertybuyers.com/blog/sell-house-with-mortgage-arrears-uk/</loc>
-    <lastmod>2026-05-04</lastmod>
-    <priority>0.7</priority>
-    <changefreq>monthly</changefreq>
-  </url>
-  <url>
-    <loc>https://southyorkshirepropertybuyers.com/blog/do-you-have-to-sell-the-house-in-a-divorce-uk/</loc>
-    <lastmod>2026-05-04</lastmod>
-    <priority>0.7</priority>
-    <changefreq>monthly</changefreq>
-  </url>
-  <url>
-    <loc>https://southyorkshirepropertybuyers.com/blog/selling-house-with-japanese-knotweed-uk/</loc>
-    <lastmod>2026-05-04</lastmod>
-    <priority>0.7</priority>
-    <changefreq>monthly</changefreq>
-  </url>
-  <url>
-    <loc>https://southyorkshirepropertybuyers.com/blog/house-on-market-too-long-what-to-do/</loc>
-    <lastmod>2026-05-04</lastmod>
-    <priority>0.7</priority>
-    <changefreq>monthly</changefreq>
-  </url>
-  <url>
-    <loc>https://southyorkshirepropertybuyers.com/blog/can-you-sell-house-before-probate-is-granted/</loc>
-    <lastmod>2026-05-04</lastmod>
-    <priority>0.7</priority>
-    <changefreq>monthly</changefreq>
-  </url>
-  <url>
-    <loc>https://southyorkshirepropertybuyers.com/blog/selling-house-with-sitting-tenants-uk/</loc>
-    <lastmod>2026-05-04</lastmod>
-    <priority>0.7</priority>
-    <changefreq>monthly</changefreq>
-  </url>
-  <url>
-    <loc>https://southyorkshirepropertybuyers.com/blog/selling-house-with-subsidence-uk/</loc>
-    <lastmod>2026-05-04</lastmod>
-    <priority>0.7</priority>
-    <changefreq>monthly</changefreq>
-  </url>
-  <!-- BLOG: NEW MAY 2026 (Renters Rights Act, BoE rates, CGT, prices) -->
-  <url>
-    <loc>https://southyorkshirepropertybuyers.com/blog/how-long-does-it-take-to-sell-a-flat-uk/</loc>
-    <lastmod>2026-05-14</lastmod>
-    <priority>0.8</priority>
-    <changefreq>monthly</changefreq>
-  </url>
-  <url>
-    <loc>https://southyorkshirepropertybuyers.com/blog/moving-house-with-negative-equity-uk/</loc>
-    <lastmod>2026-05-14</lastmod>
-    <priority>0.8</priority>
-    <changefreq>monthly</changefreq>
-  </url>
-  <url>
-    <loc>https://southyorkshirepropertybuyers.com/blog/how-to-get-out-of-negative-equity-uk/</loc>
-    <lastmod>2026-05-14</lastmod>
-    <priority>0.8</priority>
-    <changefreq>monthly</changefreq>
-  </url>
-  <url>
-    <loc>https://southyorkshirepropertybuyers.com/blog/im-going-to-lose-my-house-options/</loc>
-    <lastmod>2026-05-09</lastmod>
-    <priority>0.8</priority>
-    <changefreq>monthly</changefreq>
-  </url>
-  <url>
-    <loc>https://southyorkshirepropertybuyers.com/blog/court-letter-about-house-uk-repossession/</loc>
-    <lastmod>2026-05-09</lastmod>
-    <priority>0.8</priority>
-    <changefreq>monthly</changefreq>
-  </url>
-  <url>
-    <loc>https://southyorkshirepropertybuyers.com/blog/best-cash-house-buyer-sheffield/</loc>
-    <lastmod>2026-05-04</lastmod>
-    <priority>0.8</priority>
-    <changefreq>monthly</changefreq>
-  </url>
-  <url>
-    <loc>https://southyorkshirepropertybuyers.com/blog/cash-buyer-vs-auction-uk/</loc>
-    <lastmod>2026-05-04</lastmod>
-    <priority>0.8</priority>
-    <changefreq>monthly</changefreq>
-  </url>
-  <url>
-    <loc>https://southyorkshirepropertybuyers.com/blog/cash-buyer-scams-uk-how-to-spot-a-legitimate-buyer/</loc>
-    <lastmod>2026-05-04</lastmod>
-    <priority>0.8</priority>
-    <changefreq>monthly</changefreq>
-  </url>
-  <url>
-    <loc>https://southyorkshirepropertybuyers.com/blog/should-i-sell-my-buy-to-let-2026/</loc>
-    <lastmod>2026-05-04</lastmod>
-    <priority>0.8</priority>
-    <changefreq>monthly</changefreq>
-  </url>
-  <url>
-    <loc>https://southyorkshirepropertybuyers.com/blog/selling-tenanted-property-2026-renters-rights-act/</loc>
-    <lastmod>2026-05-04</lastmod>
-    <priority>0.8</priority>
-    <changefreq>monthly</changefreq>
-  </url>
-  <url>
-    <loc>https://southyorkshirepropertybuyers.com/blog/tired-landlord-guide-exit-buy-to-let-2026/</loc>
-    <lastmod>2026-05-04</lastmod>
-    <priority>0.8</priority>
-    <changefreq>monthly</changefreq>
-  </url>
-  <url>
-    <loc>https://southyorkshirepropertybuyers.com/blog/section-21-abolished-how-to-evict-tenant-2026/</loc>
-    <lastmod>2026-05-04</lastmod>
-    <priority>0.8</priority>
-    <changefreq>monthly</changefreq>
-  </url>
-  <url>
-    <loc>https://southyorkshirepropertybuyers.com/blog/section-8-eviction-grounds-2026/</loc>
-    <lastmod>2026-05-04</lastmod>
-    <priority>0.8</priority>
-    <changefreq>monthly</changefreq>
-  </url>
-  <url>
-    <loc>https://southyorkshirepropertybuyers.com/blog/what-is-an-assured-periodic-tenancy/</loc>
-    <lastmod>2026-05-04</lastmod>
-    <priority>0.8</priority>
-    <changefreq>monthly</changefreq>
-  </url>
-  <url>
-    <loc>https://southyorkshirepropertybuyers.com/blog/will-uk-interest-rates-fall-2026/</loc>
-    <lastmod>2026-05-04</lastmod>
-    <priority>0.7</priority>
-    <changefreq>monthly</changefreq>
-  </url>
-  <url>
-    <loc>https://southyorkshirepropertybuyers.com/blog/bank-of-england-base-rate-history-2020-2026/</loc>
-    <lastmod>2026-05-04</lastmod>
-    <priority>0.7</priority>
-    <changefreq>monthly</changefreq>
-  </url>
-  <url>
-    <loc>https://southyorkshirepropertybuyers.com/blog/sheffield-yorkshire-house-prices-2026/</loc>
-    <lastmod>2026-05-04</lastmod>
-    <priority>0.8</priority>
-    <changefreq>monthly</changefreq>
-  </url>
-  <url>
-    <loc>https://southyorkshirepropertybuyers.com/blog/capital-gains-tax-buy-to-let-2026/</loc>
-    <lastmod>2026-05-04</lastmod>
-    <priority>0.7</priority>
-    <changefreq>monthly</changefreq>
-  </url>
-  <!-- COMMERCIAL & NAVIGATIONAL PAGES -->
-  <url>
-    <loc>https://southyorkshirepropertybuyers.com/how-it-works/</loc>
-    <lastmod>2026-05-04</lastmod>
-    <priority>0.8</priority>
-    <changefreq>monthly</changefreq>
-  </url>
-  <url>
-    <loc>https://southyorkshirepropertybuyers.com/faq/</loc>
-    <lastmod>2026-05-04</lastmod>
-    <priority>0.8</priority>
-    <changefreq>monthly</changefreq>
-  </url>
-  <url>
-    <loc>https://southyorkshirepropertybuyers.com/reviews/</loc>
-    <lastmod>2026-05-04</lastmod>
-    <priority>0.7</priority>
-    <changefreq>monthly</changefreq>
-  </url>
-  <url>
-    <loc>https://southyorkshirepropertybuyers.com/cash-buyer-vs-estate-agent/</loc>
-    <lastmod>2026-05-04</lastmod>
+    <loc>https://southyorkshirepropertybuyers.com/need-to-sell-house-urgently/</loc>
+    <lastmod>2026-06-02</lastmod>
     <priority>0.8</priority>
     <changefreq>monthly</changefreq>
   </url>
   <url>
     <loc>https://southyorkshirepropertybuyers.com/sell-house-at-auction/</loc>
-    <lastmod>2026-05-04</lastmod>
+    <lastmod>2026-06-02</lastmod>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://southyorkshirepropertybuyers.com/sell-my-house-quickly/</loc>
+    <lastmod>2026-06-02</lastmod>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://southyorkshirepropertybuyers.com/sell-property-portfolio/</loc>
+    <lastmod>2026-06-02</lastmod>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://southyorkshirepropertybuyers.com/struggling-to-sell-my-house/</loc>
+    <lastmod>2026-06-02</lastmod>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://southyorkshirepropertybuyers.com/what-is-a-cash-buyer-selling-fast/</loc>
+    <lastmod>2026-06-02</lastmod>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+
+  <!-- UTILITY / SERVICE PAGES -->
+  <url>
+    <loc>https://southyorkshirepropertybuyers.com/about/</loc>
+    <lastmod>2026-06-02</lastmod>
+    <priority>0.6</priority>
+    <changefreq>yearly</changefreq>
+  </url>
+  <url>
+    <loc>https://southyorkshirepropertybuyers.com/faq/</loc>
+    <lastmod>2026-06-02</lastmod>
+    <priority>0.6</priority>
+    <changefreq>yearly</changefreq>
+  </url>
+  <url>
+    <loc>https://southyorkshirepropertybuyers.com/get-offer/</loc>
+    <lastmod>2026-06-02</lastmod>
+    <priority>0.7</priority>
+    <changefreq>yearly</changefreq>
+  </url>
+  <url>
+    <loc>https://southyorkshirepropertybuyers.com/how-it-works/</loc>
+    <lastmod>2026-06-02</lastmod>
+    <priority>0.6</priority>
+    <changefreq>yearly</changefreq>
+  </url>
+  <url>
+    <loc>https://southyorkshirepropertybuyers.com/privacy-policy/</loc>
+    <lastmod>2026-06-02</lastmod>
+    <priority>0.3</priority>
+    <changefreq>yearly</changefreq>
+  </url>
+  <url>
+    <loc>https://southyorkshirepropertybuyers.com/reviews/</loc>
+    <lastmod>2026-06-02</lastmod>
+    <priority>0.6</priority>
+    <changefreq>yearly</changefreq>
+  </url>
+
+  <!-- TIER 5 — BLOG POSTS -->
+  <url>
+    <loc>https://southyorkshirepropertybuyers.com/blog/bank-of-england-base-rate-history-2020-2026/</loc>
+    <lastmod>2026-06-02</lastmod>
+    <priority>0.7</priority>
+    <changefreq>monthly</changefreq>
+    <image:image>
+      <image:loc>https://southyorkshirepropertybuyers.com/blog/images/bank-of-england-base-rate-history-2026.jpg</image:loc>
+      <image:title>Bank of England Base Rate History 2020–2026</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://southyorkshirepropertybuyers.com/blog/best-cash-house-buyer-barnsley/</loc>
+    <lastmod>2026-06-02</lastmod>
+    <priority>0.7</priority>
+    <changefreq>monthly</changefreq>
+    <image:image>
+      <image:loc>https://southyorkshirepropertybuyers.com/blog/images/best-cash-house-buyer-barnsley-2026.jpg</image:loc>
+      <image:title>Best Cash House Buyer in Barnsley: How to Compare Them (2026)</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://southyorkshirepropertybuyers.com/blog/best-cash-house-buyer-doncaster/</loc>
+    <lastmod>2026-06-02</lastmod>
+    <priority>0.7</priority>
+    <changefreq>monthly</changefreq>
+    <image:image>
+      <image:loc>https://southyorkshirepropertybuyers.com/blog/images/best-cash-house-buyer-doncaster-2026.jpg</image:loc>
+      <image:title>Best Cash House Buyer in Doncaster: How to Compare Them (2026)</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://southyorkshirepropertybuyers.com/blog/best-cash-house-buyer-rotherham/</loc>
+    <lastmod>2026-06-02</lastmod>
+    <priority>0.7</priority>
+    <changefreq>monthly</changefreq>
+    <image:image>
+      <image:loc>https://southyorkshirepropertybuyers.com/blog/images/best-cash-house-buyer-rotherham-2026.jpg</image:loc>
+      <image:title>Best Cash House Buyer in Rotherham: How to Compare Them (2026)</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://southyorkshirepropertybuyers.com/blog/best-cash-house-buyer-sheffield/</loc>
+    <lastmod>2026-06-02</lastmod>
+    <priority>0.7</priority>
+    <changefreq>monthly</changefreq>
+    <image:image>
+      <image:loc>https://southyorkshirepropertybuyers.com/blog/images/best-cash-house-buyer-sheffield-2026.jpg</image:loc>
+      <image:title>Best Cash House Buyer in Sheffield (2026 Comparison)</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://southyorkshirepropertybuyers.com/blog/buttle-v-saunders-executor-cash-sale-defence/</loc>
+    <lastmod>2026-06-02</lastmod>
+    <priority>0.7</priority>
+    <changefreq>monthly</changefreq>
+    <image:image>
+      <image:loc>https://southyorkshirepropertybuyers.com/blog/images/sell-house-during-probate-south-yorkshire.jpg</image:loc>
+      <image:title>Buttle v Saunders [1950] — How Executors Can Legally Accept a Cash Sale</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://southyorkshirepropertybuyers.com/blog/can-you-sell-house-before-probate-is-granted/</loc>
+    <lastmod>2026-06-02</lastmod>
+    <priority>0.7</priority>
+    <changefreq>monthly</changefreq>
+    <image:image>
+      <image:loc>https://southyorkshirepropertybuyers.com/blog/images/selling-house-before-probate-granted.jpg</image:loc>
+      <image:title>Can You Sell a House Before Probate Is Granted? UK 2026</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://southyorkshirepropertybuyers.com/blog/capital-gains-tax-buy-to-let-2026/</loc>
+    <lastmod>2026-06-02</lastmod>
+    <priority>0.7</priority>
+    <changefreq>monthly</changefreq>
+    <image:image>
+      <image:loc>https://southyorkshirepropertybuyers.com/blog/images/capital-gains-tax-buy-to-let-2026.jpg</image:loc>
+      <image:title>Capital Gains Tax on Buy-to-Let 2026</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://southyorkshirepropertybuyers.com/blog/cash-buyer-scams-uk-how-to-spot-a-legitimate-buyer/</loc>
+    <lastmod>2026-06-02</lastmod>
+    <priority>0.7</priority>
+    <changefreq>monthly</changefreq>
+    <image:image>
+      <image:loc>https://southyorkshirepropertybuyers.com/blog/images/cash-buyer-scams-uk-2026.jpg</image:loc>
+      <image:title>Cash Buyer Scams UK 2026: Red Flags + Companies House Verification</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://southyorkshirepropertybuyers.com/blog/cash-buyer-vs-auction-uk/</loc>
+    <lastmod>2026-06-02</lastmod>
+    <priority>0.7</priority>
+    <changefreq>monthly</changefreq>
+    <image:image>
+      <image:loc>https://southyorkshirepropertybuyers.com/blog/images/cash-buyer-vs-auction-uk-2026.jpg</image:loc>
+      <image:title>Cash Buyer vs Auction UK 2026</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://southyorkshirepropertybuyers.com/blog/coal-authority-mining-search-uk-2026/</loc>
+    <lastmod>2026-06-02</lastmod>
+    <priority>0.7</priority>
+    <changefreq>monthly</changefreq>
+    <image:image>
+      <image:loc>https://southyorkshirepropertybuyers.com/blog/images/coal-authority-mining-search-uk.jpg</image:loc>
+      <image:title>Coal Authority Mining Search 2026 — CON29M Explained</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://southyorkshirepropertybuyers.com/blog/court-letter-about-house-uk-repossession/</loc>
+    <lastmod>2026-06-02</lastmod>
+    <priority>0.7</priority>
+    <changefreq>monthly</changefreq>
+    <image:image>
+      <image:loc>https://southyorkshirepropertybuyers.com/blog/images/mortgage-redemption-solicitor-completion.jpg</image:loc>
+      <image:title>Court Letter About Your House: What Each One Means (UK 2026)</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://southyorkshirepropertybuyers.com/blog/do-you-have-to-sell-the-house-in-a-divorce-uk/</loc>
+    <lastmod>2026-06-02</lastmod>
+    <priority>0.7</priority>
+    <changefreq>monthly</changefreq>
+    <image:image>
+      <image:loc>https://southyorkshirepropertybuyers.com/blog/images/selling-house-divorce-uk.jpg</image:loc>
+      <image:title>Do You Have to Sell the House in a Divorce? UK 2026</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://southyorkshirepropertybuyers.com/blog/doncaster-flood-insurance-2026/</loc>
+    <lastmod>2026-06-02</lastmod>
+    <priority>0.7</priority>
+    <changefreq>monthly</changefreq>
+    <image:image>
+      <image:loc>https://southyorkshirepropertybuyers.com/blog/images/doncaster-flood-insurance-2026.jpg</image:loc>
+      <image:title>Doncaster Flood Insurance 2026 — Selling a Flood-Risk Property</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://southyorkshirepropertybuyers.com/blog/empty-property-council-tax-premium-uk-2026/</loc>
+    <lastmod>2026-06-02</lastmod>
+    <priority>0.7</priority>
+    <changefreq>monthly</changefreq>
+    <image:image>
+      <image:loc>https://southyorkshirepropertybuyers.com/blog/images/empty-property-council-tax-premium-uk-2026.jpg</image:loc>
+      <image:title>Empty Property Council Tax Premium 2026</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://southyorkshirepropertybuyers.com/blog/house-on-market-too-long-what-to-do/</loc>
+    <lastmod>2026-06-02</lastmod>
+    <priority>0.7</priority>
+    <changefreq>monthly</changefreq>
+    <image:image>
+      <image:loc>https://southyorkshirepropertybuyers.com/blog/images/house-on-market-too-long-what-to-do.jpg</image:loc>
+      <image:title>House on Market Too Long? What to Do in 2026 (Zoopla 127-Day Penalty)</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://southyorkshirepropertybuyers.com/blog/house-sale-fallen-through-what-to-do/</loc>
+    <lastmod>2026-06-02</lastmod>
+    <priority>0.7</priority>
+    <changefreq>monthly</changefreq>
+    <image:image>
+      <image:loc>https://southyorkshirepropertybuyers.com/blog/images/house-sale-fallen-through-what-to-do.jpg</image:loc>
+      <image:title>House Sale Fallen Through? What to Do Next (2026 Guide)</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://southyorkshirepropertybuyers.com/blog/how-long-does-it-take-to-sell-a-flat-uk/</loc>
+    <lastmod>2026-06-02</lastmod>
+    <priority>0.7</priority>
+    <changefreq>monthly</changefreq>
+    <image:image>
+      <image:loc>https://southyorkshirepropertybuyers.com/blog/images/house-sale-conveyancing-timeline-uk.jpg</image:loc>
+      <image:title>How Long Does It Take to Sell a Flat in the UK? (2026)</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://southyorkshirepropertybuyers.com/blog/how-long-does-it-take-to-sell-a-house-uk/</loc>
+    <lastmod>2026-06-02</lastmod>
+    <priority>0.7</priority>
+    <changefreq>monthly</changefreq>
+    <image:image>
+      <image:loc>https://southyorkshirepropertybuyers.com/blog/images/how-long-does-it-take-to-sell-a-house-uk.jpg</image:loc>
+      <image:title>How Long Does It Take to Sell a House UK? (2026 Timeline)</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://southyorkshirepropertybuyers.com/blog/how-much-do-cash-buyers-offer-below-market-value/</loc>
+    <lastmod>2026-06-02</lastmod>
+    <priority>0.7</priority>
+    <changefreq>monthly</changefreq>
+    <image:image>
+      <image:loc>https://southyorkshirepropertybuyers.com/blog/images/how-much-do-cash-buyers-offer-below-market-value.jpg</image:loc>
+      <image:title>How Much Do Cash Buyers Offer Below Market Value? 2026</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://southyorkshirepropertybuyers.com/blog/how-to-get-out-of-negative-equity-uk/</loc>
+    <lastmod>2026-06-02</lastmod>
+    <priority>0.7</priority>
+    <changefreq>monthly</changefreq>
+    <image:image>
+      <image:loc>https://southyorkshirepropertybuyers.com/blog/images/what-happens-to-mortgage-when-you-sell-house.jpg</image:loc>
+      <image:title>How to Get Out of Negative Equity Without Selling (UK 2026)</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://southyorkshirepropertybuyers.com/blog/how-to-sell-property-portfolio-quickly/</loc>
+    <lastmod>2026-06-02</lastmod>
+    <priority>0.7</priority>
+    <changefreq>monthly</changefreq>
+    <image:image>
+      <image:loc>https://southyorkshirepropertybuyers.com/blog/images/how-to-sell-property-portfolio-quickly-south-yorkshire.jpg</image:loc>
+      <image:title>How to Sell a Property Portfolio Quickly (UK 2026)</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://southyorkshirepropertybuyers.com/blog/im-going-to-lose-my-house-options/</loc>
+    <lastmod>2026-06-02</lastmod>
+    <priority>0.7</priority>
+    <changefreq>monthly</changefreq>
+    <image:image>
+      <image:loc>https://southyorkshirepropertybuyers.com/blog/images/selling-house-with-mortgage-arrears-uk.jpg</image:loc>
+      <image:title>I&apos;m Going to Lose My House: Your Real UK Options 2026</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://southyorkshirepropertybuyers.com/blog/inheritance-tax-pension-2027-changes/</loc>
+    <lastmod>2026-06-02</lastmod>
     <priority>0.7</priority>
     <changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://southyorkshirepropertybuyers.com/sell-house-with-japanese-knotweed/</loc>
-    <lastmod>2026-05-04</lastmod>
-    <priority>0.8</priority>
+    <loc>https://southyorkshirepropertybuyers.com/blog/is-it-worth-selling-to-a-house-buying-company/</loc>
+    <lastmod>2026-06-02</lastmod>
+    <priority>0.7</priority>
     <changefreq>monthly</changefreq>
+    <image:image>
+      <image:loc>https://southyorkshirepropertybuyers.com/blog/images/is-it-worth-selling-to-a-house-buying-company.jpg</image:loc>
+      <image:title>Is It Worth Selling to a House Buying Company? 2026 Honest Guide</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://southyorkshirepropertybuyers.com/blog/mortgage-charter-2026-update/</loc>
+    <lastmod>2026-06-02</lastmod>
+    <priority>0.7</priority>
+    <changefreq>monthly</changefreq>
+    <image:image>
+      <image:loc>https://southyorkshirepropertybuyers.com/blog/images/selling-house-with-mortgage-arrears-uk.jpg</image:loc>
+      <image:title>Mortgage Charter 2026 — 311,000 Mortgages Enrolled, What&apos;s Next</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://southyorkshirepropertybuyers.com/blog/moving-house-with-negative-equity-uk/</loc>
+    <lastmod>2026-06-02</lastmod>
+    <priority>0.7</priority>
+    <changefreq>monthly</changefreq>
+    <image:image>
+      <image:loc>https://southyorkshirepropertybuyers.com/blog/images/negative-equity-options-mortgage-shortfall.jpg</image:loc>
+      <image:title>Moving House With Negative Equity (UK 2026 Guide)</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://southyorkshirepropertybuyers.com/blog/patarkatsishvili-woodward-fisher-2025-ta6-disclosure/</loc>
+    <lastmod>2026-06-02</lastmod>
+    <priority>0.7</priority>
+    <changefreq>monthly</changefreq>
+    <image:image>
+      <image:loc>https://southyorkshirepropertybuyers.com/blog/images/patarkatsishvili-woodward-fisher-ta6-disclosure.jpg</image:loc>
+      <image:title>Patarkatsishvili v Woodward-Fisher [2025] — TA6 Disclosure for UK Sellers</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://southyorkshirepropertybuyers.com/blog/prc-defective-housing-sheffield-airey-cornish/</loc>
+    <lastmod>2026-06-02</lastmod>
+    <priority>0.7</priority>
+    <changefreq>monthly</changefreq>
+    <image:image>
+      <image:loc>https://southyorkshirepropertybuyers.com/blog/images/prc-defective-housing-sheffield-airey-cornish.jpg</image:loc>
+      <image:title>PRC Defective Housing in Sheffield S5/S35 — The Airey, Cornish, Boot Story</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://southyorkshirepropertybuyers.com/blog/renters-rights-act-2026-first-30-days/</loc>
+    <lastmod>2026-06-02</lastmod>
+    <priority>0.7</priority>
+    <changefreq>monthly</changefreq>
+    <image:image>
+      <image:loc>https://southyorkshirepropertybuyers.com/blog/images/section-21-abolished-renters-rights-act-2026.jpg</image:loc>
+      <image:title>Renters Rights Act 2026 — First 30 Days Reality for Landlords</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://southyorkshirepropertybuyers.com/blog/section-21-abolished-how-to-evict-tenant-2026/</loc>
+    <lastmod>2026-06-02</lastmod>
+    <priority>0.7</priority>
+    <changefreq>monthly</changefreq>
+    <image:image>
+      <image:loc>https://southyorkshirepropertybuyers.com/blog/images/section-21-abolished-renters-rights-act-2026.jpg</image:loc>
+      <image:title>How to Evict a Tenant in 2026 After Section 21 Abolished (UK Landlord Guide)</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://southyorkshirepropertybuyers.com/blog/section-8-eviction-grounds-2026/</loc>
+    <lastmod>2026-06-02</lastmod>
+    <priority>0.7</priority>
+    <changefreq>monthly</changefreq>
+    <image:image>
+      <image:loc>https://southyorkshirepropertybuyers.com/blog/images/section-8-eviction-grounds-2026.jpg</image:loc>
+      <image:title>Section 8 Eviction Grounds 2026</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://southyorkshirepropertybuyers.com/blog/sell-house-with-mortgage-arrears-uk/</loc>
+    <lastmod>2026-06-02</lastmod>
+    <priority>0.7</priority>
+    <changefreq>monthly</changefreq>
+    <image:image>
+      <image:loc>https://southyorkshirepropertybuyers.com/blog/images/selling-house-with-mortgage-arrears-uk.jpg</image:loc>
+      <image:title>Sell a House With Mortgage Arrears UK 2026 — Your Options</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://southyorkshirepropertybuyers.com/blog/sell-house-without-estate-agent-uk/</loc>
+    <lastmod>2026-06-02</lastmod>
+    <priority>0.7</priority>
+    <changefreq>monthly</changefreq>
+    <image:image>
+      <image:loc>https://southyorkshirepropertybuyers.com/blog/images/sell-house-without-estate-agent-uk.jpg</image:loc>
+      <image:title>Sell a House Without an Estate Agent UK</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://southyorkshirepropertybuyers.com/blog/selling-buy-to-let-2026-decision-tree/</loc>
+    <lastmod>2026-06-02</lastmod>
+    <priority>0.7</priority>
+    <changefreq>monthly</changefreq>
+    <image:image>
+      <image:loc>https://southyorkshirepropertybuyers.com/blog/images/selling-buy-to-let-2026-decision-tree.jpg</image:loc>
+      <image:title>Selling a Buy-to-Let in 2026 — CGT vs Section 24 vs RRA Decision Tree</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://southyorkshirepropertybuyers.com/blog/selling-house-during-probate-south-yorkshire/</loc>
+    <lastmod>2026-06-02</lastmod>
+    <priority>0.7</priority>
+    <changefreq>monthly</changefreq>
+    <image:image>
+      <image:loc>https://southyorkshirepropertybuyers.com/blog/images/sell-house-during-probate-south-yorkshire.jpg</image:loc>
+      <image:title>Selling a House During Probate (South Yorkshire 2026)</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://southyorkshirepropertybuyers.com/blog/selling-house-negative-equity-uk/</loc>
+    <lastmod>2026-06-02</lastmod>
+    <priority>0.7</priority>
+    <changefreq>monthly</changefreq>
+    <image:image>
+      <image:loc>https://southyorkshirepropertybuyers.com/blog/images/selling-house-negative-equity-uk.jpg</image:loc>
+      <image:title>Selling a House in Negative Equity UK 2026</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://southyorkshirepropertybuyers.com/blog/selling-house-with-japanese-knotweed-uk/</loc>
+    <lastmod>2026-06-02</lastmod>
+    <priority>0.7</priority>
+    <changefreq>monthly</changefreq>
+    <image:image>
+      <image:loc>https://southyorkshirepropertybuyers.com/blog/images/selling-house-japanese-knotweed-uk.jpg</image:loc>
+      <image:title>Selling a House With Japanese Knotweed</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://southyorkshirepropertybuyers.com/blog/selling-house-with-sitting-tenants-uk/</loc>
+    <lastmod>2026-06-02</lastmod>
+    <priority>0.7</priority>
+    <changefreq>monthly</changefreq>
+    <image:image>
+      <image:loc>https://southyorkshirepropertybuyers.com/blog/images/selling-house-sitting-tenants-uk.jpg</image:loc>
+      <image:title>Selling a House With Sitting Tenants UK (2026): Tenants In Situ Guide</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://southyorkshirepropertybuyers.com/blog/selling-house-with-subsidence-uk/</loc>
+    <lastmod>2026-06-02</lastmod>
+    <priority>0.7</priority>
+    <changefreq>monthly</changefreq>
+    <image:image>
+      <image:loc>https://southyorkshirepropertybuyers.com/blog/images/selling-house-with-subsidence-uk.jpg</image:loc>
+      <image:title>Selling a House With Subsidence UK (2026 Guide)</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://southyorkshirepropertybuyers.com/blog/selling-tenanted-property-2026-renters-rights-act/</loc>
+    <lastmod>2026-06-02</lastmod>
+    <priority>0.7</priority>
+    <changefreq>monthly</changefreq>
+    <image:image>
+      <image:loc>https://southyorkshirepropertybuyers.com/blog/images/selling-tenanted-property-2026.jpg</image:loc>
+      <image:title>Selling a Tenanted Property in 2026</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://southyorkshirepropertybuyers.com/blog/sheffield-court-possession-timeline-2026/</loc>
+    <lastmod>2026-06-02</lastmod>
+    <priority>0.7</priority>
+    <changefreq>monthly</changefreq>
+    <image:image>
+      <image:loc>https://southyorkshirepropertybuyers.com/blog/images/sell-house-before-repossession-south-yorkshire.jpg</image:loc>
+      <image:title>Sheffield Possession Claims — Court Timeline May 2026</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://southyorkshirepropertybuyers.com/blog/sheffield-property-market-may-2026-flats-vs-houses/</loc>
+    <lastmod>2026-06-02</lastmod>
+    <priority>0.7</priority>
+    <changefreq>monthly</changefreq>
+    <image:image>
+      <image:loc>https://southyorkshirepropertybuyers.com/blog/images/sheffield-property-market-may-2026-flats-vs-houses.jpg</image:loc>
+      <image:title>Sheffield Property Market May 2026 — Flats vs Houses Diverging</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://southyorkshirepropertybuyers.com/blog/sheffield-yorkshire-house-prices-2026/</loc>
+    <lastmod>2026-06-02</lastmod>
+    <priority>0.7</priority>
+    <changefreq>monthly</changefreq>
+    <image:image>
+      <image:loc>https://southyorkshirepropertybuyers.com/blog/images/sheffield-yorkshire-house-prices-2026.jpg</image:loc>
+      <image:title>Sheffield &amp; Yorkshire House Prices 2026</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://southyorkshirepropertybuyers.com/blog/should-i-sell-my-buy-to-let-2026/</loc>
+    <lastmod>2026-06-02</lastmod>
+    <priority>0.7</priority>
+    <changefreq>monthly</changefreq>
+    <image:image>
+      <image:loc>https://southyorkshirepropertybuyers.com/blog/images/should-i-sell-buy-to-let-2026.jpg</image:loc>
+      <image:title>Should I Sell My Buy-to-Let in 2026? Honest Guide</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://southyorkshirepropertybuyers.com/blog/tenant-rights-when-landlord-sells/</loc>
+    <lastmod>2026-06-02</lastmod>
+    <priority>0.7</priority>
+    <changefreq>monthly</changefreq>
+    <image:image>
+      <image:loc>https://southyorkshirepropertybuyers.com/blog/images/tenant-rights-when-landlord-sells-property-uk.jpg</image:loc>
+      <image:title>Tenant Rights When Your Landlord Sells (UK 2026 Guide)</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://southyorkshirepropertybuyers.com/blog/tired-landlord-guide-exit-buy-to-let-2026/</loc>
+    <lastmod>2026-06-02</lastmod>
+    <priority>0.7</priority>
+    <changefreq>monthly</changefreq>
+    <image:image>
+      <image:loc>https://southyorkshirepropertybuyers.com/blog/images/tired-landlord-guide-2026.jpg</image:loc>
+      <image:title>Tired Landlord? 2026 Guide to Exiting Buy-to-Let</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://southyorkshirepropertybuyers.com/blog/what-happens-to-mortgage-when-you-sell-house/</loc>
+    <lastmod>2026-06-02</lastmod>
+    <priority>0.7</priority>
+    <changefreq>monthly</changefreq>
+    <image:image>
+      <image:loc>https://southyorkshirepropertybuyers.com/blog/images/what-happens-to-mortgage-when-you-sell-house.jpg</image:loc>
+      <image:title>What Happens to Your Mortgage When You Sell Your House? (2026 Guide)</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://southyorkshirepropertybuyers.com/blog/what-is-an-assured-periodic-tenancy/</loc>
+    <lastmod>2026-06-02</lastmod>
+    <priority>0.7</priority>
+    <changefreq>monthly</changefreq>
+    <image:image>
+      <image:loc>https://southyorkshirepropertybuyers.com/blog/images/assured-periodic-tenancy-2026.jpg</image:loc>
+      <image:title>Assured Periodic Tenancy Explained</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://southyorkshirepropertybuyers.com/blog/will-uk-interest-rates-fall-2026/</loc>
+    <lastmod>2026-06-02</lastmod>
+    <priority>0.7</priority>
+    <changefreq>monthly</changefreq>
+    <image:image>
+      <image:loc>https://southyorkshirepropertybuyers.com/blog/images/will-uk-interest-rates-fall-2026.jpg</image:loc>
+      <image:title>Will UK Interest Rates Fall in 2026? BoE Holds at 3.75%</image:title>
+    </image:image>
   </url>
 
 </urlset>
