@@ -174,6 +174,49 @@
   .nav-item .dropdown { opacity: 0 !important; pointer-events: none !important; transform: translateX(-50%) translateY(-4px) !important; transition: opacity 0.15s ease, transform 0.15s ease !important; }
   .nav-item.open .dropdown { opacity: 1 !important; pointer-events: auto !important; transform: translateX(-50%) translateY(0) !important; }
   </style>
+
+<!-- howto-schema -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  "name": "How to estimate your monthly mortgage payment",
+  "description": "Calculate your monthly mortgage payment and see the impact of a 1–2% interest rate rise.",
+  "tool": [
+    {
+      "@type": "HowToTool",
+      "name": "South Yorkshire Property Buyers mortgage payment calculator"
+    }
+  ],
+  "step": [
+    {
+      "@type": "HowToStep",
+      "name": "Enter your outstanding loan balance",
+      "text": "Type the amount you still owe on your mortgage in pounds sterling."
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Enter your current interest rate",
+      "text": "Enter the annual interest rate as a percentage (for example, 5.25)."
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Enter the years remaining",
+      "text": "Enter how many years are left on your mortgage term."
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Choose mortgage type",
+      "text": "Select repayment (capital and interest) or interest-only."
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Review the result",
+      "text": "The calculator displays your monthly payment, the total paid over term, the total interest, and what each payment becomes if rates rise +1% or +2%."
+    }
+  ]
+}
+</script>
 </head>
 <body>
 

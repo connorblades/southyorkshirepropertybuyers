@@ -182,6 +182,44 @@
   .nav-item .dropdown { opacity: 0 !important; pointer-events: none !important; transform: translateX(-50%) translateY(-4px) !important; transition: opacity 0.15s ease, transform 0.15s ease !important; }
   .nav-item.open .dropdown { opacity: 1 !important; pointer-events: auto !important; transform: translateX(-50%) translateY(0) !important; }
   </style>
+
+<!-- howto-schema -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  "name": "How to compare net cash from three sale routes",
+  "description": "Compare the cash you would walk away with after estate agent, cash buyer, and auction routes — after fees and after the mortgage is cleared.",
+  "tool": [
+    {
+      "@type": "HowToTool",
+      "name": "South Yorkshire Property Buyers net walkaway calculator"
+    }
+  ],
+  "step": [
+    {
+      "@type": "HowToStep",
+      "name": "Enter your house value",
+      "text": "Type the estimated market value of your house in pounds sterling."
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Enter your mortgage balance",
+      "text": "Type your outstanding mortgage balance."
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Add any other secured charges",
+      "text": "Optional — add any second charges or secured loans registered against the property."
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Compare three routes",
+      "text": "The calculator shows the net cash from estate agent, cash buyer, and auction routes side by side. The route with the highest net is highlighted automatically. Negative equity displays as a red shortfall figure."
+    }
+  ]
+}
+</script>
 </head>
 <body>
 
