@@ -302,6 +302,101 @@
     <p>The single biggest predictor of a bad outcome in mortgage difficulty is silence. The <a href="https://www.moneyandmentalhealth.org/financial-difficulties-suicide/" rel="noopener" target="_blank">Money and Mental Health Policy Institute</a> has found that people in problem debt are more than three times as likely to attempt suicide as those who are not, and that creditor letters and silence at home are specific triggers. Phone someone today. Tell a partner, sibling, or friend. The conversation gets harder the longer it is left, and the financial position gets harder with it.</p>
     <p>Then make the second call: <strong>your lender's mortgage support team</strong>. Ask explicitly for "the team that deals with customers in financial difficulty". Under the FCA's Mortgage Charter rules and the strengthened MCOB 13 forbearance framework (see below), simply <em>asking for help</em> does not affect your credit file. It puts you inside the protection regime described in the rest of this page.</p>
 
+    <h2>Work out where you actually stand — mortgage payment calculator</h2>
+    <p>Before you read another word about the Charter, the Pre-Action Protocol or selling, see your real number on the screen. Enter your outstanding loan balance, the rate you're paying (or worried about going onto) and the years left. The calculator updates instantly, including what happens if the Bank of England rate moves another 1% or 2% against you.</p>
+
+    <section class="sypb-calc" data-calc="mortgage" aria-labelledby="mortgage-calc-heading">
+      <header class="sypb-calc-header">
+        <h3 id="mortgage-calc-heading">Mortgage payment calculator</h3>
+        <p>Enter your loan, rate and term. Numbers update as you type. No data leaves your browser.</p>
+      </header>
+
+      <div class="sypb-calc-grid">
+        <div class="sypb-calc-field">
+          <label for="calc-loan">Outstanding loan balance</label>
+          <div class="sypb-calc-input-wrap">
+            <span class="prefix">£</span>
+            <input id="calc-loan" type="number" inputmode="decimal" min="0" step="1000" value="180000" class="has-prefix" data-calc-input="loan" aria-describedby="calc-loan-note">
+          </div>
+        </div>
+
+        <div class="sypb-calc-field">
+          <label for="calc-rate">Interest rate</label>
+          <div class="sypb-calc-input-wrap">
+            <input id="calc-rate" type="number" inputmode="decimal" min="0" max="20" step="0.01" value="5.25" class="has-suffix" data-calc-input="rate">
+            <span class="suffix">%</span>
+          </div>
+        </div>
+
+        <div class="sypb-calc-field">
+          <label for="calc-term">Years remaining on mortgage</label>
+          <div class="sypb-calc-input-wrap">
+            <input id="calc-term" type="number" inputmode="decimal" min="1" max="40" step="1" value="22" class="has-suffix" data-calc-input="term">
+            <span class="suffix">yrs</span>
+          </div>
+        </div>
+
+        <div class="sypb-calc-field">
+          <label for="calc-type">Mortgage type</label>
+          <div class="sypb-calc-input-wrap">
+            <select id="calc-type" data-calc-input="type">
+              <option value="repayment">Repayment (capital &amp; interest)</option>
+              <option value="interest">Interest-only</option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+      <div class="sypb-calc-results" role="status" aria-live="polite">
+        <div class="sypb-calc-result-cell">
+          <span class="label">Monthly payment</span>
+          <span class="value" data-calc-out="month">—</span>
+        </div>
+        <div class="sypb-calc-result-cell">
+          <span class="label">Total paid over term</span>
+          <span class="value" data-calc-out="total">—</span>
+        </div>
+        <div class="sypb-calc-result-cell">
+          <span class="label">Total interest</span>
+          <span class="value" data-calc-out="interest">—</span>
+        </div>
+      </div>
+
+      <div class="sypb-calc-scenarios">
+        <h4>If your rate rises at renewal</h4>
+        <ul data-calc-out="scenarios"></ul>
+      </div>
+
+      <div class="sypb-calc-question">
+        <h4>Honestly — does that monthly figure work for your household?</h4>
+        <div class="sypb-calc-buttons">
+          <button type="button" class="sypb-calc-btn" data-calc-action="ok">Yes — it's tight but manageable</button>
+          <button type="button" class="sypb-calc-btn warn" data-calc-action="stretched">I can pay it now, but a rate rise would break me</button>
+          <button type="button" class="sypb-calc-btn danger" data-calc-action="help">No — I'm already missing payments or about to</button>
+        </div>
+
+        <div class="sypb-calc-response" data-calc-response="ok" role="region">
+          <h5>Good. Keep that buffer — and read the rest of this page anyway.</h5>
+          <p>If the figure works, your priority is staying ahead of any rate change at renewal. The Mortgage Charter (next section) lets you lock in a new rate up to six months before your current deal ends without penalty. The forbearance options below also exist for short, unexpected shocks — illness, redundancy, divorce — even when the underlying mortgage is affordable in normal times.</p>
+        </div>
+
+        <div class="sypb-calc-response warn" data-calc-response="stretched" role="region">
+          <h5>You're in the zone the Mortgage Charter was built for.</h5>
+          <p>The Charter lets you switch to interest-only for six months <em>or</em> extend your term to reduce monthly payments — both with no affordability check and no credit-file marker. For the loan amount above, switching to interest-only typically cuts your payment by 30–40%. That alone can absorb a 2% rate shock. Read the Charter section below before you do anything else.</p>
+          <p>If after running those options the maths still doesn't work, an honest sale on your terms — while you still have equity and time — almost always beats waiting for a forced sale at the wrong end of the year. That route is covered further down the page.</p>
+        </div>
+
+        <div class="sypb-calc-response danger" data-calc-response="help" role="region">
+          <h5>You're not alone, and the order of what to do next matters.</h5>
+          <p>Make the two free calls at the top of this page first — StepChange and your lender's hardship team. Both are free, neither will judge you, and asking the lender for help is <em>not</em> a credit-file event under the Mortgage Charter. They have legal duties to try forbearance, term extension and interest-only switches before any repossession step.</p>
+          <p>If you've already had those conversations and the position is unrecoverable, selling on your own terms — while you still have time, equity and a clean title — is almost always a better outcome than waiting for the court timeline. We don't charge fees, there's no obligation, and we can give you a written offer within 48 hours so you know what's on the table.</p>
+          <a class="cta-inline" href="/get-offer/">Get a no-obligation cash offer</a>
+        </div>
+      </div>
+
+      <p class="sypb-calc-note">For illustration only — not financial advice. Your actual payment depends on your lender's product terms, any product fees, and any arrears already on the account. Get personalised free advice from <a href="https://www.stepchange.org/" rel="noopener" target="_blank">StepChange</a> or <a href="https://www.moneyhelper.org.uk/" rel="noopener" target="_blank">MoneyHelper</a>.</p>
+    </section>
+
     <h2>What the law says your lender must try first</h2>
     <p>This is the single most under-known fact in UK mortgage distress. Your lender — if it is one of the 49 signatories representing about 90% of the regulated UK mortgage market — has substantial legal obligations to attempt every reasonable forbearance option before it can begin to repossess. Those obligations sit in three layered structures: the FCA's MCOB 13 rules, the Civil Procedure Rules' Pre-Action Protocol for mortgage possession claims, and the voluntary Mortgage Charter sitting on top.</p>
     <p><strong>The FCA's MCOB 13 forbearance rules</strong>, materially strengthened by <a href="https://www.fca.org.uk/publications/policy-statements/ps24-2-strengthening-protections-borrowers-financial-difficulty" rel="noopener" target="_blank">Policy Statement PS24/2</a> in effect from 4 November 2024, require lenders to: engage with you early; consider you as <em>at risk of</em> difficulty, not just already in arrears; publish their forbearance options on their website; tell you in advance how each option will be reported to credit reference agencies; and, in genuine hardship, consider waiving capital or interest. Repossession must be a measure of last resort.</p>
@@ -649,6 +744,8 @@
   }
 })();
 </script>
+
+<script defer src="/js/calculators.js"></script>
 
 </body>
 </html>

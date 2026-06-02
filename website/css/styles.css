@@ -2076,3 +2076,246 @@ h1 em {
   height: auto;
   object-fit: cover;
 }
+
+/* ──────────────────────────────────────────────
+   INTERACTIVE CALCULATORS
+   Used on mortgage-stress and cash-offer pages.
+   Self-contained — no external deps.
+   ────────────────────────────────────────────── */
+.sypb-calc {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 1.75rem 1.75rem 2rem;
+  margin: 2.5rem 0;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.03);
+}
+.sypb-calc-header {
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 1rem;
+  margin-bottom: 1.5rem;
+}
+.sypb-calc-header h3 {
+  font-size: 1.4rem;
+  color: var(--heading);
+  margin: 0 0 0.4rem;
+  line-height: 1.3;
+  font-weight: 600;
+}
+.sypb-calc-header p {
+  color: var(--muted);
+  font-size: 0.95rem;
+  margin: 0;
+}
+.sypb-calc-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.25rem 1.5rem;
+}
+@media (max-width: 640px) {
+  .sypb-calc-grid { grid-template-columns: 1fr; }
+}
+.sypb-calc-field { display: flex; flex-direction: column; gap: 0.4rem; }
+.sypb-calc-field label {
+  font-size: 0.88rem;
+  color: var(--label-col);
+  font-weight: 500;
+}
+.sypb-calc-input-wrap { position: relative; }
+.sypb-calc-input-wrap .prefix,
+.sypb-calc-input-wrap .suffix {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--muted);
+  font-size: 0.95rem;
+  pointer-events: none;
+}
+.sypb-calc-input-wrap .prefix { left: 0.85rem; }
+.sypb-calc-input-wrap .suffix { right: 0.85rem; }
+.sypb-calc-input-wrap input,
+.sypb-calc-input-wrap select {
+  width: 100%;
+  background: var(--input-bg);
+  border: 1px solid var(--input-border);
+  color: var(--input-text);
+  border-radius: var(--radius);
+  font-family: inherit;
+  font-size: 1rem;
+  padding: 0.7rem 0.95rem;
+  transition: border-color 0.15s, box-shadow 0.15s;
+}
+.sypb-calc-input-wrap input.has-prefix { padding-left: 1.6rem; }
+.sypb-calc-input-wrap input.has-suffix { padding-right: 2.2rem; }
+.sypb-calc-input-wrap input:focus,
+.sypb-calc-input-wrap select:focus {
+  outline: none;
+  border-color: var(--green);
+  box-shadow: 0 0 0 3px var(--green-subtle);
+}
+.sypb-calc-results {
+  background: var(--green-subtle);
+  border: 1px solid var(--green-border);
+  border-radius: var(--radius);
+  padding: 1.5rem;
+  margin-top: 1.75rem;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+@media (max-width: 640px) {
+  .sypb-calc-results { grid-template-columns: 1fr; }
+}
+.sypb-calc-result-cell { display: flex; flex-direction: column; gap: 0.25rem; }
+.sypb-calc-result-cell .label {
+  font-size: 0.78rem;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-weight: 600;
+}
+.sypb-calc-result-cell .value {
+  font-size: 1.45rem;
+  color: var(--green);
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  line-height: 1.2;
+}
+@media (max-width: 640px) {
+  .sypb-calc-result-cell .value { font-size: 1.25rem; }
+}
+.sypb-calc-scenarios {
+  margin-top: 1.5rem;
+  padding: 1.1rem 1.25rem;
+  background: var(--surface-alt);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+}
+.sypb-calc-scenarios h4 {
+  font-size: 0.95rem;
+  color: var(--heading);
+  margin: 0 0 0.75rem;
+  font-weight: 600;
+}
+.sypb-calc-scenarios ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+.sypb-calc-scenarios li {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  font-size: 0.92rem;
+  color: var(--body-text);
+  padding: 0.35rem 0;
+  border-bottom: 1px dashed var(--border);
+}
+.sypb-calc-scenarios li:last-child { border-bottom: none; }
+.sypb-calc-scenarios li strong {
+  color: var(--heading);
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+.sypb-calc-question {
+  margin-top: 1.75rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--border);
+}
+.sypb-calc-question h4 {
+  font-size: 1.05rem;
+  color: var(--heading);
+  margin: 0 0 1rem;
+  font-weight: 600;
+}
+.sypb-calc-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+}
+.sypb-calc-btn {
+  flex: 1 1 200px;
+  min-width: 0;
+  padding: 0.75rem 1.1rem;
+  border-radius: var(--radius);
+  border: 1px solid var(--input-border);
+  background: var(--surface);
+  color: var(--body-text);
+  font-family: inherit;
+  font-size: 0.95rem;
+  font-weight: 500;
+  cursor: pointer;
+  text-align: center;
+  transition: border-color 0.15s, background 0.15s, color 0.15s, transform 0.1s;
+}
+.sypb-calc-btn:hover {
+  border-color: var(--green);
+  color: var(--green);
+  transform: translateY(-1px);
+}
+.sypb-calc-btn.danger:hover { border-color: #b91c1c; color: #b91c1c; }
+.sypb-calc-btn.warn:hover { border-color: #b45309; color: #b45309; }
+.sypb-calc-response {
+  display: none;
+  margin-top: 1.5rem;
+  padding: 1.25rem 1.4rem;
+  border-radius: var(--radius);
+  border-left: 4px solid var(--green);
+  background: var(--green-subtle);
+  animation: sypb-fade-in 0.4s ease;
+}
+.sypb-calc-response.warn {
+  border-left-color: #b45309;
+  background: rgba(180,83,9,0.08);
+}
+.sypb-calc-response.danger {
+  border-left-color: #b91c1c;
+  background: rgba(185,28,28,0.07);
+}
+.sypb-calc-response h5 {
+  margin: 0 0 0.5rem;
+  font-size: 1.05rem;
+  color: var(--heading);
+  font-weight: 600;
+}
+.sypb-calc-response p {
+  margin: 0 0 0.75rem;
+  font-size: 0.95rem;
+  color: var(--body-text);
+  line-height: 1.55;
+}
+.sypb-calc-response p:last-child { margin-bottom: 0; }
+.sypb-calc-response a.cta-inline {
+  display: inline-block;
+  background: var(--green);
+  color: #ffffff;
+  text-decoration: none;
+  padding: 0.65rem 1.2rem;
+  border-radius: var(--radius);
+  font-weight: 600;
+  font-size: 0.95rem;
+  margin-top: 0.4rem;
+  transition: background 0.15s;
+}
+.sypb-calc-response a.cta-inline:hover { background: var(--green-hover); }
+
+@keyframes sypb-fade-in {
+  from { opacity: 0; transform: translateY(6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .sypb-calc-response { animation: none; }
+  .sypb-calc-btn { transition: none; }
+  .sypb-calc-btn:hover { transform: none; }
+}
+
+/* small note under inputs */
+.sypb-calc-note {
+  font-size: 0.82rem;
+  color: var(--muted);
+  margin: 1rem 0 0;
+  text-align: center;
+}

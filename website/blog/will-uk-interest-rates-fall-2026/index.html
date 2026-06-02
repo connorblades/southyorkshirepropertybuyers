@@ -345,6 +345,102 @@
       <p style="margin:0;font-size:0.95rem;line-height:1.55;"><strong>Re-thinking the buy-to-let?</strong> If rate uncertainty has you weighing whether to keep the rental or exit, read <a href="/blog/should-i-sell-my-buy-to-let-2026/">should I sell my buy-to-let in 2026?</a>.</p>
     </div>
 
+    
+    <h2>Put your own mortgage through the rate scenarios</h2>
+    <p>Forecasts move markets, but they also move your monthly payment. Enter your loan, your current rate and the years remaining. The calculator below updates instantly and shows what each plausible Bank Rate scenario means for you in cash. The +1% and +2% rows mirror the upside scenarios in the MPC's November fan chart — the downside cuts work the other way.</p>
+
+    <section class="sypb-calc" data-calc="mortgage" aria-labelledby="mortgage-calc-heading-rates">
+      <header class="sypb-calc-header">
+        <h3 id="mortgage-calc-heading-rates">Mortgage payment calculator</h3>
+        <p>Enter your loan, rate and term. Numbers update as you type. No data leaves your browser.</p>
+      </header>
+
+      <div class="sypb-calc-grid">
+        <div class="sypb-calc-field">
+          <label for="calc-loan-rates">Outstanding loan balance</label>
+          <div class="sypb-calc-input-wrap">
+            <span class="prefix">£</span>
+            <input id="calc-loan-rates" type="number" inputmode="decimal" min="0" step="1000" value="180000" class="has-prefix" data-calc-input="loan">
+          </div>
+        </div>
+
+        <div class="sypb-calc-field">
+          <label for="calc-rate-rates">Interest rate</label>
+          <div class="sypb-calc-input-wrap">
+            <input id="calc-rate-rates" type="number" inputmode="decimal" min="0" max="20" step="0.01" value="5.25" class="has-suffix" data-calc-input="rate">
+            <span class="suffix">%</span>
+          </div>
+        </div>
+
+        <div class="sypb-calc-field">
+          <label for="calc-term-rates">Years remaining on mortgage</label>
+          <div class="sypb-calc-input-wrap">
+            <input id="calc-term-rates" type="number" inputmode="decimal" min="1" max="40" step="1" value="22" class="has-suffix" data-calc-input="term">
+            <span class="suffix">yrs</span>
+          </div>
+        </div>
+
+        <div class="sypb-calc-field">
+          <label for="calc-type-rates">Mortgage type</label>
+          <div class="sypb-calc-input-wrap">
+            <select id="calc-type-rates" data-calc-input="type">
+              <option value="repayment">Repayment (capital &amp; interest)</option>
+              <option value="interest">Interest-only</option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+      <div class="sypb-calc-results" role="status" aria-live="polite">
+        <div class="sypb-calc-result-cell">
+          <span class="label">Monthly payment</span>
+          <span class="value" data-calc-out="month">—</span>
+        </div>
+        <div class="sypb-calc-result-cell">
+          <span class="label">Total paid over term</span>
+          <span class="value" data-calc-out="total">—</span>
+        </div>
+        <div class="sypb-calc-result-cell">
+          <span class="label">Total interest</span>
+          <span class="value" data-calc-out="interest">—</span>
+        </div>
+      </div>
+
+      <div class="sypb-calc-scenarios">
+        <h4>If your rate rises at renewal</h4>
+        <ul data-calc-out="scenarios"></ul>
+      </div>
+
+      <div class="sypb-calc-question">
+        <h4>Honestly — does that monthly figure work for your household?</h4>
+        <div class="sypb-calc-buttons">
+          <button type="button" class="sypb-calc-btn" data-calc-action="ok">Yes — it's tight but manageable</button>
+          <button type="button" class="sypb-calc-btn warn" data-calc-action="stretched">I can pay it now, but a rate rise would break me</button>
+          <button type="button" class="sypb-calc-btn danger" data-calc-action="help">No — I'm already missing payments or about to</button>
+        </div>
+
+        <div class="sypb-calc-response" data-calc-response="ok" role="region">
+          <h5>Good — your buffer is real, but plan for renewal.</h5>
+          <p>If the figure works today, your priority is preparing for the rate at your next renewal. The Mortgage Charter lets you lock in a new rate up to six months before your current deal ends without penalty. If you ever do hit trouble, the forbearance options on this site still apply — they exist for short, unexpected shocks (illness, redundancy, divorce) even when the underlying mortgage is normally affordable.</p>
+        </div>
+
+        <div class="sypb-calc-response warn" data-calc-response="stretched" role="region">
+          <h5>You're in the zone the Mortgage Charter was built for.</h5>
+          <p>The Charter lets you switch to interest-only for six months <em>or</em> extend your term to reduce monthly payments — both with no affordability check and no credit-file marker. For a loan like the one above, switching to interest-only typically cuts your payment by 30–40%. That alone can absorb a 2% rate shock. If after running those options the maths still doesn't work, selling on your own terms while you still have equity and time almost always beats waiting for a forced sale.</p>
+          <a class="cta-inline" href="/get-offer/">See what we'd offer for the house</a>
+        </div>
+
+        <div class="sypb-calc-response danger" data-calc-response="help" role="region">
+          <h5>You're not alone, and the order of what to do next matters.</h5>
+          <p>Start with two free calls: <strong>StepChange (0800 138 1111)</strong> and <strong>your lender's hardship team</strong>. Both are free, neither will judge you, and asking the lender for help is <em>not</em> a credit-file event under the Mortgage Charter. Lenders have legal duties to try forbearance, term extension and interest-only switches before any repossession step.</p>
+          <p>If you've had those conversations and the position is genuinely unrecoverable, selling on your own terms — while you still have time, equity and a clean title — is almost always a better outcome than waiting for the court timeline. We don't charge fees, we don't pressure, and we can give you a written offer within 24–48 hours so you know what's on the table.</p>
+          <a class="cta-inline" href="/get-offer/">Get a no-obligation cash offer</a>
+        </div>
+      </div>
+
+      <p class="sypb-calc-note">For illustration only — not financial advice. Your actual payment depends on your lender's product terms, any product fees, and any arrears already on the account. Get personalised free advice from <a href="https://www.stepchange.org/" rel="noopener" target="_blank">StepChange</a> or <a href="https://www.moneyhelper.org.uk/" rel="noopener" target="_blank">MoneyHelper</a>.</p>
+    </section>
+
     <h2>What does this mean for UK property sellers in 2026?</h2>
     <p>Three implications matter most.</p>
     <p>First, mortgage rates are likely to ease but not collapse. Even if Bank Rate falls to 3.25 or 3.50% by year-end, mortgage rates won't be back to the sub-2% levels of 2020 to 2021. Buyers will continue to face affordability constraints.</p>
@@ -483,6 +579,8 @@
   }
 })();
 </script>
+
+<script defer src="/js/calculators.js"></script>
 
 </body>
 </html>
