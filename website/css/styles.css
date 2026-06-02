@@ -2599,3 +2599,46 @@ h1 em {
 @media (prefers-reduced-motion: reduce) {
   #sypb-sticky-cta { transition: none; }
 }
+
+/* ──────────────────────────────────────────────
+   WHATSAPP FLOATING ACTION BUTTON
+   Always-visible green FAB, links to WhatsApp
+   with prefilled message. Repositions above the
+   sticky mobile CTA bar on small screens.
+   ────────────────────────────────────────────── */
+#sypb-whatsapp-fab {
+  position: fixed;
+  bottom: 1.5rem;
+  right: 1.5rem;
+  width: 58px;
+  height: 58px;
+  border-radius: 50%;
+  background: #25D366;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.18);
+  z-index: 95;
+  transition: transform 0.2s cubic-bezier(0.22,1,0.36,1), box-shadow 0.2s;
+}
+#sypb-whatsapp-fab:hover {
+  transform: scale(1.08);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.24);
+  color: #ffffff;
+}
+#sypb-whatsapp-fab:active { transform: scale(0.97); }
+@media (max-width: 768px) {
+  #sypb-whatsapp-fab {
+    bottom: calc(5rem + env(safe-area-inset-bottom, 0px));
+    right: 1rem;
+    width: 52px;
+    height: 52px;
+  }
+  #sypb-whatsapp-fab svg { width: 24px; height: 24px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  #sypb-whatsapp-fab { transition: none; }
+  #sypb-whatsapp-fab:hover { transform: none; }
+}
