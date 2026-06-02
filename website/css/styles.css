@@ -2454,3 +2454,148 @@ h1 em {
   min-height: 1px;
 }
 .sypb-equity-insight:empty { display: none; }
+
+/* ──────────────────────────────────────────────
+   ANIMATED STAT STRIP
+   For "1,000+ sellers helped" type counters
+   that count up when scrolled into view.
+   ────────────────────────────────────────────── */
+.sypb-stats-strip {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+  padding: 2.5rem 1.5rem;
+  margin: 0;
+  background: var(--surface);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+@media (max-width: 768px) {
+  .sypb-stats-strip {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.75rem 1rem;
+    padding: 2rem 1rem;
+  }
+}
+.sypb-stat {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+.sypb-stat .num {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--green);
+  line-height: 1;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: -0.02em;
+}
+@media (max-width: 768px) {
+  .sypb-stat .num { font-size: 2rem; }
+}
+.sypb-stat .label {
+  font-size: 0.88rem;
+  color: var(--muted);
+  font-weight: 500;
+  line-height: 1.35;
+}
+
+/* ──────────────────────────────────────────────
+   STICKY MOBILE CTA BAR
+   Fixed at bottom on viewports < 768px, appears
+   after 30% scroll, dismissible per session.
+   ────────────────────────────────────────────── */
+#sypb-sticky-cta {
+  display: none;
+}
+@media (max-width: 768px) {
+  #sypb-sticky-cta {
+    display: flex;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 90;
+    background: var(--surface);
+    border-top: 1px solid var(--border);
+    box-shadow: 0 -4px 16px rgba(0,0,0,0.07);
+    padding: 0.65rem 0.75rem calc(0.65rem + env(safe-area-inset-bottom, 0px));
+    gap: 0.55rem;
+    align-items: stretch;
+    transform: translateY(100%);
+    transition: transform 0.35s cubic-bezier(0.22,1,0.36,1), opacity 0.3s;
+    opacity: 0;
+    pointer-events: none;
+  }
+  #sypb-sticky-cta.is-visible {
+    transform: translateY(0);
+    opacity: 1;
+    pointer-events: auto;
+  }
+  #sypb-sticky-cta.is-dismissed {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+}
+#sypb-sticky-cta a {
+  flex: 1 1 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  text-decoration: none;
+  border-radius: 7px;
+  padding: 0.75rem 0.5rem;
+  font-family: inherit;
+  font-size: 0.92rem;
+  font-weight: 600;
+  line-height: 1.2;
+  white-space: nowrap;
+  transition: background 0.15s, color 0.15s;
+}
+#sypb-sticky-cta .sticky-cta-primary {
+  background: var(--green);
+  color: #ffffff;
+  flex: 2 1 auto;
+}
+#sypb-sticky-cta .sticky-cta-primary:hover,
+#sypb-sticky-cta .sticky-cta-primary:active {
+  background: var(--green-hover);
+}
+#sypb-sticky-cta .sticky-cta-secondary {
+  background: var(--surface-alt);
+  color: var(--heading);
+  border: 1px solid var(--border);
+  flex: 1 1 auto;
+}
+#sypb-sticky-cta .sticky-cta-secondary:hover {
+  background: var(--green-subtle);
+  color: var(--green);
+}
+#sypb-sticky-cta .sticky-cta-icon {
+  display: inline-flex;
+  align-items: center;
+}
+#sypb-sticky-cta .sticky-cta-close {
+  flex: 0 0 auto;
+  width: 36px;
+  background: transparent;
+  border: 1px solid var(--border);
+  border-radius: 7px;
+  color: var(--muted);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  font-family: inherit;
+}
+#sypb-sticky-cta .sticky-cta-close:hover {
+  background: var(--surface-alt);
+  color: var(--heading);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #sypb-sticky-cta { transition: none; }
+}
