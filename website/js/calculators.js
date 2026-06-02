@@ -106,8 +106,89 @@
     recalc();
   }
 
+  /* ──────────────── Cash offer estimator ────────────────
+     User enters their Zoopla / Rightmove estimated market value
+     and chooses a property condition. The calculator returns:
+
+       condition-adjusted market value = MV × condition multiplier
+       cash offer estimate             = adjusted × 0.85
+
+     Final offer is firm only after a 15-minute viewing — the range
+     shown (±5%) reflects that uncertainty honestly rather than
+     pretending the estimator is the offer.
+     ─────────────────────────────────────────────── */
+  var CONDITION_MULT = {
+    excellent: 1.00, // Refurbished, move-in ready
+    good:      0.85, // Well-maintained, minor cosmetics only
+    fair:      0.65, // Dated, needs modernisation (kitchen/bathroom)
+    poor:      0.40, // Significant work — re-wiring, roof, damp
+    derelict:  0.20  // Uninhabitable, structural problems
+  };
+  var CASH_OFFER_FACTOR = 0.85; // 15% reduction below condition-adjusted MV
+
+  function initCashOfferCalc(root) {
+    var value = root.querySelector('[data-calc-input="value"]');
+    var condition = root.querySelector('[data-calc-input="condition"]');
+    var outOffer = root.querySelector('[data-calc-out="offer"]');
+    var outRange = root.querySelector('[data-calc-out="offer-range"]');
+    var outAdjusted = root.querySelector('[data-calc-out="adjusted"]');
+    var outPercent = root.querySelector('[data-calc-out="percent"]');
+
+    if (!value || !condition || !outOffer) return;
+
+    function recalc() {
+      var V = parseFloat(value.value) || 0;
+      var C = condition.value || 'good';
+
+      if (V <= 0) {
+        outOffer.textContent = '—';
+        if (outRange) outRange.textContent = '';
+        if (outAdjusted) outAdjusted.textContent = '—';
+        if (outPercent) outPercent.textContent = '—';
+        return;
+      }
+
+      var mult = CONDITION_MULT[C] != null ? CONDITION_MULT[C] : 1;
+      var adjusted = V * mult;
+      var offerPoint = adjusted * CASH_OFFER_FACTOR;
+      var offerLow = offerPoint * 0.95;
+      var offerHigh = offerPoint * 1.00;
+      var percentOfMV = (offerPoint / V) * 100;
+
+      outOffer.textContent = fmtCurrency0.format(offerPoint);
+      if (outRange) {
+        outRange.textContent = fmtCurrency0.format(offerLow) + ' – ' + fmtCurrency0.format(offerHigh);
+      }
+      if (outAdjusted) outAdjusted.textContent = fmtCurrency0.format(adjusted);
+      if (outPercent) outPercent.textContent = Math.round(percentOfMV) + '%';
+    }
+
+    [value, condition].forEach(function (el) {
+      if (!el) return;
+      el.addEventListener('input', recalc);
+      el.addEventListener('change', recalc);
+    });
+
+    root.querySelectorAll('[data-calc-action]').forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        var action = btn.getAttribute('data-calc-action');
+        root.querySelectorAll('[data-calc-response]').forEach(function (block) {
+          block.style.display = block.getAttribute('data-calc-response') === action
+            ? 'block' : 'none';
+        });
+        var resp = root.querySelector('[data-calc-response="' + action + '"]');
+        if (resp && resp.scrollIntoView) {
+          resp.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        }
+      });
+    });
+
+    recalc();
+  }
+
   function boot() {
     document.querySelectorAll('[data-calc="mortgage"]').forEach(initMortgageCalc);
+    document.querySelectorAll('[data-calc="cash-offer"]').forEach(initCashOfferCalc);
   }
 
   if (document.readyState === 'loading') {
