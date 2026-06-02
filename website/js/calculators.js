@@ -186,9 +186,124 @@
     recalc();
   }
 
+  /* ──────────────── Equity / net walkaway estimator ────────────────
+     Three-route comparison. Same MV + mortgage inputs across all three;
+     each route has its own (sale-price multiplier, fee model) so the
+     net cash to seller varies. Highest net is highlighted; negative
+     numbers display as shortfalls in red.
+
+     Defaults reflect 2026 South Yorkshire market norms:
+       Estate agent → sale 98% of MV, fees 1.5% + VAT + £1,500 legals
+       Cash buyer   → sale 80% of MV, no fees (we cover legals)
+       Auction      → sale 78% of MV, fees 1.0% + £1,500 legals
+     ─────────────────────────────────────────────── */
+  var EQUITY_ROUTES = {
+    'estate-agent': { sale: 0.98, feePct: 0.018, feeFlat: 1500 },
+    'cash-buyer':   { sale: 0.80, feePct: 0.000, feeFlat: 0    },
+    'auction':      { sale: 0.78, feePct: 0.010, feeFlat: 1500 }
+  };
+
+  function initEquityCalc(root) {
+    var mv = root.querySelector('[data-calc-input="mv"]');
+    var mortgage = root.querySelector('[data-calc-input="mortgage"]');
+    var charges = root.querySelector('[data-calc-input="charges"]');
+
+    if (!mv || !mortgage) return;
+
+    function recalc() {
+      var MV = parseFloat(mv.value) || 0;
+      var M = parseFloat(mortgage.value) || 0;
+      var C = charges ? (parseFloat(charges.value) || 0) : 0;
+      var totalCharges = M + C;
+
+      var results = {};
+      var bestNet = -Infinity;
+      var bestKey = null;
+
+      Object.keys(EQUITY_ROUTES).forEach(function (key) {
+        var r = EQUITY_ROUTES[key];
+        var sale = MV * r.sale;
+        var fee = sale * r.feePct + r.feeFlat;
+        var net = sale - fee - totalCharges;
+        results[key] = { sale: sale, fee: fee, net: net };
+        if (MV > 0 && net > bestNet) { bestNet = net; bestKey = key; }
+      });
+
+      Object.keys(results).forEach(function (key) {
+        var card = root.querySelector('[data-equity-route="' + key + '"]');
+        if (!card) return;
+        var r = results[key];
+
+        var saleEl = card.querySelector('[data-equity-out="sale"]');
+        var feeEl = card.querySelector('[data-equity-out="fee"]');
+        var mortgageEl = card.querySelector('[data-equity-out="mortgage"]');
+        var netEl = card.querySelector('[data-equity-out="net"]');
+        var pctEl = card.querySelector('[data-equity-out="pct"]');
+        var netRow = card.querySelector('.line.net');
+
+        if (MV <= 0) {
+          if (saleEl) saleEl.textContent = '—';
+          if (feeEl) feeEl.textContent = '—';
+          if (mortgageEl) mortgageEl.textContent = '—';
+          if (netEl) netEl.textContent = '—';
+          if (pctEl) pctEl.textContent = '';
+          if (netRow) netRow.classList.remove('is-shortfall');
+          card.classList.remove('is-best');
+          return;
+        }
+
+        if (saleEl) saleEl.textContent = fmtCurrency0.format(r.sale);
+        if (feeEl) feeEl.textContent = '−' + fmtCurrency0.format(r.fee);
+        if (mortgageEl) mortgageEl.textContent = totalCharges > 0
+          ? '−' + fmtCurrency0.format(totalCharges) : '—';
+
+        if (netEl) {
+          if (r.net >= 0) {
+            netEl.textContent = fmtCurrency0.format(r.net);
+          } else {
+            netEl.innerHTML = '−' + fmtCurrency0.format(Math.abs(r.net)) +
+              ' <span style="font-size:0.65em;font-weight:500;">shortfall</span>';
+          }
+        }
+        if (netRow) netRow.classList.toggle('is-shortfall', r.net < 0);
+        if (pctEl) {
+          pctEl.textContent = Math.round(r.net / MV * 100) + '% of market value';
+        }
+        card.classList.toggle('is-best', key === bestKey);
+      });
+
+      // Toggle the contextual insight block
+      var insight = root.querySelector('[data-equity-insight]');
+      if (insight && MV > 0) {
+        var ea = results['estate-agent'].net;
+        var cb = results['cash-buyer'].net;
+        var gap = ea - cb;
+        if (totalCharges > MV * 0.85) {
+          insight.innerHTML = '<strong>Heads up — you may be in negative equity at the cash-buyer price.</strong> A cash sale still works, but it needs your lender\'s written consent and a signed shortfall undertaking. The estate-agent route may net more in cash, but takes 4–6 months and lender consent applies there too.';
+        } else if (gap > 0) {
+          insight.innerHTML = '<strong>The estate-agent route nets you about ' +
+            fmtCurrency0.format(gap) + ' more</strong>, but takes 4–6 months and assumes the chain holds. The cash route completes in 2–4 weeks with no fees and no chain risk. If you have a binding deadline (probate, divorce, repossession, relocation), that gap is often worth less than the certainty.';
+        } else {
+          insight.innerHTML = '<strong>On these numbers, the cash route nets at least as much as the estate-agent route</strong> — and completes 4–5 months faster. Worth getting a firm offer.';
+        }
+      } else if (insight) {
+        insight.innerHTML = '';
+      }
+    }
+
+    [mv, mortgage, charges].forEach(function (el) {
+      if (!el) return;
+      el.addEventListener('input', recalc);
+      el.addEventListener('change', recalc);
+    });
+
+    recalc();
+  }
+
   function boot() {
     document.querySelectorAll('[data-calc="mortgage"]').forEach(initMortgageCalc);
     document.querySelectorAll('[data-calc="cash-offer"]').forEach(initCashOfferCalc);
+    document.querySelectorAll('[data-calc="equity"]').forEach(initEquityCalc);
   }
 
   if (document.readyState === 'loading') {

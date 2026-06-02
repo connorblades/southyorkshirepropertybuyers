@@ -343,6 +343,92 @@
     <p>If the property is jointly owned, both parties must consent to a sale. There is no legal mechanism by which one co-owner can compel the other to sign a TR1 without a court order. The non-owning spouse of a married couple also has statutory <strong>home rights</strong> under Part IV of the Family Law Act 1996, which can be protected by a Class F land charge against the title — preventing the legal owner from selling over the other's head.</p>
     <p>But the corollary is also true: the court can force the sale. Either spouse can apply under section 24A MCA 1973 as part of financial remedy proceedings. Cohabiting co-owners apply under section 14 TOLATA 1996. The application is not trivial — most South Yorkshire financial-remedy hearings list in Sheffield Combined Court Centre, and contested cases routinely take 12–18 months from issue to final order. But the path exists, and the existence of the path is often enough to bring a reluctant party back to the table.</p>
 
+    
+    <h2>See the financial picture for your own house</h2>
+    <p>Equity split is the central financial question in a divorce sale. Use the calculator below to see what each of the three sale routes actually nets after the mortgage is cleared — both halves of the relationship can run their own numbers privately, then come to the table on the same footing.</p>
+
+    <section class="sypb-calc" data-calc="equity" aria-labelledby="equity-calc-heading-shd-div">
+      <header class="sypb-calc-header">
+        <h3 id="equity-calc-heading-shd-div">Net walkaway calculator — three routes compared</h3>
+        <p>Enter your house value and what's left on the mortgage. We'll show the cash you'd actually walk away with on each of the three real sale routes, after fees and after the mortgage is cleared.</p>
+      </header>
+
+      <div class="sypb-calc-grid">
+        <div class="sypb-calc-field">
+          <label for="equity-mv-shd-div">Estimated market value</label>
+          <div class="sypb-calc-input-wrap">
+            <span class="prefix">£</span>
+            <input id="equity-mv-shd-div" type="number" inputmode="decimal" min="0" step="1000" value="220000" class="has-prefix" data-calc-input="mv">
+          </div>
+        </div>
+
+        <div class="sypb-calc-field">
+          <label for="equity-mortgage-shd-div">Outstanding mortgage balance</label>
+          <div class="sypb-calc-input-wrap">
+            <span class="prefix">£</span>
+            <input id="equity-mortgage-shd-div" type="number" inputmode="decimal" min="0" step="1000" value="120000" class="has-prefix" data-calc-input="mortgage">
+          </div>
+        </div>
+
+        <div class="sypb-calc-field">
+          <label for="equity-charges-shd-div">Other secured charges (optional)</label>
+          <div class="sypb-calc-input-wrap">
+            <span class="prefix">£</span>
+            <input id="equity-charges-shd-div" type="number" inputmode="decimal" min="0" step="500" value="0" class="has-prefix" data-calc-input="charges">
+          </div>
+        </div>
+      </div>
+
+      <div class="sypb-equity-grid" role="status" aria-live="polite">
+
+        <article class="sypb-equity-card" data-equity-route="estate-agent">
+          <span class="badge">HIGHEST NET</span>
+          <h4 class="route">Estate agent</h4>
+          <p class="timeline">4–6 months · chain risk</p>
+          <div class="line"><span class="label-col">Sale price</span><strong data-equity-out="sale">—</strong></div>
+          <div class="line"><span class="label-col">Fees (agent + legals)</span><strong data-equity-out="fee">—</strong></div>
+          <div class="line"><span class="label-col">Mortgage cleared</span><strong data-equity-out="mortgage">—</strong></div>
+          <div class="line net"><span class="label-col">Net to you</span><strong data-equity-out="net">—</strong></div>
+          <div class="pct" data-equity-out="pct"></div>
+        </article>
+
+        <article class="sypb-equity-card" data-equity-route="cash-buyer">
+          <span class="badge">HIGHEST NET</span>
+          <h4 class="route">Cash buyer (us)</h4>
+          <p class="timeline">2–4 weeks · guaranteed</p>
+          <div class="line"><span class="label-col">Sale price</span><strong data-equity-out="sale">—</strong></div>
+          <div class="line"><span class="label-col">Fees (we cover legals)</span><strong data-equity-out="fee">—</strong></div>
+          <div class="line"><span class="label-col">Mortgage cleared</span><strong data-equity-out="mortgage">—</strong></div>
+          <div class="line net"><span class="label-col">Net to you</span><strong data-equity-out="net">—</strong></div>
+          <div class="pct" data-equity-out="pct"></div>
+        </article>
+
+        <article class="sypb-equity-card" data-equity-route="auction">
+          <span class="badge">HIGHEST NET</span>
+          <h4 class="route">Auction</h4>
+          <p class="timeline">6–16 weeks · reserve risk</p>
+          <div class="line"><span class="label-col">Sale price</span><strong data-equity-out="sale">—</strong></div>
+          <div class="line"><span class="label-col">Fees (auctioneer + legals)</span><strong data-equity-out="fee">—</strong></div>
+          <div class="line"><span class="label-col">Mortgage cleared</span><strong data-equity-out="mortgage">—</strong></div>
+          <div class="line net"><span class="label-col">Net to you</span><strong data-equity-out="net">—</strong></div>
+          <div class="pct" data-equity-out="pct"></div>
+        </article>
+
+      </div>
+
+      <div class="sypb-equity-insight" data-equity-insight></div>
+
+      <div class="sypb-calc-question">
+        <h4>What's your situation?</h4>
+        <div class="sypb-calc-buttons">
+          <a class="sypb-calc-btn" href="/get-offer/" style="text-decoration:none;display:inline-block;text-align:center;">Get a firm cash offer</a>
+          <a class="sypb-calc-btn" href="/cash-buyer-vs-estate-agent/" style="text-decoration:none;display:inline-block;text-align:center;">See full route-by-route comparison</a>
+        </div>
+      </div>
+
+      <p class="sypb-calc-note">For illustration only. Estate-agent route assumes a 98% sale-of-asking price, 1.5% + VAT agent fee, and £1,500 conveyancing. Cash route assumes our typical 80% of market value with no fees (we cover legals). Auction assumes 78% of market value with 1.0% auctioneer + £1,500 legals. Your numbers will vary by chain dynamics, lender consent (in negative equity), and any product fees.</p>
+    </section>
+
     <h2>The financial picture, side by side</h2>
     <p>For a South Yorkshire couple looking at a typical £230,000 family home with £130,000 of mortgage outstanding, here is what each route actually leaves you with after costs (figures rounded for clarity, drawn from <a href="https://hoa.org.uk/advice/guides-for-homeowners/i-am-selling/how-much-should-i-pay-the-estate-agent/" rel="nofollow noopener" target="_blank">HomeOwners Alliance estate-agent fee data</a> and Land Registry / Bank of England 2026 figures).</p>
     <table style="width:100%;border-collapse:collapse;margin:1.25rem 0;font-size:0.95rem;">
@@ -637,6 +723,8 @@
   }
 })();
 </script>
+
+<script defer src="/js/calculators.js"></script>
 
 </body>
 </html>
