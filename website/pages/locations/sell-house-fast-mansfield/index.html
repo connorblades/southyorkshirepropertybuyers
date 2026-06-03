@@ -185,6 +185,44 @@
   "speakableSelector": [".page-hero h1", ".hero-intro", ".page-body h2:first-of-type"]
 }
 </script>
+
+<!-- howto-schema -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  "name": "How to estimate a cash offer for your house",
+  "description": "Get an indicative cash offer for your property based on its estimated market value and condition tier.",
+  "tool": [
+    {
+      "@type": "HowToTool",
+      "name": "South Yorkshire Property Buyers cash offer estimator"
+    }
+  ],
+  "step": [
+    {
+      "@type": "HowToStep",
+      "name": "Get an estimated market value",
+      "text": "Use Zoopla or Rightmove to get a free estimated market value for your property."
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Enter the market value",
+      "text": "Type the estimated market value into the calculator in pounds sterling."
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Pick property condition",
+      "text": "Choose the condition tier — excellent (refurbished), good (well-maintained), fair (dated), poor (significant work needed), or very poor (uninhabitable)."
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Review the indicative offer",
+      "text": "The calculator shows the indicative cash offer, the condition-adjusted market value, and the offer as a percentage of market value. Final offers follow a 15-minute viewing and are guaranteed for 14 days."
+    }
+  ]
+}
+</script>
 </head>
 <body>
 
@@ -329,6 +367,29 @@
     <p>That matters because the current page-1 cash-buyer SERP for "sell house fast Mansfield" is built almost entirely on out-of-town registered offices: Good Move is Thorpe Park, Leeds LS15; SellTo gives a Manchester M15 address; Property Cash Buyer publishes no Mansfield office; Repossession Stoppers publishes no Mansfield office; Property Solvers' nearest base is Office 15 at Long Eaton NG10, 19 miles south-east. None is Mansfield-registered. We are.</p>
     <p>We disclose one further item proactively. Companies House shows our trading parent was previously named <strong>Lord CNB Properties Ltd until 18 April 2024</strong>. Both names remain permanently visible on the public filing history. Name changes are routine in property structures; the public record is the trust signal. A buyer who hides a former name is a buyer to walk away from.</p>
 
+    
+    <figure class="sypb-route-bars reveal" aria-label="Estate agent vs cash buyer timeline comparison" style="margin:2rem 0 2.5rem;">
+      <figcaption>
+        <span class="route-bars-title">How long each route really takes</span>
+        <span class="route-bars-sub">2026 UK averages — Zoopla, HomeOwners Alliance, Property Solvers</span>
+      </figcaption>
+      <div class="route-bars-grid">
+        <div class="route-bar">
+          <span class="route-name">Estate agent</span>
+          <div class="route-track"><div class="route-fill route-fill--ea" style="--w:92%"></div></div>
+          <span class="route-time">22–26 weeks</span>
+        </div>
+        <div class="route-bar">
+          <span class="route-name">Cash buyer (us)</span>
+          <div class="route-track"><div class="route-fill route-fill--sypb" style="--w:14%"></div></div>
+          <span class="route-time">2–4 weeks</span>
+        </div>
+      </div>
+      <div class="route-axis" aria-hidden="true">
+        <span>0w</span><span>5w</span><span>10w</span><span>15w</span><span>20w</span><span>25w+</span>
+      </div>
+    </figure>
+
     <h2>The Mansfield property market right now</h2>
     <p>Mansfield's average dwelling price stood at <strong>£187,000 in November 2025</strong> on <a href="https://www.gov.uk/government/statistics/uk-house-price-index" rel="noopener">HM Land Registry's UK House Price Index</a>, broadly flat against £185,000 in November 2024. The headline that some national pages lift is the East Midlands regional figure of +2.7% YoY — that is the region, not Mansfield. The honest Mansfield-specific print is flat-YoY at the district level, with semi-detached homes up 1.7% and flats down 3.2% in the same window per the ONS HPI breakdown by property type.</p>
     <p>Mansfield sits below most of its closest comparators. Sheffield averaged £230,000 in February 2026; Chesterfield £188,400; Nottingham £201,000; Barnsley £174,000. Days-on-market across Mansfield split sharply by postcode tier:</p>
@@ -340,6 +401,80 @@
     </ul>
     <p>The macro picture is steady but not benign. The <a href="https://www.bankofengland.co.uk/monetary-policy-summary-and-minutes/2026/april-2026" rel="noopener">Bank of England held the Bank Rate at 3.75%</a> at the 30 April 2026 MPC meeting after three cuts from the 5.25% peak; CPI inflation was 3.3% in the 12 months to March 2026, still above target. The <a href="https://www.legislation.gov.uk/ukpga/2025/26/contents" rel="noopener">Renters' Rights Act 2025</a> commenced on 1 May 2026, abolishing Section 21 and introducing a four-month Ground 1A notice plus a 12-month re-let ban for landlords selling. Many small landlords with stock in NG18, NG19 and NG20 are weighing exit.</p>
     <div class="key-fact"><strong>Mansfield is in Nottinghamshire, not South Yorkshire — but it is our home base.</strong> South Yorkshire Property Buyers operates a cross-border North Midlands footprint. The brand name reflects where the majority of buying activity happens; the registered office reflects where the company actually sits. Mansfield District Council bills the council tax across NG18, parts of NG19 and parts of NG20; Bassetlaw / Bolsover / Ashfield district councils cover the surrounding fringe. The county court hearing Nottinghamshire family and possession applications for Mansfield residents is at Rosemary Street, Mansfield NG19 6EE. None of these reflect a generic North-Midlands take — they are local realities.</div>
+
+    
+    <h2>What we'd typically offer for a Mansfield house</h2>
+    <p>Mansfield NG18, NG19, NG20 and NG21 spread from town-centre stock through ex-mining villages with very different pricing dynamics. Enter your Zoopla valuation and condition tier below for an instant indicative cash offer.</p>
+
+    <section class="sypb-calc" data-calc="cash-offer" aria-labelledby="cash-offer-heading-shf-man">
+      <header class="sypb-calc-header">
+        <h3 id="cash-offer-heading-shf-man">Cash offer estimator</h3>
+        <p>Enter your Zoopla / Rightmove valuation and an honest assessment of condition. Numbers update as you type. No data leaves your browser.</p>
+      </header>
+
+      <div class="sypb-calc-grid">
+        <div class="sypb-calc-field">
+          <label for="cash-value-shf-man">Estimated market value</label>
+          <div class="sypb-calc-input-wrap">
+            <span class="prefix">£</span>
+            <input id="cash-value-shf-man" type="number" inputmode="decimal" min="0" step="1000" value="200000" class="has-prefix" data-calc-input="value" aria-describedby="cash-value-note-shf-man">
+          </div>
+          <small id="cash-value-note-shf-man" style="font-size:0.8rem;color:var(--muted);">Don't know? Get a free estimate from <a href="https://www.zoopla.co.uk/home-values/" rel="noopener" target="_blank">Zoopla</a> or <a href="https://www.rightmove.co.uk/house-prices.html" rel="noopener" target="_blank">Rightmove</a>.</small>
+        </div>
+
+        <div class="sypb-calc-field">
+          <label for="cash-condition-shf-man">Property condition</label>
+          <div class="sypb-calc-input-wrap">
+            <select id="cash-condition-shf-man" data-calc-input="condition">
+              <option value="excellent">Excellent — refurbished, move-in ready</option>
+              <option value="good" selected>Good — well-maintained, minor cosmetics</option>
+              <option value="fair">Fair — dated, needs modernisation</option>
+              <option value="poor">Poor — significant work needed (roof, damp, rewiring)</option>
+              <option value="derelict">Very poor — uninhabitable or structural problems</option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+      <div class="sypb-calc-results single-headline" role="status" aria-live="polite">
+        <div class="sypb-calc-result-cell headline">
+          <span class="label">Indicative cash offer</span>
+          <span class="value" data-calc-out="offer">—</span>
+          <span class="range" data-calc-out="offer-range"></span>
+        </div>
+        <div class="sypb-calc-result-cell">
+          <span class="label">Condition-adjusted value</span>
+          <span class="value" data-calc-out="adjusted">—</span>
+        </div>
+        <div class="sypb-calc-result-cell">
+          <span class="label">% of market value</span>
+          <span class="value" data-calc-out="percent">—</span>
+        </div>
+      </div>
+
+      <div class="sypb-calc-question">
+        <h4>Does that figure work for what you need?</h4>
+        <div class="sypb-calc-buttons">
+          <button type="button" class="sypb-calc-btn" data-calc-action="ok">Yes — get me a firm offer</button>
+          <button type="button" class="sypb-calc-btn warn" data-calc-action="lower">Lower than I'd hoped — what are my options?</button>
+        </div>
+
+        <div class="sypb-calc-response" data-calc-response="ok" role="region">
+          <h5>Good. We can firm this up within 24–48 hours.</h5>
+          <p>The figure above is indicative — a firm written offer follows a 15-minute viewing (in person or by video) and a desktop check of comparable sales on your street. Once signed, the offer is guaranteed for 14 days and we cover all legal fees. Typical completion is 2–4 weeks.</p>
+          <a class="cta-inline" href="/get-offer/">Get a firm offer</a>
+        </div>
+
+        <div class="sypb-calc-response warn" data-calc-response="lower" role="region">
+          <h5>That gap is real — and so is what you get for it.</h5>
+          <p>A cash sale at our typical 80–85% of market value buys you three things the estate-agent route can't reliably deliver: <strong>certainty</strong> (no chain, no buyer pulling out), <strong>speed</strong> (2–4 weeks vs 4–6 months average), and <strong>no fees</strong> (we cover legals; estate agents take 1–2% + VAT on top). For sellers in a real time-bind — divorce, probate, mortgage arrears, job relocation — that gap is often worth less than the equivalent in stress, double mortgage payments, or a chain collapse at week ten.</p>
+          <p>If you're not under time pressure, the estate-agent route may net you more. The honest comparison is on our <a href="/cash-buyer-vs-estate-agent/">cash buyer vs estate agent</a> page — read it before deciding.</p>
+          <a class="cta-inline" href="/get-offer/">Still get a firm offer (no obligation)</a>
+        </div>
+      </div>
+
+      <p class="sypb-calc-note">For illustration only. Final offers depend on a desktop check of comparable sales, a 15-minute viewing, and any title or structural issues found during conveyancing. Our offers typically land at 80–85% of open market value — see <a href="/blog/how-much-do-cash-buyers-offer-below-market-value/">how cash buyer pricing works</a>.</p>
+    </section>
 
     <h2>Selling in Mansfield by postcode</h2>
     <p>The market in NG18 is not the market in NG21. National competitor pages treat Mansfield as one place. It is not. Here is how things actually differ across NG18 to NG21, with the dominant stock type and the characteristic local feature for each postcode named.</p>
@@ -684,6 +819,8 @@
 </script>
 
 <script defer src="/js/animations.js"></script>
+
+<script defer src="/js/calculators.js"></script>
 
 </body>
 </html>
