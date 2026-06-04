@@ -1488,7 +1488,10 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": ["LocalBusiness", "RealEstateAgent"],
+  "@type": [
+    "LocalBusiness",
+    "RealEstateAgent"
+  ],
   "@id": "https://southyorkshirepropertybuyers.com/#organization",
   "name": "South Yorkshire Property Buyers",
   "legalName": "Bullseye Properties Ltd",
@@ -1512,21 +1515,56 @@
   "openingHoursSpecification": [
     {
       "@type": "OpeningHoursSpecification",
-      "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
+      "dayOfWeek": [
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday",
+        "Saturday",
+        "Sunday"
+      ],
       "opens": "08:00",
       "closes": "20:00"
     }
   ],
   "areaServed": [
-    {"@type": "City", "name": "Sheffield"},
-    {"@type": "City", "name": "Rotherham"},
-    {"@type": "City", "name": "Doncaster"},
-    {"@type": "City", "name": "Barnsley"},
-    {"@type": "City", "name": "Chesterfield"},
-    {"@type": "City", "name": "Worksop"},
-    {"@type": "City", "name": "Retford"},
-    {"@type": "City", "name": "Gainsborough"},
-    {"@type": "City", "name": "Mansfield"}
+    {
+      "@type": "City",
+      "name": "Sheffield"
+    },
+    {
+      "@type": "City",
+      "name": "Rotherham"
+    },
+    {
+      "@type": "City",
+      "name": "Doncaster"
+    },
+    {
+      "@type": "City",
+      "name": "Barnsley"
+    },
+    {
+      "@type": "City",
+      "name": "Chesterfield"
+    },
+    {
+      "@type": "City",
+      "name": "Worksop"
+    },
+    {
+      "@type": "City",
+      "name": "Retford"
+    },
+    {
+      "@type": "City",
+      "name": "Gainsborough"
+    },
+    {
+      "@type": "City",
+      "name": "Mansfield"
+    }
   ],
   "serviceType": "Cash Property Buyers",
   "address": {
@@ -1580,8 +1618,12 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "Speakable",
-  "speakableSelector": [".hero h1", ".hero .hero-sub", "#how"]
+  "@type": "WebPage",
+  "url": "https://southyorkshirepropertybuyers.com/",
+  "speakable": {
+    "@type": "SpeakableSpecification",
+    "cssSelector": [".hero h1", ".hero .hero-sub", "#how"]
+  }
 }
 </script>
 

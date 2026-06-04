@@ -65,20 +65,53 @@
     "https://find-and-update.company-information.service.gov.uk/company/14869608"
   ],
   "areaServed": [
-    {"@type": "City", "name": "Sheffield"},
-    {"@type": "City", "name": "Rotherham"},
-    {"@type": "City", "name": "Doncaster"},
-    {"@type": "City", "name": "Barnsley"},
-    {"@type": "City", "name": "Chesterfield"},
-    {"@type": "City", "name": "Worksop"},
-    {"@type": "City", "name": "Retford"},
-    {"@type": "City", "name": "Gainsborough"}
+    {
+      "@type": "City",
+      "name": "Sheffield"
+    },
+    {
+      "@type": "City",
+      "name": "Rotherham"
+    },
+    {
+      "@type": "City",
+      "name": "Doncaster"
+    },
+    {
+      "@type": "City",
+      "name": "Barnsley"
+    },
+    {
+      "@type": "City",
+      "name": "Chesterfield"
+    },
+    {
+      "@type": "City",
+      "name": "Worksop"
+    },
+    {
+      "@type": "City",
+      "name": "Retford"
+    },
+    {
+      "@type": "City",
+      "name": "Gainsborough"
+    }
   ],
   "serviceType": "Cash Property Buyers",
   "address": {
     "@type": "PostalAddress",
     "addressRegion": "South Yorkshire",
-    "addressCountry": "GB"
+    "addressCountry": "GB",
+    "addressLocality": "Sheffield"
+  },
+  "email": "hello@southyorkshirepropertybuyers.com",
+  "foundingDate": "2023",
+  "priceRange": "No fees",
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 53.3811,
+    "longitude": -1.4701
   }
 }
 </script>
@@ -158,8 +191,12 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "Speakable",
-  "speakableSelector": [".page-hero h1", ".hero-intro", ".page-body h2:first-of-type"]
+  "@type": "WebPage",
+  "url": "https://southyorkshirepropertybuyers.com/cannot-afford-mortgage/",
+  "speakable": {
+    "@type": "SpeakableSpecification",
+    "cssSelector": [".page-hero h1", ".hero-intro", ".page-body h2:first-of-type"]
+  }
 }
 </script>
   <style id="nav-fix">
