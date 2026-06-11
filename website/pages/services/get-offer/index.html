@@ -229,20 +229,20 @@
       <div class="form-row">
         <div class="form-group">
           <label for="name">Your Name</label>
-          <input type="text" id="name" name="name" placeholder="John Smith" required />
+          <input type="text" id="name" name="name" placeholder="John Smith" required autocomplete="name" />
         </div>
         <div class="form-group">
           <label for="phone">Phone Number</label>
-          <input type="tel" id="phone" name="phone" placeholder="07700 000000" required />
+          <input type="tel" id="phone" name="phone" placeholder="07700 000000" required autocomplete="tel" />
         </div>
       </div>
       <div class="form-group">
         <label for="email">Email Address</label>
-        <input type="email" id="email" name="email" placeholder="john@example.com" />
+        <input type="email" id="email" name="email" placeholder="john@example.com" autocomplete="email" />
       </div>
       <div class="form-group">
         <label for="address">Property Address</label>
-        <input type="text" id="address" name="address" placeholder="Full address or postcode" required />
+        <input type="text" id="address" name="address" placeholder="Full address or postcode" required autocomplete="street-address" />
       </div>
       <div class="form-row">
         <div class="form-group">
@@ -508,7 +508,15 @@
     } catch (_) {}
     btn.disabled = false;
     btn.textContent = 'Send My Request →';
-    alert('Sorry, we could not submit your enquiry just now. Please call us on 07739 063734 or try again in a moment.');
+    var err = document.getElementById('formErrorNote');
+    if (!err) {
+      err = document.createElement('p');
+      err.id = 'formErrorNote';
+      err.setAttribute('role', 'alert');
+      err.style.cssText = 'margin-top:0.9rem;padding:0.8rem 1rem;border-radius:8px;background:#fef2f2;border:1px solid #fecaca;color:#991b1b;font-size:0.95rem;';
+      err.innerHTML = 'Sorry &mdash; we could not send your enquiry just now. Please try again in a moment, or call us directly on <a href="tel:07739063734" style="color:inherit;font-weight:700;">07739 063734</a>.';
+      this.appendChild(err);
+    }
   });
 </script>
 <script type="application/ld+json">
