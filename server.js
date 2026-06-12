@@ -1,6 +1,11 @@
 const express = require('express');
 const path = require('path');
 
+// Build dist/ from website/ at startup. dist/ is gitignored, and Hostinger's
+// default Node deployment runs `npm install` + `npm start` without
+// `npm run build` — building here makes the server self-sufficient on any host.
+require('./build');
+
 const app = express();
 const PORT = process.env.PORT || 3000;
 
