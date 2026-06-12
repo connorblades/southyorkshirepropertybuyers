@@ -101,9 +101,9 @@
   "serviceType": "Cash Property Buyers",
   "address": {
     "@type": "PostalAddress",
+    "addressLocality": "Sheffield",
     "addressRegion": "South Yorkshire",
-    "addressCountry": "GB",
-    "addressLocality": "Sheffield"
+    "addressCountry": "GB"
   },
   "email": "hello@southyorkshirepropertybuyers.com",
   "foundingDate": "2023",
@@ -361,6 +361,11 @@
 
   <div class="page-body">
 
+    <div class="quick-answer" style="background:#f3f4f6;border-left:4px solid #0f766e;padding:1rem 1.25rem;margin:0 0 1.5rem 0;border-radius:6px;">
+      <p style="margin:0;font-size:1rem;line-height:1.55;"><strong>Quick answer:</strong> Speak to your lender before you miss a payment if you can — under FCA rules and the Mortgage Charter they must consider support such as a temporary interest-only period or a term extension, and missed payments only lead to repossession after a long, regulated process. Free, independent advice is available from the services listed on this page. Selling — including a fast cash sale — is one option, not the first one.</p>
+    </div>
+
+
     <p class="post-meta" style="color:#6b7280;font-size:0.92rem;margin:0 0 0.5rem;">Written and reviewed by the South Yorkshire Property Buyers team. South Yorkshire Property Buyers is a trading name of Bullseye Properties Ltd, registered in England and Wales (<a href="https://find-and-update.company-information.service.gov.uk/company/14869608" rel="noopener" target="_blank">company number 14869608</a>), AML-registered with HMRC, member of <a href="https://www.tpos.co.uk/" rel="noopener" target="_blank">The Property Ombudsman</a>, ICO-registered. <strong>Last reviewed: 24 May 2026.</strong></p>
 
     <figure class="post-video" style="margin:1.5rem 0 2rem;">
@@ -378,7 +383,7 @@
       <li><strong>Citizens Advice</strong> — <a href="tel:08001448848">0800 144 8848</a> (England). Free, impartial, in person or by phone. Local offices in Sheffield, Doncaster, Rotherham and Barnsley with debt-specialist caseworkers.</li>
       <li><strong>MoneyHelper</strong> (the Money and Pensions Service, statutorily funded) — <a href="tel:08001387777">0800 138 7777</a>. Webchat and WhatsApp also available at <a href="https://www.moneyhelper.org.uk/en/contact-us" rel="noopener" target="_blank">moneyhelper.org.uk</a>.</li>
       <li><strong>Shelter</strong> — <a href="tel:08088004444">0808 800 4444</a>. The housing emergency line, particularly relevant once court letters arrive.</li>
-      <li><strong>National Debtline</strong> — <a href="tel:08008084000">0808 808 4000</a>. Monday to Friday 9am–8pm.</li>
+      <li><strong>National Debtline</strong> — <a href="tel:08088084000">0808 808 4000</a>. Monday to Friday 9am–8pm.</li>
     </ul>
     <p>The single biggest predictor of a bad outcome in mortgage difficulty is silence. The <a href="https://www.moneyandmentalhealth.org/financial-difficulties-suicide/" rel="noopener" target="_blank">Money and Mental Health Policy Institute</a> has found that people in problem debt are more than three times as likely to attempt suicide as those who are not, and that creditor letters and silence at home are specific triggers. Phone someone today. Tell a partner, sibling, or friend. The conversation gets harder the longer it is left, and the financial position gets harder with it.</p>
     <p>Then make the second call: <strong>your lender's mortgage support team</strong>. Ask explicitly for "the team that deals with customers in financial difficulty". Under the FCA's Mortgage Charter rules and the strengthened MCOB 13 forbearance framework (see below), simply <em>asking for help</em> does not affect your credit file. It puts you inside the protection regime described in the rest of this page.</p>
@@ -832,5 +837,43 @@
 
 <script defer src="/js/animations.js"></script>
 
+
+<div id="sypb-sticky-cta" role="region" aria-label="Get a cash offer">
+  <a class="sticky-cta-primary" href="/get-offer/">
+    <span class="sticky-cta-icon"><svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg></span>
+    Get a Cash Offer
+  </a>
+  <a class="sticky-cta-secondary" href="tel:07739063734">
+    <span class="sticky-cta-icon"><svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg></span>
+    Call us
+  </a>
+  <button class="sticky-cta-close" type="button" aria-label="Dismiss this bar">&#215;</button>
+</div>
+<script>
+(function () {
+  var bar = document.getElementById('sypb-sticky-cta');
+  if (!bar) return;
+  try {
+    if (sessionStorage.getItem('sypb_cta_dismissed') === '1' ||
+        sessionStorage.getItem('sypb_lead_submitted') === '1') return;
+  } catch (_) {}
+  var shown = false;
+  function onScroll() {
+    var max = document.body.scrollHeight - window.innerHeight;
+    if (max <= 0) return;
+    if (!shown && window.scrollY / max > 0.3) {
+      shown = true;
+      bar.classList.add('is-visible');
+      window.removeEventListener('scroll', onScroll);
+    }
+  }
+  window.addEventListener('scroll', onScroll, { passive: true });
+  bar.querySelector('.sticky-cta-close').addEventListener('click', function () {
+    bar.classList.remove('is-visible');
+    bar.classList.add('is-dismissed');
+    try { sessionStorage.setItem('sypb_cta_dismissed', '1'); } catch (_) {}
+  });
+})();
+</script>
 </body>
 </html>

@@ -2838,3 +2838,17 @@ h1 em {
   margin: 0 auto;
   line-height: 1.55;
 }
+
+/* ──────────────────────────────────────────────
+   QUICK-ANSWER CARD — dark-mode legibility
+   The blocks carry inline light-mode styles
+   (background:#f3f4f6), so dark mode needs
+   !important to win over the inline attribute.
+   ────────────────────────────────────────────── */
+html[data-theme="dark"] .quick-answer {
+  background: var(--surface-card) !important;
+  border-left-color: #2ea98a !important;
+}
+html[data-theme="dark"] .quick-answer p {
+  color: #d9e5dc !important;
+}
