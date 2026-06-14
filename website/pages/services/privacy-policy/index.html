@@ -5,7 +5,7 @@
   <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18125556330"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
+    function gtag{dataLayer.push(arguments);}
     gtag('consent', 'default', {
       'ad_storage': 'denied',
       'ad_user_data': 'denied',
@@ -13,7 +13,7 @@
       'analytics_storage': 'denied',
       'wait_for_update': 500
     });
-    gtag('js', new Date());
+    gtag('js', new Date);
     gtag('config', 'AW-18125556330');
     try {
       if (localStorage.getItem('sypb_consent') === 'granted') {
@@ -51,9 +51,7 @@
   <meta name="twitter:description" content="How we collect, use and protect your personal data.">
   <meta name="twitter:image" content="https://southyorkshirepropertybuyers.com/images/favicon.jpg">
   <style id="nav-fix">
-  nav, .nav-links { overflow: visible !important; }
-  .nav-item .dropdown { opacity: 0 !important; pointer-events: none !important; transform: translateX(-50%) translateY(-4px) !important; transition: opacity 0.15s ease, transform 0.15s ease !important; }
-  .nav-item.open .dropdown { opacity: 1 !important; pointer-events: auto !important; transform: translateX(-50%) translateY(0) !important; }
+  nav,.nav-links { overflow: visible !important; }.nav-item.dropdown { opacity: 0 !important; pointer-events: none !important; transform: translateX(-50%) translateY(-4px) !important; transition: opacity 0.15s ease, transform 0.15s ease !important; }.nav-item.open.dropdown { opacity: 1 !important; pointer-events: auto !important; transform: translateX(-50%) translateY(0) !important; }
   </style>
 </head>
 <body>
@@ -61,7 +59,7 @@
 <nav>
   <a class="nav-logo" href="/">
     <img class="logo-img logo-light-mode" src="/images/logo-light.png" alt="South Yorkshire Property Buyers" decoding="async" width="1000" height="500">
-    <img class="logo-img logo-dark-mode"  src="/images/logo-dark.png" alt="South Yorkshire Property Buyers" decoding="async" width="1000" height="500">
+    <img class="logo-img logo-dark-mode" src="/images/logo-dark.png" alt="South Yorkshire Property Buyers" decoding="async" width="1000" height="500">
   </a>
   <ul class="nav-links">
     <li class="nav-item"><a href="/">Home</a></li>
@@ -189,13 +187,13 @@
       <li>Progress a property purchase if you wish to proceed</li>
     </ul>
     <p>In practice, this means we use your name, contact details and property address to prepare a valuation and walk you through <a href="/how-it-works/">the sale process</a> if you decide to move forward.</p>
-    <p>Our lawful basis for processing your data is <strong>legitimate interests</strong> (Article 6(1)(f) UK GDPR) — specifically, to respond to an enquiry you have actively submitted requesting a cash offer on your property.</p>
+    <p>Our lawful basis for processing your data is <strong>legitimate interests</strong> (Article 6(1)(f) UK GDPR), specifically, to respond to an enquiry you have actively submitted requesting a cash offer on your property.</p>
 
     <h2>Who we share your data with</h2>
     <p>Your enquiry data is passed to the following:</p>
     <ul>
-      <li><strong>Bullseye Properties Ltd</strong> — the data controller and purchasing entity, who will contact you directly regarding your property</li>
-      <li><strong>GoHighLevel (Lead Connector)</strong> — a CRM platform used to manage and follow up on enquiries. GoHighLevel processes data in accordance with their own privacy policy and is subject to standard contractual clauses for data transfers</li>
+      <li><strong>Bullseye Properties Ltd</strong>, the data controller and purchasing entity, who will contact you directly regarding your property</li>
+      <li><strong>GoHighLevel (Lead Connector)</strong>, a CRM platform used to manage and follow up on enquiries. GoHighLevel processes data in accordance with their own privacy policy and is subject to standard contractual clauses for data transfers</li>
     </ul>
     <p>We do not sell your personal data to third parties. We do not share your data with estate agents, mortgage brokers or any other commercial parties without your consent.</p>
 
@@ -211,7 +209,7 @@
       <li><strong>Request deletion</strong> of your data (the "right to be forgotten")</li>
       <li><strong>Restrict</strong> how we process your data</li>
       <li><strong>Object</strong> to processing based on legitimate interests</li>
-      <li><strong>Data portability</strong> — receive your data in a structured, machine-readable format</li>
+      <li><strong>Data portability</strong>: receive your data in a structured, machine-readable format</li>
     </ul>
     <p>To exercise any of these rights, contact us via our <a href="/get-offer/">contact form</a> or call <a href="tel:07739063734">07739 063734</a>. We will respond within 30 days. If you would like to see <a href="/reviews/">what previous sellers say about us</a> before getting in touch, our reviews page collects feedback from recent completions.</p>
     <p>If you are not satisfied with how we handle your data, you have the right to lodge a complaint with the <strong>Information Commissioner's Office (ICO)</strong> at <a href="https://ico.org.uk" target="_blank" rel="noopener noreferrer">ico.org.uk</a> or by calling 0303 123 1113.</p>
@@ -260,33 +258,33 @@
     <a href="/get-offer/">Get a Cash Offer</a> &nbsp;&middot;&nbsp;
     <a href="/privacy-policy/">Privacy Policy</a>
   </p>
-  <p class="footer-legal">South Yorkshire Property Buyers is a trading name of Bullseye Properties Ltd (Company No. 14869608). Registered in England and Wales. &copy; 2026</p>
+  <p class="footer-legal">South Yorkshire Property Buyers is a trading name of Bullseye Properties Ltd (Company No. 14869608). Registered in England and Wales. &copy; 2026 &nbsp;&middot;&nbsp; <a href="/privacy-policy/">Privacy Policy</a></p>
 </footer>
 
 <script>
   /* ---- NAV DROPDOWNS ---- */
-  (function() {
+  (function {
     var items = document.querySelectorAll('.nav-item');
     items.forEach(function(item) {
       var dropdown = item.querySelector('.dropdown');
       if (!dropdown) return;
       var timer = null;
 
-      function open() {
+      function open {
         clearTimeout(timer);
         items.forEach(function(el) { if (el !== item) el.classList.remove('open'); });
         item.classList.add('open');
       }
 
-      function scheduleClose() {
-        timer = setTimeout(function() {
+      function scheduleClose {
+        timer = setTimeout(function {
           item.classList.remove('open');
         }, 400);
       }
 
       item.addEventListener('mouseenter', open);
       item.addEventListener('mouseleave', scheduleClose);
-      dropdown.addEventListener('mouseenter', function() { clearTimeout(timer); });
+      dropdown.addEventListener('mouseenter', function { clearTimeout(timer); });
       dropdown.addEventListener('mouseleave', scheduleClose);
     });
 
@@ -295,11 +293,11 @@
         document.querySelectorAll('.nav-item').forEach(function(el) { el.classList.remove('open'); });
       }
     });
-  })();
+  });
 
   const mobileMenuBtn = document.getElementById('mobileMenuBtn');
   const mobileMenu = document.getElementById('mobileMenu');
-  mobileMenuBtn.addEventListener('click', () => {
+  mobileMenuBtn.addEventListener('click', => {
     const open = mobileMenu.classList.toggle('open');
     mobileMenuBtn.setAttribute('aria-expanded', open);
     mobileMenu.setAttribute('aria-hidden', !open);
@@ -308,8 +306,8 @@
   const html = document.documentElement;
   const saved = localStorage.getItem('theme');
   if (saved) html.setAttribute('data-theme', saved);
-  themeToggle.addEventListener('click', () => {
-    const next = html.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+  themeToggle.addEventListener('click', => {
+    const next = html.getAttribute('data-theme') === 'dark' ? 'light': 'dark';
     html.setAttribute('data-theme', next);
     localStorage.setItem('theme', next);
   });
@@ -326,7 +324,7 @@
   </div>
 </div>
 <script>
-(function(){
+(function{
   function sypbConsent(choice){
     try { localStorage.setItem('sypb_consent', choice); } catch(e){}
     if (typeof gtag === 'function') {
@@ -350,7 +348,7 @@
     var b = document.getElementById('sypb-consent');
     if (b) b.style.display = 'block';
   }
-})();
+});
 </script>
 
 <script defer src="/js/animations.js"></script>
