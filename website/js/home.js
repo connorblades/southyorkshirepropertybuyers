@@ -11,7 +11,7 @@
     var iconMuted = document.getElementById('iconMuted');
     var iconSound = document.getElementById('iconSound');
     if (!wrap || !v) return;
-    var src = window.innerWidth <= 600 ? '/sypb-video-ad-9x16.mp4' : '/sypb-video-ad-16x9.mp4';
+    var src = window.innerWidth <= 600 ? '/media/sypb-video-ad-9x16.mp4' : '/media/sypb-video-ad-16x9.mp4';
     v.src = src;
     var isMuted = true;
 
