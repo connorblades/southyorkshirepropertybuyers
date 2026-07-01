@@ -1,4 +1,4 @@
-/* South Yorkshire Property Buyers — interactive calculators
+/* South Yorkshire Property Buyers, interactive calculators
    Vanilla JS, no deps. Initialised on DOMContentLoaded for every
    element matching the data-calc selector. */
 (function () {
@@ -42,9 +42,9 @@
       var T = type ? type.value : 'repayment';
 
       if (P <= 0 || R < 0 || Y <= 0) {
-        outMonth.textContent = '—';
-        if (outTotal) outTotal.textContent = '—';
-        if (outInterest) outInterest.textContent = '—';
+        outMonth.textContent = ', ';
+        if (outTotal) outTotal.textContent = ', ';
+        if (outInterest) outInterest.textContent = ', ';
         if (outScenarios) outScenarios.innerHTML = '';
         return;
       }
@@ -113,7 +113,7 @@
        condition-adjusted market value = MV × condition multiplier
        cash offer estimate             = adjusted × 0.85
 
-     Final offer is firm only after a 15-minute viewing — the range
+     Final offer is firm only after a 15-minute viewing, the range
      shown (±5%) reflects that uncertainty honestly rather than
      pretending the estimator is the offer.
      ─────────────────────────────────────────────── */
@@ -121,7 +121,7 @@
     excellent: 1.00, // Refurbished, move-in ready
     good:      0.85, // Well-maintained, minor cosmetics only
     fair:      0.65, // Dated, needs modernisation (kitchen/bathroom)
-    poor:      0.40, // Significant work — re-wiring, roof, damp
+    poor:      0.40, // Significant work, re-wiring, roof, damp
     derelict:  0.20  // Uninhabitable, structural problems
   };
   var CASH_OFFER_FACTOR = 0.85; // 15% reduction below condition-adjusted MV
@@ -141,10 +141,10 @@
       var C = condition.value || 'good';
 
       if (V <= 0) {
-        outOffer.textContent = '—';
+        outOffer.textContent = ', ';
         if (outRange) outRange.textContent = '';
-        if (outAdjusted) outAdjusted.textContent = '—';
-        if (outPercent) outPercent.textContent = '—';
+        if (outAdjusted) outAdjusted.textContent = ', ';
+        if (outPercent) outPercent.textContent = ', ';
         return;
       }
 
@@ -157,7 +157,7 @@
 
       outOffer.textContent = fmtCurrency0.format(offerPoint);
       if (outRange) {
-        outRange.textContent = fmtCurrency0.format(offerLow) + ' – ' + fmtCurrency0.format(offerHigh);
+        outRange.textContent = fmtCurrency0.format(offerLow) + ', ' + fmtCurrency0.format(offerHigh);
       }
       if (outAdjusted) outAdjusted.textContent = fmtCurrency0.format(adjusted);
       if (outPercent) outPercent.textContent = Math.round(percentOfMV) + '%';
@@ -242,10 +242,10 @@
         var netRow = card.querySelector('.line.net');
 
         if (MV <= 0) {
-          if (saleEl) saleEl.textContent = '—';
-          if (feeEl) feeEl.textContent = '—';
-          if (mortgageEl) mortgageEl.textContent = '—';
-          if (netEl) netEl.textContent = '—';
+          if (saleEl) saleEl.textContent = ', ';
+          if (feeEl) feeEl.textContent = ', ';
+          if (mortgageEl) mortgageEl.textContent = ', ';
+          if (netEl) netEl.textContent = ', ';
           if (pctEl) pctEl.textContent = '';
           if (netRow) netRow.classList.remove('is-shortfall');
           card.classList.remove('is-best');
@@ -255,7 +255,7 @@
         if (saleEl) saleEl.textContent = fmtCurrency0.format(r.sale);
         if (feeEl) feeEl.textContent = '−' + fmtCurrency0.format(r.fee);
         if (mortgageEl) mortgageEl.textContent = totalCharges > 0
-          ? '−' + fmtCurrency0.format(totalCharges) : '—';
+          ? '−' + fmtCurrency0.format(totalCharges) : ', ';
 
         if (netEl) {
           if (r.net >= 0) {
@@ -279,12 +279,12 @@
         var cb = results['cash-buyer'].net;
         var gap = ea - cb;
         if (totalCharges > MV * 0.85) {
-          insight.innerHTML = '<strong>Heads up — you may be in negative equity at the cash-buyer price.</strong> A cash sale still works, but it needs your lender\'s written consent and a signed shortfall undertaking. The estate-agent route may net more in cash, but takes 4–6 months and lender consent applies there too.';
+          insight.innerHTML = '<strong>Heads up, you may be in negative equity at the cash-buyer price.</strong> A cash sale still works, but it needs your lender\'s written consent and a signed shortfall undertaking. The estate-agent route may net more in cash, but takes 4-6 months and lender consent applies there too.';
         } else if (gap > 0) {
           insight.innerHTML = '<strong>The estate-agent route nets you about ' +
-            fmtCurrency0.format(gap) + ' more</strong>, but takes 4–6 months and assumes the chain holds. The cash route completes in 2–4 weeks with no fees and no chain risk. If you have a binding deadline (probate, divorce, repossession, relocation), that gap is often worth less than the certainty.';
+            fmtCurrency0.format(gap) + ' more</strong>, but takes 4-6 months and assumes the chain holds. The cash route completes in 2-4 weeks with no fees and no chain risk. If you have a binding deadline (probate, divorce, repossession, relocation), that gap is often worth less than the certainty.';
         } else {
-          insight.innerHTML = '<strong>On these numbers, the cash route nets at least as much as the estate-agent route</strong> — and completes 4–5 months faster. Worth getting a firm offer.';
+          insight.innerHTML = '<strong>On these numbers, the cash route nets at least as much as the estate-agent route</strong>, and completes 4-5 months faster. Worth getting a firm offer.';
         }
       } else if (insight) {
         insight.innerHTML = '';

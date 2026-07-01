@@ -1,10 +1,10 @@
-# South Yorkshire Property Buyers — robots.txt
+# South Yorkshire Property Buyers, robots.txt
 # All crawlers are welcome, including AI training and answer-engine bots.
 
 User-agent: *
 Allow: /
 
-# Explicit allow for AI / answer-engine crawlers (defensive — we welcome these).
+# Explicit allow for AI / answer-engine crawlers (defensive, we welcome these).
 # Listing them removes any ambiguity if defaults change.
 User-agent: GPTBot
 Allow: /

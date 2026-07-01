@@ -1,4 +1,4 @@
-/* South Yorkshire Property Buyers — site-wide animation layer
+/* South Yorkshire Property Buyers, site-wide animation layer
    Vanilla JS, no deps. Three independent features:
 
      1. .reveal      → IntersectionObserver fade/translate on scroll
@@ -97,7 +97,7 @@
     if (STICKY_PATH_EXCLUDE.test(window.location.pathname)) return;
     try {
       if (window.sessionStorage && sessionStorage.getItem(STICKY_DISMISS_KEY) === '1') return;
-    } catch (e) { /* sessionStorage blocked — proceed anyway */ }
+    } catch (e) { /* sessionStorage blocked, proceed anyway */ }
 
     if (document.getElementById('sypb-sticky-cta')) return;
 
@@ -113,14 +113,6 @@
           '</svg>' +
         '</span>' +
         'Free cash offer' +
-      '</a>' +
-      '<a class="sticky-cta-secondary" href="tel:07739063734" aria-label="Call us on 07739 063 734">' +
-        '<span class="sticky-cta-icon" aria-hidden="true">' +
-          '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">' +
-            '<path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>' +
-          '</svg>' +
-        '</span>' +
-        'Call' +
       '</a>' +
       '<button class="sticky-cta-close" type="button" aria-label="Dismiss">' +
         '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">' +
@@ -161,7 +153,7 @@
   /* ──────────────── 4. WhatsApp floating button ──────────────── */
   var WHATSAPP_PATH_EXCLUDE = /^\/(get-offer|thank-you|privacy-policy)\/?$/;
   var WHATSAPP_NUMBER = '447739063734'; // +44 7739 063 734
-  var WHATSAPP_MESSAGE = "Hi South Yorkshire Property Buyers — I'd like to discuss a cash offer for my property.";
+  var WHATSAPP_MESSAGE = "Hi South Yorkshire Property Buyers, I'd like to discuss a cash offer for my property.";
 
   function initWhatsApp() {
     if (WHATSAPP_PATH_EXCLUDE.test(window.location.pathname)) return;
@@ -186,7 +178,6 @@
     initReveal();
     initCounters();
     initStickyCta();
-    initWhatsApp();
   }
 
   if (document.readyState === 'loading') {

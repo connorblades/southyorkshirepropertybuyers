@@ -1198,7 +1198,7 @@ footer a:hover { color: #ffffff; }
   margin-bottom: 1rem;
   transition: color 0.3s;
 }
-.page-body ul, .page-body ol {
+.page-body ul.page-body ol {
   color: var(--body-text);
   font-size: 0.95rem;
   line-height: 1.8;
@@ -1429,7 +1429,7 @@ footer a:hover { color: #ffffff; }
   font-size: 0.95rem;
 }
 
-/* ---- COMPARISON TABLE — MOBILE ---- */
+/* ---- COMPARISON TABLE, MOBILE ---- */
 @media (max-width: 640px) {
   .compare-wrap { overflow-x: unset; }
 
@@ -2080,7 +2080,7 @@ h1 em {
 /* ──────────────────────────────────────────────
    INTERACTIVE CALCULATORS
    Used on mortgage-stress and cash-offer pages.
-   Self-contained — no external deps.
+   Self-contained, no external deps.
    ────────────────────────────────────────────── */
 .sypb-calc {
   background: var(--surface);
@@ -2329,7 +2329,7 @@ h1 em {
   font-variant-numeric: tabular-nums;
 }
 
-/* primary offer cell — slightly larger than the standard 3-cell grid */
+/* primary offer cell, slightly larger than the standard 3-cell grid */
 .sypb-calc-results.single-headline {
   grid-template-columns: 1.6fr 1fr 1fr;
 }
@@ -2840,7 +2840,7 @@ h1 em {
 }
 
 /* ──────────────────────────────────────────────
-   QUICK-ANSWER CARD — dark-mode legibility
+   QUICK-ANSWER CARD, dark-mode legibility
    The blocks carry inline light-mode styles
    (background:#f3f4f6), so dark mode needs
    !important to win over the inline attribute.
