@@ -2,29 +2,7 @@
 <html lang="en" data-theme="light">
 <head>
   <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18125556330"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('consent', 'default', {
-      'ad_storage': 'denied',
-      'ad_user_data': 'denied',
-      'ad_personalization': 'denied',
-      'analytics_storage': 'denied',
-      'wait_for_update': 500
-    });
-    gtag('js', new Date());
-    gtag('config', 'AW-18125556330');
-    try {
-      if (localStorage.getItem('sypb_consent') === 'granted') {
-        gtag('consent', 'update', {
-          'ad_storage': 'granted',
-          'ad_user_data': 'granted',
-          'ad_personalization': 'granted',
-          'analytics_storage': 'granted'
-        });
-      }
-    } catch(e) {}
-  </script>
+  <script src="/js/init.js"></script>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Page not found, South Yorkshire Property Buyers</title>
@@ -250,25 +228,8 @@
   <p style="font-size:0.85rem;color:rgba(255,255,255,0.6);text-align:center;max-width:680px;margin:1rem auto 0;">&copy; <span id="footer-year">2026</span> South Yorkshire Property Buyers. AML-registered with HMRC. Member of The Property Ombudsman. ICO-registered.</p>
 </footer>
 
-<script>
-  (function(){
-    var year = document.getElementById('footer-year');
-    if (year) year.textContent = new Date().getFullYear();
-    var btn = document.getElementById('themeToggle');
-    if (btn) {
-      var stored;
-      try { stored = localStorage.getItem('sypb_theme'); } catch(e) {}
-      if (stored) document.documentElement.setAttribute('data-theme', stored);
-      btn.addEventListener('click', function(){
-        var current = document.documentElement.getAttribute('data-theme') || 'light';
-        var next = current === 'dark' ? 'light' : 'dark';
-        document.documentElement.setAttribute('data-theme', next);
-        try { localStorage.setItem('sypb_theme', next); } catch(e) {}
-      });
-    }
-  })();
-</script>
 
+<script defer src="/js/site.js"></script>
 <script defer src="/js/animations.js"></script>
 
 </body>

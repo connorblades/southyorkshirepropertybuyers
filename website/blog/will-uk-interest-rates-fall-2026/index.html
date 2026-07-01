@@ -3,29 +3,7 @@
 <head>
   <!-- Google tag (gtag.js) with Google Consent Mode v2 -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18125556330"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag{dataLayer.push(arguments);}
-    gtag('consent', 'default', {
-      'ad_storage': 'denied',
-      'ad_user_data': 'denied',
-      'ad_personalization': 'denied',
-      'analytics_storage': 'denied',
-      'wait_for_update': 500
-    });
-    gtag('js', new Date);
-    gtag('config', 'AW-18125556330');
-    try {
-      if (localStorage.getItem('sypb_consent') === 'granted') {
-        gtag('consent', 'update', {
-          'ad_storage': 'granted',
-          'ad_user_data': 'granted',
-          'ad_personalization': 'granted',
-          'analytics_storage': 'granted'
-        });
-      }
-    } catch(e) {}
-  </script>
+  <script src="/js/init.js"></script>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Will UK Interest Rates Fall in 2026? BoE Holds at 3.75%</title>
@@ -558,32 +536,6 @@
   <p class="footer-legal">&copy; 2026 South Yorkshire Property Buyers &nbsp;&middot;&nbsp; <a href="/privacy-policy/">Privacy Policy</a></p>
 </footer>
 
-<script>
-  (function {
-    var items = document.querySelectorAll('.nav-item');
-    items.forEach(function(item) {
-      var dropdown = item.querySelector('.dropdown');
-      if (!dropdown) return;
-      var timer = null;
-      function open { clearTimeout(timer); items.forEach(function(el) { if (el !== item) el.classList.remove('open'); }); item.classList.add('open'); }
-      function scheduleClose { timer = setTimeout(function { item.classList.remove('open'); }, 400); }
-      item.addEventListener('mouseenter', open);
-      item.addEventListener('mouseleave', scheduleClose);
-      dropdown.addEventListener('mouseenter', function { clearTimeout(timer); });
-      dropdown.addEventListener('mouseleave', scheduleClose);
-    });
-    document.addEventListener('click', function(e) { if (!e.target.closest('.nav-item')) { document.querySelectorAll('.nav-item').forEach(function(el) { el.classList.remove('open'); }); } });
-  });
-  const mobileBtn = document.getElementById('mobileMenuBtn');
-  const mobileMenu = document.getElementById('mobileMenu');
-  if (mobileBtn && mobileMenu) {
-    mobileBtn.addEventListener('click', => { const isOpen = mobileBtn.classList.contains('open'); mobileBtn.classList.toggle('open'); mobileMenu.classList.toggle('open'); mobileBtn.setAttribute('aria-expanded', String(!isOpen)); mobileMenu.setAttribute('aria-hidden', String(isOpen)); document.body.style.overflow = isOpen ? '': 'hidden'; });
-    mobileMenu.querySelectorAll('a').forEach(a => { a.addEventListener('click', => { mobileBtn.classList.remove('open'); mobileMenu.classList.remove('open'); mobileBtn.setAttribute('aria-expanded', 'false'); mobileMenu.setAttribute('aria-hidden', 'true'); document.body.style.overflow = ''; }); });
-  }
-  const html = document.documentElement;
-  try { const saved = localStorage.getItem('theme'); if (saved) html.setAttribute('data-theme', saved); } catch (e) {}
-  document.getElementById('themeToggle').addEventListener('click', function { const next = html.getAttribute('data-theme') === 'dark' ? 'light': 'dark'; html.setAttribute('data-theme', next); try { localStorage.setItem('theme', next); } catch (e) {} });
-</script>
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://southyorkshirepropertybuyers.com/"},{"@type":"ListItem","position":2,"name":"Blog","item":"https://southyorkshirepropertybuyers.com/blog/"},{"@type":"ListItem","position":3,"name":"Will UK Interest Rates Fall in 2026?","item":"https://southyorkshirepropertybuyers.com/blog/will-uk-interest-rates-fall-2026/"}]}
 </script>
@@ -598,36 +550,10 @@
     </div>
   </div>
 </div>
-<script>
-(function{
-  function sypbConsent(choice){
-    try { localStorage.setItem('sypb_consent', choice); } catch(e){}
-    if (typeof gtag === 'function') {
-      gtag('consent', 'update', {
-        'ad_storage': choice,
-        'ad_user_data': choice,
-        'ad_personalization': choice,
-        'analytics_storage': choice
-      });
-    }
-    var b = document.getElementById('sypb-consent');
-    if (b) b.style.display = 'none';
-  }
-  window.sypbConsent = sypbConsent;
-  try {
-    if (!localStorage.getItem('sypb_consent')) {
-      var b = document.getElementById('sypb-consent');
-      if (b) b.style.display = 'block';
-    }
-  } catch(e) {
-    var b = document.getElementById('sypb-consent');
-    if (b) b.style.display = 'block';
-  }
-});
-</script>
 
 <script defer src="/js/calculators.js"></script>
 
+<script defer src="/js/site.js"></script>
 <script defer src="/js/animations.js"></script>
 
 
@@ -638,31 +564,5 @@
   </a>
   <button class="sticky-cta-close" type="button" aria-label="Dismiss this bar">&#215;</button>
 </div>
-<script>
-(function {
-  var bar = document.getElementById('sypb-sticky-cta');
-  if (!bar) return;
-  try {
-    if (sessionStorage.getItem('sypb_cta_dismissed') === '1' ||
-        sessionStorage.getItem('sypb_lead_submitted') === '1') return;
-  } catch (_) {}
-  var shown = false;
-  function onScroll {
-    var max = document.body.scrollHeight - window.innerHeight;
-    if (max <= 0) return;
-    if (!shown && window.scrollY / max > 0.3) {
-      shown = true;
-      bar.classList.add('is-visible');
-      window.removeEventListener('scroll', onScroll);
-    }
-  }
-  window.addEventListener('scroll', onScroll, { passive: true });
-  bar.querySelector('.sticky-cta-close').addEventListener('click', function {
-    bar.classList.remove('is-visible');
-    bar.classList.add('is-dismissed');
-    try { sessionStorage.setItem('sypb_cta_dismissed', '1'); } catch (_) {}
-  });
-});
-</script>
 </body>
 </html>
