@@ -1314,9 +1314,13 @@ footer a:hover { color: #ffffff; }
 /* ---- HOW IT WORKS (updated) ---- */
 .how-section {
   background: var(--surface);
-  padding: 5rem 2rem;
+  padding: var(--section-y) 2rem;
   transition: background 0.3s;
 }
+
+/* Cash-offer estimator, its own evenly-spaced section */
+.calc-section { background: var(--surface-alt); }
+.calc-section .sypb-calc { margin: 2rem 0 0; }
 .how-steps {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -1396,7 +1400,7 @@ footer a:hover { color: #ffffff; }
 /* ---- COMPARISON TABLE ---- */
 .compare-section {
   background: var(--page-bg);
-  padding: 5rem 2rem;
+  padding: var(--section-y) 2rem;
   transition: background 0.3s;
 }
 .compare-wrap {
@@ -1897,7 +1901,7 @@ h1 em {
 
 /* ---- Testimonials ---- */
 .testimonials-section {
-  padding: 5rem 1.5rem;
+  padding: var(--section-y) 1.5rem;
   background: var(--surface-alt);
 }
 .testimonials-grid {
@@ -1957,7 +1961,7 @@ h1 em {
 
 /* ---- Areas We Cover ---- */
 .areas-section {
-  padding: 5rem 1.5rem;
+  padding: var(--section-y) 1.5rem;
   background: var(--surface);
 }
 .areas-city-grid {
@@ -2010,7 +2014,7 @@ h1 em {
 
 /* ---- FAQ ---- */
 .faq-section {
-  padding: 5rem 1.5rem;
+  padding: var(--section-y) 1.5rem;
   background: var(--surface-alt);
 }
 .faq-list {
@@ -2070,7 +2074,7 @@ h1 em {
 
 /* ── Video section ── */
 .video-section {
-  padding: 4rem 1.5rem;
+  padding: var(--section-y) 1.5rem;
   background: var(--surface-light);
 }
 .video-section .section-header {
@@ -2792,7 +2796,7 @@ h1 em {
   background: var(--surface-alt);
   border-top: 1px solid var(--border);
   border-bottom: 1px solid var(--border);
-  padding: 3.5rem 1.5rem;
+  padding: var(--section-y) 1.5rem;
 }
 .sypb-credentials .cred-inner {
   max-width: 1080px;

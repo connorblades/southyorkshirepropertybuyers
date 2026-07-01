@@ -118,11 +118,11 @@
      pretending the estimator is the offer.
      ─────────────────────────────────────────────── */
   var CONDITION_MULT = {
-    excellent: 1.00, // Refurbished, move-in ready
-    good:      0.85, // Well-maintained, minor cosmetics only
-    fair:      0.65, // Dated, needs modernisation (kitchen/bathroom)
-    poor:      0.40, // Significant work, re-wiring, roof, damp
-    derelict:  0.20  // Uninhabitable, structural problems
+    excellent: 1.00, // Refurbished, move-in ready: full market value
+    good:      0.95, // Well-maintained, minor cosmetics only: 5% off
+    fair:      0.90, // Dated, needs modernisation (kitchen/bathroom): 10% off
+    poor:      0.85, // Significant work, re-wiring, roof, damp: 15% off
+    derelict:  0.75  // Uninhabitable, structural problems: 25% off
   };
   var CASH_OFFER_FACTOR = 0.85; // 15% reduction below condition-adjusted MV
 
