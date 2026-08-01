@@ -477,6 +477,31 @@ html[data-theme="light"] .hero .avatar { border-color: rgba(17,26,20,0.16); }
   transition: border-color 0.3s;
 }
 
+/* The base rule is nowrap with -4rem side margins, so the bar is deliberately
+   128px wider than its container. The homepage hero has the room for that; the
+   inner .page-hero does not, so on pages with longer trust text it pushed the
+   whole document into horizontal scroll. Inside .page-hero, wrap and keep the
+   bar within its container at every width. */
+.page-hero .trust-bar {
+  flex-wrap: wrap;
+  margin-left: 0;
+  margin-right: 0;
+  gap: 0.85rem 1.5rem;
+  max-width: 100%;
+}
+
+/* Below 600px the bar already wrapped, but between 601 and 900px it did
+   neither, overflowing on tablets. */
+@media (max-width: 900px) {
+  .trust-bar {
+    flex-wrap: wrap;
+    margin-left: 0;
+    margin-right: 0;
+    gap: 0.85rem 1.5rem;
+    justify-content: center;
+  }
+}
+
 @media (max-width: 600px) {
   .trust-bar {
     flex-wrap: wrap;
