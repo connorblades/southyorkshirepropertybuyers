@@ -373,6 +373,38 @@ h1 .kw, h2 .kw, h3 .kw {
   color: #ffffff;
 }
 
+/* ---- LIGHT MODE HERO ----
+   The hero defaults to white text on a dark wash, which is right in dark mode
+   but makes the light theme open on a heavy dark block. In light mode the
+   overlay flips to a pale wash and the text inverts to the standard dark
+   palette. Dark mode is untouched. */
+html[data-theme="light"] .hero-overlay {
+  background: linear-gradient(135deg, rgba(248,250,248,0.88) 0%, rgba(233,239,234,0.92) 100%);
+}
+html[data-theme="light"] .hero h1 { color: var(--heading); }
+html[data-theme="light"] .hero p  { color: var(--body-text); }
+/* --body-text not --muted: against the palest the overlay can go (over a dark
+   video frame) --muted lands at 3.8:1, under AA for 0.8rem text. */
+html[data-theme="light"] .hero-note { color: var(--body-text); }
+html[data-theme="light"] .hero .kw { color: var(--green); }
+html[data-theme="light"] .hero .badge {
+  background: var(--green-subtle);
+  border-color: var(--green-border);
+  color: var(--green);
+}
+html[data-theme="light"] .hero .btn-secondary {
+  color: var(--heading);
+  border-color: rgba(17,26,20,0.28);
+}
+html[data-theme="light"] .hero .btn-secondary:hover {
+  background: rgba(17,26,20,0.06);
+  border-color: var(--heading);
+  color: var(--heading);
+}
+html[data-theme="light"] .hero .trust-bar { border-top-color: rgba(17,26,20,0.14); }
+html[data-theme="light"] .hero .trust-item { color: var(--body-text); }
+html[data-theme="light"] .hero .avatar { border-color: rgba(17,26,20,0.16); }
+
 .avatar {
   width: 88px; height: 88px;
   border-radius: 50%;
