@@ -167,6 +167,26 @@
         situation: document.getElementById('situation').value,
         notes: document.getElementById('message').value
       };
+
+      /* Pipeline context: lets GHL tag and route the lead without manual triage. */
+      var slug = (window.location.pathname.replace(/^\/|\/$/g, '') || 'home');
+      data.sourcePage = slug;
+      data.sourceUrl = window.location.href;
+      data.pageTitle = document.title;
+      data.pageType = slug === 'home' ? 'homepage'
+        : /^sell-house-fast-|^cash-house-buyer-/.test(slug) ? 'location'
+        : slug.indexOf('blog/') === 0 ? 'blog'
+        : slug === 'get-offer' ? 'form'
+        : 'situation';
+      data.area = (slug.match(/(sheffield|rotherham|doncaster|barnsley|chesterfield|worksop|retford|gainsborough|mansfield)/) || [''])[0];
+      data.leadSource = 'website';
+      try {
+        var p = new URLSearchParams(window.location.search);
+        ['utm_source', 'utm_medium', 'utm_campaign', 'utm_term', 'utm_content', 'gclid'].forEach(function (k) {
+          if (p.get(k)) data[k] = p.get(k);
+        });
+        data.referrer = document.referrer || '';
+      } catch (_) {}
       var submitBtn = form.querySelector('.form-submit');
       var origText = submitBtn ? submitBtn.textContent : '';
       if (submitBtn) { submitBtn.disabled = true; submitBtn.textContent = 'Sending…'; }
@@ -193,5 +213,18 @@
         form.appendChild(err);
       }
     });
+  })();
+
+  /* ---- Phone tap tracking (Google Ads conversion) ---- */
+  (function () {
+    document.addEventListener('click', function (e) {
+      var link = e.target.closest ? e.target.closest('[data-track="phone-tap"]') : null;
+      if (!link) return;
+      if (typeof window.gtag !== 'function') return;
+      window.gtag('event', 'phone_tap', {
+        event_category: 'contact',
+        page_path: window.location.pathname
+      });
+    }, true);
   })();
 })();
