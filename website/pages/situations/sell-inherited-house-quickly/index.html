@@ -150,18 +150,190 @@
   "@context": "https://schema.org",
   "@type": "FAQPage",
   "mainEntity": [
-    {"@type": "Question", "name": "Do I need probate before I can sell an inherited house?", "acceptedAnswer": {"@type": "Answer", "text": "You can market and agree a sale at any time, but contracts cannot be exchanged and title cannot be transferred until the Grant of Probate (or Letters of Administration on intestacy) has been issued."}},
-    {"@type": "Question", "name": "How much capital gains tax will I pay on an inherited property in 2026?", "acceptedAnswer": {"@type": "Answer", "text": "Your CGT base cost is the probate value, not the deceased's original purchase price. You only pay CGT on any gain since the date of death. From 6 April 2024 the residential rates are 18% (basic-rate band) and 24% (higher- and additional-rate band). The annual exempt amount is £3,000 per person. Many inheritors selling within months of Grant owe nothing."}},
-    {"@type": "Question", "name": "What is IHT38 and when does it help?", "acceptedAnswer": {"@type": "Answer", "text": "IHT38 is the HMRC form used to reclaim overpaid inheritance tax where land is sold for less than its probate value within four years of death. If the estate paid IHT and the property has dropped in value, the estate can recover up to 40% of the loss as a tax refund."}},
-    {"@type": "Question", "name": "I've inherited the house jointly with siblings, what if we don't agree?", "acceptedAnswer": {"@type": "Answer", "text": "All co-owners must agree to sell. If you cannot agree, any one of you can apply to court under section 14 of the Trusts of Land and Appointment of Trustees Act 1996 (TOLATA) for an order for sale. In practice that takes 4-9 months and costs £6,000-£20,000 in legal fees, so a credible cash offer with a written deadline often unblocks the dispute first."}},
-    {"@type": "Question", "name": "Can I buy out my siblings rather than sell?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. You typically need a formal valuation and either savings, equity or a mortgage equal to their share. Stamp duty land tax may apply on the share you buy, but only on the consideration paid for that share, not on the full property value."}},
-    {"@type": "Question", "name": "What is the difference between AS1 and TR1?", "acceptedAnswer": {"@type": "Answer", "text": "AS1 is the Land Registry form used when an executor 'assents' the property to a beneficiary (no money changes hands). TR1 is used for a sale to a third-party buyer. Both can apply to inherited property; using the wrong form causes Land Registry to reject the application."}},
-    {"@type": "Question", "name": "Should the executor assent to me first or sell straight to the buyer?", "acceptedAnswer": {"@type": "Answer", "text": "For a fast cash sale, direct sale by the personal representative is usually quicker because it avoids waiting for HM Land Registry to register the AS1 (currently 3-12 months for many applications). For tax reasons, especially with multiple beneficiaries, taking assent first sometimes works better. Take advice."}},
-    {"@type": "Question", "name": "What will the empty house cost me each month?", "acceptedAnswer": {"@type": "Answer", "text": "Sheffield, Doncaster and Barnsley all apply a 100% empty-home council tax premium after 12 months of vacancy; Rotherham follows from April 2026. Combined with unoccupied-property insurance, utilities and basic security, expect £300-£500 per month on a typical South Yorkshire property, more once the council tax premium is in force."}},
-    {"@type": "Question", "name": "Can I sell the inherited house in its current poor condition?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Cash buyers including South Yorkshire Property Buyers buy in any condition. Open-market mortgaged buyers may not, lenders frequently decline to lend on properties with severe damp, structural issues or no working heating."}},
-    {"@type": "Question", "name": "What do I have to disclose about the property's condition?", "acceptedAnswer": {"@type": "Answer", "text": "Whatever you know. The pre-contract enquiry form (TA6) asks specific questions. Following Patarkatsishvili v Woodward-Fisher [2025], the courts are taking a strict line on sellers who conceal known defects. 'I never lived there' is not a defence if you know about a problem."}},
-    {"@type": "Question", "name": "How do I know the cash buyer is genuine?", "acceptedAnswer": {"@type": "Answer", "text": "Six checks: Companies House registration, written proof of funds dated within 14 days, NAPB or TPO membership, a written offer with calculation basis, your own solicitor, and no upfront fees. "}},
-    {"@type": "Question", "name": "How quickly can South Yorkshire Property Buyers complete?", "acceptedAnswer": {"@type": "Answer", "text": "Once probate has been granted and you have instructed a solicitor, a typical cash completion runs 2-4 weeks. Some cases close in 7-10 days; some need 4-6 weeks where title is complicated or co-beneficiaries are abroad. We confirm a realistic completion window in writing with our offer."}}
+    {
+      "@type": "Question",
+      "name": "Do I need probate before I can sell an inherited house?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "You can market and agree a sale at any time, but contracts cannot be exchanged and title cannot be transferred until the Grant of Probate (or Letters of Administration on intestacy) has been issued."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How much capital gains tax will I pay on an inherited property in 2026?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Your CGT base cost is the probate value, not the deceased's original purchase price. You only pay CGT on any gain since the date of death. From 6 April 2024 the residential rates are 18% (basic-rate band) and 24% (higher- and additional-rate band). The annual exempt amount is £3,000 per person. Many inheritors selling within months of Grant owe nothing."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is IHT38 and when does it help?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "IHT38 is the HMRC form used to reclaim overpaid inheritance tax where land is sold for less than its probate value within four years of death. If the estate paid IHT and the property has dropped in value, the estate can recover up to 40% of the loss as a tax refund."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "I've inherited the house jointly with siblings, what if we don't agree?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "All co-owners must agree to sell. If you cannot agree, any one of you can apply to court under section 14 of the Trusts of Land and Appointment of Trustees Act 1996 (TOLATA) for an order for sale. In practice that takes 4-9 months and costs £6,000-£20,000 in legal fees, so a credible cash offer with a written deadline often unblocks the dispute first."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I buy out my siblings rather than sell?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. You typically need a formal valuation and either savings, equity or a mortgage equal to their share. Stamp duty land tax may apply on the share you buy, but only on the consideration paid for that share, not on the full property value."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the difference between AS1 and TR1?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "AS1 is the Land Registry form used when an executor 'assents' the property to a beneficiary (no money changes hands). TR1 is used for a sale to a third-party buyer. Both can apply to inherited property; using the wrong form causes Land Registry to reject the application."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Should the executor assent to me first or sell straight to the buyer?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "For a fast cash sale, direct sale by the personal representative is usually quicker because it avoids waiting for HM Land Registry to register the AS1 (currently 3-12 months for many applications). For tax reasons, especially with multiple beneficiaries, taking assent first sometimes works better. Take advice."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What will the empty house cost me each month?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sheffield, Doncaster and Barnsley all apply a 100% empty-home council tax premium after 12 months of vacancy; Rotherham follows from April 2026. Combined with unoccupied-property insurance, utilities and basic security, expect £300-£500 per month on a typical South Yorkshire property, more once the council tax premium is in force."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I sell the inherited house in its current poor condition?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Cash buyers including South Yorkshire Property Buyers buy in any condition. Open-market mortgaged buyers may not, lenders frequently decline to lend on properties with severe damp, structural issues or no working heating."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What do I have to disclose about the property's condition?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Whatever you know. The pre-contract enquiry form (TA6) asks specific questions. Following Patarkatsishvili v Woodward-Fisher [2025], the courts are taking a strict line on sellers who conceal known defects. 'I never lived there' is not a defence if you know about a problem."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I know the cash buyer is genuine?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Six checks: Companies House registration, written proof of funds dated within 14 days, NAPB or TPO membership, a written offer with calculation basis, your own solicitor, and no upfront fees. "
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How quickly can South Yorkshire Property Buyers complete?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Once probate has been granted and you have instructed a solicitor, a typical cash completion runs 2-4 weeks. Some cases close in 7-10 days; some need 4-6 weeks where title is complicated or co-beneficiaries are abroad. We confirm a realistic completion window in writing with our offer."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "There's no will. Does that change how quickly we can sell?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Not by much. Without a will you apply for Letters of Administration instead of a Grant of Probate, and it does the same job. The person who applies is usually the closest relative. Once the Grant is in your hands, the sale runs exactly as it would with a will. Getting it can take a bit longer, because the law decides who inherits and in what shares, and those shares need to be clear before any money is paid out."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "The house is still full of Mum's things. Do we have to empty it before we sell?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No, you do not have to clear it for us. We buy houses as they are, furniture, carpets, loft, shed and all. Take whatever time you need to sort through the things that matter to you, and leave the rest with the house. On the open market you would usually be expected to clear it first, which is one more heavy job at a hard time."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "There's still a mortgage on the house. Can we even sell it?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. The mortgage is paid off out of the sale money on the day of completion, and whatever is left over goes to the estate. Interest usually keeps building until then, so the debt grows while the house sits empty. Tell your solicitor early so they can ask the lender for a redemption figure, because a slow lender can add a few weeks. Equity release plans work the same way."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Should we do the place up first to get more for it?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Usually not, unless the work is cheap and quick. Full renovations on an older South Yorkshire house often cost more than they add, and you carry council tax, insurance and standing charges the whole time the work drags on. A clear out and a good clean can help on the open market. Anything bigger is a gamble with the estate's money. We buy in any condition, so no work is needed for us."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Would we be better off renting it out instead of selling?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sometimes, but it is a far bigger job than people expect. You become a landlord, with gas and electrical safety checks, an EPC, deposit protection, insurance and tax on the rent. If several of you inherited, you all have to agree, and keep agreeing, for years. If the house needs work before anyone could live in it, that money comes out of your own pockets first. Selling ends it cleanly."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do we work out what the house was worth when Mum died?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "For a smaller estate, written valuations from two or three local estate agents are normally enough. If the estate looks likely to pay Inheritance Tax, pay for a proper RICS red book valuation instead, because HMRC can question a figure that looks too low. Keep all the paperwork either way. That date of death value is the starting point for any Capital Gains Tax when the house is later sold."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "One of us lives abroad. Will that hold the sale up?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "It can add time, so plan for it. Everyone with a share has to sign, and the solicitor has to check identity documents for each of you, which is slower from overseas. Ask your solicitor early how they will verify someone abroad, and start that paperwork before you agree a completion date. We can work to a date that suits everyone rather than pushing you into one."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How soon do we actually get the money after the house sells?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The sale money goes into the estate first, not straight into your own bank account. The executor then pays any debts, funeral costs, tax and fees before splitting what is left between the people who inherit. Many hold a little back for a while in case a bill or a claim turns up. Ask your solicitor for a rough timetable, so nobody is counting on money that has not been released yet."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Will you offer us less because you know it's a probate sale?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. Our offers are typically 80 to 85 percent of market value whatever the reason for selling, and a death in the family does not change that. What you get for the difference is speed and certainty. We will say it plainly: if you are not under time pressure and the house is in reasonable order, an estate agent will probably get you more than we can."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "We can't find the deeds anywhere. Is the sale dead?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. Almost all property in England is registered with HM Land Registry, so your solicitor can pull up the record without any paper deeds. If the house was never registered, which still happens with a few older South Yorkshire homes that have not changed hands in decades, your solicitor can apply for first registration using whatever documents exist. It adds time, so flag it as early as you can."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "My brother is the executor. Can he sell without asking the rest of us?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "While the house is still part of the estate, often yes, because the executor holds the legal power to sell it. They must still act in the beneficiaries' best interests, and they can be challenged if they do not. Once the house has been transferred into your joint names, that changes, and every owner has to agree. A good executor shares the valuations and any offers before deciding. If you feel shut out, ask for the figures in writing and take your own legal advice."
+      }
+    }
   ]
 }
 </script>
@@ -576,6 +748,29 @@
     <p>Once probate has been granted and you have instructed a solicitor, a typical cash completion runs 2-4 weeks. Some cases close in 7-10 days; others need 4-6 weeks where title is complicated, the property was unregistered, or co-beneficiaries are abroad. We confirm a realistic completion window in writing alongside our offer.</p>
 
     <div class="page-cta-box reveal">
+    <h3>There's no will. Does that change how quickly we can sell?</h3>
+    <p>Not by much. Without a will you apply for Letters of Administration instead of a Grant of Probate, and it does the same job. The person who applies is usually the closest relative. Once the Grant is in your hands, the sale runs exactly as it would with a will. Getting it can take a bit longer, because the law decides who inherits and in what shares, and those shares need to be clear before any money is paid out.</p>
+    <h3>The house is still full of Mum's things. Do we have to empty it before we sell?</h3>
+    <p>No, you do not have to clear it for us. We buy houses as they are, furniture, carpets, loft, shed and all. Take whatever time you need to sort through the things that matter to you, and leave the rest with the house. On the open market you would usually be expected to clear it first, which is one more heavy job at a hard time.</p>
+    <h3>There's still a mortgage on the house. Can we even sell it?</h3>
+    <p>Yes. The mortgage is paid off out of the sale money on the day of completion, and whatever is left over goes to the estate. Interest usually keeps building until then, so the debt grows while the house sits empty. Tell your solicitor early so they can ask the lender for a redemption figure, because a slow lender can add a few weeks. Equity release plans work the same way.</p>
+    <h3>Should we do the place up first to get more for it?</h3>
+    <p>Usually not, unless the work is cheap and quick. Full renovations on an older South Yorkshire house often cost more than they add, and you carry council tax, insurance and standing charges the whole time the work drags on. A clear out and a good clean can help on the open market. Anything bigger is a gamble with the estate's money. We buy in any condition, so no work is needed for us.</p>
+    <h3>Would we be better off renting it out instead of selling?</h3>
+    <p>Sometimes, but it is a far bigger job than people expect. You become a landlord, with gas and electrical safety checks, an EPC, deposit protection, insurance and tax on the rent. If several of you inherited, you all have to agree, and keep agreeing, for years. If the house needs work before anyone could live in it, that money comes out of your own pockets first. Selling ends it cleanly.</p>
+    <h3>How do we work out what the house was worth when Mum died?</h3>
+    <p>For a smaller estate, written valuations from two or three local estate agents are normally enough. If the estate looks likely to pay Inheritance Tax, pay for a proper RICS red book valuation instead, because HMRC can question a figure that looks too low. Keep all the paperwork either way. That date of death value is the starting point for any Capital Gains Tax when the house is later sold.</p>
+    <h3>One of us lives abroad. Will that hold the sale up?</h3>
+    <p>It can add time, so plan for it. Everyone with a share has to sign, and the solicitor has to check identity documents for each of you, which is slower from overseas. Ask your solicitor early how they will verify someone abroad, and start that paperwork before you agree a completion date. We can work to a date that suits everyone rather than pushing you into one.</p>
+    <h3>How soon do we actually get the money after the house sells?</h3>
+    <p>The sale money goes into the estate first, not straight into your own bank account. The executor then pays any debts, funeral costs, tax and fees before splitting what is left between the people who inherit. Many hold a little back for a while in case a bill or a claim turns up. Ask your solicitor for a rough timetable, so nobody is counting on money that has not been released yet.</p>
+    <h3>Will you offer us less because you know it's a probate sale?</h3>
+    <p>No. Our offers are typically 80 to 85 percent of market value whatever the reason for selling, and a death in the family does not change that. What you get for the difference is speed and certainty. We will say it plainly: if you are not under time pressure and the house is in reasonable order, an estate agent will probably get you more than we can.</p>
+    <h3>We can't find the deeds anywhere. Is the sale dead?</h3>
+    <p>No. Almost all property in England is registered with HM Land Registry, so your solicitor can pull up the record without any paper deeds. If the house was never registered, which still happens with a few older South Yorkshire homes that have not changed hands in decades, your solicitor can apply for first registration using whatever documents exist. It adds time, so flag it as early as you can.</p>
+    <h3>My brother is the executor. Can he sell without asking the rest of us?</h3>
+    <p>While the house is still part of the estate, often yes, because the executor holds the legal power to sell it. They must still act in the beneficiaries' best interests, and they can be challenged if they do not. Once the house has been transferred into your joint names, that changes, and every owner has to agree. A good executor shares the valuations and any offers before deciding. If you feel shut out, ask for the figures in writing and take your own legal advice.</p>
+
       <h2>Get a no-obligation same day cash offer</h2>
       <p>Whether probate has just come through, or you've had the property sitting empty for months, we can give you a written cash figure the same day and complete within weeks of you saying yes. No fees, no obligation, your own solicitor.</p>
       <a href="/get-offer/" class="btn-primary">Get Your Free Cash Offer</a>
