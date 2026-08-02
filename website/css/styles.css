@@ -3273,3 +3273,17 @@ html[data-theme="dark"] .page-hero--img > .page-hero-wash {
   border-bottom: 1px solid transparent;
 }
 .related-guides a:hover { text-decoration: underline; }
+
+/* ---- CHECK IT YOURSELF CALLOUT ----
+   Sits next to a stated offer percentage so the claim is checkable rather than
+   asserted: independent valuation first, then our estimator. */
+.check-yourself {
+  margin: 1.5rem 0;
+  padding: 1.1rem 1.3rem;
+  background: var(--green-subtle);
+  border: 1px solid var(--green-border);
+  border-left: 4px solid var(--green);
+  border-radius: var(--r-sm);
+}
+.check-yourself p { margin: 0; font-size: 0.95rem; line-height: 1.6; }
+.check-yourself strong { color: var(--heading); }
