@@ -3287,3 +3287,97 @@ html[data-theme="dark"] .page-hero--img > .page-hero-wash {
 }
 .check-yourself p { margin: 0; font-size: 0.95rem; line-height: 1.6; }
 .check-yourself strong { color: var(--heading); }
+
+/* ── FAQ accordion, rolled out sitewide ──────────────────────────────
+   Scoped to .faq-list so the older homepage and get-offer accordions keep
+   their own look. display and max-height are restated in each rule because
+   the two earlier .faq-* blocks above set `display:block` and
+   `max-height:400px` on the open state at a specificity that would
+   otherwise clamp these panels and clip any longer answer. */
+.faq-list {
+  max-width: 800px;
+  margin: 2rem auto 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+.faq-list .faq-item {
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: var(--surface-card);
+  overflow: hidden;
+}
+.faq-list .faq-qh {
+  margin: 0;
+  font-size: inherit;
+  line-height: inherit;
+}
+.faq-list .faq-q {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.05rem 1.25rem;
+  background: none;
+  border: 0;
+  cursor: pointer;
+  text-align: left;
+  font: inherit;
+  font-weight: 600;
+  color: var(--heading);
+  transition: color 0.15s ease, background 0.15s ease;
+}
+.faq-list .faq-qt { flex: 1; }
+.faq-list .faq-q:hover { color: var(--green); background: var(--surface-alt); }
+.faq-list .faq-q:focus-visible { outline: 2px solid var(--green); outline-offset: -2px; }
+.faq-list .faq-chevron {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+  stroke: var(--muted);
+  transition: transform 0.28s ease;
+}
+.faq-list .faq-item.open .faq-q { color: var(--green); }
+.faq-list .faq-item.open .faq-chevron { transform: rotate(180deg); stroke: var(--green); }
+
+/* Collapsed in CSS rather than by a class JavaScript adds on load. Waiting
+   for JS meant every answer painted open first and then snapped shut, which
+   on a 24-question page is a large layout shift. The no-JS case is handled
+   by a <noscript> override next to each list instead. */
+.faq-list .faq-item .faq-a {
+  display: grid;
+  grid-template-rows: 0fr;
+  max-height: none;
+  /* The earlier .faq-a block sets padding and a border-top that this scope
+     does not otherwise touch; together they held a shut panel 17px open. */
+  padding: 0;
+  border-top: 0;
+  transition: grid-template-rows 0.28s ease;
+}
+.faq-list .faq-item.open .faq-a {
+  display: grid;
+  grid-template-rows: 1fr;
+  max-height: none;
+}
+.faq-list .faq-a-inner {
+  overflow: hidden;
+  min-height: 0;
+}
+/* Padding belongs on the children, not on the grid item. Padding on a 0fr
+   track still renders, which left every collapsed panel 35px tall instead
+   of shut. On the children it gets clipped by the overflow above. */
+.faq-list .faq-a-inner > * { padding: 0 1.25rem; }
+.faq-list .faq-a-inner > :last-child {
+  padding-bottom: 1.15rem;
+  margin-bottom: 0;
+}
+.faq-list .faq-a-inner p {
+  margin: 0 0 0.75rem;
+  color: var(--body-text);
+  line-height: 1.7;
+}
+@media (prefers-reduced-motion: reduce) {
+  .faq-list .faq-item .faq-a,
+  .faq-list .faq-chevron { transition: none; }
+}
