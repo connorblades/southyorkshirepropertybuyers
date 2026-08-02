@@ -12,22 +12,49 @@
     var iconSound = document.getElementById('iconSound');
     if (!wrap || !v) return;
     var src = window.innerWidth <= 600 ? '/media/sypb-video-ad-9x16.mp4' : '/media/sypb-video-ad-16x9.mp4';
-    v.src = src;
     var isMuted = true;
 
-    var audioEl = document.createElement('audio');
-    audioEl.src = src;
-    audioEl.loop = true;
-    audioEl.volume = 1;
-    document.body.appendChild(audioEl);
+    /* The video only gets a src once it is near the viewport. It sits well
+       below the fold, and eagerly loading it cost every visitor ~2.3MB
+       whether they scrolled to it or not. */
+    function loadVideo() {
+      if (v.src) return;
+      v.src = src;
+      var play = v.play();
+      if (play && play.catch) play.catch(function () {});
+    }
+    if ('IntersectionObserver' in window) {
+      var io = new IntersectionObserver(function (entries) {
+        for (var i = 0; i < entries.length; i++) {
+          if (entries[i].isIntersecting) { loadVideo(); io.disconnect(); return; }
+        }
+      }, { rootMargin: '400px' });
+      io.observe(wrap);
+    } else {
+      loadVideo();
+    }
 
+    /* The audio track is the same MP4 played through a separate element, which
+       is how tapping unmutes without restarting the video. Creating it up front
+       downloaded the identical file a second time, doubling the cost of the
+       page. It is now built on first tap, so it costs nothing unless used. */
+    var audioEl = null;
     wrap.addEventListener('click', function () {
+      loadVideo();
       if (isMuted) {
+        if (!audioEl) {
+          audioEl = document.createElement('audio');
+          audioEl.src = src;
+          audioEl.loop = true;
+          audioEl.volume = 1;
+          document.body.appendChild(audioEl);
+        }
         audioEl.currentTime = v.currentTime;
-        audioEl.play();
+        var ap = audioEl.play();
+        if (ap && ap.catch) ap.catch(function () {});
         isMuted = false;
       } else {
-        audioEl.pause();
+        if (audioEl) audioEl.pause();
         isMuted = true;
       }
       if (iconMuted) iconMuted.style.display = isMuted ? 'block' : 'none';
@@ -43,6 +70,18 @@
     var FADE_S = 1.5; // must match CSS transition duration
     var current = v1, next = v2;
     var prepared = false, fading = false;
+
+    /* v2 carries preload="none" so it costs nothing against LCP, but the
+       crossfade only reaches for it two seconds before it is needed, which is
+       not enough to fetch a megabyte on a slow connection. Start it explicitly
+       once the page has settled: off the critical path, ready in good time. */
+    function warmSecondClip() {
+      if (v2.preload !== 'none') return;
+      v2.preload = 'auto';
+      try { v2.load(); } catch (e) {}
+    }
+    if (document.readyState === 'complete') setTimeout(warmSecondClip, 1200);
+    else window.addEventListener('load', function () { setTimeout(warmSecondClip, 1200); });
 
     function onTimeUpdate(e) {
       if (e.target !== current || !current.duration) return;

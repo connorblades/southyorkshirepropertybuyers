@@ -477,6 +477,31 @@ html[data-theme="light"] .hero .avatar { border-color: rgba(17,26,20,0.16); }
   transition: border-color 0.3s;
 }
 
+/* The base rule is nowrap with -4rem side margins, so the bar is deliberately
+   128px wider than its container. The homepage hero has the room for that; the
+   inner .page-hero does not, so on pages with longer trust text it pushed the
+   whole document into horizontal scroll. Inside .page-hero, wrap and keep the
+   bar within its container at every width. */
+.page-hero .trust-bar {
+  flex-wrap: wrap;
+  margin-left: 0;
+  margin-right: 0;
+  gap: 0.85rem 1.5rem;
+  max-width: 100%;
+}
+
+/* Below 600px the bar already wrapped, but between 601 and 900px it did
+   neither, overflowing on tablets. */
+@media (max-width: 900px) {
+  .trust-bar {
+    flex-wrap: wrap;
+    margin-left: 0;
+    margin-right: 0;
+    gap: 0.85rem 1.5rem;
+    justify-content: center;
+  }
+}
+
 @media (max-width: 600px) {
   .trust-bar {
     flex-wrap: wrap;
@@ -3215,3 +3240,50 @@ html[data-theme="dark"] .page-hero--img > .page-hero-wash {
 @media (max-width: 640px) {
   .page-hero--img > .page-hero-img { opacity: 0.34; }
 }
+
+/* ---- RELATED GUIDES ---- */
+.related-guides {
+  margin: 2.5rem 0 0;
+  padding: 1.5rem 1.6rem;
+  background: var(--surface-alt);
+  border: 1px solid var(--border);
+  border-radius: var(--r-md);
+}
+.related-guides h2 {
+  margin: 0 0 0.9rem;
+  font-size: 1.1rem;
+  color: var(--heading);
+}
+.related-guides ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 0.5rem 1.5rem;
+}
+.related-guides li { margin: 0; }
+.related-guides a {
+  display: block;
+  padding: 0.45rem 0;
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--green);
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+}
+.related-guides a:hover { text-decoration: underline; }
+
+/* ---- CHECK IT YOURSELF CALLOUT ----
+   Sits next to a stated offer percentage so the claim is checkable rather than
+   asserted: independent valuation first, then our estimator. */
+.check-yourself {
+  margin: 1.5rem 0;
+  padding: 1.1rem 1.3rem;
+  background: var(--green-subtle);
+  border: 1px solid var(--green-border);
+  border-left: 4px solid var(--green);
+  border-radius: var(--r-sm);
+}
+.check-yourself p { margin: 0; font-size: 0.95rem; line-height: 1.6; }
+.check-yourself strong { color: var(--heading); }
