@@ -351,43 +351,7 @@
   nav,.nav-links { overflow: visible !important; }.nav-item.dropdown { opacity: 0 !important; pointer-events: none !important; transform: translateX(-50%) translateY(-4px) !important; transition: opacity 0.15s ease, transform 0.15s ease !important; }.nav-item.open.dropdown { opacity: 1 !important; pointer-events: auto !important; transform: translateX(-50%) translateY(0) !important; }.author-line { font-size: 0.9rem; color: #6b7280; margin: 0.75rem 0 1.5rem; }.author-line strong { color: #374151; }.check-card { background: #f9fafb; border: 1px solid #e5e7eb; border-left: 4px solid #0f766e; border-radius: 6px; padding: 0.9rem 1.1rem; margin: 0.75rem 0; }.check-card h3 { margin: 0 0 0.4rem; color: #0f766e; font-size: 1.05rem; }.check-card p { margin: 0.35rem 0; line-height: 1.5; }.warn-box { background: #fef3c7; border-left: 4px solid #d97706; padding: 1rem 1.25rem; border-radius: 6px; margin: 1.5rem 0; }.warn-box h3 { margin-top: 0; color: #92400e; }
   </style>
 
-<!-- howto-schema -->
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "HowTo",
-  "name": "How to estimate a cash offer for your house",
-  "description": "Get an indicative cash offer for your property based on its estimated market value and condition tier.",
-  "tool": [
-    {
-      "@type": "HowToTool",
-      "name": "South Yorkshire Property Buyers cash offer estimator"
-    }
-  ],
-  "step": [
-    {
-      "@type": "HowToStep",
-      "name": "Get an estimated market value",
-      "text": "Use Zoopla or Rightmove to get a free estimated market value for your property."
-    },
-    {
-      "@type": "HowToStep",
-      "name": "Enter the market value",
-      "text": "Type the estimated market value into the calculator in pounds sterling."
-    },
-    {
-      "@type": "HowToStep",
-      "name": "Pick property condition",
-      "text": "Choose the condition tier: excellent (refurbished), good (well-maintained), fair (dated), poor (significant work needed), or very poor (uninhabitable)."
-    },
-    {
-      "@type": "HowToStep",
-      "name": "Review the indicative offer",
-      "text": "The calculator shows the indicative cash offer, the condition-adjusted market value, and the offer as a percentage of market value. Final offers follow a short viewing and are valid for 14 days."
-    }
-  ]
-}
-</script>
+
 </head>
 <body>
 
@@ -560,81 +524,19 @@
     <p><strong>Compare what lands, not what is quoted.</strong> An estate agent's asking price is not what you keep, because fees, any price reduction and months of holding costs come off it first. At a modern method of auction the hammer price is not the buyer's full cost either: the buyer also pays a non-refundable reservation fee, commonly 4.2 to 5 percent of the price plus VAT, and because a buyer works to a total budget, that fee comes out of what they can bid. It is described as paid by the buyer rather than the seller, which hides how it suppresses the price. Our offer has no fees or commission taken off it, so it is the figure the sale completes at. That does not mean we always leave you with more. It means the three numbers are not like for like.
 
     <h2>What "cash house buyer" actually means in Sheffield</h2>
-    <p>A cash house buyer is the buyer of your property: not a broker, not a lead-generation site, not an introducer to a panel of investors. We use our own funds to purchase directly. There is no mortgage lender on the buying side, no survey-dependent lender decision, no chain. The trade-off is straightforward: we pay 80 to 85 percent of current open market value rather than the full asking price, and in return the seller gets a same day written offer, completion in 7 to 28 days, no estate agent fees, and no fall-through risk after the offer is accepted in writing. For the full picture of the Sheffield market: postcode-by-postcode prices, PRC and cladding context, Renters' Rights Act 2026 implications, days-on-market data, read our canonical guide on <a href="/sell-house-fast-sheffield/">selling a house fast in Sheffield</a>. This page is the focused companion on how to verify any cash buyer before you sign.</p>
+    <p>A cash house buyer is the buyer of your property: not a broker, not a lead-generation site, not an introducer to a panel of investors. We use our own funds to purchase directly. There is no mortgage lender on the buying side, no survey-dependent lender decision, no chain. The trade-off is straightforward: we pay less than a full price open market sale might achieve. Every property is priced individually, on what it actually is and on what you tell us about it, so we will not put a percentage on it before we have spoken to you. In return the seller gets a same day written offer, completion in 7 to 28 days, no estate agent fees, and no fall-through risk after the offer is accepted in writing. For the full picture of the Sheffield market: postcode-by-postcode prices, PRC and cladding context, Renters' Rights Act 2026 implications, days-on-market data, read our canonical guide on <a href="/sell-house-fast-sheffield/">selling a house fast in Sheffield</a>. This page is the focused companion on how to verify any cash buyer before you sign.</p>
 
     
-    <h2>See what we'd pay for your Sheffield property</h2>
-    <p>An instant indicative offer, worked out in your browser. Final offers follow a short viewing and are valid for 14 days.</p>
+    <h2>How we price a Sheffield property</h2>
+    <p>There is no calculator on this page that will tell you what we would pay, because there is no formula behind our offers. Every property is priced on what it actually is: the street, the condition, the tenure, the title, and whatever you tell us about the situation. Tell us about yours and we will put a number in writing the same day.</p>
 
-    <section class="sypb-calc reveal" data-calc="cash-offer" aria-labelledby="cash-offer-heading-chb-she">
-      <header class="sypb-calc-header">
-        <h3 id="cash-offer-heading-chb-she">Cash offer estimator</h3>
-        <p>Enter your Zoopla / Rightmove valuation and an honest assessment of condition. Numbers update as you type. No data leaves your browser.</p>
-      </header>
-
-      <div class="sypb-calc-grid">
-        <div class="sypb-calc-field">
-          <label for="cash-value-chb-she">Estimated market value</label>
-          <div class="sypb-calc-input-wrap">
-            <span class="prefix">£</span>
-            <input id="cash-value-chb-she" type="number" inputmode="decimal" min="0" step="1000" value="200000" class="has-prefix" data-calc-input="value" aria-describedby="cash-value-note-chb-she">
-          </div>
-          <small id="cash-value-note-chb-she" style="font-size:0.8rem;color:var(--muted);">Don't know? Get a free estimate from <a href="https://www.zoopla.co.uk/home-values/" rel="noopener" target="_blank">Zoopla</a> or <a href="https://www.rightmove.co.uk/house-prices.html" rel="noopener" target="_blank">Rightmove</a>.</small>
-        </div>
-
-        <div class="sypb-calc-field">
-          <label for="cash-condition-chb-she">Property condition</label>
-          <div class="sypb-calc-input-wrap">
-            <select id="cash-condition-chb-she" data-calc-input="condition">
-              <option value="excellent">Excellent: refurbished, move-in ready</option>
-              <option value="good" selected>Good: well-maintained, minor cosmetics</option>
-              <option value="fair">Fair: dated, needs modernisation</option>
-              <option value="poor">Poor: significant work needed (roof, damp, rewiring)</option>
-              <option value="derelict">Very poor, uninhabitable or structural problems</option>
-            </select>
-          </div>
-        </div>
-      </div>
-
-      <div class="sypb-calc-results single-headline" role="status" aria-live="polite">
-        <div class="sypb-calc-result-cell headline">
-          <span class="label">Indicative cash offer</span>
-          <span class="value" data-calc-out="offer">,</span>
-          <span class="range" data-calc-out="offer-range"></span>
-        </div>
-        <div class="sypb-calc-result-cell">
-          <span class="label">Condition-adjusted value</span>
-          <span class="value" data-calc-out="adjusted">,</span>
-        </div>
-        <div class="sypb-calc-result-cell">
-          <span class="label">% of market value</span>
-          <span class="value" data-calc-out="percent">,</span>
-        </div>
-      </div>
-
-      <div class="sypb-calc-question">
-        <h4>Does that figure work for what you need?</h4>
-        <div class="sypb-calc-buttons">
-          <button type="button" class="sypb-calc-btn" data-calc-action="ok">Yes, get me a firm offer</button>
-          <button type="button" class="sypb-calc-btn warn" data-calc-action="lower">Lower than I'd hoped, what are my options?</button>
-        </div>
-
-        <div class="sypb-calc-response" data-calc-response="ok" role="region">
-          <h5>Good. We can put a written offer in front of you the same day.</h5>
-          <p>The figure above is indicative, a firm written offer follows a short viewing (in person or by video) and a desktop check of comparable sales on your street. Once signed, the offer is valid for 14 days, and we can cover your legal fees if you use our panel solicitor. Typical completion is 7 to 28 days.</p>
-          <a class="cta-inline" href="/get-offer/">Get a firm offer</a>
-        </div>
-
-        <div class="sypb-calc-response warn" data-calc-response="lower" role="region">
-          <h5>That gap is real, and so is what you get for it.</h5>
-          <p>A cash sale at our typical 80-85% of market value buys you three things the estate-agent route can't reliably deliver: <strong>certainty</strong> (no chain, no buyer pulling out), <strong>speed</strong> (1 to 4 weeks vs 4-6 months average), and <strong>no fees to you</strong> (we can cover your legal fees if you use our panel solicitor; estate agents take 1-2% + VAT on top). For sellers in a real time-bind: divorce, probate, mortgage arrears, job relocation: that gap is often worth less than the equivalent in stress, double mortgage payments, or a chain collapse at week ten.</p>
-          <p>If you're not under time pressure, the estate-agent route may net you more. The honest comparison is on our <a href="/cash-buyer-vs-estate-agent/">cash buyer vs estate agent</a> page, read it before deciding.</p>
-          <a class="cta-inline" href="/get-offer/">Still get a firm offer (no obligation)</a>
-        </div>
-      </div>
-
-      <p class="sypb-calc-note">For illustration only. Final offers depend on a desktop check of comparable sales, a short viewing, and any title or structural issues found during conveyancing. Our offers typically land at 80-85% of open market value, see <a href="/blog/how-much-do-cash-buyers-offer-below-market-value/">how cash buyer pricing works</a>.</p>
-    </section>
+    <div class="check-card">
+      <h3>What our number means</h3>
+      <p>The figure we give you is our best offer at that point, based on the information you have provided. We do not start low and work up to get a deal over the line. The offer is valid for 14 days, we can cover your legal fees if you use our panel solicitor, and typical completion is 7 to 28 days, with the fastest at 7 days.</p>
+      <p>It can still change if the legal work turns up something material that we were not told about, such as a title defect or a structural problem, or if the property turns out to be different from how it was described. If that happens we will explain exactly why.</p>
+      <p>Judge our number for yourself before you accept it. Get a free estimate from <a href="https://www.zoopla.co.uk/home-values/" rel="noopener" target="_blank">Zoopla</a> or <a href="https://www.rightmove.co.uk/house-prices.html" rel="noopener" target="_blank">Rightmove</a>, then check what has actually sold on your street. If you are not under time pressure, the estate agent route may well leave you with more money, and the honest comparison is on our <a href="/cash-buyer-vs-estate-agent/">cash buyer vs estate agent</a> page.</p>
+      <p><a href="/get-offer/" class="btn-primary">Get a written offer</a></p>
+    </div>
 
     <h2>Six checks every Sheffield seller should make before accepting a cash offer</h2>
     <p>The UK quick-sale industry is not regulated as a sector. There is no statutory licence to set up a cash-buying company and start advertising in Sheffield, which is precisely why the burden of verification sits with the seller. Sheffield City Council Trading Standards has explicitly warned that rogue traders moved online during and after the pandemic behind "professional-looking websites which appear genuine, but many are not". The six checks below take about twenty minutes total and filter out the bad actors. Run them on us. Run them on every Sheffield cash buyer you approach.</p>
@@ -696,7 +598,7 @@
 
     <h2>How our Sheffield cash purchase actually works, four steps</h2>
     <p><strong>Step 1, you tell us about the property.</strong> Two-minute form on the <a href="/get-offer/">offer page</a>. Address, type, brief note on the situation (probate, divorce, tenanted, mortgage arrears, knotweed, PRC construction, whatever is relevant).</p>
-    <p><strong>Step 2, we make a written offer the same day.</strong> The offer is valid for 14 days. No pressure to accept. If we need clarifying information first, we ask before we offer rather than offering high and dropping later.</p>
+    <p><strong>Step 2, we make a written offer the same day.</strong> The offer is valid for 14 days. No pressure to accept. It is our best offer at that point, based on what you have told us, so we do not open low and creep up to get a deal over the line. If we need clarifying information first, we ask before we offer rather than offering high and dropping later.</p>
     <p><strong>Step 3, solicitors instructed; you keep the right to your own.</strong> If you accept, our panel solicitors are instructed immediately and we can cover the legal fees. You can use your own solicitor if you prefer; we work with sellers' solicitors as readily as our own panel.</p>
     <p><strong>Step 4, completion in 7 to 28 days, on your date.</strong> Fastest completions are 7 days, and most Sheffield sales through us complete inside four weeks. We can also work to a longer date if you need to align with a probate Grant, a divorce settlement, or an onward purchase.</p>
 
@@ -719,7 +621,7 @@
       </div>
       <div class="faq-item">
         <h3 class="faq-qh"><button class="faq-q" type="button" aria-expanded="false" aria-controls="faq-cash-house-buyer-sheffield-1-4"><span class="faq-qt">How much do cash buyers pay for a Sheffield house?</span><svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg></button></h3>
-        <div class="faq-a" id="faq-cash-house-buyer-sheffield-1-4"><div class="faq-a-inner"><p>Genuine buyers typically pay 80 to 85 per cent of current open market value in 2026. On the Sheffield average of around £222,000 (February 2026 UK HPI), expect £177,000 to £188,000. Lower offers reflect material condition, PRC construction, cladding friction, or other saleability issues.</p></div></div>
+        <div class="faq-a" id="faq-cash-house-buyer-sheffield-1-4"><div class="faq-a-inner"><p>Cash buyers as a sector pay below open market value, and how far below varies widely from buyer to buyer and from house to house. We do not work to a percentage at all. Every Sheffield property is priced on its own condition, tenure, title and situation, and what we send you is our best offer at that point, based on what you have told us. The Sheffield average sale price is around £222,000 (February 2026 UK HPI), which tells you what the market is doing rather than what any one house is worth. Material condition, PRC construction and cladding friction all pull an individual figure down.</p></div></div>
       </div>
       <div class="faq-item">
         <h3 class="faq-qh"><button class="faq-q" type="button" aria-expanded="false" aria-controls="faq-cash-house-buyer-sheffield-1-5"><span class="faq-qt">How quickly can a Sheffield cash sale complete?</span><svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg></button></h3>

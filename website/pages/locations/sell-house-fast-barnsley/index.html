@@ -229,43 +229,6 @@
 }
 </script>
 
-<!-- howto-schema -->
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "HowTo",
-  "name": "How to estimate a cash offer for your house",
-  "description": "Get an indicative cash offer for your property based on its estimated market value and condition tier.",
-  "tool": [
-    {
-      "@type": "HowToTool",
-      "name": "South Yorkshire Property Buyers cash offer estimator"
-    }
-  ],
-  "step": [
-    {
-      "@type": "HowToStep",
-      "name": "Get an estimated market value",
-      "text": "Use Zoopla or Rightmove to get a free estimated market value for your property."
-    },
-    {
-      "@type": "HowToStep",
-      "name": "Enter the market value",
-      "text": "Type the estimated market value into the calculator in pounds sterling."
-    },
-    {
-      "@type": "HowToStep",
-      "name": "Pick property condition",
-      "text": "Choose the condition tier: excellent (refurbished), good (well-maintained), fair (dated), poor (significant work needed), or very poor (uninhabitable)."
-    },
-    {
-      "@type": "HowToStep",
-      "name": "Review the indicative offer",
-      "text": "The calculator shows the indicative cash offer, the condition-adjusted market value, and the offer as a percentage of market value. Final offers follow a short viewing and are valid for 14 days."
-    }
-  ]
-}
-</script>
 </head>
 <body>
 
@@ -411,7 +374,7 @@
     </figure>
 
     <div class="quick-answer" style="background:#f3f4f6;border-left:4px solid #0f766e;padding:1rem 1.25rem;margin:0 0 1.5rem 0;border-radius:6px;">
-      <p style="margin:0;font-size:1rem;line-height:1.55;"><strong>Quick answer:</strong> We buy houses across all Barnsley postcodes (S70 to S75, plus S36 Penistone and S63 Dearne) for cash. Typical 80-85% of open market value in exchange for speed, certainty and no fees. Written offer the same day, completion in 7 to 28 days. Suitable for ex-mining stock, PRC defective housing, tenanted properties under the Renters' Rights Act 2025, probate sales and chain-break situations. No estate agent fees, no chain, no requirement for repairs.</p>
+      <p style="margin:0;font-size:1rem;line-height:1.55;"><strong>Quick answer:</strong> We buy houses across all Barnsley postcodes (S70 to S75, plus S36 Penistone and S63 Dearne) for cash. Every property is priced individually rather than from a percentage, so we will not put a figure on yours before we have spoken to you. What you get is speed, certainty and no fees. Written offer the same day, completion in 7 to 28 days. Suitable for ex-mining stock, PRC defective housing, tenanted properties under the Renters' Rights Act 2025, probate sales and chain-break situations. No estate agent fees, no chain, no requirement for repairs.</p>
     </div>
 
     
@@ -449,78 +412,12 @@
     <div class="key-fact"><strong>Practical read:</strong> if your property is in the top tier of Barnsley stock, an estate agent route usually nets more once fees are accounted for. If you're in mid or lower-tier stock: especially S72 ex-mining or anything with PRC/mining/condition complications: a cash route is worth pricing up properly once carrying costs, the 22% withdrawal rate and the time-to-completion gap are in the sums. Whether it actually beats an agent on net depends on how many of those costs land in your case, so do the arithmetic on your own house rather than on an average one.</div>
 
     
-    <h2>What we'd typically offer for a Barnsley house</h2>
-    <p>Barnsley remains the most affordable South Yorkshire local-authority area, with average prices around 18% below the regional figure. Enter your Zoopla valuation and condition for an instant indicative cash offer.</p>
-
-    <section class="sypb-calc reveal" data-calc="cash-offer" aria-labelledby="cash-offer-heading-shf-bar">
-      <header class="sypb-calc-header">
-        <h3 id="cash-offer-heading-shf-bar">Cash offer estimator</h3>
-        <p>Enter your Zoopla / Rightmove valuation and an honest assessment of condition. Numbers update as you type. No data leaves your browser.</p>
-      </header>
-
-      <div class="sypb-calc-grid">
-        <div class="sypb-calc-field">
-          <label for="cash-value-shf-bar">Estimated market value</label>
-          <div class="sypb-calc-input-wrap">
-            <span class="prefix">£</span>
-            <input id="cash-value-shf-bar" type="number" inputmode="decimal" min="0" step="1000" value="200000" class="has-prefix" data-calc-input="value" aria-describedby="cash-value-note-shf-bar">
-          </div>
-          <small id="cash-value-note-shf-bar" style="font-size:0.8rem;color:var(--muted);">Don't know? Get a free estimate from <a href="https://www.zoopla.co.uk/home-values/" rel="noopener" target="_blank">Zoopla</a> or <a href="https://www.rightmove.co.uk/house-prices.html" rel="noopener" target="_blank">Rightmove</a>.</small>
-        </div>
-
-        <div class="sypb-calc-field">
-          <label for="cash-condition-shf-bar">Property condition</label>
-          <div class="sypb-calc-input-wrap">
-            <select id="cash-condition-shf-bar" data-calc-input="condition">
-              <option value="excellent">Excellent: refurbished, move-in ready</option>
-              <option value="good" selected>Good: well-maintained, minor cosmetics</option>
-              <option value="fair">Fair: dated, needs modernisation</option>
-              <option value="poor">Poor: significant work needed (roof, damp, rewiring)</option>
-              <option value="derelict">Very poor, uninhabitable or structural problems</option>
-            </select>
-          </div>
-        </div>
-      </div>
-
-      <div class="sypb-calc-results single-headline" role="status" aria-live="polite">
-        <div class="sypb-calc-result-cell headline">
-          <span class="label">Indicative cash offer</span>
-          <span class="value" data-calc-out="offer">,</span>
-          <span class="range" data-calc-out="offer-range"></span>
-        </div>
-        <div class="sypb-calc-result-cell">
-          <span class="label">Condition-adjusted value</span>
-          <span class="value" data-calc-out="adjusted">,</span>
-        </div>
-        <div class="sypb-calc-result-cell">
-          <span class="label">% of market value</span>
-          <span class="value" data-calc-out="percent">,</span>
-        </div>
-      </div>
-
-      <div class="sypb-calc-question">
-        <h4>Does that figure work for what you need?</h4>
-        <div class="sypb-calc-buttons">
-          <button type="button" class="sypb-calc-btn" data-calc-action="ok">Yes, get me a firm offer</button>
-          <button type="button" class="sypb-calc-btn warn" data-calc-action="lower">Lower than I'd hoped, what are my options?</button>
-        </div>
-
-        <div class="sypb-calc-response" data-calc-response="ok" role="region">
-          <h5>Good. We can put a written offer in front of you the same day.</h5>
-          <p>The figure above is indicative, a firm written offer follows a short viewing (in person or by video) and a desktop check of comparable sales on your street. Once signed, the offer is valid for 14 days, and we can cover your legal fees if you use our panel solicitor. Typical completion is 7 to 28 days.</p>
-          <a class="cta-inline" href="/get-offer/">Get a firm offer</a>
-        </div>
-
-        <div class="sypb-calc-response warn" data-calc-response="lower" role="region">
-          <h5>That gap is real, and so is what you get for it.</h5>
-          <p>A cash sale at our typical 80-85% of market value buys you three things the estate-agent route can't reliably deliver: <strong>certainty</strong> (no chain, no buyer pulling out), <strong>speed</strong> (1 to 4 weeks vs 4-6 months average), and <strong>no fees</strong> (we can cover your legals; estate agents take 1-2% + VAT on top). For sellers in a real time-bind: divorce, probate, mortgage arrears, job relocation: that gap is often worth less than the equivalent in stress, double mortgage payments, or a chain collapse at week ten.</p>
-          <p>If you're not under time pressure, the estate-agent route may net you more. The honest comparison is on our <a href="/cash-buyer-vs-estate-agent/">cash buyer vs estate agent</a> page, read it before deciding.</p>
-          <a class="cta-inline" href="/get-offer/">Still get a firm offer (no obligation)</a>
-        </div>
-      </div>
-
-      <p class="sypb-calc-note">For illustration only. Final offers depend on a desktop check of comparable sales, a short viewing, and any title or structural issues found during conveyancing. Our offers typically land at 80-85% of open market value, see <a href="/blog/how-much-do-cash-buyers-offer-below-market-value/">how cash buyer pricing works</a>.</p>
-    </section>
+    <h2>How we price a Barnsley house</h2>
+    <p>Barnsley remains the most affordable South Yorkshire local-authority area, with average prices around 18% below the regional figure. Beyond that we will not put a percentage on your house before we have spoken to you. Too much turns on the specifics: the postcode, the stock type, the condition, whether there is a tenant in place, whether the title and the mining position are clean, and how quickly you need to be out.</p>
+    <p>Every property is priced on its own merits and on what you tell us about it. When we come back to you, the figure is our best offer at that point, based on the information provided. We do not open low and then work up to get a deal over the line. The offer goes in writing the same day and stays valid for 14 days.</p>
+    <p>It can still change if conveyancing turns up something material, such as a title defect or a structural problem, or if the property turns out to be different from how it was described. Short of that, the number we give you is the number that reaches your account on completion. Nothing comes off it in fees, and we can cover your legal fees if you use our panel solicitor. Typical completion is 7 to 28 days, and the fastest is 7.</p>
+    <p>If a cash sale is not the right route for your property we will say so. Where there is no time pressure and the house is straightforward, the open market usually nets more, and our <a href="/cash-buyer-vs-estate-agent/">cash buyer vs estate agent</a> comparison sets out why.</p>
+    <p><a class="cta-inline" href="/get-offer/">Tell us about your Barnsley property</a></p>
 
     <h2>Selling in Barnsley by postcode</h2>
     <p>The market in S70 is not the market in S75. National competitor pages treat Barnsley as one place. It's not. Here's how things actually differ across S70 to S75 (plus the S36 and S63 cross-border postcodes we cover).</p>
@@ -552,13 +449,13 @@
     <p>The Renters' Rights Act 2025 commenced on 1 May 2026, abolishing Section 21 "no-fault" evictions. To regain possession to sell, landlords use Ground 1A, four months' notice plus a 12-month re-let ban if circumstances change. The Barnsley MBC selective licensing scheme (commenced 15 February 2026, £975 per property for five years until 14 February 2031, with civil penalties up to £30,000 for unlicensed letting in designated areas) layers additional compliance cost on top. A cash sale with the tenant in situ avoids the Ground 1A notice period entirely, the new owner takes the tenancy across as part of the purchase.</p>
 
     <h2>Three routes compared, what each one nets</h2>
-    <p>For a typical Barnsley property, here's how the three sale routes compare on a net basis once realistic 2026 carrying costs and fees are factored in. We've modelled a £150,000 S73 Wombwell mid-market semi. Barnsley's most common stock type.</p>
+    <p>For a typical Barnsley property, here's how the three sale routes compare on a net basis once realistic 2026 carrying costs and fees are factored in. We've modelled a £150,000 S73 Wombwell mid-market semi. Barnsley's most common stock type. The agent and auction rows use published market averages. We have deliberately left our own row without a figure, because we price each house individually rather than from a percentage.</p>
     <table class="compare-table">
       <thead><tr><th>Route</th><th>Gross sale price</th><th>Costs (fees, carrying, voids)</th><th>Net to seller</th><th>% of OMV</th><th>Time to net</th></tr></thead>
       <tbody>
         <tr><td>Estate agent (16-week sale, typical Barnsley mid-tier)</td><td>~£145,500 (97% OMV)</td><td>~£7,750 (1.5% commission, conveyancing, EPC, 4 mo carrying, void risk)</td><td>~£137,750</td><td>~91.8%</td><td>16+ weeks, c.14% withdrawal risk</td></tr>
         <tr><td>Auction (modern method, 56-day reservation)</td><td>~£127,500 (85% OMV)</td><td>~£7,000 (entry, commission, legal pack, void)</td><td>~£120,500</td><td>~80.3%</td><td>8-12 weeks, lower fall-through</td></tr>
-        <tr><td>Cash buyer (us)</td><td>~£127,500 (85% OMV)</td><td>£0 in fees to you (no agent fees; legal fees covered if you use our panel solicitor)</td><td>~£127,500</td><td>~85.0%</td><td>14 days</td></tr>
+        <tr><td>Cash buyer (us)</td><td>Priced on the property, not from a formula</td><td>£0 in fees to you (no agent fees; legal fees covered if you use our panel solicitor)</td><td>The offer figure, in full</td><td>Depends on the house</td><td>7 to 28 days</td></tr>
       </tbody>
     </table>
     <p>One thing that table hides, and it is the thing most auction pages will not tell you. With the modern method of auction the buyer pays a non-refundable reservation fee on top of the hammer price, commonly 4.2 to 5 per cent of the price plus VAT. It is described as paid by the buyer, not the seller, but a buyer works to a total budget, so that fee comes out of what they can afford to bid. Your own entry fee, commission and legal pack then come off the suppressed price. So compare what lands in your account, not what you are quoted: an agent's asking price is not your net after fees and months of waiting, an auction hammer price is not what the buyer could really afford, and our offer is the figure that reaches your account on completion. That does not mean you end up with more by selling to us. It means the three numbers are not like for like, and you should not compare them as if they are.</p>
@@ -566,11 +463,11 @@
 
     <h2>Worked example: S73 Wombwell mid-market semi (£150,000)</h2>
     <p>A 1960s three-bed semi in Wombwell, decent condition, no mining survey issues. Open-market sale at the typical 97% completes in 16 weeks, after which the seller nets around £137,750 once estate agent commission, conveyancing, EPC, four months of mortgage/council tax/insurance carrying costs, and the c.14% withdrawal risk (which doesn't fully resolve in the numbers above) are factored in.</p>
-    <p>Our cash route on the same property completes in 14 days at £127,500. The headline difference is about £10,250, call it 6.8% of open market value. The time differential is closer to <em>three and a half months</em>. For an executor settling a probate estate or a divorcing couple wanting a clean break, that time-to-net trade-off can be worth taking.</p>
+    <p>Our cash route on the same property completes inside 7 to 28 days, with no agent commission, no four months of carrying costs and no chain to collapse at week ten. We will not put a figure on a house like that in advance, because the offer is priced on the property and on what you tell us about it rather than on a percentage. What we will say plainly is that on well-kept mid-market stock of this kind the estate agent route usually nets more, and the months saved are what you are being asked to weigh against it. For an executor settling a probate estate or a divorcing couple wanting a clean break, that trade-off can still be worth taking.</p>
 
     <h2>Worked example: S72 Goldthorpe ex-mining terrace (£100,000)</h2>
     <p>A two-up two-down ex-NCB terrace in Goldthorpe with a CON29M flag for shallow workings, dated wiring, and aged Crittall windows. Three local lenders have already declined the surveyed value. The open-market sale takes 26 weeks at 92% gross: £92,000: netting about £82,800 once estate agent commission, conveyancing, six months of carrying costs, and the empty-homes premium that kicks in if completion drifts further are subtracted.</p>
-    <p>Our cash route completes inside 7 to 28 days at £84,000 (84% of market value). On paper that lands just above the £82,800 open-market net, but treat that comparison carefully: it only holds if every assumed cost actually lands. Knock two or three months off the carrying period, or find a buyer who does not need a mortgage, and the open market comes out ahead again. What is not in doubt is the timing and the certainty. Older S72 and S63 stock with mining or condition flags is structurally slow on the open market, and the carrying costs run for the whole time it sits there.</p>
+    <p>Our cash route completes inside 7 to 28 days. What we would pay for that house is priced on the house itself, on the mining flag, the wiring, the windows and whatever else you tell us, so we will not put a percentage on it here. Treat the £82,800 open-market net carefully as well: it only holds if every assumed cost actually lands. Knock two or three months off the carrying period, or find a buyer who does not need a mortgage, and the open market comes out well ahead. What is not in doubt is the timing and the certainty. Older S72 and S63 stock with mining or condition flags is structurally slow on the open market, and the carrying costs run for the whole time it sits there.</p>
 
     <h2>How a Barnsley cash sale actually works</h2>
     <p>The process is short and there's nothing hidden in it.</p>
@@ -613,7 +510,7 @@
       </div>
       <div class="faq-item">
         <h3 class="faq-qh"><button class="faq-q" type="button" aria-expanded="false" aria-controls="faq-sell-house-fast-barnsley-1-4"><span class="faq-qt">What percentage of market value will you pay?</span><svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg></button></h3>
-        <div class="faq-a" id="faq-sell-house-fast-barnsley-1-4"><div class="faq-a-inner"><p>Typically 80-85% of open market value, reflecting certainty, speed and condition-tolerance. Below 75% is exploitative; above 90% is usually a bait offer.</p></div></div>
+        <div class="faq-a" id="faq-sell-house-fast-barnsley-1-4"><div class="faq-a-inner"><p>We do not publish a percentage. Every property is priced on what it actually is and on what you tell us about it, so there is no formula to quote. The figure we give you is our best offer at that point, in writing the same day and valid for 14 days, and we do not start low and work up to get a deal over the line. It can still change if conveyancing turns up something material, such as a title defect or a structural problem, or if the property turns out to be different from how it was described. For the market-wide picture, see <a href="/blog/how-much-do-cash-buyers-offer-below-market-value/">how cash buyer pricing works</a>.</p></div></div>
       </div>
       <div class="faq-item">
         <h3 class="faq-qh"><button class="faq-q" type="button" aria-expanded="false" aria-controls="faq-sell-house-fast-barnsley-1-5"><span class="faq-qt">Are there any fees?</span><svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg></button></h3>
@@ -829,7 +726,7 @@
         "name": "What percentage of market value will you pay?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Typically 80 to 85% of open market value, reflecting certainty, speed and condition-tolerance. Below 75% is exploitative; above 90% is usually a bait offer."
+          "text": "We do not publish a percentage. Every property is priced on what it actually is and on what you tell us about it, so there is no formula to quote. The figure we give you is our best offer at that point, in writing the same day and valid for 14 days, and we do not start low and work up to get a deal over the line. It can still change if conveyancing turns up something material, such as a title defect or a structural problem, or if the property turns out to be different from how it was described."
         }
       },
       {
