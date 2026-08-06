@@ -32,42 +32,7 @@
   </style>
 
 <!-- howto-schema -->
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "HowTo",
-  "name": "How to estimate a cash offer for your house",
-  "description": "Get an indicative cash offer for your property based on its estimated market value and condition tier.",
-  "tool": [
-    {
-      "@type": "HowToTool",
-      "name": "South Yorkshire Property Buyers cash offer estimator"
-    }
-  ],
-  "step": [
-    {
-      "@type": "HowToStep",
-      "name": "Get an estimated market value",
-      "text": "Use Zoopla or Rightmove to get a free estimated market value for your property."
-    },
-    {
-      "@type": "HowToStep",
-      "name": "Enter the market value",
-      "text": "Type the estimated market value into the calculator in pounds sterling."
-    },
-    {
-      "@type": "HowToStep",
-      "name": "Pick property condition",
-      "text": "Choose the condition tier: excellent (refurbished), good (well-maintained), fair (dated), poor (significant work needed), or very poor (uninhabitable)."
-    },
-    {
-      "@type": "HowToStep",
-      "name": "Review the indicative offer",
-      "text": "The calculator shows the indicative cash offer, the condition-adjusted market value, and the offer as a percentage of market value. Final offers follow a short viewing and are valid for 14 days."
-    }
-  ]
-}
-</script>
+
 </head>
 <body>
 <div class="scroll-progress" id="scrollProgress"></div>
@@ -201,7 +166,7 @@
     </div>
     <div class="badge">South Yorkshire's Trusted Cash Buyers</div>
     <h1>Sell Your House Fast in South Yorkshire.<br><em>No Agents. No Delays.</em></h1>
-    <p>Facing <span class="kw">repossession</span>, <span class="kw">probate</span>, <span class="kw">divorce</span>, or <span class="kw">title complications</span>? We buy any property in South Yorkshire for <span class="kw">cash</span>, in as little as <span class="kw">7 days</span>.</p>
+    <p>Facing <span class="kw">repossession</span>, <span class="kw">probate</span>, <span class="kw">divorce</span>, or <span class="kw">a property in need of repair</span>? We buy any property in South Yorkshire for <span class="kw">cash</span>, in as little as <span class="kw">7 days</span>.</p>
     <div class="hero-btns">
       <a href="/get-offer/" class="btn-primary">Request My Callback</a>
       <a href="tel:+447739063734" class="btn-secondary" data-track="phone-tap">07739 063734</a>
@@ -239,8 +204,8 @@
     <span class="label">Your written cash offer</span>
   </div>
   <div class="sypb-stat">
-    <span class="num">80-85%</span>
-    <span class="label">Typical offer vs market value</span>
+    <span class="num">Any condition</span>
+    <span class="label">Bought as it stands, no repairs needed</span>
   </div>
   <div class="sypb-stat">
     <span class="num">£0</span>
@@ -254,7 +219,7 @@
     <div class="section-header reveal">
       <span class="section-label">Simple Process</span>
       <h2 class="section-title">How it works</h2>
-      <p class="section-sub">We are completely transparent throughout the process of buying your home.</p>
+      <p class="section-sub">We are completely transparent throughout the process of buying your property.</p>
     </div>
     <div class="how-steps reveal">
       <div class="how-step">
@@ -288,86 +253,7 @@
   </div>
 </section>
 
-<!-- CASH OFFER ESTIMATOR -->
-<section class="calc-section" id="offer-estimate" aria-labelledby="calc-home-heading">
-  <div class="section-inner" style="max-width:880px;">
-    <div class="section-header reveal" style="text-align:center;">
-      <span class="section-label">Instant Estimate</span>
-      <h2 class="section-title" id="calc-home-heading">See an indicative cash offer for your house</h2>
-      <p class="section-sub">Enter the Zoopla or Rightmove estimate for your property and pick an honest condition tier. We'll show you what we'd typically offer, instantly, with no contact details required.</p>
-    </div>
 
-    <section class="sypb-calc reveal" data-calc="cash-offer" aria-labelledby="cash-offer-heading-home">
-      <header class="sypb-calc-header">
-        <h3 id="cash-offer-heading-home">Cash offer estimator</h3>
-        <p>Numbers update as you type. No data leaves your browser.</p>
-      </header>
-
-      <div class="sypb-calc-grid">
-        <div class="sypb-calc-field">
-          <label for="cash-value-home">Estimated market value</label>
-          <div class="sypb-calc-input-wrap">
-            <span class="prefix">£</span>
-            <input id="cash-value-home" type="number" inputmode="decimal" min="0" step="1000" value="200000" class="has-prefix" data-calc-input="value" aria-describedby="cash-value-note-home">
-          </div>
-          <small id="cash-value-note-home" style="font-size:0.8rem;color:var(--muted);">Don't know? Get a free estimate from <a href="https://www.zoopla.co.uk/home-values/" rel="noopener" target="_blank">Zoopla</a> or <a href="https://www.rightmove.co.uk/house-prices.html" rel="noopener" target="_blank">Rightmove</a>.</small>
-        </div>
-
-        <div class="sypb-calc-field">
-          <label for="cash-condition-home">Property condition</label>
-          <div class="sypb-calc-input-wrap">
-            <select id="cash-condition-home" data-calc-input="condition">
-              <option value="excellent">Excellent: refurbished, move-in ready</option>
-              <option value="good" selected>Good: well-maintained, minor cosmetics</option>
-              <option value="fair">Fair: dated, needs modernisation</option>
-              <option value="poor">Poor: significant work needed (roof, damp, rewiring)</option>
-              <option value="derelict">Very poor, uninhabitable or structural problems</option>
-            </select>
-          </div>
-        </div>
-      </div>
-
-      <div class="sypb-calc-results single-headline" role="status" aria-live="polite">
-        <div class="sypb-calc-result-cell headline">
-          <span class="label">Indicative cash offer</span>
-          <span class="value" data-calc-out="offer">,</span>
-          <span class="range" data-calc-out="offer-range"></span>
-        </div>
-        <div class="sypb-calc-result-cell">
-          <span class="label">Condition-adjusted value</span>
-          <span class="value" data-calc-out="adjusted">,</span>
-        </div>
-        <div class="sypb-calc-result-cell">
-          <span class="label">% of market value</span>
-          <span class="value" data-calc-out="percent">,</span>
-        </div>
-      </div>
-
-      <div class="sypb-calc-question">
-        <h4>Does that figure work for what you need?</h4>
-        <div class="sypb-calc-buttons">
-          <button type="button" class="sypb-calc-btn" data-calc-action="ok">Yes, get me a firm offer</button>
-          <button type="button" class="sypb-calc-btn warn" data-calc-action="lower">Lower than I'd hoped, what are my options?</button>
-        </div>
-
-        <div class="sypb-calc-response" data-calc-response="ok" role="region">
-          <h5>Good. We can put a written offer in front of you the same day.</h5>
-          <p>The figure above is indicative, a firm written offer follows a short viewing (in person or by video) and a desktop check of comparable sales on your street. Once signed, the offer is valid for 14 days, and we can cover your legal fees if you use our panel solicitor. Typical completion is 7 to 28 days.</p>
-          <a class="cta-inline" href="/get-offer/">Get a firm offer</a>
-        </div>
-
-        <div class="sypb-calc-response warn" data-calc-response="lower" role="region">
-          <h5>That gap is real, and so is what you get for it.</h5>
-          <p>A cash sale at our typical 80-85% of market value buys you three things the estate-agent route can't reliably deliver: <strong>certainty</strong> (no chain, no buyer pulling out), <strong>speed</strong> (7 to 28 days vs 4-6 months average), and <strong>no fees</strong> (we can cover your legal fees if you use our panel solicitor; estate agents take 1-2% + VAT on top). For sellers in a real time-bind: divorce, probate, mortgage arrears, job relocation: that gap is often worth less than the equivalent in stress, double mortgage payments, or a chain collapse at week ten.</p>
-          <p>If you're not under time pressure, the estate-agent route may net you more. The honest comparison is on our <a href="/cash-buyer-vs-estate-agent/">cash buyer vs estate agent</a> page, read it before deciding.</p>
-          <a class="cta-inline" href="/get-offer/">Still get a firm offer (no obligation)</a>
-        </div>
-      </div>
-
-      <p class="sypb-calc-note">For illustration only. Final offers depend on a desktop check of comparable sales, a short viewing, and any title or structural issues found during conveyancing. Our offers typically land at 80-85% of open market value, see <a href="/blog/how-much-do-cash-buyers-offer-below-market-value/">how cash buyer pricing works</a>.</p>
-    </section>
-  </div>
-</section>
 
 <!-- MID-PAGE CTA #1 -->
 <div class="midcta-strip">
@@ -443,14 +329,13 @@
 <section class="compare-section" id="compare">
   <div class="section-inner">
     <div class="section-header reveal">
-      <span class="section-label">The Honest Comparison</span>
-      <h2 class="section-title">What each route actually costs you</h2>
-      <p class="section-sub">An example on a £130,000 property. The estate agent route lands somewhere in a range, depending on how long it takes to sell and what the property costs you to hold while you wait.</p>
+      <span class="section-label">Speed</span>
+      <h2 class="section-title">How long each route really takes</h2>
+      <p class="section-sub">The open market can take half a year. We work to a date you choose.</p>
     </div>
 
     <figure class="sypb-route-bars reveal" aria-label="Estate agent vs cash buyer timeline comparison" style="max-width:880px;margin:0 auto 2rem;">
       <figcaption>
-        <span class="route-bars-title">How long each route really takes</span>
         <span class="route-bars-sub">2026 UK averages: Zoopla, HomeOwners Alliance, Property Solvers</span>
       </figcaption>
       <div class="route-bars-grid">
@@ -470,51 +355,6 @@
       </div>
     </figure>
 
-    <div class="compare-wrap reveal">
-      <table class="compare-table">
-        <thead>
-          <tr>
-            <th></th>
-            <th>Estate Agent</th>
-            <th class="our-col">South Yorkshire<br>Property Buyers</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>Time to sell</td>
-            <td><strong>6 to 9 months</strong></td>
-            <td class="our-col"><strong>As little as 7 days</strong></td>
-          </tr>
-          <tr>
-            <td>True market value</td>
-            <td><strong>£130,000</strong></td>
-            <td class="our-col"><strong>£130,000</strong></td>
-          </tr>
-          <tr>
-            <td>Agreed sale price</td>
-            <td><strong>£124,000</strong></td>
-            <td class="our-col"><strong>£110,000</strong></td>
-          </tr>
-          <tr>
-            <td>Agent fees (2.5%)</td>
-            <td><strong>less £3,100</strong></td>
-            <td class="our-col"><strong>None</strong></td>
-          </tr>
-          <tr>
-            <td>Cost of holding it while it sells: bills, council tax and any mortgage</td>
-            <td><strong>Nothing, up to £11,610</strong></td>
-            <td class="our-col"><strong>None</strong></td>
-          </tr>
-          <tr class="final-row">
-            <td><strong>What reaches you</strong></td>
-            <td><strong>£109,290 to £120,900</strong></td>
-            <td class="our-col"><strong>£110,000</strong></td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-    <p class="section-sub" style="max-width:780px;margin:1.75rem auto 0;text-align:left;">Those holding costs only count if they apply to you. An empty property with a mortgage still running for nine months is the expensive end of that range. A house that is mortgage free, or that sells quickly, costs far less to wait on, and then the estate agent route pays you more than we do. If that is your situation, we will tell you. We are worth talking to when a property is hard to sell, when holding on to it is costing you money every month, or when you need a completion date you can actually rely on.</p>
-    <p class="section-sub" style="max-width:780px;margin:1.25rem auto 0;text-align:left;">Auction is the third route people weigh up, and the figure you are shown there is not the one to compare either. Under the modern method of auction the buyer pays a non-refundable reservation fee on top of the hammer price, commonly 4.2 to 5 percent of the price plus VAT. It is described as paid by the buyer, not the seller, but a buyer works to a total budget, so that fee comes out of what they can afford to bid. Your own fee stack then comes off the suppressed price. We are not saying you always walk away with more by selling to us. We are saying the headline numbers are not like for like, and the figure worth comparing is the one that reaches your account on completion.</p>
     <div class="compare-cta reveal">
       <p>Ready to find out what we would pay for your property?</p>
       <a href="/get-offer/" class="btn-primary">Get My Free Cash Offer</a>
@@ -544,7 +384,7 @@
         <h2 class="section-title">South Yorkshire's local property buyers.</h2>
         <p>We are a small, experienced team of property investors based right here in South Yorkshire. We are not a national call centre. When you contact us, you speak directly with the <span class="kw">decision-maker</span>, with no middlemen and no waiting on approvals from head office.</p>
         <p>We have been buying residential and commercial property across <span class="kw">Sheffield, Rotherham, Doncaster, Barnsley</span>, and the surrounding areas for years. We know this market, we know the local solicitors, and we know how to move quickly when it matters.</p>
-        <p>We pay a fair cash price, typically <span class="kw">80 to 85 percent of market value</span>, in exchange for speed, certainty, and zero hassle. For many people in difficult circumstances, that trade-off is absolutely worth it, and we will always be honest with you about what to expect.</p>
+        <p>We pay a fair cash price in exchange for speed, certainty, and zero hassle. Every property is different, so we price yours on what it actually is rather than on a formula. For many people in difficult circumstances, that trade-off is absolutely worth it, and we will always be honest with you about what to expect.</p>
         <p>We <span class="kw">can cover your legal fees</span> if you use our panel solicitor, who knows exactly how we work, which keeps things moving quickly. You are free to use your own solicitor instead, and that is often worth doing, in which case their bill is yours. Either way, we charge you nothing.</p>
         <div class="about-stats">
           <div>
@@ -1183,8 +1023,6 @@
     </div>
   </div>
 </div>
-
-<script defer src="/js/calculators.js"></script>
 
 <script defer src="/js/site.js"></script>
 <script defer src="/js/popup.js"></script>

@@ -7,7 +7,7 @@
 (function () {
   'use strict';
 
-  var DELAY_MS = 3000;
+  var DELAY_MS = 15000;
   var SEEN_KEY = 'sypb_popup_seen';
   var LEAD_KEY = 'sypb_lead_submitted';
   var SKIP_PATHS = ['/get-offer/', '/thank-you/'];
@@ -155,8 +155,8 @@
     return window.getComputedStyle(el).display !== 'none';
   }
 
-  /* Run the 3s clock first, so a visitor with no cookie banner sees the popup at
-     exactly 3s. Only then, if the banner is still up, hold off until it is gone. */
+  /* Run the 15s clock first, so a visitor with no cookie banner sees the popup at
+     exactly 15s. Only then, if the banner is still up, hold off until it is gone. */
   function start() {
     var MAX_WAIT_MS = 30000;
     setTimeout(function () {
