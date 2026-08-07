@@ -755,13 +755,18 @@ section { padding: var(--section-y) 1.5rem; transition: background 0.3s; }
 .blog-thumb {
   background: var(--green-subtle);
   border-bottom: 1px solid var(--green-border);
-  height: 82px;
+  height: 168px;
   display: flex;
   align-items: center;
   justify-content: center;
   color: var(--green);
+  overflow: hidden;
   transition: background 0.3s;
 }
+/* Taller than the old icon strip because these now carry a photograph rather
+   than a 30px glyph. The flex centring stays so any card still holding an icon
+   keeps working. */
+.blog-thumb img { width: 100%; height: 100%; object-fit: cover; display: block; }
 
 .blog-body { padding: 1.3rem; }
 
@@ -3434,3 +3439,23 @@ span.map-label:hover { background: rgba(10, 48, 26, 0.88); }
   text-align: center;
 }
 html[data-theme="dark"] .coverage-map .cvm-d { fill-opacity: 0.32; }
+
+/* ── Recent purchase cards ──────────────────────────────────────────
+   Photo slot for the case cards. These carry photographs of houses we have
+   actually bought, which is the one kind of image on this site that cannot be
+   mistaken for stock. The whole point is that they are ours, so there is no
+   placeholder state and no icon fallback: a card without a real photograph
+   should not be published. */
+.case-photo {
+  display: block;
+  width: 100%;
+  height: 190px;
+  object-fit: cover;
+  background: var(--surface-alt);
+}
+.case-photo-caption {
+  font-size: 0.7rem;
+  color: var(--muted);
+  padding: 0.5rem 1.5rem 0;
+  font-style: italic;
+}
