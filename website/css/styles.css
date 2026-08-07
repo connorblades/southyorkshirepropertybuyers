@@ -3381,3 +3381,10 @@ html[data-theme="dark"] .page-hero--img > .page-hero-wash {
   .faq-list .faq-item .faq-a,
   .faq-list .faq-chevron { transition: none; }
 }
+
+/* A map label with no page behind it yet. It keeps the pin styling so it reads
+   as part of the same set, but drops the hover cue and the pointer, because
+   nothing happens when you click it. Give Wakefield an <a> the day it has a
+   page and this rule stops applying on its own. */
+span.map-label { cursor: default; }
+span.map-label:hover { background: rgba(10, 48, 26, 0.88); }
