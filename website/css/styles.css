@@ -3388,3 +3388,49 @@ html[data-theme="dark"] .page-hero--img > .page-hero-wash {
    page and this rule stops applying on its own. */
 span.map-label { cursor: default; }
 span.map-label:hover { background: rgba(10, 48, 26, 0.88); }
+
+/* ── Homepage coverage map ──────────────────────────────────────────
+   Drawn from ONS boundary data rather than a map screenshot. It is inlined
+   into the page, not loaded as an <img>, because an external SVG cannot
+   inherit the theme variables and this has to recolour in dark mode. */
+.coverage-map {
+  margin: 0;
+  padding: 1rem;
+  background: var(--surface-alt);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  position: relative;
+}
+.coverage-map-svg {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+.coverage-map .cvm-d {
+  fill: var(--green);
+  fill-opacity: 0.24;
+  stroke: var(--green);
+  stroke-width: 1.4;
+  stroke-linejoin: round;
+  vector-effect: non-scaling-stroke;
+}
+.coverage-map .cvm-pin circle {
+  fill: var(--green);
+  stroke: var(--surface-alt);
+  stroke-width: 2;
+}
+.coverage-map .cvm-pin text {
+  font: 700 15px Inter, system-ui, sans-serif;
+  fill: var(--heading);
+  paint-order: stroke;
+  stroke: var(--surface-alt);
+  stroke-width: 3.5px;
+  stroke-linejoin: round;
+}
+.coverage-map figcaption {
+  margin-top: 0.6rem;
+  font-size: 0.75rem;
+  color: var(--muted);
+  text-align: center;
+}
+html[data-theme="dark"] .coverage-map .cvm-d { fill-opacity: 0.32; }
