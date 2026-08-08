@@ -3459,3 +3459,15 @@ html[data-theme="dark"] .coverage-map .cvm-d { fill-opacity: 0.32; }
   padding: 0.5rem 1.5rem 0;
   font-style: italic;
 }
+
+/* A route-bars caption carrying only its source line, which is the homepage
+   case now the duplicate title has gone. The spacing above and below was set
+   for a title plus a subtitle, so a single grey line was left floating in the
+   middle of it. */
+.sypb-route-bars .route-bars-sub:only-child {
+  margin-top: 0;
+  font-size: 0.78rem;
+}
+.sypb-route-bars figcaption:has(> .route-bars-sub:only-child) {
+  margin-bottom: 1rem;
+}
