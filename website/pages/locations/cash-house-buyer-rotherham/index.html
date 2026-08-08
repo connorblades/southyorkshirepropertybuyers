@@ -256,43 +256,7 @@
   nav,.nav-links { overflow: visible !important; }.nav-item.dropdown { opacity: 0 !important; pointer-events: none !important; transform: translateX(-50%) translateY(-4px) !important; transition: opacity 0.15s ease, transform 0.15s ease !important; }.nav-item.open.dropdown { opacity: 1 !important; pointer-events: auto !important; transform: translateX(-50%) translateY(0) !important; }
   </style>
 
-<!-- howto-schema -->
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "HowTo",
-  "name": "How to estimate a cash offer for your house",
-  "description": "Get an indicative cash offer for your property based on its estimated market value and condition tier.",
-  "tool": [
-    {
-      "@type": "HowToTool",
-      "name": "South Yorkshire Property Buyers cash offer estimator"
-    }
-  ],
-  "step": [
-    {
-      "@type": "HowToStep",
-      "name": "Get an estimated market value",
-      "text": "Use Zoopla or Rightmove to get a free estimated market value for your property."
-    },
-    {
-      "@type": "HowToStep",
-      "name": "Enter the market value",
-      "text": "Type the estimated market value into the calculator in pounds sterling."
-    },
-    {
-      "@type": "HowToStep",
-      "name": "Pick property condition",
-      "text": "Choose the condition tier: excellent (refurbished), good (well-maintained), fair (dated), poor (significant work needed), or very poor (uninhabitable)."
-    },
-    {
-      "@type": "HowToStep",
-      "name": "Review the indicative offer",
-      "text": "The calculator shows an indicative figure and the condition-adjusted market value. It is an illustration rather than a formula we price from. The real offer follows a short viewing, is our best offer based on the information provided, and is valid for 14 days."
-    }
-  ]
-}
-</script>
+
 </head>
 <body>
 
@@ -475,77 +439,7 @@
     <h2>What "cash house buyer" actually means in Rotherham</h2>
     <p>A cash house buyer purchases your property using their own funds: no mortgage lender, no broker, no chain. The buyer is the principal. In Rotherham specifically, the average dwelling stands at £197,400 in February 2026 (HM Land Registry UK House Price Index), up 4.2% year-on-year, the fastest growth of the four South Yorkshire boroughs, and roughly 36% of completed Maltby (S66) sales in Q1 2026 went to a cash purchase, per Land Registry sample data. This page focuses on a single question: how do you verify the cash buyer in front of you is the real thing? For the full picture of the Rotherham market: S60 to S66 postcode-by-postcode, Liberty Steel context, Coal Authority mining-ground guidance, PRC defective housing, the 15 February 2026 Selective Licensing Scheme, the 1 April 2026 empty-homes premium and the Renters' Rights Act 2025, read our canonical <a href="/sell-house-fast-rotherham/">sell house fast Rotherham</a> guide first.</p>
 
-    
-    <h2>Get a rough idea for your Rotherham property</h2>
-    <p>Enter your Zoopla or Rightmove valuation and an honest condition tier to see a rough illustration. It is not our offer and it is not a formula we price from: every property is priced individually on what it actually is and on what you tell us. The real figure is our best offer at that point, it follows a short viewing, and it is valid for 14 days.</p>
-
-    <section class="sypb-calc reveal" data-calc="cash-offer" aria-labelledby="cash-offer-heading-chb-rot">
-      <header class="sypb-calc-header">
-        <h3 id="cash-offer-heading-chb-rot">Cash offer estimator</h3>
-        <p>Enter your Zoopla / Rightmove valuation and an honest assessment of condition. Numbers update as you type. No data leaves your browser.</p>
-      </header>
-
-      <div class="sypb-calc-grid">
-        <div class="sypb-calc-field">
-          <label for="cash-value-chb-rot">Estimated market value</label>
-          <div class="sypb-calc-input-wrap">
-            <span class="prefix">£</span>
-            <input id="cash-value-chb-rot" type="number" inputmode="decimal" min="0" step="1000" value="200000" class="has-prefix" data-calc-input="value" aria-describedby="cash-value-note-chb-rot">
-          </div>
-          <small id="cash-value-note-chb-rot" style="font-size:0.8rem;color:var(--muted);">Don't know? Get a free estimate from <a href="https://www.zoopla.co.uk/home-values/" rel="noopener" target="_blank">Zoopla</a> or <a href="https://www.rightmove.co.uk/house-prices.html" rel="noopener" target="_blank">Rightmove</a>.</small>
-        </div>
-
-        <div class="sypb-calc-field">
-          <label for="cash-condition-chb-rot">Property condition</label>
-          <div class="sypb-calc-input-wrap">
-            <select id="cash-condition-chb-rot" data-calc-input="condition">
-              <option value="excellent">Excellent: refurbished, move-in ready</option>
-              <option value="good" selected>Good: well-maintained, minor cosmetics</option>
-              <option value="fair">Fair: dated, needs modernisation</option>
-              <option value="poor">Poor: significant work needed (roof, damp, rewiring)</option>
-              <option value="derelict">Very poor, uninhabitable or structural problems</option>
-            </select>
-          </div>
-        </div>
-      </div>
-
-      <div class="sypb-calc-results single-headline" role="status" aria-live="polite">
-        <div class="sypb-calc-result-cell headline">
-          <span class="label">Indicative cash offer</span>
-          <span class="value" data-calc-out="offer">,</span>
-          <span class="range" data-calc-out="offer-range"></span>
-        </div>
-        <div class="sypb-calc-result-cell">
-          <span class="label">Condition-adjusted value</span>
-          <span class="value" data-calc-out="adjusted">,</span>
-        </div>
-      </div>
-
-      <div class="sypb-calc-question">
-        <h4>Does that figure work for what you need?</h4>
-        <div class="sypb-calc-buttons">
-          <button type="button" class="sypb-calc-btn" data-calc-action="ok">Yes, get me a firm offer</button>
-          <button type="button" class="sypb-calc-btn warn" data-calc-action="lower">Lower than I'd hoped, what are my options?</button>
-        </div>
-
-        <div class="sypb-calc-response" data-calc-response="ok" role="region">
-          <h5>Good. We can put a written offer in front of you the same day.</h5>
-          <p>The figure above is indicative, a firm written offer follows a short viewing (in person or by video) and a desktop check of comparable sales on your street. Once signed, the offer is valid for 14 days, and we can cover your legal fees if you use our panel solicitor. Typical completion is 7 to 28 days.</p>
-          <a class="cta-inline" href="/get-offer/">Get a firm offer</a>
-        </div>
-
-        <div class="sypb-calc-response warn" data-calc-response="lower" role="region">
-          <h5>That gap is real, and so is what you get for it.</h5>
-          <p>Selling to us normally lands below what a patient open-market sale would fetch, and we price each property individually rather than to a percentage. What that gap buys you is three things the estate-agent route can't reliably deliver: <strong>certainty</strong> (no chain, no buyer pulling out), <strong>speed</strong> (1 to 4 weeks vs 4-6 months average), and <strong>no fees</strong> (we can cover your legal fees if you use our panel solicitor; estate agents take 1-2% + VAT on top). For sellers in a real time-bind: divorce, probate, mortgage arrears, job relocation: that gap is often worth less than the equivalent in stress, double mortgage payments, or a chain collapse at week ten.</p>
-          <p>If you're not under time pressure, the estate-agent route may net you more. The honest comparison is on our <a href="/cash-buyer-vs-estate-agent/">cash buyer vs estate agent</a> page, read it before deciding.</p>
-          <a class="cta-inline" href="/get-offer/">Still get a firm offer (no obligation)</a>
-        </div>
-      </div>
-
-      <p class="sypb-calc-note">For illustration only. Final offers depend on a desktop check of comparable sales, a short viewing, and any title or structural issues found during conveyancing. We do not price to a fixed percentage of market value, so the only way to get a real figure is to tell us about the property, see <a href="/blog/how-much-do-cash-buyers-offer-below-market-value/">how cash buyer pricing works</a>.</p>
-    </section>
-
-    <h3>Compare what lands, not what is quoted</h3>
+    <h2>Compare what lands, not what is quoted</h2>
     <p>Three routes quote three different kinds of number, and only one of them is the money that reaches your account. An estate agent quotes an asking price, which comes before commission, before any reduction needed to get a sale agreed, and before months of bills on a house you are still paying for. Modern method of auction quotes a hammer price, but the buyer also pays a non-refundable reservation fee on top, commonly 4.2 to 5 percent of the price plus VAT. That fee is described as paid by the buyer rather than the seller, which hides the economics: a buyer works to one total budget, so the fee comes out of what they can bid, and your own selling costs then come off the lower price. Our offer is the figure that lands in your account on completion. We are not claiming you always end up with more by selling to us. We are saying the three numbers are not like for like, so compare what lands, not what is quoted.</p>
 
     <h2>Six checks every Rotherham seller should make before accepting a cash offer</h2>
@@ -949,8 +843,6 @@
     </div>
   </div>
 </div>
-
-<script defer src="/js/calculators.js"></script>
 
 <script defer src="/js/site.js"></script>
 <script defer src="/js/popup.js"></script>

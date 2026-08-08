@@ -97,43 +97,7 @@
   nav,.nav-links { overflow: visible !important; }.nav-item.dropdown { opacity: 0 !important; pointer-events: none !important; transform: translateX(-50%) translateY(-4px) !important; transition: opacity 0.15s ease, transform 0.15s ease !important; }.nav-item.open.dropdown { opacity: 1 !important; pointer-events: auto !important; transform: translateX(-50%) translateY(0) !important; }
   </style>
 
-<!-- howto-schema -->
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "HowTo",
-  "name": "How to compare net cash from three sale routes",
-  "description": "Compare the cash you would walk away with after estate agent, cash buyer, and auction routes, after fees and after the mortgage is cleared.",
-  "tool": [
-    {
-      "@type": "HowToTool",
-      "name": "South Yorkshire Property Buyers net walkaway calculator"
-    }
-  ],
-  "step": [
-    {
-      "@type": "HowToStep",
-      "name": "Enter your house value",
-      "text": "Type the estimated market value of your house in pounds sterling."
-    },
-    {
-      "@type": "HowToStep",
-      "name": "Enter your mortgage balance",
-      "text": "Type your outstanding mortgage balance."
-    },
-    {
-      "@type": "HowToStep",
-      "name": "Add any other secured charges",
-      "text": "Optional, add any second charges or secured loans registered against the property."
-    },
-    {
-      "@type": "HowToStep",
-      "name": "Compare three routes",
-      "text": "The calculator shows the net cash from estate agent, cash buyer, and auction routes side by side. The route with the highest net is highlighted automatically. Negative equity displays as a red shortfall figure."
-    }
-  ]
-}
-</script>
+
 </head>
 <body>
 
@@ -338,93 +302,7 @@
     <p>For a £15,000 shortfall, that means £15,000 of structured debt rather than £15,000 needed in cash at completion. Personal loans for the same amount sit at 7 to 12 percent unsecured in 2026: a five-year £15,000 loan at 9 percent costs about £310 per month, which is one alternative if the lender will not agree to a payment plan and you would rather refinance the shortfall yourself.</p>
     <p>If a quick sale is preferred to manage timing alongside the move, a cash sale completes in 7 to 28 days, and the price is below what a full open-market sale would fetch. We do not put a percentage on it in advance, because every property is priced on what it actually is and on what you tell us about it. That lower price increases the shortfall, but the certainty and speed protect against the timing gap between selling here and buying or renting there, and they let you set the completion date that works with the lender's written agreement. For more on this route, see our hub on <a href="/blog/selling-house-negative-equity-uk/">selling a house in negative equity</a>.</p>
 
-    
-    <h2>Run the numbers for your own house first</h2>
-    <p>Before reading the Sheffield S5 worked example, see where your own house sits. The net figure turns red if the mortgage exceeds what a sale would deliver, and that shortfall is exactly what your lender will want a written undertaking against.</p>
-
-    <section class="sypb-calc reveal" data-calc="equity" aria-labelledby="equity-calc-heading-mhne">
-      <header class="sypb-calc-header">
-        <h3 id="equity-calc-heading-mhne">Net walkaway calculator, three routes compared</h3>
-        <p>Enter your house value and what's left on the mortgage. We'll show the cash you'd actually walk away with on each of the three real sale routes, after fees and after the mortgage is cleared.</p>
-      </header>
-
-      <div class="sypb-calc-grid">
-        <div class="sypb-calc-field">
-          <label for="equity-mv-mhne">Estimated market value</label>
-          <div class="sypb-calc-input-wrap">
-            <span class="prefix">£</span>
-            <input id="equity-mv-mhne" type="number" inputmode="decimal" min="0" step="1000" value="220000" class="has-prefix" data-calc-input="mv">
-          </div>
-        </div>
-
-        <div class="sypb-calc-field">
-          <label for="equity-mortgage-mhne">Outstanding mortgage balance</label>
-          <div class="sypb-calc-input-wrap">
-            <span class="prefix">£</span>
-            <input id="equity-mortgage-mhne" type="number" inputmode="decimal" min="0" step="1000" value="120000" class="has-prefix" data-calc-input="mortgage">
-          </div>
-        </div>
-
-        <div class="sypb-calc-field">
-          <label for="equity-charges-mhne">Other secured charges (optional)</label>
-          <div class="sypb-calc-input-wrap">
-            <span class="prefix">£</span>
-            <input id="equity-charges-mhne" type="number" inputmode="decimal" min="0" step="500" value="0" class="has-prefix" data-calc-input="charges">
-          </div>
-        </div>
-      </div>
-
-      <div class="sypb-equity-grid" role="status" aria-live="polite">
-
-        <article class="sypb-equity-card" data-equity-route="estate-agent">
-          <span class="badge">HIGHEST NET</span>
-          <h4 class="route">Estate agent</h4>
-          <p class="timeline">4-6 months · chain risk</p>
-          <div class="line"><span class="label-col">Sale price</span><strong data-equity-out="sale">,</strong></div>
-          <div class="line"><span class="label-col">Fees (agent + legals)</span><strong data-equity-out="fee">,</strong></div>
-          <div class="line"><span class="label-col">Mortgage cleared</span><strong data-equity-out="mortgage">,</strong></div>
-          <div class="line net"><span class="label-col">Net to you</span><strong data-equity-out="net">,</strong></div>
-          <div class="pct" data-equity-out="pct"></div>
-        </article>
-
-        <article class="sypb-equity-card" data-equity-route="cash-buyer">
-          <span class="badge">HIGHEST NET</span>
-          <h4 class="route">Cash buyer (us)</h4>
-          <p class="timeline">7-28 days · no chain</p>
-          <div class="line"><span class="label-col">Sale price</span><strong data-equity-out="sale">,</strong></div>
-          <div class="line"><span class="label-col">Fees (legal fees covered on our panel)</span><strong data-equity-out="fee">,</strong></div>
-          <div class="line"><span class="label-col">Mortgage cleared</span><strong data-equity-out="mortgage">,</strong></div>
-          <div class="line net"><span class="label-col">Net to you</span><strong data-equity-out="net">,</strong></div>
-          <div class="pct" data-equity-out="pct"></div>
-        </article>
-
-        <article class="sypb-equity-card" data-equity-route="auction">
-          <span class="badge">HIGHEST NET</span>
-          <h4 class="route">Auction</h4>
-          <p class="timeline">6-16 weeks · reserve risk</p>
-          <div class="line"><span class="label-col">Sale price</span><strong data-equity-out="sale">,</strong></div>
-          <div class="line"><span class="label-col">Fees (auctioneer + legals)</span><strong data-equity-out="fee">,</strong></div>
-          <div class="line"><span class="label-col">Mortgage cleared</span><strong data-equity-out="mortgage">,</strong></div>
-          <div class="line net"><span class="label-col">Net to you</span><strong data-equity-out="net">,</strong></div>
-          <div class="pct" data-equity-out="pct"></div>
-        </article>
-
-      </div>
-
-      <div class="sypb-equity-insight" data-equity-insight></div>
-
-      <div class="sypb-calc-question">
-        <h4>What's your situation?</h4>
-        <div class="sypb-calc-buttons">
-          <a class="sypb-calc-btn" href="/get-offer/" style="text-decoration:none;display:inline-block;text-align:center;">Get a firm cash offer</a>
-          <a class="sypb-calc-btn" href="/cash-buyer-vs-estate-agent/" style="text-decoration:none;display:inline-block;text-align:center;">See full route-by-route comparison</a>
-        </div>
-      </div>
-
-      <p class="sypb-calc-note">For illustration only. Estate-agent route assumes a 98% sale-of-asking price, 1.5% + VAT agent fee, and £1,500 conveyancing. Cash route uses a deliberately cautious 80% of market value purely as an illustration. We do not price to a percentage. Our offers are worked out on the property itself and on what you tell us about it, so the only way to see a real figure is to ask us for one. It assumes no fees on your side and legal fees covered if you use our panel solicitor. Auction assumes 78% of market value with 1.0% auctioneer + £1,500 legals. Your numbers will vary by chain dynamics, lender consent (in negative equity), and any product fees.</p>
-    </section>
-
-    <p><strong>One thing the auction column cannot show you.</strong> These three figures are not like for like. With the modern method of auction, the buyer pays a non-refundable reservation fee on top of the hammer price, commonly 4.2 to 5 percent of the price plus VAT. It is described as paid by the buyer, not the seller, but a buyer works to one total budget, so that fee comes out of what they can afford to bid. Your own fee stack then comes off the already suppressed price. The same applies to an estate agent asking price, which is not what you net after fees and months of waiting. Our offer is the figure that reaches your account on completion, so it is the number worth holding the others up against.</p>
+    <p><strong>One thing an auction result cannot show you.</strong> A cash offer, an auction hammer price and an estate agent asking price are not like for like. With the modern method of auction, the buyer pays a non-refundable reservation fee on top of the hammer price, commonly 4.2 to 5 percent of the price plus VAT. It is described as paid by the buyer, not the seller, but a buyer works to one total budget, so that fee comes out of what they can afford to bid. Your own fee stack then comes off the already suppressed price. The same applies to an estate agent asking price, which is not what you net after fees and months of waiting. Our offer is the figure that reaches your account on completion, so it is the number worth holding the others up against.</p>
 
     <h2>A worked example: a Sheffield S5 family moving for work</h2>
     <p>A 3-bed semi in Sheffield S5, bought in late 2022 for £180,000 with a 95 percent mortgage. Current value £170,000. Mortgage balance £172,000. Negative equity: £2,000. Family needs to move to Leeds for a job. Income £52,000 joint.</p>
@@ -529,8 +407,6 @@
     </div>
   </div>
 </div>
-
-<script defer src="/js/calculators.js"></script>
 
 <script defer src="/js/site.js"></script>
 <script defer src="/js/popup.js"></script>

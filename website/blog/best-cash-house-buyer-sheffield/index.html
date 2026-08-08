@@ -101,43 +101,7 @@
   nav,.nav-links { overflow: visible !important; }.nav-item.dropdown { opacity: 0 !important; pointer-events: none !important; transform: translateX(-50%) translateY(-4px) !important; transition: opacity 0.15s ease, transform 0.15s ease !important; }.nav-item.open.dropdown { opacity: 1 !important; pointer-events: auto !important; transform: translateX(-50%) translateY(0) !important; }.compare-table { width: 100%; border-collapse: collapse; margin: 1.5rem 0; font-size: 0.92rem; }.compare-table th,.compare-table td { border: 1px solid #e5e7eb; padding: 0.65rem 0.85rem; text-align: left; vertical-align: top; }.compare-table th { background: #f3f4f6; font-weight: 600; }
   </style>
 
-<!-- howto-schema -->
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "HowTo",
-  "name": "How to estimate a cash offer for your house",
-  "description": "Get an indicative cash offer for your property based on its estimated market value and condition tier.",
-  "tool": [
-    {
-      "@type": "HowToTool",
-      "name": "South Yorkshire Property Buyers cash offer estimator"
-    }
-  ],
-  "step": [
-    {
-      "@type": "HowToStep",
-      "name": "Get an estimated market value",
-      "text": "Use Zoopla or Rightmove to get a free estimated market value for your property."
-    },
-    {
-      "@type": "HowToStep",
-      "name": "Enter the market value",
-      "text": "Type the estimated market value into the calculator in pounds sterling."
-    },
-    {
-      "@type": "HowToStep",
-      "name": "Pick property condition",
-      "text": "Choose the condition tier: excellent (refurbished), good (well-maintained), fair (dated), poor (significant work needed), or very poor (uninhabitable)."
-    },
-    {
-      "@type": "HowToStep",
-      "name": "Review the indicative offer",
-      "text": "The calculator shows the indicative cash offer, the condition-adjusted market value, and the offer as a percentage of market value. Final offers follow a short viewing and are valid for 14 days."
-    }
-  ]
-}
-</script>
+
 </head>
 <body>
 
@@ -349,80 +313,6 @@
     </ol>
     <p>If a buyer cannot answer all six clearly and quickly in writing, that is the answer about whether to use them.</p>
 
-    
-    <h2>Get an indicative figure for your Sheffield property</h2>
-    <p>Most listicles on this query are affiliate-driven. The calculator below takes your Zoopla valuation and the condition of the property and gives a rough indicative figure. It is an illustration, not an offer. Every property we buy is priced on its own facts, so treat this as a starting point for the conversation.</p>
-
-    <section class="sypb-calc" data-calc="cash-offer" aria-labelledby="cash-offer-heading-bchb-she">
-      <header class="sypb-calc-header">
-        <h3 id="cash-offer-heading-bchb-she">Cash offer estimator</h3>
-        <p>Enter your Zoopla / Rightmove valuation and an honest assessment of condition. Numbers update as you type. No data leaves your browser.</p>
-      </header>
-
-      <div class="sypb-calc-grid">
-        <div class="sypb-calc-field">
-          <label for="cash-value-bchb-she">Estimated market value</label>
-          <div class="sypb-calc-input-wrap">
-            <span class="prefix">£</span>
-            <input id="cash-value-bchb-she" type="number" inputmode="decimal" min="0" step="1000" value="200000" class="has-prefix" data-calc-input="value" aria-describedby="cash-value-note-bchb-she">
-          </div>
-          <small id="cash-value-note-bchb-she" style="font-size:0.8rem;color:var(--muted);">Don't know? Get a free estimate from <a href="https://www.zoopla.co.uk/home-values/" rel="noopener" target="_blank">Zoopla</a> or <a href="https://www.rightmove.co.uk/house-prices.html" rel="noopener" target="_blank">Rightmove</a>.</small>
-        </div>
-
-        <div class="sypb-calc-field">
-          <label for="cash-condition-bchb-she">Property condition</label>
-          <div class="sypb-calc-input-wrap">
-            <select id="cash-condition-bchb-she" data-calc-input="condition">
-              <option value="excellent">Excellent: refurbished, move-in ready</option>
-              <option value="good" selected>Good: well-maintained, minor cosmetics</option>
-              <option value="fair">Fair: dated, needs modernisation</option>
-              <option value="poor">Poor: significant work needed (roof, damp, rewiring)</option>
-              <option value="derelict">Very poor, uninhabitable or structural problems</option>
-            </select>
-          </div>
-        </div>
-      </div>
-
-      <div class="sypb-calc-results single-headline" role="status" aria-live="polite">
-        <div class="sypb-calc-result-cell headline">
-          <span class="label">Indicative cash offer</span>
-          <span class="value" data-calc-out="offer">,</span>
-          <span class="range" data-calc-out="offer-range"></span>
-        </div>
-        <div class="sypb-calc-result-cell">
-          <span class="label">Condition-adjusted value</span>
-          <span class="value" data-calc-out="adjusted">,</span>
-        </div>
-        <div class="sypb-calc-result-cell">
-          <span class="label">% of market value</span>
-          <span class="value" data-calc-out="percent">,</span>
-        </div>
-      </div>
-
-      <div class="sypb-calc-question">
-        <h4>Does that figure work for what you need?</h4>
-        <div class="sypb-calc-buttons">
-          <button type="button" class="sypb-calc-btn" data-calc-action="ok">Yes, get me a firm offer</button>
-          <button type="button" class="sypb-calc-btn warn" data-calc-action="lower">Lower than I'd hoped, what are my options?</button>
-        </div>
-
-        <div class="sypb-calc-response" data-calc-response="ok" role="region">
-          <h5>Good. We can put a written offer in front of you the same day.</h5>
-          <p>The figure above is indicative, a firm written offer follows a short viewing (in person or by video) and a desktop check of comparable sales on your street. That written figure is our best offer at that point, based on what you have told us. We do not start low and work up to get a deal over the line, and it changes afterwards only if conveyancing turns up something material such as a title defect or a structural problem, or the property turns out to be different from how it was described. Once signed, the offer is valid for 14 days, and we can cover your legal fees if you use our panel solicitor. Typical completion is 7 to 28 days.</p>
-          <a class="cta-inline" href="/get-offer/">Get a firm offer</a>
-        </div>
-
-        <div class="sypb-calc-response warn" data-calc-response="lower" role="region">
-          <h5>That gap is real, and so is what you get for it.</h5>
-          <p>A cash sale at a discount to the open market buys you three things the estate-agent route can't reliably deliver: <strong>certainty</strong> (no chain, no buyer pulling out), <strong>speed</strong> (1 to 4 weeks vs 4-6 months average), and <strong>no fees to pay us</strong> (no commission and no upfront charges, and we can cover your legal fees if you use our panel solicitor; estate agents take 1-2% + VAT on top). For sellers in a real time-bind: divorce, probate, mortgage arrears, job relocation: that gap is often worth less than the equivalent in stress, double mortgage payments, or a chain collapse at week ten.</p>
-          <p>If you're not under time pressure, the estate-agent route may net you more. The honest comparison is on our <a href="/cash-buyer-vs-estate-agent/">cash buyer vs estate agent</a> page, read it before deciding.</p>
-          <a class="cta-inline" href="/get-offer/">Still get a firm offer (no obligation)</a>
-        </div>
-      </div>
-
-      <p class="sypb-calc-note">For illustration only. Final offers depend on a desktop check of comparable sales, a short viewing, and any title or structural issues found during conveyancing. We price each property on what it actually is rather than to a fixed percentage, see <a href="/blog/how-much-do-cash-buyers-offer-below-market-value/">how cash buyer pricing works</a>.</p>
-    </section>
-
     <h2>Realistic Sheffield prices in 2026</h2>
     <p>The average Sheffield house price sits at around <strong>£222,000 in February 2026</strong>, with the city tracking just below the wider Yorkshire and the Humber regional average of £248,000, according to the <a href="https://www.ons.gov.uk/economy/inflationandpriceindices/bulletins/housepriceindex/latest" target="_blank" rel="nofollow noopener">ONS UK House Price Index</a>. The headline figure hides a sharp split by property type: <strong>semis are up 3.5% year on year, while flats are down 1.1%</strong>. The flat market is being held back by EWS1 and cladding-remediation uncertainty in the higher-rise blocks across S1, S2 and S3, a factor that any genuine buyer in the city in 2026 should price in transparently rather than use as a late-stage discount lever.</p>
     <p>Working backwards from a typical 2-bed terrace in S6 at around £165,000 OMV:</p>
@@ -525,8 +415,6 @@
 <script defer src="/js/site.js"></script>
 <script defer src="/js/popup.js"></script>
 <script defer src="/js/animations.js"></script>
-
-<script defer src="/js/calculators.js"></script>
 
 
 <div id="sypb-sticky-cta" role="region" aria-label="Get a cash offer">
