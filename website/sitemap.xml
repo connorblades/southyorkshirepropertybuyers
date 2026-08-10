@@ -17,9 +17,21 @@
   <!-- BLOG INDEX -->
   <url>
     <loc>https://southyorkshirepropertybuyers.com/blog/</loc>
-    <lastmod>2026-08-06</lastmod>
+    <lastmod>2026-08-10</lastmod>
     <priority>0.8</priority>
     <changefreq>weekly</changefreq>
+  </url>
+
+  <!-- NEW: Repossession Stats South Yorkshire 2026 -->
+  <url>
+    <loc>https://southyorkshirepropertybuyers.com/blog/repossession-stats-south-yorkshire-2026/</loc>
+    <lastmod>2026-08-10</lastmod>
+    <priority>0.7</priority>
+    <changefreq>monthly</changefreq>
+    <image:image>
+      <image:loc>https://southyorkshirepropertybuyers.com/blog/images/selling-house-with-mortgage-arrears-uk.jpg</image:loc>
+      <image:title>Repossession statistics South Yorkshire 2026 — mortgage possession claim data</image:title>
+    </image:image>
   </url>
 
   <!-- TIER 1, top-priority money pages -->
