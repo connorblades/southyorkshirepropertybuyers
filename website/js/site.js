@@ -221,6 +221,18 @@
       var link = e.target.closest ? e.target.closest('[data-track="phone-tap"]') : null;
       if (!link) return;
       if (typeof window.gtag !== 'function') return;
+      // Two events on purpose. 'conversion' with send_to is what Google Ads
+      // counts; without it the tap was invisible and Ads would have bid
+      // toward form fills alone, which on this site misses most of the value.
+      // 'phone_tap' is kept as the plain event for reporting later.
+      //
+      // No dedupe here, unlike the form conversion on /thank-you/. The Ads
+      // action counts One per click, so a second tap after a call that did not
+      // connect is still one conversion, and suppressing it locally would only
+      // hide a genuine repeat attempt.
+      window.gtag('event', 'conversion', {
+        send_to: 'AW-18125556330/B_aQCP-epOEcEOqU-MJD'
+      });
       window.gtag('event', 'phone_tap', {
         event_category: 'contact',
         page_path: window.location.pathname
