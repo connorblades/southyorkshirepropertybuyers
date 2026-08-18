@@ -153,6 +153,19 @@
   (function () {
     var form = document.getElementById('offerForm') || document.getElementById('contactForm');
     if (!form) return;
+
+    /* UK phone to E.164, which is the only format Google accepts for enhanced
+       conversions. Returns '' when the number can't be read confidently, so a
+       wrong number is never sent. */
+    function toE164(raw) {
+      var s = String(raw || '').replace(/[^\d+]/g, '');
+      if (!s) return '';
+      if (s.charAt(0) === '+') return s;
+      if (s.slice(0, 2) === '00') return '+' + s.slice(2);
+      if (s.charAt(0) === '0') return s.length >= 10 ? '+44' + s.slice(1) : '';
+      if (s.length === 10) return '+44' + s;
+      return '';
+    }
     form.addEventListener('submit', async function (e) {
       e.preventDefault();
       var fullName = (document.getElementById('name').value || '').trim().split(' ');
@@ -198,6 +211,22 @@
         });
         if (response.ok) {
           try { sessionStorage.setItem('sypb_lead_submitted', '1'); } catch (_) {}
+          /* Enhanced conversions: hand the two highest-matching identifiers to
+             /thank-you/, where init.js sends them with the conversion. Email and
+             phone only. The address field is one free-text box and Google wants
+             a name, postcode and country set, so a split would be guesswork and
+             would put more of the seller's details in storage for no gain.
+             init.js clears this whether or not it ends up sending it. */
+          try {
+            var ec = {};
+            var em = (data.email || '').trim().toLowerCase();
+            var ph = toE164(data.phone);
+            if (em) ec.email = em;
+            if (ph) ec.phone_number = ph;
+            if (ec.email || ec.phone_number) {
+              sessionStorage.setItem('sypb_ec', JSON.stringify(ec));
+            }
+          } catch (_) {}
           window.location.href = '/thank-you/';
           return;
         }

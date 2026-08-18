@@ -47,9 +47,26 @@
     if (!fromSubmit) {
       location.replace('/');
     } else {
+      /* Enhanced conversions for leads. site.js stashed the seller's email and
+         phone at submit. Send them only if advertising consent was actually
+         given, then clear the stash either way so contact details never sit in
+         storage after the conversion has fired. Google hashes these in the
+         browser; nothing unhashed leaves the page. */
+      var ec = null;
+      try {
+        var raw = sessionStorage.getItem('sypb_ec');
+        sessionStorage.removeItem('sypb_ec');
+        if (raw && localStorage.getItem('sypb_consent') === 'granted') {
+          ec = JSON.parse(raw);
+        }
+      } catch (_) {}
+
       try {
         if (sessionStorage.getItem('sypb_conversion_fired') !== '1') {
           sessionStorage.setItem('sypb_conversion_fired', '1');
+          if (ec && (ec.email || ec.phone_number)) {
+            gtag('set', 'user_data', ec);
+          }
           gtag('event', 'conversion', {
             send_to: 'AW-18125556330/uZetCNHoibIcEOqU-MJD',
             value: 300.0,
