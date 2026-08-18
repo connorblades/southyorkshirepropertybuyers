@@ -46,8 +46,20 @@
     var duration = parseInt(el.getAttribute('data-counter-duration') || '1500', 10);
 
     if (prefersReduced) {
-      el.textContent = prefix + target.toFixed(decimals) + suffix;
+      el.textContent = prefix + fmt(target) + suffix;
       return;
+    }
+
+    /* Group thousands, or a four figure count lands as £1000 rather than £1,000 */
+    function fmt(v) {
+      try {
+        return v.toLocaleString('en-GB', {
+          minimumFractionDigits: decimals,
+          maximumFractionDigits: decimals
+        });
+      } catch (_) {
+        return v.toFixed(decimals);
+      }
     }
 
     var start = null;
@@ -56,9 +68,9 @@
       var elapsed = ts - start;
       var pct = Math.min(elapsed / duration, 1);
       var value = target * easeOutCubic(pct);
-      el.textContent = prefix + value.toFixed(decimals) + suffix;
+      el.textContent = prefix + fmt(value) + suffix;
       if (pct < 1) requestAnimationFrame(frame);
-      else el.textContent = prefix + target.toFixed(decimals) + suffix;
+      else el.textContent = prefix + fmt(target) + suffix;
     }
     requestAnimationFrame(frame);
   }
