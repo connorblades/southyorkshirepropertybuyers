@@ -3520,7 +3520,14 @@ html[data-theme="dark"] {
 .page-hero.has-bg .hero-intro,
 .page-hero.has-bg .byline { color: #eef5f0; }
 .page-hero.has-bg .hero-intro { opacity: 0.94; }
-.page-hero.has-bg .byline { opacity: 0.78; }
+.page-hero.has-bg .byline { color: #dbe9df; opacity: 1; }
+.page-hero .byline {
+  font-size: var(--fs-sm);
+  color: var(--muted);
+  margin-top: 2rem;
+  margin-bottom: 2.25rem;
+}
+.page-hero .hero-intro { margin-bottom: 1.5rem; }
 .page-hero.has-bg .btn-secondary {
   border-color: rgba(255,255,255,0.45);
   color: #eef5f0;
@@ -3666,14 +3673,13 @@ html[data-theme="dark"] {
 .page-body .how-section { background: transparent; padding: 0; }
 .page-body .how-steps { margin-top: 1.75rem; gap: 1.25rem; }
 .page-body .how-step { padding: 1.5rem 1.25rem; }
-.page-body .how-step h3 {
-  font-size: var(--fs-xs);
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: var(--muted);
-  margin-bottom: 0.2rem;
-}
 .page-body .how-step .step-arrow { display: none; }
+
+/* Sections written for the full-width homepage paint their own surface.
+   Inside an article column that reads as a white slab, so drop it. */
+.page-body .blog-section,
+.page-body .how-section,
+.page-body .contact-section { background: transparent; }
 
 /* ---- One tidy onward-links block ---- */
 .onward-links {
