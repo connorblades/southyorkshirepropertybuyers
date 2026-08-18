@@ -3473,3 +3473,188 @@ html[data-theme="dark"] .coverage-map .cvm-d { fill-opacity: 0.32; }
 .sypb-route-bars figcaption:has(> .route-bars-sub:only-child) {
   margin-bottom: 1rem;
 }
+
+/* ============================================================
+   PAGE VISUALS: hero image, comparison bars, chain pictogram
+   Chart hues are validated for colour-blind separation against
+   both surfaces. Light and dark are separate steps of the same
+   two hues, not an automatic flip. Do not swap these by eye.
+   ============================================================ */
+
+:root {
+  --chart-us:     #1c6b40;
+  --chart-market: #7d4a91;
+  --chart-track:  rgba(17,26,20,0.07);
+}
+html[data-theme="dark"] {
+  --chart-us:     #3f9d64;
+  --chart-market: #a878c4;
+  --chart-track:  rgba(255,255,255,0.07);
+}
+
+/* ---- Hero with the photograph set into the background ---- */
+.page-hero.has-bg {
+  position: relative;
+  isolation: isolate;
+  background-color: var(--hero-bg);
+  overflow: hidden;
+}
+.page-hero.has-bg > .hero-bg-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -2;
+}
+.page-hero.has-bg::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: linear-gradient(180deg, rgba(8,16,11,0.82) 0%, rgba(8,16,11,0.74) 55%, rgba(8,16,11,0.88) 100%);
+}
+.page-hero.has-bg .breadcrumb,
+.page-hero.has-bg .breadcrumb a,
+.page-hero.has-bg h1,
+.page-hero.has-bg .hero-intro,
+.page-hero.has-bg .byline { color: #eef5f0; }
+.page-hero.has-bg .hero-intro { opacity: 0.94; }
+.page-hero.has-bg .byline { opacity: 0.78; }
+.page-hero.has-bg .btn-secondary {
+  border-color: rgba(255,255,255,0.45);
+  color: #eef5f0;
+}
+
+/* ---- Horizontal comparison bars ---- */
+.sypb-viz {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.5rem 1.35rem 1.35rem;
+  margin: 1.75rem 0;
+}
+.sypb-viz > figcaption {
+  font-weight: 700;
+  color: var(--heading);
+  font-size: var(--fs-md);
+  margin-bottom: 0.35rem;
+}
+.sypb-viz .viz-sub {
+  color: var(--muted);
+  font-size: var(--fs-sm);
+  margin: 0 0 1.25rem;
+}
+.viz-row { margin-bottom: 1.1rem; }
+.viz-row:last-of-type { margin-bottom: 0.5rem; }
+.viz-label {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.75rem;
+  font-size: var(--fs-sm);
+  margin-bottom: 0.4rem;
+}
+.viz-label .viz-name { color: var(--body-text); font-weight: 600; }
+.viz-label .viz-val  { color: var(--heading); font-weight: 700; white-space: nowrap; }
+.viz-track {
+  background: var(--chart-track);
+  border-radius: 4px;
+  height: 30px;
+  overflow: hidden;
+}
+.viz-bar {
+  height: 100%;
+  border-radius: 0 4px 4px 0;
+  transform-origin: left center;
+  animation: vizGrow 0.85s cubic-bezier(0.22,1,0.36,1) both;
+}
+.viz-bar.is-us     { background: var(--chart-us); }
+.viz-bar.is-market { background: var(--chart-market); }
+@keyframes vizGrow { from { transform: scaleX(0); } to { transform: scaleX(1); } }
+@media (prefers-reduced-motion: reduce) {
+  .viz-bar { animation: none; }
+}
+.viz-foot {
+  color: var(--muted);
+  font-size: var(--fs-xs);
+  margin: 0.9rem 0 0;
+  line-height: 1.5;
+}
+
+/* ---- Chain pictogram ---- */
+.chain-viz { display: grid; gap: 1rem; margin: 1.5rem 0; }
+@media (min-width: 700px) { .chain-viz { grid-template-columns: 1fr 1fr; } }
+.chain-panel {
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.15rem 1.1rem;
+  background: var(--surface);
+}
+.chain-panel h4 {
+  margin: 0 0 0.15rem;
+  font-size: var(--fs-base);
+  color: var(--heading);
+}
+.chain-panel p { margin: 0.35rem 0 0; font-size: var(--fs-sm); color: var(--muted); }
+.chain-links {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  flex-wrap: wrap;
+  margin-top: 0.75rem;
+}
+.chain-node {
+  width: 34px; height: 34px;
+  border-radius: 50%;
+  display: grid; place-items: center;
+  border: 2px solid var(--chart-market);
+  color: var(--chart-market);
+  flex: 0 0 auto;
+}
+.chain-node.is-us { border-color: var(--chart-us); color: var(--chart-us); }
+.chain-node.is-broken { border-style: dashed; opacity: 0.5; }
+.chain-join { color: var(--muted); font-size: 0.85rem; }
+.chain-join.is-break { color: var(--chart-market); font-weight: 700; }
+
+/* ---- Recommended route card ---- */
+.route-grid { display: grid; gap: 1rem; margin: 1.5rem 0; }
+@media (min-width: 760px) { .route-grid { grid-template-columns: repeat(2, 1fr); } }
+.route-card {
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.25rem 1.2rem;
+  background: var(--surface);
+  position: relative;
+}
+.route-card h4 { margin: 0 0 0.4rem; font-size: var(--fs-md); color: var(--heading); }
+.route-card p  { margin: 0; font-size: var(--fs-sm); }
+.route-card.is-recommended {
+  border-color: var(--green);
+  border-width: 2px;
+  background: var(--green-subtle);
+}
+.route-badge {
+  display: inline-block;
+  background: var(--green);
+  color: #fff;
+  font-size: var(--fs-xs);
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  padding: 0.2rem 0.6rem;
+  border-radius: 999px;
+  margin-bottom: 0.55rem;
+}
+
+/* ---- Next steps strip ---- */
+.next-steps {
+  background: var(--surface-alt);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.5rem 1.35rem;
+  margin: 2rem 0;
+}
+.next-steps h3 { margin: 0 0 1rem; color: var(--heading); }
+.next-steps ol { margin: 0; padding-left: 1.15rem; }
+.next-steps li { margin-bottom: 0.5rem; font-size: var(--fs-base); }
+.next-steps .btn-primary { margin-top: 1rem; }
