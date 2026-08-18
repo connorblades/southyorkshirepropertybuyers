@@ -3726,3 +3726,28 @@ html[data-theme="dark"] {
 .chain-count.is-many { background: rgba(125,74,145,0.14); color: var(--chart-market); }
 .chain-count.is-few  { background: var(--green-subtle); color: var(--chart-us); }
 html[data-theme="dark"] .chain-count.is-many { background: rgba(168,120,196,0.18); }
+
+/* ---- Situation cards and process steps are links now ---- */
+a.pain-card, a.how-step {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+}
+a.pain-card h3, a.how-step h3, a.how-step strong { color: var(--heading); }
+a.pain-card p, a.how-step p { color: var(--body-text); }
+a.pain-card:hover, a.how-step:hover { border-color: var(--green-border); }
+a.pain-card:focus-visible, a.how-step:focus-visible {
+  outline: 3px solid var(--green);
+  outline-offset: 3px;
+}
+.pain-more {
+  display: inline-block;
+  margin-top: 0.9rem;
+  font-weight: 700;
+  font-size: var(--fs-sm);
+  color: var(--green);
+}
+.pain-more span { transition: transform 0.25s; display: inline-block; }
+a.pain-card:hover .pain-more span { transform: translateX(4px); }
+html[data-theme="dark"] .pain-more { color: #4fbf82; }
