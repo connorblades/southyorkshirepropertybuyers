@@ -3528,6 +3528,19 @@ html[data-theme="dark"] {
   margin-bottom: 2.25rem;
 }
 .page-hero .hero-intro { margin-bottom: 1.5rem; }
+/* Everything else in a photographic hero. The badge and the tick row inherit
+   dark tokens meant for the pale hero, which on a dark photograph render at
+   about 1.4:1. Light them up with the rest. */
+.page-hero.has-bg .badge,
+.page-hero.has-bg .section-label {
+  color: #cfe9d9;
+  border-color: rgba(207,233,217,0.45);
+}
+.page-hero.has-bg .trust-bar { border-top-color: rgba(255,255,255,0.22); }
+.page-hero.has-bg .trust-item { color: #e4f0e8; }
+.page-hero.has-bg .trust-item .check { color: #6fd79b; }
+.page-hero.has-bg .breadcrumb a { color: #cfe9d9; }
+
 .page-hero.has-bg .btn-secondary {
   border-color: rgba(255,255,255,0.45);
   color: #eef5f0;
