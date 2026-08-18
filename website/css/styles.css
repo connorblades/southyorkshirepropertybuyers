@@ -3512,7 +3512,7 @@ html[data-theme="dark"] {
   position: absolute;
   inset: 0;
   z-index: -1;
-  background: linear-gradient(180deg, rgba(8,16,11,0.82) 0%, rgba(8,16,11,0.74) 55%, rgba(8,16,11,0.88) 100%);
+  background: linear-gradient(180deg, rgba(8,16,11,0.68) 0%, rgba(8,16,11,0.56) 55%, rgba(8,16,11,0.76) 100%);
 }
 .page-hero.has-bg .breadcrumb,
 .page-hero.has-bg .breadcrumb a,
@@ -3540,6 +3540,12 @@ html[data-theme="dark"] {
 .page-hero.has-bg .trust-item { color: #e4f0e8; }
 .page-hero.has-bg .trust-item .check { color: #6fd79b; }
 .page-hero.has-bg .breadcrumb a { color: #cfe9d9; }
+.page-hero.has-bg .hero-intro a,
+.page-hero.has-bg .byline a {
+  color: #9fe0bb;
+  text-decoration-color: rgba(159,224,187,0.6);
+  text-underline-offset: 2px;
+}
 
 .page-hero.has-bg .btn-secondary {
   border-color: rgba(255,255,255,0.45);
