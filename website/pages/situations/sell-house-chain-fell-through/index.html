@@ -544,40 +544,63 @@
 
     <h2>Why being the end of the chain removes the risk</h2>
 
-    <figure class="sypb-viz reveal">
-      <figcaption>How long each route takes</figcaption>
-      <p class="viz-sub">Time from agreeing a sale to money in your account.</p>
-      <div class="viz-row">
-        <div class="viz-label"><span class="viz-name">Relisting on the open market</span><span class="viz-val">About 22 weeks</span></div>
-        <div class="viz-track"><div class="viz-bar is-market" style="width:100%;"></div></div>
+    <figure class="sypb-route-bars reveal" aria-label="How long a relisted open market sale takes compared with selling to us" style="max-width:880px;margin:2rem auto 2.5rem;">
+      <figcaption>How long each route really takes
+        <span class="route-bars-sub">2026 UK averages: Zoopla, HomeOwners Alliance, Property Solvers</span>
+      </figcaption>
+      <div class="route-bars-grid">
+        <div class="route-bar">
+          <span class="route-name">Relisting with an agent</span>
+          <div class="route-track"><div class="route-fill route-fill--ea" style="--w:92%"></div></div>
+          <span class="route-time">22-26 weeks</span>
+        </div>
+        <div class="route-bar">
+          <span class="route-name">Cash buyer (us)</span>
+          <div class="route-track"><div class="route-fill route-fill--sypb" style="--w:14%"></div></div>
+          <span class="route-time">1 to 4 weeks</span>
+        </div>
       </div>
-      <div class="viz-row">
-        <div class="viz-label"><span class="viz-name">Selling to us</span><span class="viz-val">7 to 28 days</span></div>
-        <div class="viz-track"><div class="viz-bar is-us" style="width:18%;"></div></div>
+      <div class="route-axis" aria-hidden="true">
+        <span>0w</span><span>5w</span><span>10w</span><span>15w</span><span>20w</span><span>25w+</span>
       </div>
-      <p class="viz-foot">The open market figure is a typical agreed-sale-to-completion time and assumes the second sale holds. Roughly one in four doesn't, which starts the clock again.</p>
     </figure>
 
     <p>We buy with our own funds. That means there is no mortgage lender who can withdraw an offer, no survey that can be used to renegotiate, and no property we need to sell first in order to buy yours.</p>
     <p>Take those three away and most of the reasons on the list above simply can't happen. What is left is conveyancing, which is why we complete in 7 to 28 days rather than the 22 weeks an open market sale typically takes.</p>
 
-    <div class="chain-viz reveal" role="img" aria-label="A chain sale has four households linked together and any one of them can break it. Selling to us has two parties and nothing to break.">
+    <div class="chain-viz reveal">
       <div class="chain-panel">
+        <span class="chain-count is-many">7 things that can stop it</span>
         <h4>A chain sale</h4>
         <div class="chain-links">
-          <span class="chain-node " title="You" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l9-8 9 8v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg></span><span class="chain-join">&#8594;</span>
-          <span class="chain-node " title="Your buyer" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l9-8 9 8v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg></span><span class="chain-join is-break">&#10005;</span>
-          <span class="chain-node is-broken" title="Their seller" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l9-8 9 8v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg></span><span class="chain-join">&#8594;</span>
-          <span class="chain-node is-broken" title="And on up the chain" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l9-8 9 8v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg></span>
+          <span class="chain-node " aria-hidden="true"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l9-8 9 8v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg></span><span class="chain-join">&#8594;</span><span class="chain-node " aria-hidden="true"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l9-8 9 8v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg></span><span class="chain-join is-break">&#10005;</span><span class="chain-node is-broken" aria-hidden="true"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l9-8 9 8v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg></span><span class="chain-join">&#8594;</span><span class="chain-node is-broken" aria-hidden="true"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l9-8 9 8v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg></span><span class="chain-join">&#8594;</span><span class="chain-node is-broken" aria-hidden="true"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l9-8 9 8v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg></span>
         </div>
-        <p>Four households, three links. Any one of them can pull out and the whole thing stops, however solid your own buyer is.</p>
+        <ul class="chain-stages">
+          <li class="risk">Your buyer applies for a mortgage, which the lender can still withdraw</li>
+          <li class="risk">The lender sends a surveyor, who can down-value or flag the condition</li>
+          <li class="risk">Searches come back and can raise something nobody expected</li>
+          <li class="risk">Enquiries go back and forth between four sets of solicitors</li>
+          <li class="risk">Your buyer's own sale has to hold together</li>
+          <li class="risk">So does their buyer's sale, and so on up the chain</li>
+          <li class="risk">Everyone has to be ready to exchange on the same day</li>
+        </ul>
       </div>
       <div class="chain-panel">
+        <span class="chain-count is-few">2 parties, nothing behind us</span>
         <h4>Selling to us</h4>
         <div class="chain-links">
-          <span class="chain-node is-us" title="You" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l9-8 9 8v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg></span><span class="chain-join">&#8594;</span>
-          <span class="chain-node is-us" title="Us" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l9-8 9 8v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg></span>
+          <span class="chain-node is-us" aria-hidden="true"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l9-8 9 8v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg></span><span class="chain-join">&#8594;</span><span class="chain-node is-us" aria-hidden="true"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l9-8 9 8v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg></span>
         </div>
+        <ul class="chain-stages">
+          <li class="gone">No mortgage application, because we buy with our own funds</li>
+          <li class="gone">No lender's surveyor, so condition can't be used to renegotiate</li>
+          <li class="gone">No onward chain, because we aren't selling anything to buy yours</li>
+          <li class="keep">Your solicitor still does the searches and the legal work properly</li>
+          <li class="keep">You pick the completion date, and we work to it</li>
+        </ul>
+        <p>That's why this route runs in weeks rather than months. The legal work still happens, the things that break sales don't.</p>
+      </div>
+    </div>
         <p>Two parties. We buy with our own funds, so there is no lender, no survey and nothing behind us that has to sell first.</p>
       </div>
     </div>

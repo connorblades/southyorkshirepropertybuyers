@@ -107,7 +107,7 @@ body {
 }
 
 /* ---- NAV ---- */
-nav {
+nav:not([class]) {
   position: fixed;
   top: 0; left: 0; right: 0;
   z-index: 100;
@@ -3665,26 +3665,7 @@ html[data-theme="dark"] {
    a stray panel, so scope a flat version here and leave the homepage alone. */
 .page-body .how-section { background: transparent; padding: 0; }
 .page-body .how-steps { margin-top: 1.75rem; gap: 1.25rem; }
-.page-body .how-step {
-  background: var(--surface);
-  border: 1px solid var(--border);
-  padding: 1.5rem 1.25rem;
-}
-.page-body .how-step:nth-child(1),
-.page-body .how-step:nth-child(2),
-.page-body .how-step:nth-child(3) {
-  background: var(--surface);
-  border-color: var(--border);
-}
-/* Progression carried by the accent, not by three different card fills:
-   purple at the start, brand green once it is done. */
-.page-body .how-step { border-top: 3px solid var(--border); }
-.page-body .how-step:nth-child(1) { border-top-color: var(--chart-market); }
-.page-body .how-step:nth-child(2) { border-top-color: var(--muted); }
-.page-body .how-step:nth-child(3) { border-top-color: var(--chart-us); }
-.page-body .how-step:nth-child(1) .how-icon { color: var(--chart-market); }
-.page-body .how-step:nth-child(2) .how-icon { color: var(--muted); }
-.page-body .how-step:nth-child(3) .how-icon { color: var(--chart-us); }
+.page-body .how-step { padding: 1.5rem 1.25rem; }
 .page-body .how-step h3 {
   font-size: var(--fs-xs);
   letter-spacing: 0.08em;
@@ -3711,3 +3692,37 @@ html[data-theme="dark"] {
 @media (min-width: 640px) { .onward-links ul { grid-template-columns: 1fr 1fr; } }
 .onward-links li { margin: 0; }
 .onward-links a { font-size: var(--fs-sm); }
+
+/* ---- Chain stage lists, shown beside the node pictogram ---- */
+.chain-stages { list-style: none; margin: 0.85rem 0 0; padding: 0; }
+.chain-stages li {
+  position: relative;
+  padding-left: 1.6rem;
+  margin-bottom: 0.4rem;
+  font-size: var(--fs-sm);
+  color: var(--body-text);
+  line-height: 1.45;
+}
+.chain-stages li::before {
+  position: absolute;
+  left: 0;
+  top: 0.05em;
+  font-weight: 700;
+}
+.chain-stages li.risk::before  { content: '\26A0'; color: var(--chart-market); }
+.chain-stages li.gone::before  { content: '\2715'; color: var(--muted); }
+.chain-stages li.keep::before  { content: '\2713'; color: var(--chart-us); }
+.chain-stages li.gone { color: var(--muted); }
+.chain-count {
+  display: inline-block;
+  font-size: var(--fs-xs);
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  padding: 0.15rem 0.55rem;
+  border-radius: 999px;
+  margin-bottom: 0.5rem;
+}
+.chain-count.is-many { background: rgba(125,74,145,0.14); color: var(--chart-market); }
+.chain-count.is-few  { background: var(--green-subtle); color: var(--chart-us); }
+html[data-theme="dark"] .chain-count.is-many { background: rgba(168,120,196,0.18); }
