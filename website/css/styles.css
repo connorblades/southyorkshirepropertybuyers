@@ -3658,3 +3658,56 @@ html[data-theme="dark"] {
 .next-steps ol { margin: 0; padding-left: 1.15rem; }
 .next-steps li { margin-bottom: 0.5rem; font-size: var(--fs-base); }
 .next-steps .btn-primary { margin-top: 1rem; }
+
+/* ---- Step block when embedded in a page body ----
+   The homepage version paints its own surface and tints each card with a
+   hardcoded green that is not the brand green. Inside an article that reads as
+   a stray panel, so scope a flat version here and leave the homepage alone. */
+.page-body .how-section { background: transparent; padding: 0; }
+.page-body .how-steps { margin-top: 1.75rem; gap: 1.25rem; }
+.page-body .how-step {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  padding: 1.5rem 1.25rem;
+}
+.page-body .how-step:nth-child(1),
+.page-body .how-step:nth-child(2),
+.page-body .how-step:nth-child(3) {
+  background: var(--surface);
+  border-color: var(--border);
+}
+/* Progression carried by the accent, not by three different card fills:
+   purple at the start, brand green once it is done. */
+.page-body .how-step { border-top: 3px solid var(--border); }
+.page-body .how-step:nth-child(1) { border-top-color: var(--chart-market); }
+.page-body .how-step:nth-child(2) { border-top-color: var(--muted); }
+.page-body .how-step:nth-child(3) { border-top-color: var(--chart-us); }
+.page-body .how-step:nth-child(1) .how-icon { color: var(--chart-market); }
+.page-body .how-step:nth-child(2) .how-icon { color: var(--muted); }
+.page-body .how-step:nth-child(3) .how-icon { color: var(--chart-us); }
+.page-body .how-step h3 {
+  font-size: var(--fs-xs);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 0.2rem;
+}
+.page-body .how-step .step-arrow { display: none; }
+
+/* ---- One tidy onward-links block ---- */
+.onward-links {
+  border-top: 1px solid var(--border);
+  padding-top: 1.5rem;
+  margin-top: 2rem;
+}
+.onward-links h3 { margin: 0 0 0.9rem; color: var(--heading); font-size: var(--fs-md); }
+.onward-links ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 0.55rem 1.5rem;
+}
+@media (min-width: 640px) { .onward-links ul { grid-template-columns: 1fr 1fr; } }
+.onward-links li { margin: 0; }
+.onward-links a { font-size: var(--fs-sm); }
