@@ -61,20 +61,81 @@ function rateLimited(ip) {
   return hits.length > RATE_LIMIT;
 }
 
+// Field length ceilings. Generous for a real person, but they stop the
+// enormous values spam tends to carry. localPart is 45 rather than the RFC's
+// 64 because real addresses are far shorter and the spam that got through here
+// used very long local parts.
+const MAX = { name: 80, email: 254, localPart: 45, address: 200, notes: 2000 };
+
+// Digits that are obviously not a phone number. Two signals, both chosen so a
+// real number cannot trip them: almost no digit variety (0000000000,
+// 07000000000, 5555555555), or a long unbroken counting run (1234567890). The
+// run threshold is 9, tuned by testing real numbers: an 0800 number and a
+// Spanish mobile both contain runs of 7 and 8, so anything tighter rejected
+// genuine callers. Turning away a real seller costs far more than letting one
+// spam lead through, and the honeypot and timing checks are the strong layers
+// anyway.
+function fakeDigits(d) {
+  if (new Set(d).size <= 2) return true;
+  let run = 1;
+  for (let i = 1; i < d.length; i++) {
+    const step = +d[i] - +d[i - 1];
+    run = (step === 1 || step === -1) ? run + 1 : 1;
+    if (run >= 9) return true;
+  }
+  return false;
+}
+
+// Accepts a UK number in any of the ways people actually type it, and a genuine
+// international number too: an owner selling a UK property from abroad is a
+// real case and must not be turned away.
+function phoneIsPlausible(raw) {
+  let v = String(raw || '').replace(/[^\d+]/g, '');
+  if (!v) return false;
+
+  if (v.startsWith('+') && !v.startsWith('+44')) {
+    const d = v.slice(1);
+    return d.length >= 8 && d.length <= 15 && !fakeDigits(d);
+  }
+
+  v = v.replace(/^\+?44/, '0');
+  if (/^[1237]\d{9}$/.test(v)) v = '0' + v;   // typed without the leading zero
+
+  if (!/^0[123478]\d{8,9}$/.test(v)) return false;
+  return !fakeDigits(v.slice(1));
+}
+
+function emailIsPlausible(raw) {
+  const v = String(raw || '').trim();
+  if (!v || v.length > MAX.email) return false;
+  if (!/^[^@\s]+@[^@\s.]+\.[^@\s]{2,}$/.test(v)) return false;
+  const [local, domain] = v.split('@');
+  if (local.length > MAX.localPart) return false;
+  if (domain.length > 190) return false;
+  return true;
+}
+
 function looksLikePerson(body) {
   const name = `${body.firstName || ''} ${body.lastName || ''}`.trim();
-  const phone = String(body.phone || '').replace(/[^\d+]/g, '');
-  const email = String(body.email || '').trim();
   const address = String(body.address1 || '').trim();
+  const notes = String(body.notes || '');
 
   if (name.length < 2) return 'no name';
-  // a UK number is 10 to 13 digits once punctuation is stripped
-  const phoneOk = phone.length >= 10 && phone.length <= 13;
-  const emailOk = /^[^@\s]+@[^@\s.]+\.[^@\s]{2,}$/.test(email);
-  if (!phoneOk && !emailOk) return 'no usable phone or email';
+  if (name.length > MAX.name) return 'name absurdly long';
   if (!address) return 'no property address';
-  // links in a free-text field are the classic spam signature
-  if (/https?:\/\/|\[url=|<a\s/i.test(String(body.notes || ''))) return 'links in message';
+  if (address.length > MAX.address) return 'address absurdly long';
+  if (notes.length > MAX.notes) return 'message absurdly long';
+
+  const gotPhone = phoneIsPlausible(body.phone);
+  const gotEmail = emailIsPlausible(body.email);
+
+  // One good contact route is enough, but a supplied value that is clearly junk
+  // is a spam signal in its own right even when the other field is fine.
+  if (!gotPhone && !gotEmail) return 'no usable phone or email';
+  if (String(body.phone || '').trim() && !gotPhone) return 'phone not a real number';
+  if (String(body.email || '').trim() && !gotEmail) return 'email not usable';
+
+  if (/https?:\/\/|\[url=|<a\s/i.test(notes)) return 'links in message';
   return null;
 }
 
