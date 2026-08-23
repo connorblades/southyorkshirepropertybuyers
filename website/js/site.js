@@ -154,6 +154,11 @@
     var form = document.getElementById('offerForm') || document.getElementById('contactForm');
     if (!form) return;
 
+    /* Anti-spam, both invisible to a real user. A timestamp taken when the page
+       renders lets the server reject a submission nobody could have typed, and
+       the honeypot is an off-screen field only a bot fills in. */
+    var formShownAt = Date.now();
+
     /* UK phone to E.164, which is the only format Google accepts for enhanced
        conversions. Returns '' when the number can't be read confidently, so a
        wrong number is never sent. */
@@ -182,6 +187,10 @@
       };
 
       /* Pipeline context: lets GHL tag and route the lead without manual triage. */
+      var hp = form.querySelector('.hp-field input');
+      data._hp = hp ? hp.value : '';
+      data._elapsed = Date.now() - formShownAt;
+
       var slug = (window.location.pathname.replace(/^\/|\/$/g, '') || 'home');
       data.sourcePage = slug;
       data.sourceUrl = window.location.href;

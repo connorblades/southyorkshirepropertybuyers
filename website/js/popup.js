@@ -38,6 +38,10 @@
         '<h2 id="leadPopTitle">Want us to call you back?</h2>' +
         '<p class="lead-pop-sub">Leave your number and one of our team will ring you as soon as we can. No fees, no obligation, no pressure.</p>' +
         '<form class="lead-pop-form" novalidate>' +
+          '<div class="hp-field" aria-hidden="true">' +
+            '<label for="leadPopSite">Leave this field empty</label>' +
+            '<input type="text" id="leadPopSite" name="leadPopSite" tabindex="-1" autocomplete="off">' +
+          '</div>' +
           '<input type="text" name="name" id="leadPopName" placeholder="Your name" autocomplete="name" required>' +
           '<input type="tel" name="phone" id="leadPopPhone" placeholder="Phone number" autocomplete="tel" required>' +
           '<input type="text" name="address" id="leadPopAddress" placeholder="Property address or postcode" autocomplete="street-address" required>' +
@@ -46,6 +50,7 @@
         '</form>' +
         '<p class="lead-pop-alt">Would you rather talk now? <a href="tel:+447445629113" data-track="phone-tap">07445 629113</a></p>' +
       '</div>';
+    window.__sypbPopShownAt = Date.now();
     return wrap;
   }
 
@@ -84,6 +89,10 @@
       leadSource: 'website',
       area: (slug.match(/(sheffield|rotherham|doncaster|barnsley|chesterfield|worksop|retford|gainsborough|mansfield)/) || [''])[0]
     };
+    var hp2 = form.querySelector('.hp-field input');
+    data._hp = hp2 ? hp2.value : '';
+    data._elapsed = Date.now() - (window.__sypbPopShownAt || Date.now());
+
     try {
       var p = new URLSearchParams(window.location.search);
       ['utm_source', 'utm_medium', 'utm_campaign', 'utm_term', 'utm_content', 'gclid'].forEach(function (k) {

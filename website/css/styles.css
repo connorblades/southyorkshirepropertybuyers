@@ -3843,3 +3843,15 @@ html[data-theme="dark"] .nav-phone:hover { color: #ffffff; }
   border-color: rgba(61,170,104,0.5);
   transform: translateY(-2px);
 }
+
+/* Honeypot. Positioned off-screen rather than display:none, because some bots
+   skip fields that are explicitly hidden. Never reachable by keyboard or by a
+   screen reader, so it costs a real user nothing. */
+.hp-field {
+  position: absolute !important;
+  left: -9999px !important;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
