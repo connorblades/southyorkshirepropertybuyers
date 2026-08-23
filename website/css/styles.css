@@ -3788,3 +3788,58 @@ html[data-theme="dark"] .pain-more { color: #4fbf82; }
 .cost-tile.is-cost .cost-tag { background: rgba(125,74,145,0.14); color: var(--chart-market); }
 .cost-tile.is-free .cost-tag { background: var(--green-subtle); color: var(--chart-us); }
 html[data-theme="dark"] .cost-tile.is-cost .cost-tag { background: rgba(168,120,196,0.18); }
+
+/* ---- Phone icon in the nav ribbon and the footer ----
+   The number itself is deliberately not printed. A tel: link on an icon dials
+   on a phone and is a no-op worth nothing on desktop, so it carries a label for
+   screen readers and a title for anyone hovering. */
+.nav-phone {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  margin-left: 0.6rem;
+  border-radius: 50%;
+  color: var(--green);
+  background: var(--green-subtle);
+  border: 1px solid var(--green-border);
+  text-decoration: none;
+  transition: background 0.2s, color 0.2s, transform 0.2s;
+}
+.nav-phone:hover {
+  background: var(--green);
+  color: #ffffff;
+  transform: translateY(-1px);
+}
+.nav-phone:focus-visible {
+  outline: 3px solid var(--green);
+  outline-offset: 2px;
+}
+html[data-theme="dark"] .nav-phone { color: #4fbf82; }
+html[data-theme="dark"] .nav-phone:hover { color: #ffffff; }
+
+/* On a photographic hero the nav sits over the page, keep it legible */
+@media (max-width: 480px) {
+  .nav-phone { width: 34px; height: 34px; margin-left: 0.35rem; }
+  .nav-phone svg { width: 16px; height: 16px; }
+}
+
+.footer-phone { margin: 0.35rem 0 0; }
+.footer-phone a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  color: rgba(255,255,255,0.55);
+  border: 1px solid rgba(255,255,255,0.18);
+  transition: color 0.2s, border-color 0.2s, transform 0.2s;
+}
+.footer-phone a:hover {
+  color: #3daa68;
+  border-color: rgba(61,170,104,0.5);
+  transform: translateY(-2px);
+}
