@@ -17,7 +17,7 @@
   <!-- BLOG INDEX -->
   <url>
     <loc>https://southyorkshirepropertybuyers.com/blog/</loc>
-    <lastmod>2026-08-06</lastmod>
+    <lastmod>2026-08-24</lastmod>
     <priority>0.8</priority>
     <changefreq>weekly</changefreq>
   </url>
@@ -673,6 +673,16 @@
     <image:image>
       <image:loc>https://southyorkshirepropertybuyers.com/blog/images/selling-tenanted-property-2026.jpg</image:loc>
       <image:title>Selling a Tenanted Property in 2026</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://southyorkshirepropertybuyers.com/blog/repossession-stats-south-yorkshire-2026/</loc>
+    <lastmod>2026-08-24</lastmod>
+    <priority>0.7</priority>
+    <changefreq>monthly</changefreq>
+    <image:image>
+      <image:loc>https://southyorkshirepropertybuyers.com/blog/images/best-cash-house-buyer-sheffield-2026.jpg</image:loc>
+      <image:title>Repossession Stats South Yorkshire 2026, How to Read the MoJ Numbers</image:title>
     </image:image>
   </url>
   <url>
