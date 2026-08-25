@@ -3855,3 +3855,47 @@ html[data-theme="dark"] .nav-phone:hover { color: #ffffff; }
   height: 1px;
   overflow: hidden;
 }
+
+/* ---- Stepped enquiry form ----
+   Steps only exist once form-steps.js runs; with the script blocked every
+   field is visible and the form behaves as it always did. */
+.form-progress {
+  font-size: var(--fs-xs);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: var(--muted);
+  margin: 0 0 1rem;
+}
+.form-nav { display: flex; gap: 0.75rem; margin-top: 0.25rem; }
+.form-nav[hidden] { display: none; }
+.form-next {
+  flex: 1 1 auto;
+  background: linear-gradient(135deg, var(--green) 0%, #14593b 100%);
+  color: #fff;
+  border: none;
+  border-radius: var(--radius);
+  padding: 0.95rem 1.4rem;
+  font-size: 1rem;
+  font-weight: 700;
+  font-family: inherit;
+  cursor: pointer;
+  transition: filter 0.2s, transform 0.2s;
+}
+.form-next:hover { filter: brightness(1.08); transform: translateY(-1px); }
+.form-back {
+  flex: 0 0 auto;
+  background: transparent;
+  color: var(--label-col);
+  border: 1px solid var(--input-border);
+  border-radius: var(--radius);
+  padding: 0.95rem 1.15rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+  font-family: inherit;
+  cursor: pointer;
+  transition: border-color 0.2s, color 0.2s;
+}
+.form-back:hover { border-color: var(--green); color: var(--green); }
+.form-back[hidden], .form-next[hidden], .form-submit[hidden] { display: none; }
+.form-next:focus-visible, .form-back:focus-visible { outline: 3px solid var(--green); outline-offset: 2px; }

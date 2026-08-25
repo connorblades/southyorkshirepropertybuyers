@@ -180,6 +180,7 @@
         phone: document.getElementById('phone').value,
         email: document.getElementById('email').value,
         address1: document.getElementById('address').value,
+        postcode: (document.getElementById('postcode') || {}).value || '',
         propertyType: document.getElementById('type').value,
         timeline: document.getElementById('timeline').value,
         situation: document.getElementById('situation').value,
@@ -190,6 +191,10 @@
       var hp = form.querySelector('.hp-field input');
       data._hp = hp ? hp.value : '';
       data._elapsed = Date.now() - formShownAt;
+
+      if (data.postcode && data.address1.indexOf(data.postcode) === -1) {
+        data.address1 = (data.address1 + ', ' + data.postcode).replace(/^, /, '');
+      }
 
       var slug = (window.location.pathname.replace(/^\/|\/$/g, '') || 'home');
       data.sourcePage = slug;
