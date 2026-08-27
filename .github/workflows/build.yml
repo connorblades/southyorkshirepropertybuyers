@@ -1,8 +1,12 @@
 name: Build and deploy to GitHub Pages
 
+# Disabled 2026-08-25. Hosting is Hostinger, not GitHub Pages. This workflow was
+# still building the site with the retired python builder and publishing a full
+# duplicate to connorblades.github.io on every push. That copy has no /api/submit
+# behind it, so its enquiry form returned 405 and any lead reaching it was lost.
+# Left in place rather than deleted so the history is obvious, but it now only
+# runs if someone starts it by hand.
 on:
-  push:
-    branches: [main]
   workflow_dispatch:
 
 permissions:
