@@ -466,6 +466,52 @@ html[data-theme="light"] .hero .avatar { border-color: rgba(17,26,20,0.16); }
 
 .hero-btns { display: flex; gap: 0.85rem; justify-content: center; flex-wrap: wrap; margin-bottom: 1.25rem; }
 
+/* ---- HERO POSTCODE CAPTURE ----
+   The enquiry form sits ~9,000px down the homepage, so nobody saw it before
+   scrolling. This puts the form's own first step, the postcode, in the hero.
+   It hands off to #contactForm rather than submitting on its own, so there is
+   still one submission path and one conversion tag. */
+.hero-postcode {
+  /* The global form rule paints a padded panel. The hero is not a panel. */
+  background: none;
+  border: 0;
+  border-radius: 0;
+  padding: 0;
+  display: flex;
+  gap: 0.6rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 0.85rem;
+}
+.hero-postcode input {
+  flex: 0 1 250px;
+  min-width: 0;
+  padding: 0.8rem 1.1rem;
+  font-family: inherit;
+  font-size: 0.9rem;
+  color: #10261a;
+  background: rgba(255,255,255,0.96);
+  border: 1px solid rgba(16,38,26,0.28);
+  border-radius: var(--radius);
+}
+.hero-postcode input::placeholder { color: rgba(16,38,26,0.55); }
+.hero-postcode input:focus-visible {
+  outline: 3px solid var(--green);
+  outline-offset: 2px;
+  background: #fff;
+}
+.hero-postcode .btn-primary {
+  flex: 0 0 auto;
+  border: 0;
+  cursor: pointer;
+  font-family: inherit;
+}
+/* One field per row on a phone, so neither is squeezed to an unusable width */
+@media (max-width: 460px) {
+  .hero-postcode input,
+  .hero-postcode .btn-primary { flex: 1 1 100%; }
+}
+
 .trust-bar {
   margin-top: 3.5rem;
   padding-top: 2.5rem;

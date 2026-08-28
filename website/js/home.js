@@ -196,4 +196,35 @@
     if (e && e.target === document.getElementById('modalOverlay')) closePost();
   };
   document.addEventListener('keydown', function (e) { if (e.key === 'Escape') closePost(); });
+
+  /* ---- Hero postcode, handed off to the stepped enquiry form ----
+     The hero field is deliberately not a second submission path. It copies the
+     postcode into the real form, scrolls there and advances it to step 2, so
+     the payload, the validation and the conversion tag are all unchanged.
+     Without JS the form falls back to its action of /get-offer/. */
+  (function () {
+    var hero = document.getElementById('heroPostcode');
+    var input = document.getElementById('heroPostcodeInput');
+    var target = document.getElementById('postcode');
+    var contact = document.getElementById('contact');
+    if (!hero || !input || !target || !contact) return;
+
+    hero.addEventListener('submit', function (e) {
+      var value = input.value.trim();
+      /* Empty: let the browser show its own required prompt and go no further */
+      if (!value) return;
+      e.preventDefault();
+
+      target.value = value;
+      target.dispatchEvent(new Event('input', { bubbles: true }));
+      contact.scrollIntoView({ behavior: 'smooth', block: 'start' });
+
+      /* form-steps.js builds this button. Clicking it validates the postcode
+         step and moves to the address step, so the visitor carries on rather
+         than re-entering what they just typed. */
+      var next = document.querySelector('#contactForm .form-next');
+      if (next) next.click();
+      else target.focus({ preventScroll: true });
+    });
+  })();
 })();
