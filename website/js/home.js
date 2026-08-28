@@ -80,8 +80,24 @@
       v2.preload = 'auto';
       try { v2.load(); } catch (e) {}
     }
-    if (document.readyState === 'complete') setTimeout(warmSecondClip, 1200);
-    else window.addEventListener('load', function () { setTimeout(warmSecondClip, 1200); });
+    /* v1 is deferred the same way. It used to carry autoplay and preload="auto",
+       which pulled 779KB onto the critical path and pushed the largest paint out
+       past five seconds on a mid-range phone. The poster is the thing a visitor
+       actually sees, so it paints first and the clip starts underneath it. */
+    function startFirstClip() {
+      if (v1.preload === 'none') {
+        v1.preload = 'auto';
+        try { v1.load(); } catch (e) {}
+      }
+      var go = v1.play();
+      if (go && go.catch) go.catch(function () {});
+    }
+    function afterPaint() {
+      startFirstClip();
+      setTimeout(warmSecondClip, 1200);
+    }
+    if (document.readyState === 'complete') setTimeout(afterPaint, 200);
+    else window.addEventListener('load', function () { setTimeout(afterPaint, 200); });
 
     function onTimeUpdate(e) {
       if (e.target !== current || !current.duration) return;

@@ -23,7 +23,27 @@ app.use((req, res, next) => {
   next();
 });
 
-app.use(express.static(DIST));
+// Every asset was going out with cache-control: max-age=0, so a visitor
+// refetched the stylesheet, the scripts and the images on every page they
+// looked at. HTML stays uncached because a deploy must show immediately, but
+// the rest can be held: the stylesheet and scripts are versioned in the markup
+// (styles.css?v=27), so bumping that number is how we bust them.
+const YEAR = 365 * 24 * 60 * 60 * 1000;
+const WEEK = 7 * 24 * 60 * 60 * 1000;
+
+app.use(express.static(DIST, {
+  setHeaders(res, filePath) {
+    if (filePath.endsWith('.html')) {
+      res.setHeader('Cache-Control', 'public, max-age=0, must-revalidate');
+    } else if (/[\\/](css|js)[\\/]/.test(filePath)) {
+      res.setHeader('Cache-Control', 'public, max-age=' + WEEK / 1000);
+    } else if (/[\\/](images|media)[\\/]/.test(filePath)) {
+      res.setHeader('Cache-Control', 'public, max-age=' + YEAR / 1000 + ', immutable');
+    } else {
+      res.setHeader('Cache-Control', 'public, max-age=' + WEEK / 1000);
+    }
+  }
+}));
 
 // ---------------------------------------------------------------------------
 // Lead spam filtering.
