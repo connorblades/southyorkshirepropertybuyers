@@ -283,3 +283,43 @@
     }, true);
   })();
 })();
+
+/* ---- Hero postcode, handed off to the stepped enquiry form ----
+   Lives in site.js rather than home.js because the paid landing pages carry
+   the same hero field and do not load home.js. Deliberately not a second
+   submission path: it copies the postcode into the real form, scrolls there
+   and advances it to the next step, so the payload, the validation and the
+   conversion tag are all unchanged. Without JS the form falls back to its
+   action of /get-offer/. Element-guarded, so pages without the field skip it. */
+(function () {
+  'use strict';
+  function boot() {
+    var hero = document.getElementById('heroPostcode');
+    var input = document.getElementById('heroPostcodeInput');
+    var target = document.getElementById('postcode');
+    var contact = document.getElementById('contact');
+    if (!hero || !input || !target || !contact) return;
+
+    hero.addEventListener('submit', function (e) {
+      var value = input.value.trim();
+      /* Empty: let the browser show its own required prompt and go no further */
+      if (!value) return;
+      e.preventDefault();
+
+      target.value = value;
+      target.dispatchEvent(new Event('input', { bubbles: true }));
+      contact.scrollIntoView({ behavior: 'smooth', block: 'start' });
+
+      /* form-steps.js builds this button. Clicking it validates the postcode
+         step and moves on, so the visitor carries on rather than retyping. */
+      var next = document.querySelector('#contactForm .form-next, #offerForm .form-next');
+      if (next) next.click();
+      else target.focus({ preventScroll: true });
+    });
+  }
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', boot);
+  } else {
+    boot();
+  }
+})();

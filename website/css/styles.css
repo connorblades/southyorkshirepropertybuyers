@@ -466,6 +466,31 @@ html[data-theme="light"] .hero .avatar { border-color: rgba(17,26,20,0.16); }
 
 .hero-btns { display: flex; gap: 0.85rem; justify-content: center; flex-wrap: wrap; margin-bottom: 1.25rem; }
 
+/* ---- HERO READER ROUTES ----
+   Two situations arriving on one page (deciding on auction, or already failed).
+   The default link colour is unreadable on the hero photograph, so these are
+   explicitly light and pill shaped. */
+.hero-routes {
+  margin: 0.9rem 0 0;
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.hero-routes a {
+  color: #fff;
+  background: rgba(0,0,0,0.34);
+  border: 1px solid rgba(255,255,255,0.55);
+  border-radius: 999px;
+  padding: 0.4rem 0.9rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background 0.2s, border-color 0.2s;
+}
+.hero-routes a:hover,
+.hero-routes a:focus-visible { background: rgba(0,0,0,0.55); border-color: #fff; }
+
 /* ---- HERO POSTCODE CAPTURE ----
    The enquiry form sits ~9,000px down the homepage, so nobody saw it before
    scrolling. This puts the form's own first step, the postcode, in the hero.
