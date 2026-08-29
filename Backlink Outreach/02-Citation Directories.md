@@ -40,7 +40,7 @@ Category: Cash House Buyers / Property Buyers / Quick Sale Property
 |---|---|---|---|
 | 14 | Compare My Move (cash buyer section) | https://www.comparemymove.com/ | They list cash buyers — apply to be included |
 | 15 | The Advisory | https://www.theadvisory.co.uk/ | Submit company for review (high authority) |
-| 16 | NAPB (membership) | https://www.napb.co.uk/ | Paid — ~£500–1,000/yr — defer decision |
+| 16 | NAPB (membership) | https://www.napb.co.uk/ | Fee NOT published; the ~£500-1,000 here was a guess. Requires TPOS first. Restricted to firms buying with their own funds, so settle the Points Of Truth lead-gen wording before applying. Neither register gives a backlink. See `_internal/seo/napb-tpos-call-script.md` |
 | 17 | Property118 member profile | https://www.property118.com/ | Free — create member profile + first post |
 
 ## Tier 3 — South Yorkshire local
