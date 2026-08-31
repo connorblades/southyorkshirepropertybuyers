@@ -2928,7 +2928,6 @@ h1 em {
   padding-left: calc(var(--route-label-w) + var(--route-gap));
   padding-right: calc(var(--route-time-w) + var(--route-gap));
 }
-@media (max-width: 640px) {
 @media (prefers-reduced-motion: reduce) {
   .sypb-route-bars .route-fill { transition: none; }
 }
@@ -4052,7 +4051,8 @@ html[data-theme="dark"] .nav-phone:hover { color: #ffffff; }
   white-space: nowrap;
 }
 @media (min-width: 700px) {
-  .hero-routes.is-towns { grid-template-columns: repeat(8, minmax(0, 1fr)); max-width: none; }
+  /* one row, but held to the width of the copy above rather than the whole hero */
+  .hero-routes.is-towns { grid-template-columns: repeat(8, auto); max-width: 700px; }
 }
 
 /* ---- INLINE CTA PAIR ----
