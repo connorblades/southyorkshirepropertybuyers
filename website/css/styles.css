@@ -3311,16 +3311,23 @@ html[data-theme="dark"] .page-hero--img > .page-hero-wash {
 }
 
 /* ---- RELATED GUIDES ---- */
+/* ---- RELATED GUIDES ----
+   This was a pale boxed panel with a small heading and a plain list, which read
+   as a collapsed widget rather than part of the page. It is a section now: rule
+   above it, a heading the same size as the page's other h2s, and links that
+   look like somewhere to go rather than a footnote. */
 .related-guides {
-  margin: 2.5rem 0 0;
-  padding: 1.5rem 1.6rem;
-  background: var(--surface-alt);
-  border: 1px solid var(--border);
-  border-radius: var(--r-md);
+  margin: 3rem 0 0;
+  padding: 2rem 0 0;
+  background: none;
+  border: 0;
+  border-top: 2px solid var(--border);
+  border-radius: 0;
 }
 .related-guides h2 {
-  margin: 0 0 0.9rem;
-  font-size: 1.1rem;
+  margin: 0 0 1.25rem;
+  font-size: 1.45rem;
+  font-weight: 700;
   color: var(--heading);
 }
 .related-guides ul {
@@ -3328,20 +3335,38 @@ html[data-theme="dark"] .page-hero--img > .page-hero-wash {
   padding: 0;
   list-style: none;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: 0.5rem 1.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 0.7rem;
 }
 .related-guides li { margin: 0; }
 .related-guides a {
-  display: block;
-  padding: 0.45rem 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.9rem;
+  padding: 0.9rem 1.1rem;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--r-md);
   font-size: 0.95rem;
-  font-weight: 500;
-  color: var(--green);
+  font-weight: 600;
+  color: var(--heading);
   text-decoration: none;
-  border-bottom: 1px solid transparent;
+  transition: border-color 0.2s, transform 0.15s, color 0.2s;
 }
-.related-guides a:hover { text-decoration: underline; }
+.related-guides a::after {
+  content: "\2192";
+  color: var(--green);
+  font-weight: 700;
+  flex: 0 0 auto;
+}
+.related-guides a:hover,
+.related-guides a:focus-visible {
+  border-color: var(--green);
+  color: var(--green);
+  transform: translateY(-1px);
+  text-decoration: none;
+}
 
 /* ---- CHECK IT YOURSELF CALLOUT ----
    Sits next to a stated offer percentage so the claim is checkable rather than
@@ -4221,3 +4246,23 @@ html[data-theme="light"] .page-hero.has-bg .hero-routes a:focus-visible {
   background: var(--green);
   color: #fff;
 }
+
+/* ---- HERO ACTION ROW ----
+   The postcode form and the phone link sat in a flex row with the default
+   align-items: stretch, so once the form wrapped to two lines the phone link
+   grew to match it and rendered as a tall empty outlined box. */
+.hero-actions {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  margin-top: 1.5rem;
+}
+.hero-call {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  white-space: nowrap;
+}
+.hero-call svg { width: 16px; height: 16px; flex: 0 0 auto; }
