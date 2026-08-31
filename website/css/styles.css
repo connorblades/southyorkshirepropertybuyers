@@ -4050,3 +4050,130 @@ html[data-theme="dark"] .nav-phone:hover { color: #ffffff; }
 @media (min-width: 700px) {
   .hero-routes.is-towns { grid-template-columns: repeat(8, minmax(0, 1fr)); max-width: none; }
 }
+
+/* ---- INLINE CTA PAIR ----
+   Two buttons in a text-align:center div had only collapsing whitespace
+   between them, so on a phone they wrapped hard against each other. */
+.inline-cta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  justify-content: center;
+  align-items: center;
+}
+.inline-cta > p { flex: 1 0 100%; text-align: center; margin: 0.25rem 0 0; }
+
+/* ---- HELP LAUNCHER ----
+   Sits above the sticky CTA on a phone so the two never overlap. Not a chat:
+   two actions, the form and the phone, and nothing that looks like a text box. */
+.sypb-helper {
+  position: fixed;
+  right: 1rem;
+  bottom: 1.25rem;
+  z-index: 95;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.6rem;
+}
+@media (max-width: 768px) {
+  /* clear the sticky CTA bar and the home indicator */
+  .sypb-helper { bottom: calc(5.5rem + env(safe-area-inset-bottom, 0px)); right: 0.75rem; }
+}
+
+.sypb-helper-launch {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.6rem 1rem;
+  border: 1px solid var(--green-border);
+  border-radius: 999px;
+  background: var(--green);
+  color: #fff;
+  font-family: inherit;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 4px 18px rgba(0,0,0,0.22);
+  transition: padding 0.25s ease, transform 0.15s ease;
+}
+.sypb-helper-launch:hover { transform: translateY(-1px); }
+.sypb-helper-launch:focus-visible { outline: 3px solid var(--green); outline-offset: 3px; }
+.sypb-helper-icon { display: flex; }
+.sypb-helper-icon svg { width: 20px; height: 20px; }
+.sypb-helper-label { white-space: nowrap; }
+
+/* Collapsed: icon only, so it stops competing with the page */
+.sypb-helper.is-collapsed .sypb-helper-launch { padding: 0.7rem; }
+.sypb-helper.is-collapsed .sypb-helper-label {
+  max-width: 0;
+  opacity: 0;
+  overflow: hidden;
+  transition: max-width 0.25s ease, opacity 0.2s ease;
+}
+.sypb-helper-label { max-width: 9rem; opacity: 1; transition: max-width 0.25s ease, opacity 0.2s ease; }
+
+.sypb-helper-panel {
+  position: relative;
+  width: min(19rem, calc(100vw - 2rem));
+  padding: 1.1rem 1.1rem 1rem;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: var(--surface);
+  box-shadow: 0 10px 34px rgba(0,0,0,0.18);
+}
+.sypb-helper-panel h2 {
+  margin: 0 0 0.4rem;
+  font-size: 1rem;
+  line-height: 1.3;
+  color: var(--heading);
+}
+.sypb-helper-panel p {
+  margin: 0 0 0.85rem;
+  font-size: 0.85rem;
+  line-height: 1.5;
+  color: var(--muted);
+}
+.sypb-helper-primary,
+.sypb-helper-secondary {
+  display: block;
+  text-align: center;
+  padding: 0.65rem 0.9rem;
+  border-radius: var(--radius);
+  font-size: 0.88rem;
+  font-weight: 600;
+  text-decoration: none;
+}
+.sypb-helper-primary {
+  background: var(--green);
+  color: #fff;
+  margin-bottom: 0.5rem;
+}
+.sypb-helper-secondary {
+  background: transparent;
+  color: var(--heading);
+  border: 1px solid var(--border);
+}
+.sypb-helper-close {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: none;
+  color: var(--muted);
+  cursor: pointer;
+}
+.sypb-helper-close svg { width: 15px; height: 15px; }
+.sypb-helper-close:hover { background: var(--border); }
+
+@media (prefers-reduced-motion: reduce) {
+  .sypb-helper-launch,
+  .sypb-helper-label { transition: none; }
+}
