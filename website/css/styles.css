@@ -1810,8 +1810,6 @@ h1 em {
 
 @media (max-width: 900px) {
   .hamburger { display: flex; }
-  nav { gap: 0; padding: 0 1.25rem; }
-  .hamburger { margin-left: auto; margin-right: 0.75rem; }
 }
 
 .mobile-menu {
@@ -4003,3 +4001,48 @@ html[data-theme="dark"] .nav-phone:hover { color: #ffffff; }
 .form-back:hover { border-color: var(--green); color: var(--green); }
 .form-back[hidden], .form-next[hidden], .form-submit[hidden] { display: none; }
 .form-next:focus-visible, .form-back:focus-visible { outline: 3px solid var(--green); outline-offset: 2px; }
+
+/* ---- MOBILE HEADER CONTROLS ----
+   Must sit at the end of the file. .nav-phone sets its own margin-left further
+   up, and nav:not([class]) sets the gap, so an earlier block loses on order and
+   specificity and the cluster stops being flush right.
+
+   Before this the three controls were 34, 30 and 38px wide and each carried its
+   own margin on top of the nav gap, so the spacing came out 30, 40 and 36. */
+@media (max-width: 900px) {
+  nav:not([class]) { gap: 0.6rem; padding: 0 1.25rem; }
+  .nav-phone { margin-left: auto; margin-right: 0; }
+  .hamburger { margin-left: 0; margin-right: 0; padding: 0; }
+  .nav-phone,
+  .hamburger,
+  .theme-toggle {
+    width: 38px;
+    height: 38px;
+    flex: 0 0 38px;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+/* ---- HERO TOWN ROW ----
+   Eight towns wrapped 3/3/2 and read as a ragged block. As a grid they fall
+   into an even 4 by 2 on a phone and a single row once there is width for it. */
+.hero-routes.is-towns {
+  display: grid;
+  /* auto, not 1fr: equal columns truncated Chesterfield and Rotherham. Each
+     column takes the width its name needs, and the rows still come out 4 and 4. */
+  grid-template-columns: repeat(4, auto);
+  justify-content: center;
+  gap: 0.4rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+.hero-routes.is-towns a {
+  padding: 0.4rem 0.5rem;
+  font-size: 0.75rem;
+  text-align: center;
+  white-space: nowrap;
+}
+@media (min-width: 700px) {
+  .hero-routes.is-towns { grid-template-columns: repeat(8, minmax(0, 1fr)); max-width: none; }
+}
