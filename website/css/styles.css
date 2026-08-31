@@ -4010,7 +4010,11 @@ html[data-theme="dark"] .nav-phone:hover { color: #ffffff; }
    Before this the three controls were 34, 30 and 38px wide and each carried its
    own margin on top of the nav gap, so the spacing came out 30, 40 and 36. */
 @media (max-width: 900px) {
-  nav:not([class]) { gap: 0.6rem; padding: 0 1.25rem; }
+  /* Asymmetric on purpose. The logo image carries about 19px of transparent
+     padding inside its own box, so with equal padding its ink sits 39px from
+     the left while the toggle's ink sits 20px from the right, and the header
+     looks lopsided. The right padding matches the logo's optical edge. */
+  nav:not([class]) { gap: 0.6rem; padding: 0 2.4rem 0 1.25rem; }
   .nav-phone { margin-left: auto; margin-right: 0; }
   .hamburger { margin-left: 0; margin-right: 0; padding: 0; }
   .nav-phone,

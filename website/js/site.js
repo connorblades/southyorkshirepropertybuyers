@@ -342,3 +342,33 @@
     ready();
   }
 })();
+
+/* ---- Ad video: serve the portrait cut on a phone ----
+   78 pages hardcode /media/sypb-video-ad-16x9.mp4 in a <source>. home.js does
+   the swap, but only the homepage loads home.js, so every other page was
+   handing phones the letterboxed landscape cut. The video is preload="none",
+   so nothing has downloaded yet and swapping the source costs nothing. */
+(function () {
+  'use strict';
+  function boot() {
+    if (window.innerWidth > 600) return;
+    var src = document.querySelector('video source[src="/media/sypb-video-ad-16x9.mp4"]');
+    if (!src) return;
+    src.setAttribute('src', '/media/sypb-video-ad-9x16.mp4');
+    var video = src.parentNode;
+    video.setAttribute('width', '1080');
+    video.setAttribute('height', '1920');
+    /* Chromium does not recompute the intrinsic ratio from changed width and
+       height attributes, so the box stayed 16:9 and letterboxed the portrait
+       cut. Setting aspect-ratio directly is what actually reshapes it. */
+    video.style.aspectRatio = '1080 / 1920';
+    var dl = video.querySelector('a[href="/media/sypb-video-ad-16x9.mp4"]');
+    if (dl) dl.setAttribute('href', '/media/sypb-video-ad-9x16.mp4');
+    video.load();
+  }
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', boot);
+  } else {
+    boot();
+  }
+})();
