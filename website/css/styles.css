@@ -4035,12 +4035,14 @@ html[data-theme="dark"] .nav-phone:hover { color: #ffffff; }
    Eight towns wrapped 3/3/2 and read as a ragged block. As a grid they fall
    into an even 4 by 2 on a phone and a single row once there is width for it. */
 .hero-routes.is-towns {
-  display: grid;
-  /* auto, not 1fr: equal columns truncated Chesterfield and Rotherham. Each
-     column takes the width its name needs, and the rows still come out 4 and 4. */
-  grid-template-columns: repeat(4, auto);
+  /* Ten towns will not divide into an even grid at every width, and a grid left
+     the short final row hanging to the left. A centred wrap puts the remainder
+     in the middle, which reads as deliberate rather than broken. */
+  display: flex;
+  flex-wrap: wrap;
   justify-content: center;
   gap: 0.4rem;
+  max-width: 640px;
   margin-left: auto;
   margin-right: auto;
 }
@@ -4049,10 +4051,6 @@ html[data-theme="dark"] .nav-phone:hover { color: #ffffff; }
   font-size: 0.75rem;
   text-align: center;
   white-space: nowrap;
-}
-@media (min-width: 700px) {
-  /* one row, but held to the width of the copy above rather than the whole hero */
-  .hero-routes.is-towns { grid-template-columns: repeat(8, auto); max-width: 700px; }
 }
 
 /* ---- INLINE CTA PAIR ----
