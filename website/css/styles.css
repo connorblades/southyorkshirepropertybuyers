@@ -4179,3 +4179,45 @@ html[data-theme="dark"] .nav-phone:hover { color: #ffffff; }
   .sypb-helper-launch,
   .sypb-helper-label { transition: none; }
 }
+
+/* ---- PAGE HERO IMAGE, LIGHT THEME ----
+   The photo heroes carried a fixed dark wash whatever the theme, so a light
+   theme opened on a heavy dark block. This mirrors what the homepage already
+   does with the video: in light mode the wash flips pale and the text inverts
+   to the standard dark palette. Dark mode is untouched.
+
+   The wash stays fairly opaque on purpose. These are photographs of varying
+   brightness, and a thinner wash put the h1 under AA on the paler frames. */
+html[data-theme="light"] .page-hero.has-bg::after {
+  background: linear-gradient(180deg, rgba(248,250,248,0.90) 0%, rgba(236,242,238,0.86) 55%, rgba(248,250,248,0.92) 100%);
+}
+html[data-theme="light"] .page-hero.has-bg .breadcrumb,
+html[data-theme="light"] .page-hero.has-bg h1 { color: var(--heading); }
+html[data-theme="light"] .page-hero.has-bg .hero-intro { color: var(--body-text); opacity: 1; }
+html[data-theme="light"] .page-hero.has-bg .byline { color: var(--muted); opacity: 1; }
+html[data-theme="light"] .page-hero.has-bg .breadcrumb a { color: var(--green); }
+html[data-theme="light"] .page-hero.has-bg .badge,
+html[data-theme="light"] .page-hero.has-bg .section-label {
+  background: var(--green-subtle);
+  border-color: var(--green-border);
+  color: var(--green);
+}
+html[data-theme="light"] .page-hero.has-bg .trust-bar { border-top-color: rgba(17,26,20,0.18); }
+html[data-theme="light"] .page-hero.has-bg .trust-item { color: var(--body-text); }
+html[data-theme="light"] .page-hero.has-bg .trust-item .check { color: var(--green); }
+html[data-theme="light"] .page-hero.has-bg .btn-secondary {
+  color: var(--heading);
+  border-color: rgba(17,26,20,0.28);
+}
+/* The route and town pills sit on the wash, so they need the dark-on-light
+   treatment too rather than white text on a pale background. */
+html[data-theme="light"] .page-hero.has-bg .hero-routes a {
+  background: var(--green-subtle);
+  border-color: var(--green-border);
+  color: var(--green);
+}
+html[data-theme="light"] .page-hero.has-bg .hero-routes a:hover,
+html[data-theme="light"] .page-hero.has-bg .hero-routes a:focus-visible {
+  background: var(--green);
+  color: #fff;
+}
