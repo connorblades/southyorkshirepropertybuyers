@@ -2858,20 +2858,29 @@ h1 em {
   display: contents;
 }
 @media (max-width: 640px) {
+  /* A label column beside the bar left roughly 100px less for the track, which
+     is the part carrying the meaning. On a phone the name and the time sit on
+     one row above and the bar gets the full width underneath. */
   .sypb-route-bars {
-    --route-label-w: 100px;
+    --route-label-w: 0px;
     --route-time-w: 0px;
-    --route-gap: 0.65rem;
+    --route-gap: 0px;
   }
   .sypb-route-bars .route-bars-grid {
-    grid-template-columns: var(--route-label-w) 1fr;
-    gap: 0.35rem var(--route-gap);
+    grid-template-columns: 1fr;
+    gap: 0;
   }
-  .sypb-route-bars .route-time {
-    grid-column: 2;
-    font-size: 0.78rem;
-    text-align: right;
+  .sypb-route-bars .route-bar {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: baseline;
+    margin-bottom: 1rem;
   }
+  .sypb-route-bars .route-name  { grid-area: 1 / 1 / 2 / 2; }
+  .sypb-route-bars .route-time  { grid-area: 1 / 2 / 2 / 3; text-align: right; font-size: 0.8rem; }
+  .sypb-route-bars .route-track { grid-area: 2 / 1 / 3 / 3; margin-top: 0.4rem; }
+  .sypb-route-bars .route-axis  { padding-left: 0; padding-right: 0; }
+  .sypb-route-bars .route-axis span:nth-child(even) { display: none; }
 }
 .sypb-route-bars .route-name {
   color: var(--heading);
@@ -2920,11 +2929,6 @@ h1 em {
   padding-right: calc(var(--route-time-w) + var(--route-gap));
 }
 @media (max-width: 640px) {
-  .sypb-route-bars .route-axis {
-    padding-right: 0;
-  }
-  .sypb-route-bars .route-axis span:nth-child(even) { display: none; }
-}
 @media (prefers-reduced-motion: reduce) {
   .sypb-route-bars .route-fill { transition: none; }
 }
