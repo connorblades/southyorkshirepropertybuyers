@@ -2679,6 +2679,22 @@ h1 em {
    Fixed at bottom on viewports < 768px, appears
    after 30% scroll, dismissible per session.
    ────────────────────────────────────────────── */
+/* ---- MOBILE HEADER: theme toggle ----
+   The pill is 75px wide and ran off the right edge of a 390px screen, so the
+   control was clipped. On a phone it becomes an icon-only circle matching the
+   call button. The sun and moon already carry the state on their own, so the
+   sliding track is not needed at that size. */
+@media (max-width: 768px) {
+  .theme-toggle {
+    width: 36px;
+    height: 36px;
+    padding: 0;
+    justify-content: center;
+    border-radius: 50%;
+  }
+  .theme-toggle .toggle-track { display: none; }
+}
+
 #sypb-sticky-cta {
   display: none;
 }
@@ -2709,6 +2725,23 @@ h1 em {
   #sypb-sticky-cta.is-dismissed {
     transform: translateY(100%);
     opacity: 0;
+  }
+
+  /* iOS hides its bottom toolbar as you scroll down, which grows the viewport
+     and exposes the home indicator strip under a bottom-fixed bar. The padding
+     above uses env(safe-area-inset-bottom), but that only reports a real value
+     with viewport-fit=cover on the viewport meta and can arrive a frame late,
+     which is what left an uncoloured band under the bar. This paints the bar's
+     own colour below itself so whatever is revealed is never transparent. */
+  #sypb-sticky-cta::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    height: 140px;
+    background: var(--surface);
+    pointer-events: none;
   }
 }
 #sypb-sticky-cta a {

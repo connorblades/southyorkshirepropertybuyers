@@ -284,42 +284,61 @@
   })();
 })();
 
-/* ---- Hero postcode, handed off to the stepped enquiry form ----
-   Lives in site.js rather than home.js because the paid landing pages carry
-   the same hero field and do not load home.js. Deliberately not a second
-   submission path: it copies the postcode into the real form, scrolls there
-   and advances it to the next step, so the payload, the validation and the
-   conversion tag are all unchanged. Without JS the form falls back to its
-   action of /get-offer/. Element-guarded, so pages without the field skip it. */
+/* ---- Hero postcode: arrive on the offer page with step 1 already answered ----
+   The hero field is a plain GET form pointing at /get-offer/, so submitting it
+   navigates there with ?postcode=... and works with no JavaScript at all. It
+   used to scroll to the form embedded at the foot of the same page, but these
+   pages run to several thousand pixels and a smooth scroll that far reads as
+   the page running away from the reader.
+
+   All this does is receive it: fill the postcode on the offer page and move to
+   step 2, so nobody is asked for the same thing twice. Runs on a timeout so it
+   lands after form-steps.js has built the step nav. */
 (function () {
   'use strict';
   function boot() {
-    var hero = document.getElementById('heroPostcode');
-    var input = document.getElementById('heroPostcodeInput');
     var target = document.getElementById('postcode');
-    var contact = document.getElementById('contact');
-    if (!hero || !input || !target || !contact) return;
+    if (!target) return;
+    var m = /[?&]postcode=([^&]*)/.exec(window.location.search);
+    if (!m) return;
+    var value = decodeURIComponent(m[1].replace(/\+/g, ' ')).trim();
+    if (!value) return;
 
-    hero.addEventListener('submit', function (e) {
-      var value = input.value.trim();
-      /* Empty: let the browser show its own required prompt and go no further */
-      if (!value) return;
-      e.preventDefault();
+    target.value = value;
+    target.dispatchEvent(new Event('input', { bubbles: true }));
 
-      target.value = value;
-      target.dispatchEvent(new Event('input', { bubbles: true }));
-      contact.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    var form = document.getElementById('offerForm') || document.getElementById('contactForm');
 
-      /* form-steps.js builds this button. Clicking it validates the postcode
-         step and moves on, so the visitor carries on rather than retyping. */
-      var next = document.querySelector('#contactForm .form-next, #offerForm .form-next');
-      if (next) next.click();
-      else target.focus({ preventScroll: true });
-    });
+    /* form-steps.js builds .form-next, and both files are deferred, so which
+       runs first is not guaranteed. Waiting for the button rather than assuming
+       it exists is the difference between landing on step 2 and being bounced
+       back to step 1 by form-steps' own initial show(0). */
+    var tries = 0;
+    (function advance() {
+      var next = form && form.querySelector('.form-next');
+      if (next) {
+        next.click();
+        reveal();
+        return;
+      }
+      if (++tries < 40) { requestAnimationFrame(advance); return; }
+      target.focus({ preventScroll: true });
+      reveal();
+    })();
+
+    /* Bring the form into view. The offer page is short, so this is a few
+       hundred pixels rather than the several thousand that scrolling to the
+       foot of a landing page used to be. */
+    function reveal() {
+      if (!form) return;
+      var top = form.getBoundingClientRect().top + window.pageYOffset - 80;
+      window.scrollTo({ top: top > 0 ? top : 0, behavior: 'smooth' });
+    }
   }
+  function ready() { setTimeout(boot, 0); }
   if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', boot);
+    document.addEventListener('DOMContentLoaded', ready);
   } else {
-    boot();
+    ready();
   }
 })();

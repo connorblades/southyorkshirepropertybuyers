@@ -3,15 +3,15 @@
 <head>
   <!-- Google tag (gtag.js) with Google Consent Mode v2 -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18125556330"></script>
-  <script src="/js/init.js?v=28"></script>
+  <script src="/js/init.js?v=29"></script>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
   <title>Free Same Day Cash Offer | South Yorkshire Property Buyers</title>
   <meta name="description" content="Get a free, no-obligation cash offer on your South Yorkshire home the same day. Honest figure, no fees, complete in as little as 7 days." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="/css/styles.css?v=28" />
+  <link rel="stylesheet" href="/css/styles.css?v=29" />
   <link rel="icon" href="/images/favicon.png?v=4" type="image/png">
   <link rel="canonical" href="https://southyorkshirepropertybuyers.com/get-offer/">
   <link rel="alternate" hreflang="en-GB" href="https://southyorkshirepropertybuyers.com/get-offer/" />
@@ -217,76 +217,90 @@
     <p>Not sure what to expect? <a href="/reviews/">See what previous sellers say</a> about working with us before you fill anything in.</p>
 
     <form id="offerForm" style="margin-top:1.75rem;">
-          <div class="hp-field" aria-hidden="true">
-            <label for="company-url">Leave this field empty</label>
-            <input type="text" id="company-url" name="company-url" tabindex="-1" autocomplete="off">
-          </div>
+        <div class="hp-field" aria-hidden="true">
+          <label for="website-url">Leave this field empty</label>
+          <input type="text" id="website-url" name="website-url" tabindex="-1" autocomplete="off">
+        </div>
 
-      <div class="form-row">
-        <div class="form-group">
-          <label for="name">Your Name</label>
-          <input type="text" id="name" name="name" placeholder="John Smith" required autocomplete="name" />
+        <div class="form-step" data-step="1">
+          <div class="form-group">
+            <label for="postcode">Property Postcode</label>
+            <input type="text" id="postcode" placeholder="S1 2AB" required autocomplete="postal-code" spellcheck="false" />
+          </div>
         </div>
-        <div class="form-group">
-          <label for="phone">Phone Number</label>
-          <input type="tel" id="phone" name="phone" placeholder="07700 000000" required autocomplete="tel" />
-        </div>
-      </div>
-      <div class="form-group">
-        <label for="email">Email Address</label>
-        <input type="email" id="email" name="email" placeholder="john@example.com" autocomplete="email" />
-      </div>
-      <div class="form-group">
-        <label for="address">Property Address</label>
-        <input type="text" id="address" name="address" placeholder="Full address or postcode" required autocomplete="street-address" />
-      </div>
-      <div class="form-row">
-        <div class="form-group">
-          <label for="type">Property Type</label>
-          <select id="type" name="type">
-            <option value="">Select type..</option>
-            <option>Terraced</option>
-            <option>Semi-detached</option>
-            <option>Detached</option>
-            <option>Flat / Apartment</option>
-            <option>Bungalow</option>
+
+        <div class="form-step" data-step="2">
+          <div class="form-group">
+            <label for="address">Property Address</label>
+            <input type="text" id="address" placeholder="Street and house number" required autocomplete="street-address" />
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="type">Property Type</label>
+              <select id="type">
+              <option value="">Select type..</option>
+              <option>Terraced</option>
+              <option>Semi-detached</option>
+              <option>Detached</option>
+              <option>Flat / Apartment</option>
+              <option>Bungalow</option>
+              <option>Other</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="timeline">Ideal Timeline</label>
+              <select id="timeline">
+              <option value="">Select..</option>
+              <option>ASAP (under 2 weeks)</option>
+              <option>Within a month</option>
+              <option>1 to 3 months</option>
+              <option>Flexible</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="situation">Your Situation (optional)</label>
+            <select id="situation">
+            <option value="">Select if applicable..</option>
+            <option>Facing repossession</option>
+            <option>Divorce / separation</option>
+            <option>Probate / inherited property</option>
+            <option>Title / legal issues</option>
+            <option>Financial difficulties</option>
+            <option>Problem property</option>
+            <option>Landlord / portfolio exit</option>
+            <option>Tenanted property</option>
+            <option>Relocation</option>
             <option>Other</option>
-          </select>
+            </select>
+          </div>
         </div>
-        <div class="form-group">
-          <label for="timeline">Ideal Timeline</label>
-          <select id="timeline" name="timeline">
-            <option value="">Select..</option>
-            <option>ASAP (under 2 weeks)</option>
-            <option>Within a month</option>
-            <option>1 to 3 months</option>
-            <option>Flexible</option>
-          </select>
+
+        <div class="form-step" data-step="3">
+          <div class="form-row">
+            <div class="form-group">
+              <label for="name">Your Name</label>
+              <input type="text" id="name" placeholder="John Smith" required autocomplete="name" />
+            </div>
+            <div class="form-group">
+              <label for="phone">Phone Number</label>
+              <input type="tel" id="phone" placeholder="07700 000000" required autocomplete="tel" />
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="email">Email Address</label>
+            <input type="email" id="email" placeholder="john@example.com" autocomplete="email" />
+          </div>
+          <div class="form-group">
+            <label for="message">Anything else we should know?</label>
+            <textarea id="message" placeholder="Tell us a little more about your situation.."></textarea>
+          </div>
         </div>
-      </div>
-      <div class="form-group">
-        <label for="situation">Your Situation (optional)</label>
-        <select id="situation" name="situation">
-          <option value="">Select if applicable..</option>
-          <option>Facing repossession</option>
-          <option>Divorce / separation</option>
-          <option>Probate / inherited property</option>
-          <option>Title / legal issues</option>
-          <option>Financial difficulties</option>
-          <option>Problem property</option>
-          <option>Landlord / portfolio exit</option>
-          <option>Tenanted property</option>
-          <option>Relocation</option>
-          <option>Other</option>
-        </select>
-      </div>
-      <div class="form-group">
-        <label for="message">Anything else we should know?</label>
-        <textarea id="message" name="message" placeholder="Tell us a little more about your situation.."></textarea>
-      </div>
-      <button type="submit" class="form-submit">Request My Callback &rarr;</button>
-      <p class="form-note">100% confidential. No obligation. We can cover your legal fees. By submitting this form you agree to our <a href="/privacy-policy/" style="color:inherit;text-decoration:underline;">Privacy Policy</a>.</p>
-    </form>
+
+        
+        <button type="submit" class="form-submit">Request My Callback &#8594;</button>
+        <p class="form-note">100% confidential. No obligation. We can cover your legal fees. By submitting this form you agree to our <a href="/privacy-policy/" style="color:inherit;text-decoration:underline;">Privacy Policy</a>.</p>
+      </form>
 
     <div style="background:var(--surface-card);border:1px solid var(--border);border-radius:10px;padding:1.75rem;margin-top:2.5rem;">
       <h2 style="margin-top:0;font-size:1.1rem;">What happens after you submit?</h2>
@@ -434,9 +448,10 @@
   </div>
 </div>
 
-<script defer src="/js/site.js?v=28"></script>
-<script defer src="/js/popup.js?v=28"></script>
-<script defer src="/js/animations.js?v=28"></script>
+<script defer src="/js/site.js?v=29"></script>
+<script defer src="/js/form-steps.js?v=29"></script>
+<script defer src="/js/popup.js?v=29"></script>
+<script defer src="/js/animations.js?v=29"></script>
 
 </body>
 </html>
