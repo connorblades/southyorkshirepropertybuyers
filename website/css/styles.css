@@ -1041,6 +1041,22 @@ label {
   transition: color 0.3s;
 }
 
+/* Required-field marker. The required attribute already tells a screen reader,
+   so the star is decorative and hidden from the accessibility tree. */
+label .req {
+  color: #b91c1c;
+  font-weight: 700;
+  margin-left: 0.1rem;
+}
+html[data-theme="dark"] label .req { color: #f87171; }
+
+.form-req-note {
+  color: var(--label-col);
+  font-size: 0.78rem;
+  margin: 0 0 1.1rem;
+  line-height: 1.4;
+}
+
 input, select, textarea {
   width: 100%;
   background: var(--input-bg);
