@@ -95,10 +95,18 @@
 
     try {
       var p = new URLSearchParams(window.location.search);
-      ['utm_source', 'utm_medium', 'utm_campaign', 'utm_term', 'utm_content', 'gclid'].forEach(function (k) {
-        if (p.get(k)) data[k] = p.get(k);
+      var stash = {}, landing = {};
+      try { stash = JSON.parse(sessionStorage.getItem('sypb_attr') || '{}'); } catch (e) {}
+      try { landing = JSON.parse(sessionStorage.getItem('sypb_landing') || '{}'); } catch (e) {}
+      ['utm_source', 'utm_medium', 'utm_campaign', 'utm_term', 'utm_content',
+       'gclid', 'gbraid', 'wbraid', 'gad_source'].forEach(function (k) {
+        var v = p.get(k) || stash[k];
+        if (v) data[k] = v;
       });
-      data.referrer = document.referrer || '';
+      /* The hero postcode form lands people on /get-offer/, so sourcePage would
+         otherwise read "get-offer" for the paid path. Keep what the ad paid for. */
+      if (landing.page) data.landingPage = landing.page;
+      data.referrer = document.referrer || landing.referrer || '';
     } catch (e) {}
 
     var btn = form.querySelector('.lead-pop-submit');

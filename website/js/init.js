@@ -14,6 +14,36 @@
     if (savedTheme) document.documentElement.setAttribute('data-theme', savedTheme);
   } catch (e) {}
 
+  /* 1b. Attribution, stashed before anything can navigate away.
+     An ad click lands on the landing page with ?gclid=..., but the hero postcode
+     field is a plain GET form pointing at /get-offer/, so submitting it replaces
+     the whole query string and the click id is gone. That is the primary paid
+     path on all nine landing pages, so without this the leads that matter most
+     reach GHL with no click id, no campaign and no landing page: unattributable
+     in the CRM and impossible to upload back to Ads as an offline conversion.
+     Runs in <head> on every page, so it sees the params before any navigation. */
+  var ATTR_KEYS = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_term',
+                   'utm_content', 'gclid', 'gbraid', 'wbraid', 'gad_source'];
+  try {
+    var q = new URLSearchParams(location.search);
+    var found = {};
+    ATTR_KEYS.forEach(function (k) { if (q.get(k)) found[k] = q.get(k); });
+    if (Object.keys(found).length) {
+      var prev = {};
+      try { prev = JSON.parse(sessionStorage.getItem('sypb_attr') || '{}'); } catch (e) {}
+      ATTR_KEYS.forEach(function (k) { if (found[k]) prev[k] = found[k]; });
+      sessionStorage.setItem('sypb_attr', JSON.stringify(prev));
+    }
+    /* First page of the session, kept so a lead submitted on /get-offer/ still
+       records which landing page the ad actually paid for. Never overwritten. */
+    if (!sessionStorage.getItem('sypb_landing')) {
+      sessionStorage.setItem('sypb_landing', JSON.stringify({
+        page: location.pathname.replace(/^\/|\/$/g, '') || 'home',
+        referrer: document.referrer || ''
+      }));
+    }
+  } catch (e) {}
+
   /* 2. Google tag + Consent Mode v2 */
   window.dataLayer = window.dataLayer || [];
   function gtag() { dataLayer.push(arguments); }
@@ -67,10 +97,12 @@
           if (ec && (ec.email || ec.phone_number)) {
             gtag('set', 'user_data', ec);
           }
+          /* No value sent. A flat figure on every lead carries no signal that
+             conversion-count bidding does not already have, and it reads as
+             revenue in reports when nothing has been bought. Real deal values
+             belong in an offline conversion upload keyed on the gclid above. */
           gtag('event', 'conversion', {
-            send_to: 'AW-18125556330/uZetCNHoibIcEOqU-MJD',
-            value: 300.0,
-            currency: 'GBP'
+            send_to: 'AW-18125556330/uZetCNHoibIcEOqU-MJD'
           });
         }
       } catch (_) {}
