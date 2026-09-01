@@ -1,9 +1,21 @@
-/* Entry popup: short callback form, shown once per visit.
+/* Entry popup: a prompt to the offer form, shown once per visit.
  *
- * Fires 3 seconds after the first page of a session loads. The sessionStorage
- * flag is set the moment it fires, so navigating on within the same visit never
- * shows it again. Skipped entirely on the form and thank-you pages, and for
- * anyone who has already submitted a lead this session. */
+ * It asks for a postcode and nothing else, then hands over to /get-offer/ with
+ * ?postcode=, exactly as the hero field on every landing page does. site.js
+ * receives it there, fills step 1 and moves to step 2.
+ *
+ * It deliberately does not post anything itself. It used to, with a shorter set
+ * of keys than the main form, and one GHL inbound webhook cannot learn two
+ * payload shapes: it mapped the short one wrongly and a real seller arrived as a
+ * name with a postcode stuck to it, very nearly missed. There is now one form,
+ * one payload and one mapping on the whole site, so that cannot recur. Keep it
+ * that way: if this popup ever needs to capture more, send people to the form
+ * rather than building a second one here.
+ *
+ * Fires 15 seconds after the first page of a session loads, after the cookie
+ * banner is dealt with. The sessionStorage flag is set the moment it fires, so
+ * navigating on within the same visit never shows it again. Skipped on the form
+ * and thank-you pages, and for anyone who has already sent a lead this session. */
 (function () {
   'use strict';
 
@@ -35,22 +47,16 @@
     wrap.innerHTML =
       '<div class="lead-pop">' +
         '<button type="button" class="lead-pop-close" aria-label="Close">&#10005;</button>' +
-        '<h2 id="leadPopTitle">Want us to call you back?</h2>' +
-        '<p class="lead-pop-sub">Leave your number and one of our team will ring you as soon as we can. No fees, no obligation, no pressure.</p>' +
-        '<form class="lead-pop-form" novalidate>' +
-          '<div class="hp-field" aria-hidden="true">' +
-            '<label for="leadPopSite">Leave this field empty</label>' +
-            '<input type="text" id="leadPopSite" name="leadPopSite" tabindex="-1" autocomplete="off">' +
-          '</div>' +
-          '<input type="text" name="name" id="leadPopName" placeholder="Your name" autocomplete="name" required>' +
-          '<input type="tel" name="phone" id="leadPopPhone" placeholder="Phone number" autocomplete="tel" required>' +
-          '<input type="text" name="address" id="leadPopAddress" placeholder="Property address" autocomplete="street-address" required>' +
-          '<button type="submit" class="lead-pop-submit">Request My Callback &rarr;</button>' +
-          '<p class="lead-pop-err" role="alert" hidden></p>' +
+        '<h2 id="leadPopTitle">Want to know what we would pay?</h2>' +
+        '<p class="lead-pop-sub">Start with your postcode. It takes about two minutes, there is no obligation, and you get a written offer the same day.</p>' +
+        /* A plain GET form to /get-offer/, the same as the hero field. No fetch,
+           no payload, so there is nothing here that can drift from the main form. */
+        '<form class="lead-pop-form" action="/get-offer/" method="get">' +
+          '<input type="text" name="postcode" id="leadPopPostcode" placeholder="Enter your postcode" aria-label="Property postcode" required autocomplete="postal-code" spellcheck="false">' +
+          '<button type="submit" class="lead-pop-submit">Get my cash offer &rarr;</button>' +
         '</form>' +
         '<p class="lead-pop-alt">Would you rather talk now? <a href="tel:+447445629113" data-track="phone-tap">07445 629113</a></p>' +
       '</div>';
-    window.__sypbPopShownAt = Date.now();
     return wrap;
   }
 
@@ -59,87 +65,6 @@
     setTimeout(function () { if (el.parentNode) el.parentNode.removeChild(el); }, 200);
     document.body.style.overflow = '';
     if (lastFocus && lastFocus.focus) lastFocus.focus();
-  }
-
-  function submit(el, form) {
-    var name = (document.getElementById('leadPopName').value || '').trim();
-    var phone = (document.getElementById('leadPopPhone').value || '').trim();
-    var address = (document.getElementById('leadPopAddress').value || '').trim();
-    var err = form.querySelector('.lead-pop-err');
-
-    if (!name || !phone || !address) {
-      err.textContent = 'Please fill in all three fields so we can call you back.';
-      err.hidden = false;
-      return;
-    }
-    err.hidden = true;
-
-    var parts = name.split(' ');
-    var slug = (window.location.pathname.replace(/^\/|\/$/g, '') || 'home');
-    /* Every key the main form sends, in the same order, empty where the popup
-       does not ask for it. One inbound webhook cannot learn two payload shapes:
-       when this form sent a shorter one, GHL mapped it wrongly and a real seller
-       arrived as a name with a postcode stuck to it and was very nearly missed.
-       The main form's shape is the one GHL is confirmed to map correctly, so the
-       popup sends exactly that. Do not add a key here without adding it there. */
-    var data = {
-      firstName: parts[0] || '',
-      lastName: parts.slice(1).join(' ') || '',
-      phone: phone,
-      email: '',
-      address1: address,
-      postcode: '',
-      propertyType: '',
-      timeline: '',
-      situation: '',
-      /* Which form this came from, carried in a field GHL already maps rather
-         than in a key of its own, so the shape stays identical. */
-      notes: 'Submitted via the callback popup.',
-      sourcePage: slug,
-      sourceUrl: window.location.href,
-      pageTitle: document.title,
-      pageType: slug === 'home' ? 'homepage'
-        : /^sell-house-fast-|^cash-house-buyer-/.test(slug) ? 'location'
-        : slug.indexOf('blog/') === 0 ? 'blog'
-        : slug === 'get-offer' ? 'form'
-        : 'situation',
-      area: (slug.match(/(sheffield|rotherham|doncaster|barnsley|chesterfield|worksop|retford|gainsborough|mansfield)/) || [''])[0],
-      leadSource: 'website'
-    };
-    var hp2 = form.querySelector('.hp-field input');
-    data._hp = hp2 ? hp2.value : '';
-    data._elapsed = Date.now() - (window.__sypbPopShownAt || Date.now());
-
-    try {
-      var p = new URLSearchParams(window.location.search);
-      ['utm_source', 'utm_medium', 'utm_campaign', 'utm_term', 'utm_content', 'gclid'].forEach(function (k) {
-        if (p.get(k)) data[k] = p.get(k);
-      });
-      data.referrer = document.referrer || '';
-    } catch (e) {}
-
-    var btn = form.querySelector('.lead-pop-submit');
-    var orig = btn.textContent;
-    btn.disabled = true;
-    btn.textContent = 'Sending…';
-
-    fetch('/api/submit', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(data)
-    }).then(function (res) {
-      if (res.ok) {
-        setFlag(LEAD_KEY);
-        window.location.href = '/thank-you/';
-        return;
-      }
-      throw new Error('bad response');
-    }).catch(function () {
-      btn.disabled = false;
-      btn.textContent = orig;
-      err.innerHTML = 'Sorry, we could not send that just now. Please try again, or ring us on <a href="tel:+447445629113">07445 629113</a>.';
-      err.hidden = false;
-    });
   }
 
   function open() {
@@ -152,15 +77,11 @@
     document.body.style.overflow = 'hidden';
     requestAnimationFrame(function () { el.classList.add('is-open'); });
 
-    var input = el.querySelector('#leadPopName');
+    var input = el.querySelector('#leadPopPostcode');
     if (input) input.focus();
 
     el.querySelector('.lead-pop-close').addEventListener('click', function () { close(el); });
     el.addEventListener('click', function (e) { if (e.target === el) close(el); });
-    el.querySelector('.lead-pop-form').addEventListener('submit', function (e) {
-      e.preventDefault();
-      submit(el, this);
-    });
     document.addEventListener('keydown', function esc(e) {
       if (e.key === 'Escape' && document.getElementById('leadPop')) {
         close(el);
