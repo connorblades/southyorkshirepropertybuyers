@@ -44,7 +44,7 @@
           '</div>' +
           '<input type="text" name="name" id="leadPopName" placeholder="Your name" autocomplete="name" required>' +
           '<input type="tel" name="phone" id="leadPopPhone" placeholder="Phone number" autocomplete="tel" required>' +
-          '<input type="text" name="address" id="leadPopAddress" placeholder="Property address or postcode" autocomplete="street-address" required>' +
+          '<input type="text" name="address" id="leadPopAddress" placeholder="Property address" autocomplete="street-address" required>' +
           '<button type="submit" class="lead-pop-submit">Request My Callback &rarr;</button>' +
           '<p class="lead-pop-err" role="alert" hidden></p>' +
         '</form>' +
@@ -76,18 +76,35 @@
 
     var parts = name.split(' ');
     var slug = (window.location.pathname.replace(/^\/|\/$/g, '') || 'home');
+    /* Every key the main form sends, in the same order, empty where the popup
+       does not ask for it. One inbound webhook cannot learn two payload shapes:
+       when this form sent a shorter one, GHL mapped it wrongly and a real seller
+       arrived as a name with a postcode stuck to it and was very nearly missed.
+       The main form's shape is the one GHL is confirmed to map correctly, so the
+       popup sends exactly that. Do not add a key here without adding it there. */
     var data = {
       firstName: parts[0] || '',
       lastName: parts.slice(1).join(' ') || '',
       phone: phone,
+      email: '',
       address1: address,
-      /* Same pipeline context the main form sends, so GHL can tag both alike. */
+      postcode: '',
+      propertyType: '',
+      timeline: '',
+      situation: '',
+      /* Which form this came from, carried in a field GHL already maps rather
+         than in a key of its own, so the shape stays identical. */
+      notes: 'Submitted via the callback popup.',
       sourcePage: slug,
       sourceUrl: window.location.href,
       pageTitle: document.title,
-      formType: 'entry-popup',
-      leadSource: 'website',
-      area: (slug.match(/(sheffield|rotherham|doncaster|barnsley|chesterfield|worksop|retford|gainsborough|mansfield)/) || [''])[0]
+      pageType: slug === 'home' ? 'homepage'
+        : /^sell-house-fast-|^cash-house-buyer-/.test(slug) ? 'location'
+        : slug.indexOf('blog/') === 0 ? 'blog'
+        : slug === 'get-offer' ? 'form'
+        : 'situation',
+      area: (slug.match(/(sheffield|rotherham|doncaster|barnsley|chesterfield|worksop|retford|gainsborough|mansfield)/) || [''])[0],
+      leadSource: 'website'
     };
     var hp2 = form.querySelector('.hp-field input');
     data._hp = hp2 ? hp2.value : '';
