@@ -108,14 +108,9 @@
 
   /* ──────────────── Cash offer estimator ────────────────
      User enters their Zoopla / Rightmove estimated market value
-     and chooses a property condition. The calculator returns:
-
-       condition-adjusted market value = MV × condition multiplier
-       cash offer estimate             = adjusted × 0.85
-
-     Final offer is firm only after a 15-minute viewing, the range
-     shown (±5%) reflects that uncertainty honestly rather than
-     pretending the estimator is the offer.
+     and chooses a property condition. The calculator returns an
+     illustrative range. Final offer is determined individually
+     after speaking with the seller — this is a guide only.
      ─────────────────────────────────────────────── */
   var CONDITION_MULT = {
     excellent: 1.00, // Refurbished, move-in ready: full market value
@@ -124,7 +119,7 @@
     poor:      0.85, // Significant work, re-wiring, roof, damp: 15% off
     derelict:  0.75  // Uninhabitable, structural problems: 25% off
   };
-  var CASH_OFFER_FACTOR = 0.85; // 15% reduction below condition-adjusted MV
+  var CASH_OFFER_FACTOR = 0.85; // illustrative factor for estimate only
 
   function initCashOfferCalc(root) {
     var value = root.querySelector('[data-calc-input="value"]');
@@ -153,14 +148,12 @@
       var offerPoint = adjusted * CASH_OFFER_FACTOR;
       var offerLow = offerPoint * 0.95;
       var offerHigh = offerPoint * 1.00;
-      var percentOfMV = (offerPoint / V) * 100;
-
       outOffer.textContent = fmtCurrency0.format(offerPoint);
       if (outRange) {
         outRange.textContent = fmtCurrency0.format(offerLow) + ', ' + fmtCurrency0.format(offerHigh);
       }
       if (outAdjusted) outAdjusted.textContent = fmtCurrency0.format(adjusted);
-      if (outPercent) outPercent.textContent = Math.round(percentOfMV) + '%';
+      if (outPercent) outPercent.textContent = 'Illustrative estimate';
     }
 
     [value, condition].forEach(function (el) {
@@ -194,7 +187,7 @@
 
      Defaults reflect 2026 South Yorkshire market norms:
        Estate agent → sale 98% of MV, fees 1.5% + VAT + £1,500 legals
-       Cash buyer   → sale 80% of MV, no fees (we cover legals)
+       Cash buyer   → illustrative mid-range assumption for comparison only
        Auction      → sale 78% of MV, fees 1.0% + £1,500 legals
      ─────────────────────────────────────────────── */
   var EQUITY_ROUTES = {
@@ -266,8 +259,10 @@
           }
         }
         if (netRow) netRow.classList.toggle('is-shortfall', r.net < 0);
-        if (pctEl) {
+        if (pctEl && key !== 'cash-buyer') {
           pctEl.textContent = Math.round(r.net / MV * 100) + '% of market value';
+        } else if (pctEl) {
+          pctEl.textContent = 'Illustrative — get a real offer';
         }
         card.classList.toggle('is-best', key === bestKey);
       });
