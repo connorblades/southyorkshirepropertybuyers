@@ -4282,3 +4282,58 @@ html[data-theme="light"] .page-hero.has-bg .hero-routes a:focus-visible {
   white-space: nowrap;
 }
 .hero-call svg { width: 16px; height: 16px; flex: 0 0 auto; }
+
+/* October enquiry and reading improvements */
+:where(a, button, input, select, textarea, summary):focus-visible {
+  outline: 3px solid var(--green);
+  outline-offset: 4px;
+}
+[id] { scroll-margin-top: 100px; }
+input:not([type="checkbox"]):not([type="radio"]), select, textarea { font-size: 16px; }
+.nav-item .dropdown { visibility: hidden; }
+.nav-item.open .dropdown, .nav-item:focus-within .dropdown {
+  visibility: visible; opacity: 1; pointer-events: auto; transform: translateY(0);
+}
+.page-body > p, .page-body > ul, .page-body > ol { max-width: 78ch; }
+.table-scroll { overflow-x: auto; margin: 1.5rem 0; }
+.table-scroll table { margin: 0; }
+.enquiry-reassurance { font-size: .95rem; line-height: 1.65; color: var(--muted); }
+.offer-page .page-hero { padding: 2.5rem 1.5rem 1rem; }
+.offer-page .page-hero h1 { font-size: clamp(2rem, 5vw, 3rem); }
+.offer-page .page-hero .hero-intro { max-width: 650px; }
+.offer-page .scroll-prompt { display: none; }
+.offer-page .page-body { max-width: 760px; padding: 0 1.5rem 3rem; }
+.offer-page #offerForm { background: var(--surface-card); border: 1px solid var(--border); padding: 1.5rem; border-radius: 14px; }
+.situation-guide { padding: 2.5rem 2rem; background: var(--surface-card); border-bottom: 1px solid var(--border); }
+.situation-guide .section-inner { display: grid; grid-template-columns: 1fr 1.35fr; gap: 3rem; align-items: center; }
+.situation-guide h2 { font-size: clamp(1.5rem, 3vw, 2rem); margin: .5rem 0 .75rem; letter-spacing: -.025em; }
+.situation-guide p { max-width: 42ch; color: var(--muted); line-height: 1.7; }
+.situation-guide-links { display: grid; grid-template-columns: 1fr 1fr; gap: 0 1.5rem; }
+.situation-guide-links a { padding: 1rem 0; border-bottom: 1px solid var(--border); color: var(--body-text); text-decoration: none; }
+.situation-guide-links strong { display: flex; justify-content: space-between; gap: .5rem; font-size: .95rem; }
+.situation-guide-links a > span { display: block; margin-top: .4rem; color: var(--muted); font-size: .85rem; }
+.situation-guide-links a:hover strong { color: var(--green); text-decoration: underline; }
+.testimonials-grid:has(> .testimonial-card:only-child) { grid-template-columns: minmax(0, 760px); justify-content: center; }
+@media (max-width: 640px) {
+  .offer-page .page-hero { padding-top: 1.5rem; }
+  .offer-page .page-body { padding-left: 1rem; padding-right: 1rem; }
+  .offer-page #offerForm { padding: 1rem; }
+  .offer-page .enquiry-reassurance { margin-top: .25rem; }
+  .situation-guide { padding: 2rem 1.25rem; }
+  .situation-guide .section-inner { grid-template-columns: 1fr; gap: 1rem; }
+  .situation-guide-links { grid-template-columns: 1fr; }
+  button, .btn-primary, .btn-secondary { min-height: 44px; }
+}
+.offer-page .page-hero h1 { margin-bottom: .75rem; }
+.offer-page .page-hero .hero-intro { margin-top: .5rem; margin-bottom: .75rem; line-height: 1.6; }
+.offer-page .page-hero a { color: var(--green); }
+.offer-page .form-req-note { margin-bottom: 1rem; }
+@media (max-width: 640px) {
+  .offer-page .page-hero { padding-top: 1rem; padding-bottom: .5rem; }
+  .offer-page .page-hero .hero-intro { font-size: .95rem; }
+  .offer-page #offerForm { margin-top: 1rem !important; }
+}
+.offer-page .form-req-note { font-size: .8rem; line-height: 1.5; margin-bottom: .75rem; }
+.offer-page .enquiry-reassurance { font-size: .875rem; line-height: 1.5; }
+html[data-theme="dark"] .offer-page .page-hero a { color: #78d49d; }
+html[data-theme="dark"] :where(a, button, input, select, textarea, summary):focus-visible { outline-color: #78d49d; }
