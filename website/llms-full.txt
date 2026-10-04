@@ -3,18 +3,18 @@
 > Full content map for AI crawlers. Each entry includes title, URL, last reviewed date, and either the full body content (for Tier 1-2) or a short summary (for Tier 3-5). Generated for AI ingestion without browsing the live site.
 
 ## Organization
-- Name: South Yorkshire Property Buyers, run jointly by Bullseye Properties Ltd (Companies House 14869608, previously Lord CNB Properties Ltd until 18 April 2024) and Dearne Valley Properties Ltd (Companies House 11886498)
+- Name: South Yorkshire Property Buyers
 - Region: South Yorkshire, Sheffield, Rotherham, Doncaster, Barnsley + Chesterfield, Mansfield, Worksop, Retford, Gainsborough
 - Service: Cash property purchase, typical offer 80-85% of open market value, completion in 7-28 days
 - Website: https://southyorkshirepropertybuyers.com
-- Partner companies: Bullseye Properties Ltd (company 14869608, incorporated May 2023, https://www.bullseyeproperties.co.uk/) handles administration and the seller-facing side. Dearne Valley Properties Ltd (company 11886498, incorporated March 2019, registered at Century Business Centre, Manvers Way, Manvers, Rotherham S63 5DA) is the primary purchasing party. Both are active at Companies House with filed accounts.
+- Company details: Bullseye Properties Ltd (company 14869608) handles administration and the seller-facing side. Company and purchasing details: https://southyorkshirepropertybuyers.com/about/#company-details
 
 ## Foundational pages
 
 ### About South Yorkshire Property Buyers
 - URL: https://southyorkshirepropertybuyers.com/about/
-- Last reviewed: 2026-05-24
-- Description: About South Yorkshire Property Buyers, a collaboration between Bullseye Properties Ltd (14869608) and Dearne Valley Properties Ltd (11886498). A small South Yorkshire cash buyer team.
+- Last reviewed: 2026-10-03
+- Description: About South Yorkshire Property Buyers. A small South Yorkshire cash buyer team.
 
 ### How it works, our cash sale process
 - URL: https://southyorkshirepropertybuyers.com/how-it-works/
@@ -478,7 +478,7 @@ Our fastest is 7 days. A more typical timeline is 14 to 21 days. We can also wor
 
 ### Are you actually based in Sheffield, or just a national company with a Sheffield landing page?
 
-We are based in South Yorkshire and we buy here regularly. Purchases are made by our partner companies, Bullseye Properties Ltd (company 14869608) and Dearne Valley Properties Ltd, and you can look us up on Companies House before committing. We know the postcodes, the regen schemes, the local conveyancers, and the local stock issues, not because we read about them but because we deal with them every week.
+We are based in South Yorkshire and we buy here regularly. Our company and purchasing details are on our About page, so you can check both companies on Companies House before committing. We know the postcodes, the regen schemes, the local conveyancers, and the local stock issues, not because we read about them but because we deal with them every week.
 
 ### How can I verify you before committing, what should I check?
 
@@ -784,7 +784,7 @@ The short answer is yes, you can sell the family home during a divorce in the UK
 
 Get a Free, Confidential Cash Offer
 
-Written and reviewed by the South Yorkshire Property Buyers team. South Yorkshire Property Buyers is run jointly by Bullseye Properties Ltd (Companies House 14869608) and Dearne Valley Properties Ltd (Companies House 11886498), both registered in England and Wales.
+Written and reviewed by the South Yorkshire Property Buyers team. Our company and purchasing details are available on our About page.
 
 Last reviewed: 25 May 2026.
 
@@ -1040,7 +1040,7 @@ Any condition accepted
 Written offer the same day
 Complete in 7-28 days
 
-Quick answer: We buy houses across every Doncaster DN postcode for cash. From the DN1 town centre and DN2 Wheatley estates, to Bessacarr and Cantley family stock in DN4, the Bentley/Sprotbrough split in DN5, Tickhill and Bawtry in DN10/DN11, and the ex-mining stock around Conisbrough, Edlington and Mexborough in DN12. Same day written cash offer. Completion in as little as 7 days. No estate agent fees, no chain, no requirement for repairs. We are South Yorkshire Property Buyers, run jointly by Bullseye Properties Ltd (14869608) and Dearne Valley Properties Ltd (11886498).
+Quick answer: We buy houses across every Doncaster DN postcode for cash. From the DN1 town centre and DN2 Wheatley estates, to Bessacarr and Cantley family stock in DN4, the Bentley/Sprotbrough split in DN5, Tickhill and Bawtry in DN10/DN11, and the ex-mining stock around Conisbrough, Edlington and Mexborough in DN12. Same day written cash offer. Completion in as little as 7 days. No estate agent fees, no chain, no requirement for repairs. We are South Yorkshire Property Buyers.
 
 Written and reviewed by the South Yorkshire Property Buyers team. Last reviewed: 24 May 2026.
 
@@ -1312,7 +1312,7 @@ If you are reading this at midnight worrying about next month's mortgage payment
 
 Get a Free Cash Offer
 
-Written and reviewed by the South Yorkshire Property Buyers team. South Yorkshire Property Buyers is run jointly by Bullseye Properties Ltd (company 14869608) and Dearne Valley Properties Ltd (company 11886498), both registered in England and Wales. AML-registered with HMRC, member of The Property Ombudsman, ICO-registered. Last reviewed: 24 May 2026.
+Written and reviewed by the South Yorkshire Property Buyers team. Our company and purchasing details are available on our About page. AML-registered with HMRC, member of The Property Ombudsman, ICO-registered. Last reviewed: 24 May 2026.
 
 Your browser does not support video playback. Download the video.
 
@@ -1488,7 +1488,7 @@ Three principles that should be true of any cash buyer you deal with, including 
 
 Cash-buying has a reputation problem for good reasons. The FCA has prosecuted multiple operators since 2022 for running illegal sale-and-rent-back schemes targeting struggling homeowners, with the most recent conviction in March 2026. Any firm offering you a "sell and stay as a tenant" arrangement in 2026 is almost certainly operating outside the law. Apply the six checks below to any cash buyer, including South Yorkshire Property Buyers.
 
-- Companies House. Look up the buying entity at find-and-update.company-information.service.gov.uk. Confirm the company exists, is active, has been incorporated for at least 24 months, has filed accounts on time, and lists the directors named on the website. South Yorkshire Property Buyers is run jointly by Bullseye Properties Ltd (company 14869608, incorporated May 2023) and Dearne Valley Properties Ltd (company 11886498, incorporated March 2019).
+- Companies House. Look up the buying entity at find-and-update.company-information.service.gov.uk. Confirm the company exists, is active, has been incorporated for at least 24 months, has filed accounts on time, and lists the directors named on the website. Our company and purchasing details are available on our About page.
 
 - FCA register (for any activity that touches regulated services, such as sale-and-rent-back). At register.fca.org.uk. A straightforward cash purchase from a willing seller is outside FCA regulation, but anything beyond it should be on the register.
 
@@ -2090,7 +2090,7 @@ Whatever you know. The pre-contract enquiry form (TA6) asks specific questions. 
 
 ### How do I know the cash buyer is genuine?
 
-Six checks: (1) Companies House registration, confirm the buying entity exists and is active; (2) written proof of funds dated within 14 days, typically a solicitor's letter confirming cleared funds in client account; (3) NAPB or TPO membership, verifiable on those bodies' own websites; (4) a written offer with a clear calculation basis, not just a number on the phone; (5) your own solicitor, never a buyer's "panel" solicitor; (6) no upfront fees, ever. South Yorkshire Property Buyers is run jointly by Bullseye Properties Ltd (14869608) and Dearne Valley Properties Ltd (11886498), both registered in England and Wales.
+Six checks: (1) Companies House registration, confirm the buying entity exists and is active; (2) written proof of funds dated within 14 days, typically a solicitor's letter confirming cleared funds in client account; (3) NAPB or TPO membership, verifiable on those bodies' own websites; (4) a written offer with a clear calculation basis, not just a number on the phone; (5) your own solicitor, never a buyer's "panel" solicitor; (6) no upfront fees, ever. Our company and purchasing details are available on our About page.
 
 ### How quickly can South Yorkshire Property Buyers complete?
 
@@ -2136,7 +2136,7 @@ Yes, you can sell a rental property without evicting your tenants. Under the Ren
 
 Get a Free Cash Offer
 
-Written and reviewed by the South Yorkshire Property Buyers team. South Yorkshire Property Buyers is run jointly by Bullseye Properties Ltd (company 14869608) and Dearne Valley Properties Ltd (company 11886498), both registered in England and Wales. AML-registered with HMRC, ICO-registered. Last reviewed: 25 May 2026.
+Written and reviewed by the South Yorkshire Property Buyers team. Our company and purchasing details are available on our About page. AML-registered with HMRC, ICO-registered. Last reviewed: 25 May 2026.
 
 Your browser does not support video playback. Download the video.
 
@@ -2360,7 +2360,7 @@ South Yorkshire Property Buyers makes all five of these commitments as standard.
 
 Cash-buying has a reputation problem for good reasons. Apply the six checks below to any cash buyer, including South Yorkshire Property Buyers.
 
-- Companies House. Look up the buying entity at find-and-update.company-information.service.gov.uk. Confirm the company is active, incorporated for a meaningful period, with accounts and confirmation statement up to date. South Yorkshire Property Buyers is run jointly by Bullseye Properties Ltd (company 14869608, incorporated May 2023) and Dearne Valley Properties Ltd (company 11886498, incorporated March 2019). A point of full disclosure: the company was formerly registered as Lord CNB Properties Ltd until a name change on 18 April 2024. Previous-name changes are commonplace and not a red flag by themselves; we surface this here because a serious Companies House check will see it.
+- Companies House. Look up the buying entity at find-and-update.company-information.service.gov.uk. Confirm the company is active, incorporated for a meaningful period, with accounts and confirmation statement up to date. Our company and purchasing details are available on our About page. A point of full disclosure: the company was formerly registered as Lord CNB Properties Ltd until a name change on 18 April 2024. Previous-name changes are commonplace and not a red flag by themselves; we surface this here because a serious Companies House check will see it.
 
 - Proof of funds. Ask for a solicitor's letter on letterhead, dated within 14 days, confirming cleared funds in the buyer's client account or in a designated funding partner's account. A real cash buyer can produce this within 48 hours.
 
@@ -2466,7 +2466,7 @@ Always. Your right to instruct your own solicitor is absolute and we will not pr
 
 ### How do I check that a cash buyer is legitimate?
 
-Six checks: Companies House (incorporated, active, accounts up to date), proof of funds via a solicitor's letter on letterhead dated within 14 days, The Property Ombudsman or NAPB membership, online reviews and footer trust signals, AML and ICO registration, and your absolute right to your own solicitor. South Yorkshire Property Buyers is run jointly by Bullseye Properties Ltd (14869608, formerly Lord CNB Properties Ltd until a name change on 18 April 2024. We surface that name-change history here because any serious Companies House check will see it, better to find it in our text than in a footnote you spotted on your own.
+Six checks: Companies House (incorporated, active, accounts up to date), proof of funds via a solicitor's letter on letterhead dated within 14 days, The Property Ombudsman or NAPB membership, online reviews and footer trust signals, AML and ICO registration, and your absolute right to your own solicitor. Bullseye Properties Ltd (14869608), which handles seller-facing enquiries, was formerly Lord CNB Properties Ltd until a name change on 18 April 2024. We surface that name-change history here because any serious Companies House check will see it, better to find it in our text than in a footnote you spotted on your own.
 
 ## Ready to get a cash offer on your tenanted property?
 
@@ -2673,7 +2673,7 @@ The sibling buy-out variation also works in many SYK cases. One sibling wants to
 
 Inheritors are structurally vulnerable to cash-buyer mis-selling. Bereavement reduces executive function; the property is rarely the inheritor's own home so there is no lived knowledge of which local buyers are reputable; and the transaction is often the largest single financial decision the inheritor will ever make. The Property Ombudsman's 2025 complaints data identified "buyers targeting probate properties" as a 31% year-on-year growth category. Six checks apply to any cash buyer you are considering, including South Yorkshire Property Buyers.
 
-- Companies House registration. Search the Companies House public register for the legal entity. Confirm the company is active, has a UK registered office, has filed accounts on time, and has named, traceable directors. South Yorkshire Property Buyers is run jointly by Bullseye Properties Ltd (14869608) and Dearne Valley Properties Ltd (11886498), both registered in England and Wales. Verify directly at the Companies House record. The company's filing history shows one previous name, "Lord CNB Properties Ltd", changed to "Bullseye Properties Ltd" effective 18 April 2024. This is a routine consolidation of the company's market identity under a clearer trading name; the underlying entity and directors did not change.
+- Companies House registration. Search the Companies House public register for the legal entity. Confirm the company is active, has a UK registered office, has filed accounts on time, and has named, traceable directors. Our company and purchasing details are available on our About page. Verify directly at the Companies House record. The company's filing history shows one previous name, "Lord CNB Properties Ltd", changed to "Bullseye Properties Ltd" effective 18 April 2024. This is a routine consolidation of the company's market identity under a clearer trading name; the underlying entity and directors did not change.
 
 - Written proof of funds dated within 14 days. A legitimate cash buyer provides a solicitor's letter (or, less commonly, a bank statement extract) confirming cleared funds for the proposed purchase. The letter should carry a verifiable SRA number for the issuing firm; your solicitor should phone the firm to confirm authenticity, taking the number from the SRA's Find a Solicitor register rather than from the letter itself.
 
@@ -2731,7 +2731,7 @@ Yes, to a cash buyer. South Yorkshire's older stock, Sheffield S4/S5/S35, Doncas
 
 ### How do I verify that a cash buyer in Sheffield, Doncaster, Rotherham or Barnsley is legitimate?
 
-Apply six checks: Companies House registration (active company, real directors, traceable filing history); written proof of funds dated within 14 days on solicitor's letterhead with a verifiable SRA number; NAPB or TPO membership confirmed directly on the official directory at napb.co.uk or tpos.co.uk, not just a badge on the buyer's website; a written offer with a clear calculation basis; your own choice of solicitor, never the buyer's panel; and no upfront fees, ever. South Yorkshire Property Buyers is run jointly by Bullseye Properties Ltd (14869608) and Dearne Valley Properties Ltd (11886498), both verifiable on the Companies House public register.
+Apply six checks: Companies House registration (active company, real directors, traceable filing history); written proof of funds dated within 14 days on solicitor's letterhead with a verifiable SRA number; NAPB or TPO membership confirmed directly on the official directory at napb.co.uk or tpos.co.uk, not just a badge on the buyer's website; a written offer with a clear calculation basis; your own choice of solicitor, never the buyer's panel; and no upfront fees, ever. Our company and purchasing details are available on our About page.
 
 ### How quickly can South Yorkshire Property Buyers complete on an inherited property in the region?
 
@@ -2830,7 +2830,7 @@ Home › Cash House Buyer Barnsley # Cash house buyer in Barnsley (S70 to S75): 
 - Last reviewed: 2026-06-01
 - Summary:
 
-Home › Cash House Buyer Doncaster # Cash house buyer Doncaster, how to verify a legitimate buyer (2026) The UK cash-property-buying industry is largely unregulated. Some operators are genuine. Some are lead-generation fronts. Some are outright dishonest. This page is the verification guide we wish every Doncaster seller read before signing anything. Six free checks, the FCA sale-and-rent-back warning, the named local solicitors you can call for a second opinion, and an honest admission of where our own review density currently sits. Written and reviewed by the South Yorkshire Property Buyers team. Last reviewed: 1 June 2026. Your browser does not support video playback. Download the video. A 33-second overview of how a legitimate Doncaster cash house buyer operates. Quick answer: A legitimate Doncaster cash house buyer is registered at Companies House, provides written proof of funds from a UK solicitor's client account, uses an SRA-regulated firm, charges no upfront fees, and confirms in writing that you can use your own solicitor. South Yorkshire Property Buyers is run jointly by Bullseye Properties Ltd (14869608, previously Lord CNB Properties Ltd until 18 April 2024) and Dearne Valley Properties Ltd (11886498). We buy across DN1 to DN12, typically pay 80 to 85 per cent of market value, and complete in 7 to 28 days. For the full local market analysis, postcode-by-postcode pricing, flood-zone reality, ex-mining stock, the Doncaster Council empty-homes premium and two worked examples, see our parent guide on sell house fast Doncaster. ## What "cash house buyer" actually means in Doncaster A cash house buyer...
+Home › Cash House Buyer Doncaster # Cash house buyer Doncaster, how to verify a legitimate buyer (2026) The UK cash-property-buying industry is largely unregulated. Some operators are genuine. Some are lead-generation fronts. Some are outright dishonest. This page is the verification guide we wish every Doncaster seller read before signing anything. Six free checks, the FCA sale-and-rent-back warning, the named local solicitors you can call for a second opinion, and an honest admission of where our own review density currently sits. Written and reviewed by the South Yorkshire Property Buyers team. Last reviewed: 1 June 2026. Your browser does not support video playback. Download the video. A 33-second overview of how a legitimate Doncaster cash house buyer operates. Quick answer: A legitimate Doncaster cash house buyer is registered at Companies House, provides written proof of funds from a UK solicitor's client account, uses an SRA-regulated firm, charges no upfront fees, and confirms in writing that you can use your own solicitor. Our company and purchasing details are available on our About page. We buy across DN1 to DN12, typically pay 80 to 85 per cent of market value, and complete in 7 to 28 days. For the full local market analysis, postcode-by-postcode pricing, flood-zone reality, ex-mining stock, the Doncaster Council empty-homes premium and two worked examples, see our parent guide on sell house fast Doncaster. ## What "cash house buyer" actually means in Doncaster A cash house buyer...
 
 ### Cash House Buyer Rotherham
 - URL: https://southyorkshirepropertybuyers.com/cash-house-buyer-rotherham/
@@ -2844,7 +2844,7 @@ Home › Cash House Buyer Rotherham Cash House Buyer, Rotherham S60 to S66 # Cas
 - Last reviewed: 2026-06-01
 - Summary:
 
-Home › Cash House Buyer Sheffield # Cash house buyer in Sheffield (S1 to S36) We buy houses in Sheffield for cash with our own funds. No mortgage lenders, no chain, no estate agent. Written offer the same day, completion in as little as 7 days. This page is built around the question every careful Sheffield seller asks first: how do I know the buyer is real? Six checks, the FCA sale-and-rent-back rule, named local solicitors, and an honest note on our own review history. Get My Free Cash Offer Read the full Sheffield guide Written and reviewed by the South Yorkshire Property Buyers team. Last reviewed: 1 June 2026. Your browser does not support video playback. Download the video. How a Sheffield cash sale actually works, South Yorkshire Property Buyers, S1 to S36. Quick answer: A legitimate Sheffield cash house buyer purchases your home using their own funds without a mortgage. The verification is six checks, taking about twenty minutes, Companies House, a dated solicitor's letter as proof of funds, Google and Trustpilot reviews, The Property Ombudsman membership, your-own-solicitor freedom, and one independent voice. South Yorkshire Property Buyers is run jointly by Bullseye Properties Ltd (14869608) and Dearne Valley Properties Ltd (11886498), covering S1 to S36. For the full Sheffield market analysis, see our parent guide on sell house fast Sheffield. ## What "cash house buyer" actually means in Sheffield A cash house buyer is the buyer of your property, not a broker, not a lead-generation site, not an introducer to a panel of investors....
+Home › Cash House Buyer Sheffield # Cash house buyer in Sheffield (S1 to S36) We buy houses in Sheffield for cash with our own funds. No mortgage lenders, no chain, no estate agent. Written offer the same day, completion in as little as 7 days. This page is built around the question every careful Sheffield seller asks first: how do I know the buyer is real? Six checks, the FCA sale-and-rent-back rule, named local solicitors, and an honest note on our own review history. Get My Free Cash Offer Read the full Sheffield guide Written and reviewed by the South Yorkshire Property Buyers team. Last reviewed: 1 June 2026. Your browser does not support video playback. Download the video. How a Sheffield cash sale actually works, South Yorkshire Property Buyers, S1 to S36. Quick answer: A legitimate Sheffield cash house buyer purchases your home using their own funds without a mortgage. The verification is six checks, taking about twenty minutes, Companies House, a dated solicitor's letter as proof of funds, Google and Trustpilot reviews, The Property Ombudsman membership, your-own-solicitor freedom, and one independent voice. South Yorkshire Property Buyers covers S1 to S36. Our company and purchasing details are available on our About page. For the full Sheffield market analysis, see our parent guide on sell house fast Sheffield. ## What "cash house buyer" actually means in Sheffield A cash house buyer is the buyer of your property, not a broker, not a lead-generation site, not an introducer to a panel of investors....
 
 ## Tier 4, Situation and comparison pages (summary)
 
