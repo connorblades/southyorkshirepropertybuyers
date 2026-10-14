@@ -12,6 +12,6 @@
     "dev": "node build.js && node --watch server.js"
   },
   "dependencies": {
-    "express": "^4.19.2"
+    "express": "^4.22.3"
   }
 }
