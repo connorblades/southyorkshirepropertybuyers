@@ -223,7 +223,8 @@
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify(data)
         });
-        if (response.ok) {
+        var submitResult = response.ok ? await response.json() : null;
+        if (response.ok && submitResult && submitResult.ok === true && submitResult.accepted !== false) {
           try { sessionStorage.setItem('sypb_lead_submitted', '1'); } catch (_) {}
           /* Enhanced conversions: hand the two highest-matching identifiers to
              /thank-you/, where init.js sends them with the conversion. Email and

@@ -178,14 +178,14 @@ app.post('/api/submit', async (req, res) => {
   // 1. Honeypot. Only something reading the DOM blindly fills this.
   if (String(body._hp || '').trim()) {
     reject('honeypot', req, body);
-    return res.json({ ok: true });
+    return res.json({ ok: true, accepted: false });
   }
 
   // 2. Submitted impossibly fast. Absent on older cached pages, so only
   //    enforced when the field is actually present.
   if (typeof body._elapsed === 'number' && body._elapsed < MIN_FILL_MS) {
     reject(`too fast (${body._elapsed}ms)`, req, body);
-    return res.json({ ok: true });
+    return res.json({ ok: true, accepted: false });
   }
 
   // 3. Posted from somewhere other than the site.
@@ -195,7 +195,7 @@ app.post('/api/submit', async (req, res) => {
     try { host = new URL(origin).hostname; } catch (_) {}
     if (host && !ALLOWED_HOSTS.includes(host)) {
       reject(`bad origin ${host}`, req, body);
-      return res.json({ ok: true });
+      return res.json({ ok: true, accepted: false });
     }
   }
 
@@ -203,13 +203,13 @@ app.post('/api/submit', async (req, res) => {
   const problem = looksLikePerson(body);
   if (problem) {
     reject(problem, req, body);
-    return res.json({ ok: true });
+    return res.json({ ok: true, accepted: false });
   }
 
   // 5. Flooding from one address.
   if (rateLimited(req.ip)) {
     reject('rate limit', req, body);
-    return res.json({ ok: true });
+    return res.json({ ok: true, accepted: false });
   }
 
   // Strip our own signals so GHL sees exactly what it saw before.
