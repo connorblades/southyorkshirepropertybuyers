@@ -3,7 +3,7 @@ const source=fs.readFileSync(__dirname+'/../server.js','utf8');
 let handler,forwarded;
 const app={set(){},use(){},get(){},post(path,fn){if(path==='/api/submit')handler=fn},listen(){}};
 const express=()=>app;express.json=()=>{};express.static=()=>{};
-vm.runInNewContext(source,{require(name){if(name==='express')return express;return require(name)},__dirname:__dirname+'/..',process:{env:{GHL_WEBHOOK:'https://mock.invalid'}},console:{log(){},warn(){},error(){}},URL,Date,Map,Set,fetch:async(url,opts)=>{forwarded=JSON.parse(opts.body);return {ok:true}}});
+vm.runInNewContext(source,{require(name){if(name==='express')return express;if(name==='./build')return {};return require(name)},__dirname:__dirname+'/..',process:{env:{GHL_WEBHOOK:'https://mock.invalid'}},console:{log(){},warn(){},error(){}},URL,Date,Map,Set,fetch:async(url,opts)=>{forwarded=JSON.parse(opts.body);return {ok:true}}});
 const valid={firstName:'Audit',lastName:'Test',phone:'07700900000',email:'audit@example.invalid',address1:'TEST ONLY',notes:'Verification',_elapsed:5000,landingPage:'sell-house-at-auction',landingUrl:'https://southyorkshirepropertybuyers.com/sell-house-at-auction/',utm_campaign:'tracking_fix_20261027'};
 async function submit(extra){forwarded=null;let response;await handler({body:{...valid,...extra},ip:'127.0.0.1',headers:{origin:'https://southyorkshirepropertybuyers.com'}},{json(v){response=v}});return response}
 (async()=>{
