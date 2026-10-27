@@ -215,6 +215,21 @@ app.post('/api/submit', async (req, res) => {
   // Strip our own signals so GHL sees exactly what it saw before.
   const { _hp, _elapsed, ...lead } = body;
 
+  // Append system metadata only after validating the visitor's original
+  // message. Landing URLs must not trip the anti-spam link filter, and the
+  // receipt must not consume the visitor's 2,000-character message allowance.
+  const receiptKeys = ['landingPage', 'landingUrl', 'enquiryPage', 'sourcePage',
+    'utm_source', 'utm_medium', 'utm_campaign', 'utm_term', 'utm_content',
+    'gclid', 'gbraid', 'wbraid', 'adUserDataConsent'];
+  const receipt = receiptKeys
+    .filter(key => typeof lead[key] === 'string' && lead[key])
+    .map(key => key + ': ' + lead[key].replace(/[\r\n<>]/g, ' ').slice(0, 256));
+  if (receipt.length) {
+    lead.notes = (lead.notes ? lead.notes + '\n\n' : '') +
+      '[Website enquiry attribution]\n' + receipt.join('\n');
+  }
+
+
   try {
     const response = await fetch(GHL_WEBHOOK, {
       method: 'POST',

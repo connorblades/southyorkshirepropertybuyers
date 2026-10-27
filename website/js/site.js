@@ -246,18 +246,6 @@
         var consent = localStorage.getItem('sypb_consent');
         if (consent === 'granted' || consent === 'denied') data.adUserDataConsent = consent;
       } catch (_) {}
-      // The existing GHL workflow persists notes for every enquiry. Keep an
-      // append-only acquisition receipt there as well as the structured payload,
-      // so repeat enquiries do not depend on mutable contact attribution fields.
-      var receiptKeys = ['landingPage', 'landingUrl', 'enquiryPage', 'sourcePage',
-        'utm_source', 'utm_medium', 'utm_campaign', 'utm_term', 'utm_content',
-        'gclid', 'gbraid', 'wbraid', 'adUserDataConsent'];
-      var receipt = receiptKeys.filter(function (key) { return data[key]; })
-        .map(function (key) {
-          return key + ': ' + String(data[key]).replace(/[\r\n]/g, ' ').slice(0, 2048);
-        });
-      data.notes = (data.notes ? data.notes + '\n\n' : '') +
-        '[Website enquiry attribution]\n' + receipt.join('\n');
       var submitBtn = form.querySelector('.form-submit');
       var origText = submitBtn ? submitBtn.textContent : '';
       if (submitBtn) { submitBtn.disabled = true; submitBtn.textContent = 'Sending…'; }

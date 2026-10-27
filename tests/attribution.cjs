@@ -22,7 +22,7 @@ function visit(sessionStorage, path, query) {
 (async()=>{
  const checks=[];
  let r=await testSubmit('?postcode=S1+2HH',{ok:true});
- assert.equal(r.payload.gclid,'TEST_CLICK_ID');assert.equal(r.payload.utm_campaign,'selected');assert.equal(r.payload.gbraid,'TEST_BRAID');assert.equal(r.payload.landingPage,'sell-house-at-auction');assert.equal(r.payload.sourcePage,'get-offer');assert(r.payload.notes.startsWith('Test\n\n'));assert(r.payload.notes.includes('utm_campaign: selected'));checks.push('Cross-page acquisition survives postcode-only URL; submission location retained');
+ assert.equal(r.payload.gclid,'TEST_CLICK_ID');assert.equal(r.payload.utm_campaign,'selected');assert.equal(r.payload.gbraid,'TEST_BRAID');assert.equal(r.payload.landingPage,'sell-house-at-auction');assert.equal(r.payload.sourcePage,'get-offer');assert.equal(r.payload.notes,'Test');checks.push('Cross-page acquisition survives postcode-only URL; submission location retained');
  const session=storage();visit(session,'/sell-house-at-auction/','?gclid=old&utm_campaign=old&utm_term=old');visit(session,'/get-offer/','?postcode=S1');
  r=await testSubmit('?postcode=S1',{ok:true},session.data);assert.equal(r.payload.enquiryPage,'sell-house-at-auction');assert.equal(r.payload.landingUrl,'https://example.invalid/sell-house-at-auction/');checks.push('Content intent and clean landing URL survive shared form navigation');
  visit(session,'/sell-house-discreetly/','?utm_campaign=new&wbraid=newbraid');visit(session,'/get-offer/','');
