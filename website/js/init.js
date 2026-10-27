@@ -28,19 +28,23 @@
     var q = new URLSearchParams(location.search);
     var found = {};
     ATTR_KEYS.forEach(function (k) { if (q.get(k)) found[k] = q.get(k); });
+    var landing = {
+      page: location.pathname.replace(/^\/|\/$/g, '') || 'home',
+      url: location.origin + location.pathname,
+      referrer: document.referrer || ''
+    };
     if (Object.keys(found).length) {
-      var prev = {};
-      try { prev = JSON.parse(sessionStorage.getItem('sypb_attr') || '{}'); } catch (e) {}
-      ATTR_KEYS.forEach(function (k) { if (found[k]) prev[k] = found[k]; });
-      sessionStorage.setItem('sypb_attr', JSON.stringify(prev));
+      // A new tagged arrival replaces the entire bundle. Never combine a new
+      // campaign with an old click identifier or keyword from this session.
+      sessionStorage.setItem('sypb_attr', JSON.stringify(found));
+      sessionStorage.setItem('sypb_acquisition_landing', JSON.stringify(landing));
     }
-    /* First page of the session, kept so a lead submitted on /get-offer/ still
-       records which landing page the ad actually paid for. Never overwritten. */
     if (!sessionStorage.getItem('sypb_landing')) {
-      sessionStorage.setItem('sypb_landing', JSON.stringify({
-        page: location.pathname.replace(/^\/|\/$/g, '') || 'home',
-        referrer: document.referrer || ''
-      }));
+      sessionStorage.setItem('sypb_landing', JSON.stringify(landing));
+    }
+    // Keep the last content page separate from acquisition and form location.
+    if (landing.page !== 'get-offer' && landing.page !== 'thank-you') {
+      sessionStorage.setItem('sypb_enquiry_context', JSON.stringify(landing));
     }
   } catch (e) {}
 

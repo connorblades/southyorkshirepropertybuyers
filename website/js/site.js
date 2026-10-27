@@ -207,12 +207,44 @@
         : 'situation';
       data.area = (slug.match(/(sheffield|rotherham|doncaster|barnsley|chesterfield|worksop|retford|gainsborough|mansfield)/) || [''])[0];
       data.leadSource = 'website';
+      // Read each store independently: blocked storage or one malformed value
+      // must never stop the enquiry or hide usable current-URL attribution.
+      function storedObject(key) {
+        try {
+          var value = JSON.parse(sessionStorage.getItem(key) || '{}');
+          return value && typeof value === 'object' && !Array.isArray(value) ? value : {};
+        } catch (_) { return {}; }
+      }
+      var attributionKeys = ['utm_source', 'utm_medium', 'utm_campaign',
+        'utm_term', 'utm_content', 'gclid', 'gbraid', 'wbraid', 'gad_source'];
+      var currentAttribution = {};
       try {
         var p = new URLSearchParams(window.location.search);
-        ['utm_source', 'utm_medium', 'utm_campaign', 'utm_term', 'utm_content', 'gclid'].forEach(function (k) {
-          if (p.get(k)) data[k] = p.get(k);
+        attributionKeys.forEach(function (key) {
+          if (p.get(key)) currentAttribution[key] = p.get(key);
         });
-        data.referrer = document.referrer || '';
+      } catch (_) {}
+      var attribution = Object.keys(currentAttribution).length
+        ? currentAttribution : storedObject('sypb_attr');
+      attributionKeys.forEach(function (key) {
+        if (typeof attribution[key] === 'string' && attribution[key]) {
+          data[key] = attribution[key].slice(0, 2048);
+        }
+      });
+      var firstLanding = storedObject('sypb_landing');
+      var acquisitionLanding = storedObject('sypb_acquisition_landing');
+      var enquiryContext = storedObject('sypb_enquiry_context');
+      data.landingPage = acquisitionLanding.page || firstLanding.page || slug;
+      data.landingUrl = acquisitionLanding.url || firstLanding.url || '';
+      data.firstLandingPage = firstLanding.page || slug;
+      data.firstLandingUrl = firstLanding.url || '';
+      data.enquiryPage = enquiryContext.page || slug;
+      data.acquisitionReferrer = acquisitionLanding.referrer || firstLanding.referrer || '';
+      data.referrer = document.referrer || '';
+      data.adUserDataConsent = 'unknown';
+      try {
+        var consent = localStorage.getItem('sypb_consent');
+        if (consent === 'granted' || consent === 'denied') data.adUserDataConsent = consent;
       } catch (_) {}
       var submitBtn = form.querySelector('.form-submit');
       var origText = submitBtn ? submitBtn.textContent : '';
