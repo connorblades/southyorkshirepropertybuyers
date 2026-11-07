@@ -162,6 +162,14 @@
   <style id="nav-fix">
   nav,.nav-links { overflow: visible !important; }.nav-item.dropdown { opacity: 0 !important; pointer-events: none !important; transform: translateX(-50%) translateY(-4px) !important; transition: opacity 0.15s ease, transform 0.15s ease !important; }.nav-item.open.dropdown { opacity: 1 !important; pointer-events: auto !important; transform: translateX(-50%) translateY(0) !important; }
   </style>
+<style>
+.property-explainer{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(1.25rem,3vw,2.5rem);align-items:center;margin:2.5rem 0;padding:0}
+.property-explainer figure{margin:0;min-width:0}
+.property-explainer img{display:block;width:100%;height:auto;max-height:480px;object-fit:cover;border-radius:12px}
+.property-explainer h2{margin-top:0}
+.property-explainer p:last-child{margin-bottom:0}
+@media(max-width:640px){.property-explainer{grid-template-columns:1fr}.property-explainer img{max-height:360px}}
+</style>
 </head>
 <body>
 
@@ -298,6 +306,12 @@
   </div>
 
   <div class="page-body">
+
+    <section class="property-explainer" aria-labelledby="property-explainer-title">
+      <figure><img src="/images/real-properties/terrace-02.webp" alt="Stone-fronted end-terrace house" width="1200" height="1600" loading="lazy" decoding="async"></figure>
+      <div><h2 id="property-explainer-title">Start with your property. Choose what happens next.</h2><p>Tell us about your home, its condition and your timing. We assess the details and explain our offer in writing. You can ask questions, compare your options and decide whether to proceed.</p></div>
+    </section>
+
 
 
     <figure style="margin:2rem 0;">

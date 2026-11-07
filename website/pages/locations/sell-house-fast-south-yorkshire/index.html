@@ -188,6 +188,14 @@
   "speakable": {"@type": "SpeakableSpecification", "cssSelector": [".page-hero h1", ".hero-intro", ".quick-answer"]}
 }
 </script>
+<style>
+.property-explainer{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(1.25rem,3vw,2.5rem);align-items:center;margin:2.5rem 0;padding:0}
+.property-explainer figure{margin:0;min-width:0}
+.property-explainer img{display:block;width:100%;height:auto;max-height:480px;object-fit:cover;border-radius:12px}
+.property-explainer h2{margin-top:0}
+.property-explainer p:last-child{margin-bottom:0}
+@media(max-width:640px){.property-explainer{grid-template-columns:1fr}.property-explainer img{max-height:360px}}
+</style>
 </head>
 <body>
 
@@ -340,6 +348,12 @@
     <div class="quick-answer" style="background:#f3f4f6;border-left:4px solid #0f766e;padding:1rem 1.25rem;margin:0 0 1.5rem 0;border-radius:6px;">
       <p style="margin:0;font-size:1rem;line-height:1.55;"><strong>Quick answer:</strong> We buy houses right across South Yorkshire. That means all four boroughs: Sheffield, Rotherham, Doncaster and Barnsley. We also buy in the towns and villages in between. If your postcode starts S1 to S36, S60 to S66, S70 to S75 or DN1 to DN12, you're in our core patch.</p>
     </div>
+
+
+    <section class="property-explainer" aria-labelledby="property-explainer-title">
+      <figure><img src="/images/real-properties/terrace-01.webp" alt="Stone-fronted terraced house with a gated front yard" width="1200" height="1600" loading="lazy" decoding="async"></figure>
+      <div><h2 id="property-explainer-title">A straightforward sale for an everyday home</h2><p>Terraces, semis and homes that need work: tell us what you own and what you need from the sale. We assess the property individually and explain our offer, so you can decide whether it works for you.</p></div>
+    </section>
 
     <h2>Where we buy in South Yorkshire</h2>
     <p>Each area below has its own page: postcodes, the kinds of houses there, and what usually slows a sale down.</p>

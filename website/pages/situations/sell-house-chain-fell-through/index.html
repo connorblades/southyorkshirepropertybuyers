@@ -287,6 +287,14 @@
   <style id="nav-fix">
   nav,.nav-links { overflow: visible !important; }.nav-item.dropdown { opacity: 0 !important; pointer-events: none !important; transform: translateX(-50%) translateY(-4px) !important; transition: opacity 0.15s ease, transform 0.15s ease !important; }.nav-item.open.dropdown { opacity: 1 !important; pointer-events: auto !important; transform: translateX(-50%) translateY(0) !important; }
   </style>
+<style>
+.property-explainer{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(1.25rem,3vw,2.5rem);align-items:center;margin:2.5rem 0;padding:0}
+.property-explainer figure{margin:0;min-width:0}
+.property-explainer img{display:block;width:100%;height:auto;max-height:480px;object-fit:cover;border-radius:12px}
+.property-explainer h2{margin-top:0}
+.property-explainer p:last-child{margin-bottom:0}
+@media(max-width:640px){.property-explainer{grid-template-columns:1fr}.property-explainer img{max-height:360px}}
+</style>
 </head>
 <body>
 
@@ -460,6 +468,12 @@
           <p>We handle the paperwork with your solicitor. Most sales complete in 7 to 28 days, or later if you need longer.</p>
         </a>
       </div>
+    </section>
+
+
+    <section class="property-explainer" aria-labelledby="property-explainer-title">
+      <figure><img src="/images/real-properties/three-bedroom-semi-01.webp" alt="Rendered three-bedroom semi-detached house" width="1200" height="1600" loading="lazy" decoding="async"></figure>
+      <div><h2 id="property-explainer-title">A new route forward after a buyer pulls out</h2><p>A well-kept home can still be caught in a broken chain. We buy directly, without a property to sell first. Tell us what happened and the date you are working towards; we will explain whether a cash sale could help.</p></div>
     </section>
 
     <h2>What actually happens when a sale falls through</h2>
