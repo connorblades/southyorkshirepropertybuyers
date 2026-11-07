@@ -99,6 +99,8 @@
       try {
         if (sessionStorage.getItem('sypb_conversion_fired') !== '1') {
           sessionStorage.setItem('sypb_conversion_fired', '1');
+          // Analytics lead reporting stays separate from the existing Ads goal.
+          gtag('event', 'generate_lead', { send_to: 'G-VBWY8SPSCL' });
           if (ec && (ec.email || ec.phone_number)) {
             gtag('set', 'user_data', ec);
           }
