@@ -62,6 +62,7 @@
   });
   gtag('js', new Date());
   gtag('config', 'AW-18125556330');
+  gtag('config', 'G-VBWY8SPSCL');
 
   try {
     if (localStorage.getItem('sypb_consent') === 'granted') {
