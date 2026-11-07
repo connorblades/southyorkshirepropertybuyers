@@ -294,7 +294,7 @@
   /* ---- Phone tap tracking (Google Ads conversion) ---- */
   (function () {
     document.addEventListener('click', function (e) {
-      var link = e.target.closest ? e.target.closest('[data-track="phone-tap"]') : null;
+      var link = e.target.closest ? e.target.closest('a[href^="tel:"]') : null;
       if (!link) return;
       if (typeof window.gtag !== 'function') return;
       // Two events on purpose. 'conversion' with send_to is what Google Ads
