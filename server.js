@@ -67,6 +67,7 @@ const RATE_LIMIT = 20;           // submissions per IP per hour. Deliberately
                                  // flood is hundreds, so 20 still stops it
                                  // without ever touching a genuine enquiry.
 const RATE_WINDOW_MS = 60 * 60 * 1000;
+const RELAY_TIMEOUT_MS = 10 * 1000;
 
 const recent = new Map();
 
@@ -159,15 +160,11 @@ function looksLikePerson(body) {
   return null;
 }
 
-function reject(reason, req, body) {
+function reject(reason) {
+  // Operational logs need a reason, not the seller's contact details or the
+  // visitor-controlled origin, user agent and message.
   console.warn('[lead-rejected]', JSON.stringify({
     reason,
-    ip: req.ip,
-    ua: (req.headers['user-agent'] || '').slice(0, 120),
-    origin: req.headers.origin || req.headers.referer || null,
-    name: `${body.firstName || ''} ${body.lastName || ''}`.trim().slice(0, 60),
-    email: String(body.email || '').slice(0, 80),
-    phone: String(body.phone || '').slice(0, 30),
     at: new Date().toISOString()
   }));
 }
@@ -177,14 +174,14 @@ app.post('/api/submit', async (req, res) => {
 
   // 1. Honeypot. Only something reading the DOM blindly fills this.
   if (String(body._hp || '').trim()) {
-    reject('honeypot', req, body);
+    reject('honeypot');
     return res.json({ ok: true, accepted: false });
   }
 
   // 2. Submitted impossibly fast. Absent on older cached pages, so only
   //    enforced when the field is actually present.
   if (typeof body._elapsed === 'number' && body._elapsed < MIN_FILL_MS) {
-    reject(`too fast (${body._elapsed}ms)`, req, body);
+    reject('too fast');
     return res.json({ ok: true, accepted: false });
   }
 
@@ -194,7 +191,7 @@ app.post('/api/submit', async (req, res) => {
     let host = '';
     try { host = new URL(origin).hostname; } catch (_) {}
     if (host && !ALLOWED_HOSTS.includes(host)) {
-      reject(`bad origin ${host}`, req, body);
+      reject('bad origin');
       return res.json({ ok: true, accepted: false });
     }
   }
@@ -202,18 +199,28 @@ app.post('/api/submit', async (req, res) => {
   // 4. Not enough to be a lead.
   const problem = looksLikePerson(body);
   if (problem) {
-    reject(problem, req, body);
+    reject(problem);
     return res.json({ ok: true, accepted: false });
   }
 
   // 5. Flooding from one address.
   if (rateLimited(req.ip)) {
-    reject('rate limit', req, body);
+    reject('rate limit');
     return res.json({ ok: true, accepted: false });
   }
 
-  // Strip our own signals so GHL sees exactly what it saw before.
+  // Strip anti-spam signals before forwarding the validated enquiry.
   const { _hp, _elapsed, ...lead } = body;
+
+  // Keep seller context readable in the CRM even where an older workflow
+  // maps notes but does not yet map the individual optional form fields.
+  const sellerContext = ['timeline', 'situation', 'propertyType']
+    .filter(key => typeof lead[key] === 'string' && lead[key].trim())
+    .map(key => key + ': ' + lead[key].replace(/[\r\n<>]/g, ' ').slice(0, 120));
+  if (sellerContext.length) {
+    lead.notes = (lead.notes ? lead.notes + '\n\n' : '') +
+      '[Seller enquiry context]\n' + sellerContext.join('\n');
+  }
 
   // Append system metadata only after validating the visitor's original
   // message. Landing URLs must not trip the anti-spam link filter, and the
@@ -229,21 +236,37 @@ app.post('/api/submit', async (req, res) => {
       '[Website enquiry attribution]\n' + receipt.join('\n');
   }
 
-
+  // Bound the wait so a stalled CRM does not leave the form at "Sending…".
+  // Never retry here: the CRM may have received the enquiry before a timeout.
+  const controller = new AbortController();
+  const timeout = setTimeout(() => controller.abort(), RELAY_TIMEOUT_MS);
   try {
     const response = await fetch(GHL_WEBHOOK, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(lead)
+      body: JSON.stringify(lead),
+      signal: controller.signal
     });
+    if (!response.ok) {
+      console.warn('[lead-relay-failed]', JSON.stringify({
+        reason: 'upstream rejected', status: response.status, at: new Date().toISOString()
+      }));
+      return res.status(502).json({ ok: false });
+    }
     console.log('[lead-accepted]', JSON.stringify({
-      name: `${lead.firstName || ''} ${lead.lastName || ''}`.trim().slice(0, 60),
-      page: lead.sourcePage || null, ok: response.ok, at: new Date().toISOString()
+      ok: true, at: new Date().toISOString()
     }));
-    res.json({ ok: response.ok });
-  } catch (err) {
-    console.error('GHL webhook error:', err);
-    res.json({ ok: false });
+    res.json({ ok: true });
+  } catch (_) {
+    const timedOut = controller.signal.aborted;
+    // Fetch errors can contain the webhook URL or upstream data. Log only a
+    // fixed outcome, and return the same public failure body in either case.
+    console.error('[lead-relay-failed]', JSON.stringify({
+      reason: timedOut ? 'timeout' : 'network failure', at: new Date().toISOString()
+    }));
+    res.status(timedOut ? 504 : 502).json({ ok: false });
+  } finally {
+    clearTimeout(timeout);
   }
 });
 
