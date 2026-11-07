@@ -64,6 +64,10 @@ function main() {
     }
   }
 
+  // Seller guides keep their /guides/ URL prefix.
+  const guidesSrc = path.join(SOURCE, 'guides');
+  if (fs.existsSync(guidesSrc)) fs.cpSync(guidesSrc, path.join(DEST, 'guides'), { recursive: true });
+
   // 4. Pages — flatten /pages/<category>/<slug>/ to /<slug>/
   const pagesSrc = path.join(SOURCE, 'pages');
   if (fs.existsSync(pagesSrc)) {

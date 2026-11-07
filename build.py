@@ -54,7 +54,7 @@ def main():
             copied['root_files'] += 1
 
     # 2. Asset folders (css, images, media, js) — copied as-is
-    for asset_dir in ('css', 'images', 'media', 'js'):
+    for asset_dir in ('css', 'images', 'media', 'js', 'guides'):
         src = os.path.join(SOURCE, asset_dir)
         if os.path.isdir(src):
             shutil.copytree(src, os.path.join(DEST, asset_dir))
