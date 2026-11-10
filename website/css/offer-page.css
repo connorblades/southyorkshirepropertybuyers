@@ -1,0 +1,140 @@
+/* Offer page spacing. Loaded only by /get-offer/. */
+.offer-page {
+  padding-top: 84px;
+}
+
+.offer-page .page-hero {
+  padding: 2rem 1.5rem 1.5rem;
+}
+
+.offer-page .page-body {
+  padding-top: 1.5rem;
+}
+
+.offer-page .enquiry-reassurance {
+  margin: 0;
+  max-width: none;
+  text-align: center;
+}
+
+.offer-page #offerForm {
+  margin-top: 1rem;
+  padding: 1.5rem;
+}
+
+.offer-page #offerForm .form-req-note {
+  margin: 0 0 .75rem;
+  font-size: .8125rem;
+  line-height: 1.5;
+}
+
+.offer-page #offerForm .form-progress {
+  margin: 0 0 1.25rem;
+  font-size: .8125rem;
+  line-height: 1.5;
+}
+
+/* Preserve the script's hidden steps and the full form without JavaScript. */
+.offer-page #offerForm .form-step:not([hidden]) {
+  display: grid;
+  gap: 1.25rem;
+}
+
+.offer-page #offerForm .form-step + .form-step:not([hidden]) {
+  margin-top: 1.25rem;
+}
+
+.offer-page #offerForm:has(.form-progress) .form-step:not([hidden]) {
+  margin-top: 0;
+}
+
+.offer-page #offerForm .form-group {
+  min-width: 0;
+  margin: 0;
+}
+
+.offer-page #offerForm .form-row {
+  gap: 1.25rem;
+  min-width: 0;
+}
+
+.offer-page #offerForm label {
+  font-size: .875rem;
+  line-height: 1.5;
+  margin-bottom: .5rem;
+}
+
+.offer-page #offerForm .form-nav {
+  margin-top: 1.5rem;
+}
+
+.offer-page #offerForm .form-submit {
+  margin-top: 1rem;
+  min-height: 48px;
+}
+
+.offer-page #offerForm .form-note {
+  margin: 1rem 0 0;
+  font-size: .875rem;
+  line-height: 1.5;
+  color: var(--muted);
+  text-align: left;
+}
+
+.offer-page .offer-next-steps {
+  background: var(--surface-card);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 1.5rem;
+  margin-top: 2rem;
+}
+
+.offer-page .offer-next-steps h2,
+.offer-page .offer-questions > h2 {
+  margin: 0 0 1rem;
+}
+
+.offer-page .offer-next-steps h2 {
+  font-size: 1.1rem;
+}
+
+.offer-page .offer-next-steps .steps-list {
+  margin-bottom: 0;
+}
+
+.offer-page .offer-next-steps .steps-list li:last-child {
+  margin-bottom: 0;
+}
+
+.offer-page .offer-questions,
+.offer-page .related-links {
+  margin: 2rem 0 0;
+}
+
+@media (max-width: 640px) {
+  .offer-page .page-hero {
+    padding: 1.5rem 1rem 1.25rem;
+  }
+
+  .offer-page .page-body {
+    padding-top: 1.25rem;
+  }
+
+  .offer-page #offerForm,
+  .offer-page .offer-next-steps,
+  .offer-page .related-links {
+    padding: 1.25rem;
+  }
+}
+
+@media (max-width: 360px) {
+  .offer-layout > nav:not([class]) {
+    gap: .25rem;
+    padding-right: 1rem;
+    padding-left: 1rem;
+  }
+
+  .offer-layout > nav .nav-logo .logo-img {
+    height: 64px;
+  }
+}
