@@ -9,3 +9,4 @@ footer.seller-footer .seller-footer__identity{margin:4px 0 0;font-size:.8rem;lin
 footer.seller-footer a:hover{text-decoration:underline;color:#fff}
 footer.seller-footer a:focus-visible{outline:3px solid #93d4a9;outline-offset:4px}
 @media(max-width:600px){.seller-footer__top{justify-content:center}.seller-footer__links{column-gap:20px}}
+@media(max-width:768px){body:has(#sypb-sticky-cta) footer.seller-footer{padding-bottom:calc(104px + env(safe-area-inset-bottom,0px))}}
