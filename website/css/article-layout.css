@@ -1,0 +1,6 @@
+/* Full width copy within the article content area. */
+.seller-article .page-body > p,
+.seller-article .page-body > ul,
+.seller-article .page-body > ol {
+  max-width: none;
+}
