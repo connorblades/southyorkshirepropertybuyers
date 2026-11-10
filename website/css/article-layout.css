@@ -1,6 +1,13 @@
 /* Full width copy within the article content area. */
 .seller-article .page-body > p,
 .seller-article .page-body > ul,
-.seller-article .page-body > ol {
+.seller-article .page-body > ol,
+.seller-guide.seller-article > p,
+.seller-guide.seller-article > ul,
+.seller-guide.seller-article > ol {
   max-width: none;
+}
+
+.seller-guide.seller-article {
+  max-width: 1040px;
 }

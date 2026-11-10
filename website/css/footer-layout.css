@@ -1,0 +1,11 @@
+footer.seller-footer{padding:28px 24px}
+.seller-footer__inner{max-width:1120px;margin:0 auto}
+.seller-footer__top{display:flex;align-items:center;justify-content:space-between;gap:18px;flex-wrap:wrap}
+.seller-footer__brand img{display:block;height:38px;width:auto;max-width:100%}
+.seller-footer__phone{display:inline-flex;align-items:center;min-height:44px;font-size:1rem;color:#d8e6dd;font-weight:600;white-space:nowrap}
+.seller-footer__links{display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:4px 24px;margin:12px 0 4px}
+.seller-footer__links a{display:inline-flex;align-items:center;min-height:44px;font-size:.875rem;color:#d8e6dd;text-underline-offset:4px}
+footer.seller-footer .seller-footer__identity{margin:4px 0 0;font-size:.8rem;line-height:1.6;color:#c2d3c8;opacity:1;overflow-wrap:anywhere}
+footer.seller-footer a:hover{text-decoration:underline;color:#fff}
+footer.seller-footer a:focus-visible{outline:3px solid #93d4a9;outline-offset:4px}
+@media(max-width:600px){.seller-footer__top{justify-content:center}.seller-footer__links{column-gap:20px}}
