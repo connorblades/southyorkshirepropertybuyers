@@ -216,7 +216,7 @@
         <div class="form-step" data-step="1">
           <div class="form-group">
             <label for="postcode">Property Postcode <span class="req" aria-hidden="true">*</span></label>
-            <input type="text" id="postcode" placeholder="S1 2AB" required autocomplete="postal-code" spellcheck="false" />
+            <input type="text" id="postcode" placeholder="S1 2AB" required autocomplete="postal-code" spellcheck="false" pattern="\s*(?:[A-Za-z]{1,2}[0-9][A-Za-z0-9]?|[Gg][Ii][Rr])\s*[0-9][A-Za-z]{2}\s*" title="Enter a full UK postcode, for example S1 2AB." autocapitalize="characters" />
           </div>
         </div>
 
