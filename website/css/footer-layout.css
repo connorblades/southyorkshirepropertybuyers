@@ -16,3 +16,41 @@ footer b {
     padding-bottom: calc(168px + env(safe-area-inset-bottom, 0px));
   }
 }
+
+
+/* The homepage footer is shared by every public page. Keep its existing
+   presentation even where landing-page styles set their own footer colours. */
+footer.sypb-site-footer {
+  background: var(--footer-bg);
+  color: rgba(255,255,255,0.75);
+  padding: 3rem 2rem 2rem;
+  text-align: center;
+  font-size: 0.82rem;
+  line-height: 1.7;
+}
+footer.sypb-site-footer p {
+  color: rgba(255,255,255,0.75) !important;
+  font-size: 0.76rem;
+  margin-top: 0.4rem;
+  opacity: 1 !important;
+}
+footer.sypb-site-footer a {
+  color: rgba(255,255,255,0.85) !important;
+}
+footer.sypb-site-footer a:hover {
+  color: #ffffff !important;
+}
+footer.sypb-site-footer .footer-phone a {
+  color: rgba(255,255,255,0.85) !important;
+}
+footer.sypb-site-footer .footer-social a {
+  color: rgba(255,255,255,0.75) !important;
+}
+footer.sypb-site-footer .footer-phone a:hover,
+footer.sypb-site-footer .footer-social a:hover {
+  color: #3daa68 !important;
+}
+footer.sypb-site-footer .footer-legal {
+  font-size: 0.75rem;
+  opacity: 1 !important;
+}
