@@ -171,6 +171,13 @@
       if (s.length === 10) return '+44' + s;
       return '';
     }
+    function referrerHostname(raw) {
+      if (typeof raw !== 'string' || !/^https?:\/\//i.test(raw)) return '';
+      try {
+        var url = new URL(raw);
+        return url.username || url.password ? '' : url.hostname;
+      } catch (_) { return ''; }
+    }
     form.addEventListener('submit', async function (e) {
       e.preventDefault();
       var fullName = (document.getElementById('name').value || '').trim().split(' ');
@@ -238,6 +245,10 @@
       data.landingUrl = acquisitionLanding.url || firstLanding.url || '';
       data.firstLandingPage = firstLanding.page || slug;
       data.firstLandingUrl = firstLanding.url || '';
+      data.firstReferrerHost = referrerHostname(firstLanding.referrer);
+      // A tagged arrival without a referrer cannot inherit the first visit's referrer.
+      var acquisitionVisit = (acquisitionLanding.page || acquisitionLanding.url) ? acquisitionLanding : firstLanding;
+      data.acquisitionReferrerHost = referrerHostname(acquisitionVisit.referrer);
       data.enquiryPage = enquiryContext.page || slug;
       data.acquisitionReferrer = acquisitionLanding.referrer || firstLanding.referrer || '';
       data.referrer = document.referrer || '';

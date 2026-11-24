@@ -60,6 +60,26 @@ app.use(express.static(DIST, {
 // ---------------------------------------------------------------------------
 
 const ALLOWED_HOSTS = ['southyorkshirepropertybuyers.com', 'www.southyorkshirepropertybuyers.com'];
+
+// Store only a path on our site in the notes fallback, independent of any
+// later tagged arrival. An absent first visit remains unknown.
+function firstSitePath(raw) {
+  if (typeof raw !== 'string' || !/^https?:\/\//i.test(raw)) return '';
+  try {
+    const url = new URL(raw);
+    if (!ALLOWED_HOSTS.includes(url.hostname) || url.username || url.password || url.port) return '';
+    const path = url.pathname;
+    return path.length <= 256 && /^\/(?:[a-z0-9_-]+\/)*(?:[a-z0-9_-]+(?:\.html?)?)?$/i.test(path) ? path : '';
+  } catch (_) { return ''; }
+}
+
+function publicReferrerHost(raw) {
+  if (typeof raw !== 'string' || raw.length > 253) return '';
+  const host = raw.toLowerCase().replace(/\.$/, '');
+  // Accept a bare DNS hostname only. Full URLs, credentials and IPs never go into notes.
+  return /^(?:[a-z0-9](?:[a-z0-9-]{0,61}[a-z0-9])?\.)+[a-z](?:[a-z0-9-]{0,61}[a-z0-9])?$/.test(host)
+    && !ALLOWED_HOSTS.includes(host) ? host : '';
+}
 const MIN_FILL_MS = 3000;        // nobody types nine fields faster than this
 const RATE_LIMIT = 20;           // submissions per IP per hour. Deliberately
                                  // generous: UK mobile carriers use CGNAT, so
@@ -231,6 +251,13 @@ app.post('/api/submit', async (req, res) => {
   const receipt = receiptKeys
     .filter(key => typeof lead[key] === 'string' && lead[key])
     .map(key => key + ': ' + lead[key].replace(/[\r\n<>]/g, ' ').slice(0, 256));
+  lead.firstLandingPath = firstSitePath(lead.firstLandingUrl);
+  lead.firstReferrerHost = publicReferrerHost(lead.firstReferrerHost);
+  lead.acquisitionReferrerHost = publicReferrerHost(lead.acquisitionReferrerHost);
+  for (const key of ['firstLandingPath', 'firstReferrerHost', 'acquisitionReferrerHost']) {
+    if (lead[key]) receipt.push(key + ': ' + lead[key]);
+    else delete lead[key];
+  }
   if (receipt.length) {
     lead.notes = (lead.notes ? lead.notes + '\n\n' : '') +
       '[Website enquiry attribution]\n' + receipt.join('\n');
