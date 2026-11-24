@@ -230,13 +230,17 @@ app.post('/api/submit', async (req, res) => {
   }
 
   // Strip anti-spam signals before forwarding the validated enquiry.
-  const { _hp, _elapsed, ...lead } = body;
+  const { _hp, _elapsed, writtenOfferRequested, ...lead } = body;
 
   // Keep seller context readable in the CRM even where an older workflow
   // maps notes but does not yet map the individual optional form fields.
   const sellerContext = ['timeline', 'situation', 'propertyType']
     .filter(key => typeof lead[key] === 'string' && lead[key].trim())
     .map(key => key + ': ' + lead[key].replace(/[\r\n<>]/g, ' ').slice(0, 120));
+  if (writtenOfferRequested === true) {
+    lead.writtenOfferRequested = true;
+    sellerContext.push('Written offer requested: yes');
+  }
   if (sellerContext.length) {
     lead.notes = (lead.notes ? lead.notes + '\n\n' : '') +
       '[Seller enquiry context]\n' + sellerContext.join('\n');

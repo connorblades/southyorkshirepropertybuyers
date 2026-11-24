@@ -13,6 +13,11 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="/css/styles.css?v=46" />
   <link rel="stylesheet" href="/css/offer-page.css?v=20261110" />
+  <style>
+    #offerForm .offer-choice { display: flex; align-items: flex-start; gap: .6rem; margin: 0; cursor: pointer; }
+    #writtenOfferRequested { appearance: auto; flex: none; width: 1.2rem; height: 1.2rem; margin: .08rem 0 0; padding: 0; accent-color: var(--green); }
+    #writtenOfferRequested:focus-visible { outline: 3px solid var(--green); outline-offset: 3px; }
+  </style>
   <link rel="icon" href="/images/favicon.png?v=4" type="image/png">
   <link rel="canonical" href="https://southyorkshirepropertybuyers.com/get-offer/">
   <link rel="alternate" hreflang="en-GB" href="https://southyorkshirepropertybuyers.com/get-offer/" />
@@ -289,10 +294,16 @@
             <label for="message">Anything else we should know?</label>
             <textarea id="message" placeholder="Tell us a little more about your situation.."></textarea>
           </div>
+          <div class="form-group">
+            <label class="offer-choice" for="writtenOfferRequested">
+              <input type="checkbox" id="writtenOfferRequested" name="writtenOfferRequested" />
+              <span>I would like you to assess my property for a written offer (optional).</span>
+            </label>
+          </div>
         </div>
 
         
-        <button type="submit" class="form-submit">Request My Callback &#8594;</button>
+        <button type="submit" class="form-submit">Send my enquiry &#8594;</button>
         <p class="form-note">No obligation to accept an offer. We use your details to respond to your enquiry. We can cover legal fees if you use our panel solicitor. By submitting this form you agree to our <a href="/privacy-policy/" style="color:inherit;text-decoration:underline;">Privacy Policy</a>.</p>
       </form>
 
@@ -301,7 +312,7 @@
       <p style="margin-top:0;">Once your enquiry is in, you move straight onto <a href="/how-it-works/">how the sale works</a>.</p>
       <ol class="steps-list" style="counter-reset:steps;">
         <li><div>We review the property details you have shared.</div></li>
-        <li><div>One of our team rings you back as soon as we can to talk through your situation and give you a genuine cash figure.</div></li>
+        <li><div>We call to discuss your situation. If you requested a written offer, we explain whether we can make one and what checks are needed.</div></li>
         <li><div>If you choose to proceed, solicitors carry out the legal checks. We aim for 7 to 28 days, depending on the property and your circumstances, or a later date that suits you.</div></li>
         <li><div>On completion, your solicitor receives the funds and settles any mortgage and agreed costs. We can cover legal fees if you use our panel solicitor.</div></li>
       </ol>
@@ -446,7 +457,7 @@
   </div>
 </div>
 
-<script defer src="/js/site.js?v=50"></script>
+<script defer src="/js/site.js?v=51"></script>
 <script defer src="/js/helper.js?v=45"></script>
 <script defer src="/js/form-steps.js?v=45"></script>
 <script defer src="/js/auction-form-context.js?v=20261119"></script>

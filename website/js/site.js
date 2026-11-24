@@ -193,6 +193,10 @@
         situation: document.getElementById('situation').value,
         notes: document.getElementById('message').value
       };
+      var writtenOfferChoice = form.querySelector('#writtenOfferRequested');
+      if (writtenOfferChoice && writtenOfferChoice.checked) {
+        data.writtenOfferRequested = true;
+      }
 
       /* Pipeline context: lets GHL tag and route the lead without manual triage. */
       var hp = form.querySelector('.hp-field input');
