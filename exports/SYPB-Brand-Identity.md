@@ -1,6 +1,6 @@
 # South Yorkshire Property Buyers — Brand & Identity Reference
 
-> **southyorkshirepropertybuyers.com · 07739 063734**
+> **southyorkshirepropertybuyers.com · 07445 629113**
 > Use this document as a reference when creating marketing materials, social media content, print assets, or any other materials for the business.
 
 ---
@@ -14,10 +14,10 @@
 | Company Number | 14869608 |
 | Incorporated | 15 May 2023 |
 | Registered | England and Wales |
-| Registered Address | Oak House Enterprise Centre, Samuel Brunts Way, Mansfield, NG18 2AH |
+| Registered Address | 30 Carlton Road, Worksop, Nottinghamshire, S80 1PH |
 | Website | southyorkshirepropertybuyers.com |
-| Phone | 07739 063734 (+44 7739 063734 international) |
-| Email | No public-facing email — enquiries via form only |
+| Phone | 07445 629113 (+44 7445 629113 international) |
+| Email | hello@southyorkshirepropertybuyers.com |
 | Facebook | facebook.com/profile.php?id=61584749047268 |
 | Instagram | instagram.com/southyorkshire_propertybuyers/ |
 | Service Type | Cash Property Buyers |
