@@ -1,6 +1,6 @@
 # Outreach Email Drafts — Ready to Send
 
-Send each from `connor@bullseyeproperties.co.uk` (your domain email — boosts deliverability and credibility versus Gmail). All drafts are under 150 words. Review, personalise the **[bracketed]** bits where needed, and send.
+Send each from `hello@southyorkshirepropertybuyers.com` (your domain email — boosts deliverability and credibility versus Gmail). All drafts are under 150 words. Review, personalise the **[bracketed]** bits where needed, and send.
 
 ---
 
@@ -21,7 +21,7 @@ Happy to send a one-page brief if you'd prefer to start there.
 
 Connor Blades
 Founder, South Yorkshire Property Buyers
-[southyorkshirepropertybuyers.com](https://southyorkshirepropertybuyers.com) · 07739 063734
+[southyorkshirepropertybuyers.com](https://southyorkshirepropertybuyers.com) · 07445 629113
 
 ---
 
@@ -41,7 +41,7 @@ If a piece on the local picture would be useful, I can offer real data from our 
 Worth a 10-minute call?
 
 Connor Blades
-[southyorkshirepropertybuyers.com](https://southyorkshirepropertybuyers.com) · 07739 063734
+[southyorkshirepropertybuyers.com](https://southyorkshirepropertybuyers.com) · 07445 629113
 
 ---
 
@@ -64,7 +64,7 @@ Would this fit your editorial line?
 
 Connor Blades
 Founder, South Yorkshire Property Buyers
-07739 063734
+07445 629113
 
 ---
 
@@ -87,7 +87,7 @@ Worth a look?
 
 Connor Blades
 Founder, South Yorkshire Property Buyers
-07739 063734
+07445 629113
 
 ---
 
@@ -110,7 +110,7 @@ I'm not asking for anything more than a 15-minute introductory call to talk thro
 
 When suits you?
 
-Connor Blades · 07739 063734
+Connor Blades · 07445 629113
 [southyorkshirepropertybuyers.com/sell-house-during-probate/](https://southyorkshirepropertybuyers.com/sell-house-during-probate/)
 
 ---

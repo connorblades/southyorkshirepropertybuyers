@@ -4,15 +4,15 @@ NAP-consistent listings across UK business directories. Submit using identical d
 
 ```
 Business name: South Yorkshire Property Buyers
-Phone: 07739 063734
+Phone: 07445 629113
 Website: https://southyorkshirepropertybuyers.com
-Email: connor@bullseyeproperties.co.uk
+Email: hello@southyorkshirepropertybuyers.com
 Trading name of: Bullseye Properties Ltd (Companies House 14869608)
 Area served: Sheffield, Rotherham, Doncaster, Barnsley, Chesterfield, Worksop, Retford, Gainsborough
 Category: Cash House Buyers / Property Buyers / Quick Sale Property
 ```
 
-**Address note:** SYPB has no public street address. For directories that require one, use the Bullseye Properties Ltd registered company address from Companies House (verify on register before submitting).
+**Office address:** 30 Carlton Road, Worksop, Nottinghamshire, S80 1PH. Please call or email before visiting. [Public contact details](https://southyorkshirepropertybuyers.com/contact/)
 
 ## Tier 1 — High-authority UK business directories
 
