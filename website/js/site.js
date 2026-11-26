@@ -193,6 +193,9 @@
         situation: document.getElementById('situation').value,
         notes: document.getElementById('message').value
       };
+      // A phone-only callback must not send a blank email to a CRM upsert.
+      var callbackEmailArm = form.dataset && form.dataset.callbackEmailArm;
+      if (callbackEmailArm === 'optional' && !data.email.trim()) delete data.email;
       var writtenOfferChoice = form.querySelector('#writtenOfferRequested');
       if (writtenOfferChoice && writtenOfferChoice.checked) {
         data.writtenOfferRequested = true;
@@ -260,6 +263,9 @@
       try {
         var consent = localStorage.getItem('sypb_consent');
         if (consent === 'granted' || consent === 'denied') data.adUserDataConsent = consent;
+        if (consent === 'granted' && callbackEmailArm) {
+          data.callbackEmailTestArm = callbackEmailArm;
+        }
       } catch (_) {}
       var submitBtn = form.querySelector('.form-submit');
       var origText = submitBtn ? submitBtn.textContent : '';

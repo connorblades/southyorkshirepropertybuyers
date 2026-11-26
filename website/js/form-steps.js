@@ -15,6 +15,51 @@
 (function () {
   'use strict';
 
+  // Assign only after the contact fields are displayed. The unmeasured fallback
+  // is the original form. Never change a seller's variant halfway through it.
+  function showCallbackTest(form) {
+    if (!form.dataset || form.dataset.callbackEmailTest !== 'v1' || form.dataset.callbackTestSeen) return;
+    form.dataset.callbackTestSeen = '1';
+    var email = form.querySelector('#email');
+    var hint = form.querySelector('#emailRequirement');
+    var written = form.querySelector('#writtenOfferRequested');
+    if (!email || !hint || !written || typeof window.gtag !== 'function') return;
+
+    var arm;
+    try {
+      if (localStorage.getItem('sypb_consent') !== 'granted') return;
+      var key = 'sypb_callback_email_v1';
+      arm = localStorage.getItem(key);
+      if (arm !== 'control' && arm !== 'optional') {
+        arm = Math.random() < 0.5 ? 'control' : 'optional';
+        localStorage.setItem(key, arm);
+      }
+    } catch (_) { return; }
+
+    if (arm === 'optional') {
+      // Choose the written offer before encountering its required email field.
+      email.closest('.form-group').before(written.closest('.form-group'));
+      function updateRequirement() {
+        email.required = written.checked;
+        hint.classList.toggle('req', email.required);
+        hint.removeAttribute('aria-hidden');
+        hint.textContent = email.required ? '(required for a written offer)' : '(optional for a callback)';
+      }
+      written.addEventListener('change', updateRequirement);
+      window.addEventListener('pageshow', updateRequirement);
+      updateRequirement();
+    }
+
+    form.dataset.callbackEmailArm = arm;
+    // Two event names make both user denominators available in the standard
+    // Events report without registering a custom dimension or counting a lead.
+    window.gtag('event', 'callback_email_' + arm, {
+      send_to: 'G-VBWY8SPSCL',
+      page_location: window.location.origin + window.location.pathname,
+      page_referrer: ''
+    });
+  }
+
   function init(form) {
     var steps = [].slice.call(form.querySelectorAll('.form-step'));
     if (steps.length < 2) return;
@@ -46,6 +91,7 @@
       current = i;
       steps.forEach(function (s, n) { s.hidden = n !== i; });
       var last = i === steps.length - 1;
+      if (last) showCallbackTest(form);
       back.hidden = i === 0;
       next.hidden = last;
       nav.hidden = last && i === 0;

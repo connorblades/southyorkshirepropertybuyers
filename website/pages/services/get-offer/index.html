@@ -211,7 +211,7 @@
 
     <p class="enquiry-reassurance">A conversation with our local team. No pressure to decide today.</p>
 
-    <form id="offerForm">
+    <form id="offerForm" data-callback-email-test="v1">
         <div class="hp-field" aria-hidden="true">
           <label for="website-url">Leave this field empty</label>
           <input type="text" id="website-url" name="website-url" tabindex="-1" autocomplete="off">
@@ -287,7 +287,7 @@
             </div>
           </div>
           <div class="form-group">
-            <label for="email">Email Address <span class="req" aria-hidden="true">*</span></label>
+            <label for="email">Email Address <span id="emailRequirement" class="req" aria-hidden="true">*</span></label>
             <input type="email" id="email" placeholder="john@example.com" required autocomplete="email" />
           </div>
           <div class="form-group">
@@ -457,9 +457,9 @@
   </div>
 </div>
 
-<script defer src="/js/site.js?v=51"></script>
+<script defer src="/js/site.js?v=20261126a"></script>
 <script defer src="/js/helper.js?v=45"></script>
-<script defer src="/js/form-steps.js?v=45"></script>
+<script defer src="/js/form-steps.js?v=20261126a"></script>
 <script defer src="/js/auction-form-context.js?v=20261119"></script>
 <script defer src="/js/popup.js?v=45"></script>
 <script defer src="/js/animations.js?v=45"></script>

@@ -222,6 +222,13 @@ function looksLikePerson(body) {
 
   // One good contact route is enough, but a supplied value that is clearly junk
   // is a spam signal in its own right even when the other field is fine.
+  if (body.sourcePage === 'get-offer' &&
+      (body.callbackEmailTestArm === 'control' || body.callbackEmailTestArm === 'optional')) {
+    if (!gotPhone) return 'callback test requires a phone number';
+    if (!gotEmail && (body.callbackEmailTestArm === 'control' || body.writtenOfferRequested === true)) {
+      return 'email required for this enquiry';
+    }
+  }
   if (!gotPhone && !gotEmail) return 'no usable phone or email';
   if (String(body.phone || '').trim() && !gotPhone) return 'phone not a real number';
   if (String(body.email || '').trim() && !gotEmail) return 'email not usable';
@@ -280,7 +287,7 @@ app.post('/api/submit', async (req, res) => {
   }
 
   // Strip anti-spam signals before forwarding the validated enquiry.
-  const { _hp, _elapsed, writtenOfferRequested, ...lead } = body;
+  const { _hp, _elapsed, writtenOfferRequested, callbackEmailTestArm, ...lead } = body;
 
   // Keep seller context readable in the CRM even where an older workflow
   // maps notes but does not yet map the individual optional form fields.
@@ -290,6 +297,11 @@ app.post('/api/submit', async (req, res) => {
   if (writtenOfferRequested === true) {
     lead.writtenOfferRequested = true;
     sellerContext.push('Written offer requested: yes');
+  }
+  if (lead.sourcePage === 'get-offer' && lead.adUserDataConsent === 'granted' &&
+      (callbackEmailTestArm === 'control' || callbackEmailTestArm === 'optional')) {
+    lead.callbackEmailTestArm = callbackEmailTestArm;
+    sellerContext.push('Callback email test v1: ' + callbackEmailTestArm);
   }
   if (sellerContext.length) {
     lead.notes = (lead.notes ? lead.notes + '\n\n' : '') +
