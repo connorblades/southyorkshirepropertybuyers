@@ -80,6 +80,56 @@ function publicReferrerHost(raw) {
   return /^(?:[a-z0-9](?:[a-z0-9-]{0,61}[a-z0-9])?\.)+[a-z](?:[a-z0-9-]{0,61}[a-z0-9])?$/.test(host)
     && !ALLOWED_HOSTS.includes(host) ? host : '';
 }
+// Classify the acquisition evidence attached to this enquiry. Keep the
+// capture method (website) and the contact's original source independent.
+function websiteEnquirySource(lead) {
+  const tag = value => typeof value === 'string' ? value.trim().toLowerCase() : '';
+  const source = tag(lead.utm_source);
+  const medium = tag(lead.utm_medium);
+  const campaign = tag(lead.utm_campaign);
+  const google = source === 'google' || source === 'googleads' || source === 'google_ads';
+  const paid = ['cpc', 'ppc', 'paid', 'paidsearch', 'paid_search', 'paid-search'].includes(medium);
+  const socialSource = /^(meta|facebook|fb|instagram|ig|tiktok|linkedin|twitter|x|pinterest|youtube)$/.test(source);
+  const paidSocial = /^(paidsocial|paid[-_ ]social|social[-_ ]paid)$/.test(medium);
+  const searchSource = /^(google|bing|yahoo|duckduckgo|ecosia)$/.test(source);
+  const hasClickId = ['gclid', 'gbraid', 'wbraid'].some(key =>
+    typeof lead[key] === 'string' && /^[\w.-]{6,512}$/.test(lead[key]) &&
+    !/^(undefined|null|unknown|\(not set\))$/i.test(lead[key]));
+
+  // Disagreeing explicit tags and click IDs cannot identify one source.
+  if (hasClickId) {
+    if ((source && !google) || (medium && !paid && medium !== 'display' && medium !== 'cpm')) {
+      return 'Website (unattributed)';
+    }
+    return 'Google Ads';
+  }
+  if (google && paid) return 'Google Ads';
+  if (google && medium === 'organic' && campaign === 'business_profile') return 'Google Business Profile';
+  if ((socialSource && paid) || paidSocial) return 'Paid social';
+  if (medium === 'email' || medium === 'e-mail') return 'Email';
+  if (socialSource && ['organic', 'social', 'organic_social', 'organic-social'].includes(medium)) return 'Organic social';
+  if (searchSource && medium === 'organic') return 'Organic search';
+  const chatgpt = source === 'chatgpt.com' || source === 'chat.openai.com' || source === 'chatgpt';
+  if (chatgpt && (!medium || medium === 'referral')) return 'ChatGPT referral';
+  if (medium === 'referral') return 'Referral';
+  if (source || medium || campaign || tag(lead.utm_content) || tag(lead.utm_term)) return 'Other campaigns';
+
+  // The client already falls back to the first visit when no tagged landing
+  // exists. A tagged visit with no referrer must never borrow an older one.
+  const host = publicReferrerHost(lead.acquisitionReferrerHost);
+  if (!host || host.endsWith('.southyorkshirepropertybuyers.com') ||
+      /\.(local|localhost|internal|test|invalid)$/.test(host)) return 'Website (unattributed)';
+  if (host === 'chatgpt.com' || host === 'chat.openai.com') return 'ChatGPT referral';
+  if (/^(?:www\.)?(?:google\.(?:com|co\.uk|ie)|bing\.com|duckduckgo\.com|ecosia\.org)$/.test(host) ||
+      /^(?:(?:uk\.)?search\.)yahoo\.com$/.test(host)) return 'Organic search';
+  if (/(^|\.)(?:facebook\.com|instagram\.com|linkedin\.com|tiktok\.com|pinterest\.com|youtube\.com|twitter\.com|x\.com|t\.co)$/.test(host)) {
+    // An untagged social referrer does not distinguish a promoted post
+    // from a free post. Keep it out of both organic and paid social.
+    return 'Social referral (unattributed)';
+  }
+  return 'Referral';
+}
+
 const MIN_FILL_MS = 3000;        // nobody types nine fields faster than this
 const RATE_LIMIT = 20;           // submissions per IP per hour. Deliberately
                                  // generous: UK mobile carriers use CGNAT, so
@@ -261,6 +311,11 @@ app.post('/api/submit', async (req, res) => {
   for (const key of ['firstLandingPath', 'firstReferrerHost', 'acquisitionReferrerHost']) {
     if (lead[key]) receipt.push(key + ': ' + lead[key]);
     else delete lead[key];
+  }
+  delete lead.websiteEnquirySource;
+  if (lead.leadSource === 'website') {
+    lead.websiteEnquirySource = websiteEnquirySource(lead);
+    receipt.push('websiteEnquirySource: ' + lead.websiteEnquirySource);
   }
   if (receipt.length) {
     lead.notes = (lead.notes ? lead.notes + '\n\n' : '') +
