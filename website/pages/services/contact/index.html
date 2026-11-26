@@ -32,6 +32,32 @@
   <script type="application/ld+json">
   {"@context":"https://schema.org","@type":["LocalBusiness","RealEstateAgent"],"name":"South Yorkshire Property Buyers","url":"https://southyorkshirepropertybuyers.com/","telephone":"+447445629113","email":"hello@southyorkshirepropertybuyers.com","address":{"@type":"PostalAddress","streetAddress":"30 Carlton Road","addressLocality":"Worksop","addressRegion":"Nottinghamshire","postalCode":"S80 1PH","addressCountry":"GB"},"sameAs":["https://www.google.com/maps/search/?api=1&query=South+Yorkshire+Property+Buyers&query_place_id=ChIJe-fjm8dmrigR8I7veBqWOnI"],"parentOrganization":{"@type":"Organization","name":"Bullseye Properties Ltd","identifier":"14869608"}}
   </script>
+  <style id="contact-layout">
+    .contact-page { max-width: 1024px; margin: auto; padding: clamp(114px, 12vw, 155px) clamp(20px, 4vw, 48px) 64px; }
+    .contact-page h1, .contact-page h2, .contact-page h3 { color: var(--heading); line-height: 1.18; }
+    .contact-page h1 { font-size: var(--fs-3xl); letter-spacing: -.045em; }
+    .contact-page h2 { font-size: var(--fs-xl); letter-spacing: -.025em; }
+    .contact-page h3 { font-size: var(--fs-lg); }
+    .contact-page p, .contact-page address { max-width: 67ch; }
+    .contact-page a:not(.btn-primary) { color: var(--green-hover); text-decoration: underline; text-underline-offset: .18em; overflow-wrap: anywhere; }
+    html[data-theme="dark"] .contact-page a:not(.btn-primary) { color: #9fd9b0; }
+    .contact-page a:focus-visible { outline: 3px solid var(--heading); outline-offset: 4px; }
+    .contact-page section { border-top: 1px solid var(--border); padding: 32px 0 0; margin-top: 32px; }
+    .contact-intro { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; align-items: center; padding-bottom: 8px; }
+    .contact-intro p { margin-top: 12px; }
+    .contact-actions { display: grid; justify-items: start; gap: 12px; min-width: 0; }
+    .contact-actions .btn-primary { font-size: var(--fs-md); }
+    .contact-companies { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 16px; margin-top: 20px; }
+    .contact-company { display: flex; flex-direction: column; gap: 12px; background: var(--surface); border: 1px solid var(--border); border-radius: var(--r-md); padding: 24px; }
+    .contact-company address { margin-top: auto; font-style: normal; }
+    .contact-page section > p { margin-top: 12px; }
+    @media (max-width: 700px) {
+      .contact-intro, .contact-companies { grid-template-columns: 1fr; }
+      .contact-intro { gap: 20px; }
+      .contact-page { padding-top: 110px; }
+      .contact-company { padding: 20px; }
+    }
+  </style>
   <link rel="stylesheet" href="/css/footer-layout.css?v=20261119a" />
 </head>
 <body>
@@ -156,31 +182,48 @@
   <a href="/about/">About</a>
   <a href="/get-offer/" class="mobile-cta">Get a Cash Offer</a>
 </div>
-<main>
-  <article class="post" style="max-width:760px;margin:0 auto;padding:2rem 1rem;">
-    <h1>Contact us</h1>
-    <p>You will speak to the person who makes the decision, not a call centre and not a lead handler. If you would rather we came to you with a figure first, use the <a href="/get-offer/">cash offer form</a> and we will come back to you.</p>
+<main class="contact-page">
+  <header class="contact-intro">
+    <div>
+      <h1>Contact us</h1>
+      <p>Talk to the team who assess your property. Tell us where it is and when you hope to sell, or <a href="/get-offer/">request a written cash offer online</a>.</p>
+    </div>
+    <div class="contact-actions">
+      <a class="btn-primary" href="tel:+447445629113" data-track="phone-tap">Call 07445 629113</a>
+      <a href="mailto:hello@southyorkshirepropertybuyers.com">hello@southyorkshirepropertybuyers.com</a>
+    </div>
+  </header>
 
-    <h2>How to reach us</h2>
-    <p><strong>Phone:</strong> <a href="tel:+447445629113" data-track="phone-tap">07445 629113</a><br>
-       <strong>Email:</strong> <a href="mailto:hello@southyorkshirepropertybuyers.com">hello@southyorkshirepropertybuyers.com</a></p>
+  <section aria-labelledby="contact-meetings">
+    <h2 id="contact-meetings">Registered addresses and meetings</h2>
+    <p>The two companies below work together as South Yorkshire Property Buyers. Both addresses are for registration only and cannot receive visitors. To meet us in person, call or email and we’ll agree a time and place with you.</p>
+    <div class="contact-companies">
+      <article class="contact-company">
+        <h3>Bullseye Properties Ltd</h3>
+        <p>Handles your enquiry, calls you back and prepares your written offer and paperwork.</p>
+        <address>30 Carlton Road<br>Worksop, Nottinghamshire<br>S80 1PH</address>
+        <p><a href="https://find-and-update.company-information.service.gov.uk/company/14869608">Bullseye Properties on Companies House</a></p>
+      </article>
+      <article class="contact-company">
+        <h3>Dearne Valley Properties Ltd</h3>
+        <p>Our purchasing partner. Your written offer identifies the company buying your property.</p>
+        <address>Century Business Centre, Manvers Way<br>Manvers, Rotherham<br>S63 5DA</address>
+        <p><a href="https://find-and-update.company-information.service.gov.uk/company/11886498">Dearne Valley Properties on Companies House</a></p>
+      </article>
+    </div>
+  </section>
 
-    <h2>Registered addresses and meetings</h2>
-    <p>Two companies work together under the South Yorkshire Property Buyers name.</p>
-    <h3>Bullseye Properties Ltd</h3>
-    <p>We handle your enquiry, call you back and prepare your written offer and paperwork. Our registered address is 30 Carlton Road, Worksop, Nottinghamshire, S80 1PH. <a href="https://find-and-update.company-information.service.gov.uk/company/14869608">Companies House record for Bullseye Properties Ltd</a>.</p>
-    <h3>Dearne Valley Properties Ltd</h3>
-    <p>Dearne Valley is our purchasing partner. Your written offer identifies the company buying your property. Its registered address is Century Business Centre, Manvers Way, Manvers, Rotherham, S63 5DA. <a href="https://find-and-update.company-information.service.gov.uk/company/11886498">Companies House record for Dearne Valley Properties Ltd</a>.</p>
-    <p>Both addresses are for company registration only. We do not receive visitors at either address. To meet us in person, call or email and we will agree a time and place with you.</p>
-    <p><a href="https://www.google.com/maps/search/?api=1&amp;query=South+Yorkshire+Property+Buyers&amp;query_place_id=ChIJe-fjm8dmrigR8I7veBqWOnI">View South Yorkshire Property Buyers on Google Maps</a></p>
+  <section aria-labelledby="contact-area">
+    <h2 id="contact-area">Where we buy</h2>
+    <p>We buy in Sheffield, Rotherham, Doncaster and Barnsley, and in surrounding towns including Worksop, Retford, Mansfield, Chesterfield and Gainsborough.</p>
+    <p><a href="https://www.google.com/maps/search/?api=1&amp;query=South+Yorkshire+Property+Buyers&amp;query_place_id=ChIJe-fjm8dmrigR8I7veBqWOnI">View our business profile on Google Maps</a></p>
+  </section>
 
-    <h2>The areas we buy in</h2>
-    <p>Sheffield, Rotherham, Doncaster and Barnsley, plus the surrounding towns in Nottinghamshire, Derbyshire and Lincolnshire including Worksop, Retford, Mansfield, Chesterfield and Gainsborough.</p>
-
-    <h2>Registrations and redress</h2>
-    <p>Registered with the Information Commissioner's Office, registration number ZB599054.</p>
-    <p>Member of The Property Ombudsman, membership number T10815. If we cannot resolve a complaint to your satisfaction, you can refer it to The Property Ombudsman at Unit 159756, PO Box 7169, Poole, BH15 9EL.</p>
-  </article>
+  <section aria-labelledby="contact-redress">
+    <h2 id="contact-redress">Registrations and redress</h2>
+    <p>Information Commissioner’s Office registration number ZB599054. The Property Ombudsman membership number T10815.</p>
+    <p>If we cannot resolve a complaint to your satisfaction, you can refer it to The Property Ombudsman at Unit 159756, PO Box 7169, Poole, BH15 9EL.</p>
+  </section>
 </main>
 
 <footer class="sypb-site-footer">
